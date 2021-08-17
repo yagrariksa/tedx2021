@@ -17,14 +17,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('landing');
 });
 Route::prefix('essay')->group(function () {
     Route::get('/', [CE::class, 'branding'])->name('essay.branding');
     Route::get('/register', [CE::class, 'form'])->name('essay.form');
-    Route::post('/register', [CE::class, 'register'])->name('essay.register');
+    Route::post('/register', [CE::class, 'register'])->name('essay.form');
     Route::get('/payment', [CE::class, 'payment'])->name('essay.payment');
-    Route::post('/payment', [CE::class, 'paid'])->name('essay.paid');
+    Route::post('/payment', [CE::class, 'paid'])->name('essay.payment');
+    Route::get('/thanks', [CE::class, 'thanks'])->name('essay.thanks');
     Route::get('/status', [CE::class, 'status'])->name('essay.status');
 });
 
