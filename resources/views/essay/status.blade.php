@@ -44,33 +44,40 @@
         const displayRes = (data) => {
             paidbtn.style.display = 'none';
             switch (data.code) {
-                case (0):
+                case ("0"):
                     resstat.innerHTML = data.message
                     break;
                 case (1):
                     paidbtn.style.display = 'inline';
+                    resstat.innerHTML = "Anda belum melakukan pembayaran"
+                    paidbtn.innerHTML = "Bayar sekarang"
                     paidbtn.setAttribute('href', paymentlink + "?email=" + email.value)
                     break
 
-                case (2):
+                case ("2"):
+                    resstat.innerHTML = "Menunggu konfirmasi"
                     break
 
-                case (3):
+                case ("3"):
                     resstat.innerHTML = "SUKSES"
                     break;
-                case (4):
+                case ("4"):
+                    resstat.innerHTML = "Maaf Anda Kalah"
                     break
 
-                case (5):
+                case ("5"):
                     paidbtn.style.display = 'inline';
+                    resstat.innerHTML = "pembayaran ditolak"
+                    paidbtn.innerHTML = "Bayar Ulang"
                     paidbtn.setAttribute('href', paymentlink + "?email=" + email.value)
                     break
 
                 default:
+                    resstat.innerHTML = "server busy"
 
             }
             console.log(data)
-            resstat.innerHTML = data.message
+            // resstat.innerHTML = data.message
         }
     </script>
 

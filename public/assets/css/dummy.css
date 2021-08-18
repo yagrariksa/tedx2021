@@ -48,3 +48,25 @@ button {
 template {
     display: none;
 }
+
+table {
+    border-collapse: collapse;
+}
+
+td,
+th {
+    padding: 3px 5px;
+    border: 1px solid black;
+}
+
+hr {
+    width: 50vw;
+    height: 2px;
+    background-color: black;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}

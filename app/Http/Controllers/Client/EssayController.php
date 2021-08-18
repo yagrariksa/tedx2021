@@ -64,7 +64,7 @@ class EssayController extends Controller
 
     public function payment(Request $request)
     {
-        
+
 
         if ($request->query('email') != null) {
             // cek jika sudah berhasil membayar
@@ -92,13 +92,13 @@ class EssayController extends Controller
         }
 
         // upload file
-        $nameimg = time() . $request->bukti->extension();
+        $nameimg = time() . "." . $request->bukti->extension();
         $request->bukti->storeAs('public', $nameimg);
         // insert data
         $a = EssayPayment::create([
             'uid' => $user->id,
-            'status' => 3,
-            'img' => url('/storage\/' . $nameimg)
+            'status' => 2,
+            'img' => url('/storage' . "/" . $nameimg)
         ]);
 
         return redirect()
