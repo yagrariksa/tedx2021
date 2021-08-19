@@ -1,4 +1,4 @@
-@extends('dummy')
+@extends('layouts.app')
 
 @section('title')
     ESSAY
