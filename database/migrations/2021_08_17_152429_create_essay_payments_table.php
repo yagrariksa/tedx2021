@@ -18,6 +18,8 @@ class CreateEssayPaymentsTable extends Migration
             $table->unsignedBigInteger('uid');
             $table->string('status')->nullable(false);
             $table->string('reason')->nullable(true);
+            $table->string('method')->nullable(false);
+            $table->string('img')->nullable(false);
             $table->timestamps();
 
             $table->foreign('uid')->references('id')->on('essays');

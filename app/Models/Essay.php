@@ -10,7 +10,9 @@ class Essay extends Model
     use HasFactory;
 
     protected $fillable = [
-        'fullname', 'email'
+        'fullname', 'email', 'age',
+        'phone', 'address', 'institute',
+        'title', 'essaylink'
     ];
 
     public function payment()

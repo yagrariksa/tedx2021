@@ -36,6 +36,7 @@ class EssayController extends Controller
         }
 
         $payment->status = $request->status;
+        $payment->reason = $request->reason;
         $payment->save();
 
         $msg = [
