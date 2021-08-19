@@ -1,0 +1,423 @@
+body {
+  height: 100vh;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  overflow: hidden;
+}
+
+body h2 {
+  margin-bottom: 3rem;
+}
+
+.card {
+  position: relative;
+  border: none;
+  border-radius: 1rem;
+  background-color: #1D1D1D;
+  padding: 40px 80px;
+  width: 90vw;
+  max-width: 800px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 1.5rem;
+  border-radius: 1rem;
+}
+
+.card::before {
+  content: '';
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  z-index: -1;
+  border-radius: 1rem;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#EBEBEB), to(#EBEBEB33));
+  background-image: linear-gradient(to bottom right, #EBEBEB, #EBEBEB33);
+}
+
+.grid {
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.grid p {
+  font-size: 18px;
+}
+
+.grid .right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: .5rem;
+}
+
+.grid .right > div {
+  width: 100%;
+}
+
+.grid .method {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: .5rem;
+}
+
+.grid .payment {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: .5rem;
+}
+
+.grid input[name='method'] {
+  display: none;
+}
+
+.grid input[name='method']:checked + label {
+  background-color: #EBEBEB;
+}
+
+.grid label[for="dana"],
+.grid label[for="mandiri"] {
+  margin: 0;
+  padding: 0.5rem 1rem;
+  width: 100%;
+  max-width: 200px;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 10px;
+  background-color: transparent;
+  border: 2px solid #EBEBEB;
+}
+
+.grid label[for="dana"] img,
+.grid label[for="mandiri"] img {
+  width: 100%;
+}
+
+.grid .help {
+  cursor: pointer;
+}
+
+.grid label[for='inputFile'] {
+  padding: 6px 14px;
+  width: 100%;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-radius: 10px;
+  border: 2px dashed #960001;
+  background-color: #EBEBEB;
+}
+
+.grid label[for='inputFile'] span {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+button.btn-green {
+  width: 150px;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
+#helpDana .modal-dialog,
+#helpMandiri .modal-dialog {
+  max-width: 90vw;
+  width: 1050px;
+}
+
+#helpDana .modal-content,
+#helpMandiri .modal-content {
+  position: relative;
+  border: none;
+  border-radius: 1rem;
+  background-color: #1D1D1D;
+}
+
+#helpDana .modal-content::before,
+#helpMandiri .modal-content::before {
+  content: '';
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  z-index: -1;
+  border-radius: 1rem;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#EBEBEB), to(#EBEBEB33));
+  background-image: linear-gradient(to bottom right, #EBEBEB, #EBEBEB33);
+}
+
+#helpDana .lg,
+#helpMandiri .lg {
+  padding: 3rem;
+}
+
+#helpDana .close,
+#helpMandiri .close {
+  padding: 0;
+  font-size: 16px;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 20px;
+  color: #EBEBEB;
+  background-color: #E34444;
+  opacity: 1;
+  text-shadow: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+#helpDana ol,
+#helpMandiri ol {
+  margin-left: 1rem;
+}
+
+#helpDana .sm,
+#helpMandiri .sm {
+  display: none;
+}
+
+#thanks .modal-content {
+  position: relative;
+  border: none;
+  border-radius: 1rem;
+  background-color: #1D1D1D;
+}
+
+#thanks .modal-content::before {
+  content: '';
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  z-index: -1;
+  border-radius: 1rem;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#EBEBEB), to(#EBEBEB33));
+  background-image: linear-gradient(to bottom right, #EBEBEB, #EBEBEB33);
+}
+
+#thanks .modal-body {
+  padding: 3rem;
+}
+
+#thanks .close {
+  padding: 0;
+  font-size: 16px;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 20px;
+  color: #EBEBEB;
+  background-color: #E34444;
+  opacity: 1;
+  text-shadow: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.bg {
+  max-width: 60%;
+  position: absolute;
+  bottom: 0;
+  z-index: -999;
+}
+
+.bg.green {
+  left: 0;
+}
+
+.bg.red {
+  right: 0;
+}
+
+.bg-sm {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  body h2 {
+    margin-bottom: 2rem;
+  }
+  .grid {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    -ms-grid-rows: auto auto;
+        grid-template-rows: auto auto;
+    gap: 0;
+  }
+  .grid .method {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  #helpDana .lg,
+  #helpMandiri .lg {
+    display: none;
+  }
+  #helpDana .sm,
+  #helpMandiri .sm {
+    display: block;
+    padding: 2rem;
+  }
+  #helpDana .language,
+  #helpMandiri .language {
+    width: 100%;
+    padding-bottom: 1rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    gap: 1rem;
+  }
+  #helpDana .language input,
+  #helpMandiri .language input {
+    display: none;
+  }
+  #helpDana .language label, #helpDana .language button,
+  #helpMandiri .language label,
+  #helpMandiri .language button {
+    width: 50px;
+    margin: 0;
+    padding: 2px;
+    text-align: center;
+    border-radius: 30px;
+    border: 2px solid #EBEBEB;
+  }
+  #helpDana .language .btn-active,
+  #helpMandiri .language .btn-active {
+    border-color: #24B9BA;
+    background-color: #24B9BA;
+  }
+  .bg {
+    display: none;
+  }
+  .bg-sm {
+    position: absolute;
+    left: 0;
+    display: unset;
+    z-index: -999;
+  }
+  .bg-sm.green {
+    top: 0;
+  }
+  .bg-sm.red {
+    bottom: 0;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  body h2 {
+    margin-bottom: 1rem;
+  }
+  .card {
+    padding: 40px;
+  }
+  .left br {
+    display: none;
+  }
+  .grid p {
+    font-size: 16px;
+  }
+  .grid label[for="dana"],
+  .grid label[for="mandiri"] {
+    padding: 7px 14px;
+  }
+  .grid label[for="dana"] img,
+  .grid label[for="mandiri"] img {
+    width: 100%;
+  }
+  .grid .help {
+    width: 1rem;
+  }
+  .grid label[for='inputFile'] {
+    font-size: 14px;
+  }
+}
+/*# sourceMappingURL=payment-confirm.css.map */
