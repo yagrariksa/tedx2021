@@ -51,7 +51,7 @@ Check Status
             <div class="status">
                 <!-- diisi pake innerHTML -->
             </div>
-            <a href="#" id="paid" style="display: none">PAID</a>
+            <button href="#" id="paid" class="btn-green" style="display: none">PAID</button>
         </div>
     </div>
 
@@ -125,12 +125,145 @@ Check Status
 @section('js')
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
     <script>
+
+    const notFound =
+        `<div class="line"></div>
+        <div class="desc">
+            <div>
+                <h2 class="text-red">Not Found</h2>
+                <p class="text-sand-beach">er <span class="text-green">·</span> ror</p>
+            </div>
+            <hr>
+            <p>Your account is <span class="text-red" style="font-weight: 600;">not found</span>. Input your
+                <span class="text-red" style="font-weight: 600;">email correctly</span>.
+            </p>
+        </div>
+        <button class="btn-green">Register</button>`;
+
+    const unpaid =
+        `<div class="line"></div>
+        <div class="desc">
+            <div>
+                <h2 class="text-red">Unpaid</h2>
+                <p class="text-sand-beach">re <span class="text-green">·</span> mem <span
+                        class="text-red">·</span> ber</p>
+            </div>
+            <hr>
+            <p>Please <span class="text-red" style="font-weight: 600;">pay</span> and <span class="text-red"
+                    style="font-weight: 600;">upload</span> the transfer slip <span class="text-red"
+                    style="font-weight: 600;">before dd/mm/yyyy</span>
+            </p>
+        </div>
+        `;
+
+    const pending =
+        `<div class="line"></div>
+        <div class="desc">
+            <div>
+                <h2 class="text-red">Pending</h2>
+                <p class="text-sand-beach">wai <span class="text-green">·</span> ting</p>
+            </div>
+            <hr>
+            <p>Kindly wait for our administrator to finish <span class="text-red"
+                    style="font-weight: 600;">processing</span> your payment.
+            </p>
+        </div>`;
+
+    const decline =
+        `<div class="line"></div>
+        <div class="desc">
+            <div>
+                <h2 class="text-red">Decline</h2>
+                <p class="text-sand-beach">oop <span class="text-green">·</span> sie</p>
+            </div>
+            <hr>
+            <p>Your payment has been <span class="text-red" style="font-weight: 600;">decline</span> due to
+                <span class="text-red" style="font-weight: 600;">blablablablabla</span> <br>
+                Please <span class="text-red" style="font-weight: 600;">pay</span> and <span class="text-red"
+                    style="font-weight: 600;">upload</span> the transfer slip <span class="text-red"
+                    style="font-weight: 600;">before dd/mm/yyyy</span>
+            </p>
+        </div>
+        <button class="btn-green">Pay</button>`;
+
+    const selection =
+        `<div class="line"></div>
+        <div class="desc">
+            <div>
+                <h2 class="text-green">Selection</h2>
+                <p class="text-sand-beach">pro <span class="text-green">·</span> ces <span
+                        class="text-red">·</span> sing </p>
+            </div>
+            <hr>
+            <p>Your registration is <span class="text-red" style="font-weight: 600;">completed</span>. <span
+                    class="text-red" style="font-weight: 600;">Please wait</span> for the announcement of your
+                <span class="text-red" style="font-weight: 600;">essay result</span>.
+            </p>
+        </div>`;
+
+    const failed =
+        `<div class="line"></div>
+        <div class="desc">
+            <div>
+                <h2 class="text-red">We're Sorry</h2>
+                <p class="text-sand-beach">un <span class="text-green">·</span> qua <span
+                        class="text-red">·</span> li <span class="text-green">·</span> fied</p>
+            </div>
+            <hr>
+            <p>Thank you for participating. <span class="text-red" style="font-weight: 600;">Don't give up. Try
+                    again next time.</span>
+            </p>
+        </div>`;
+
+    const choosen =
+        `<div class="line"></div>
+        <div class="desc">
+            <div>
+                <h2 class="text-green">Congratulations</h2>
+                <p class="text-sand-beach">qua <span class="text-green">·</span> li <span
+                        class="text-red">·</span> fied</p>
+            </div>
+            <hr>
+            <p>Your registration has been <span class="text-green" style="font-weight: 600;">choosen</span> to
+                go to <span class="text-green" style="font-weight: 600;">next phase. Horray!</span>
+            </p>
+        </div>`;
+
+    const validate = () => {
+        let email = $('input#email')[0].value;
+        let filter = /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+
+        return (filter.test(email));
+    }
+
+    // LOADER
+    const loading =
+        `<div class="loader loader--fullscreen">
+            <div class="loader__balls">
+                <div class="loader__balls__dot"></div>
+                <div class="loader__balls__dot"></div>
+            </div>
+            <svg>
+                <defs>
+                    <filter id="gooey">
+                    <feGaussianBlur in="SourceGraphic" stdDeviation="10" />
+                    <feColorMatrix values="
+                        1 0 0 0 0
+                        0 1 0 0 0
+                        0 0 1 0 0
+                        0 0 0 20 -10" />
+                    </filter>
+                </defs>
+            </svg>
+        </div>`;
+
+
         const paymentlink = "{{ route('essay.payment') }}";
         const resstat = document.querySelector('.status');
         // listener input email
         const email = document.querySelector('input#email');
         const btn = document.querySelector('button#trigger');
-        const paidbtn = document.querySelector('a#paid');
+        const paidbtn = document.querySelector('button#paid');
         email.addEventListener('input', () => {
             // VERIFIY EMAIL
         })
@@ -148,24 +281,24 @@ Check Status
             paidbtn.style.display = 'none';
             switch (data.code) {
                 case ("0"):
-                    resstat.innerHTML = data.message
+                    resstat.innerHTML = notFound
                     break;
                 case (1):
                     paidbtn.style.display = 'inline';
-                    resstat.innerHTML = "Anda belum melakukan pembayaran"
+                    resstat.innerHTML = unpaid
                     paidbtn.innerHTML = "Bayar sekarang"
                     paidbtn.setAttribute('href', paymentlink + "?email=" + email.value)
                     break
 
                 case ("2"):
-                    resstat.innerHTML = "Menunggu konfirmasi"
+                    resstat.innerHTML = pending
                     break
 
                 case ("3"):
-                    resstat.innerHTML = "SUKSES"
+                    resstat.innerHTML = choosen
                     break;
                 case ("4"):
-                    resstat.innerHTML = "Maaf Anda Kalah"
+                    resstat.innerHTML = failed
                     break
 
                 case ("5"):
@@ -183,5 +316,5 @@ Check Status
             // resstat.innerHTML = data.message
         }
     </script>
-
+    <script src="{{ asset('assets/js/check-status.js') }}"></script>
 @endsection
