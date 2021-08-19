@@ -170,7 +170,7 @@ Check Status
 
                 case ("5"):
                     paidbtn.style.display = 'inline';
-                    resstat.innerHTML = "pembayaran ditolak"
+                    resstat.innerHTML = "pembayaran ditolak, karena <strong>" + data.reason + "</strong>"
                     paidbtn.innerHTML = "Bayar Ulang"
                     paidbtn.setAttribute('href', paymentlink + "?email=" + email.value)
                     break

@@ -10,7 +10,7 @@ class EssayPayment extends Model
     use HasFactory;
 
     protected $fillable = [
-        'uid', 'status', 'reason', 'img'
+        'uid', 'status', 'reason', 'img', 'method'
     ];
 
     public function essay()

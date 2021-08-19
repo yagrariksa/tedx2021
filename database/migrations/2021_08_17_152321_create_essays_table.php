@@ -17,6 +17,12 @@ class CreateEssaysTable extends Migration
             $table->id();
             $table->string('email')->unique();
             $table->string('fullname');
+            $table->integer('age');
+            $table->string('phone');
+            $table->string('address');
+            $table->string('institute');
+            $table->string('title');
+            $table->string('essaylink');
             $table->timestamps();
         });
     }

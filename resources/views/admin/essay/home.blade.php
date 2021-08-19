@@ -70,10 +70,12 @@
             <label for="">Ubah status menjadi</label>
             <select name="status" id="">
                 <option value="2" selected>menunggu konfirmasi</option>
+                <option value="5">tolak pembayaran</option>
+                <option value="6">pembayaran diterima</option>
                 <option value="3">menang kompetisi</option>
                 <option value="4">kalah kompetisi</option>
-                <option value="5">tolak pembayaran</option>
             </select>
+            <input type="text" name="reason" placeholder="alasan" id="input-reason" style="display: none">
             <div class="row">
                 <button type="button" id="cancel-form">Batalkan</button>
                 <button type="submit">UBAH</button>
@@ -84,10 +86,20 @@
 
 @section('js')
     <script>
+        const s = document.querySelector('select');
         const img = document.querySelector('img#img-payment');
         const form = document.querySelector('form#form-ubah');
         const btnCancelForm = document.querySelector('button#cancel-form');
         const btnTrigger = document.querySelectorAll('button.form-trigger');
+
+        s.addEventListener('input', () => {
+            let inputreason = document.querySelector('input#input-reason');
+            if (s.value == "5") {
+                inputreason.style.display = 'inline';
+            } else {
+                inputreason.style.display = 'none';
+            }
+        })
 
         btnTrigger.forEach(btn => {
             btn.addEventListener('click', () => {

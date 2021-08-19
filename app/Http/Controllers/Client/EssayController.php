@@ -39,7 +39,13 @@ class EssayController extends Controller
         // insert data
         Essay::create([
             'fullname'  => $request->fullname,
-            'email'     => $request->email
+            'email'     => $request->email,
+            'age'       => $request->age,
+            'address'   => $request->addr,
+            'institute' => $request->institute,
+            'title'     => $request->essay,
+            'essaylink' => $request->link,
+            'phone' => $request->phone,
         ]);
 
         // return
@@ -98,7 +104,8 @@ class EssayController extends Controller
         $a = EssayPayment::create([
             'uid' => $user->id,
             'status' => 2,
-            'img' => url('/storage' . "/" . $nameimg)
+            'img' => url('/storage' . "/" . $nameimg),
+            'method' => $request->method
         ]);
 
         return redirect()
