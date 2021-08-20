@@ -132,7 +132,7 @@ body h2 {
           justify-content: center;
   border-radius: 10px;
   background-color: transparent;
-  border: 2px solid #EBEBEB;
+  border: 2px solid #ebebeb57;
 }
 
 .grid label[for="dana"] img,
@@ -231,6 +231,15 @@ button.btn-green {
   text-shadow: none;
   -webkit-box-shadow: none;
           box-shadow: none;
+  z-index: 999;
+}
+
+#helpDana .close:hover,
+#helpMandiri .close:hover {
+  -webkit-transform: none;
+          transform: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
 #helpDana ol,
@@ -289,6 +298,14 @@ button.btn-green {
   background-color: #E34444;
   opacity: 1;
   text-shadow: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  z-index: 999;
+}
+
+#thanks .close:hover {
+  -webkit-transform: none;
+          transform: none;
   -webkit-box-shadow: none;
           box-shadow: none;
 }

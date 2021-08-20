@@ -57,6 +57,8 @@ form input {
 }
 
 form h4 {
+  margin-bottom: 0;
+  margin-top: .5rem;
   padding-left: 1rem;
   width: 100%;
   display: -webkit-box;
@@ -86,6 +88,10 @@ form .age-phone {
   -ms-grid-columns: 1fr 3fr;
       grid-template-columns: 1fr 3fr;
   gap: 1rem;
+}
+
+form .age-phone h4 {
+  margin-bottom: .5rem;
 }
 
 .warn-container {
@@ -184,6 +190,14 @@ button.close {
   background-color: #E34444;
   opacity: 1;
   text-shadow: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  z-index: 999;
+}
+
+button.close:hover {
+  -webkit-transform: none;
+          transform: none;
   -webkit-box-shadow: none;
           box-shadow: none;
 }

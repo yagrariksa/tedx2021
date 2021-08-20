@@ -18,7 +18,7 @@ Payment Confirmation
     <div class="grid">
         <div class="left">
             <p>Full Name</p>
-            <h3>Annisa Rahma NAMANA</h3>
+            <h3>{{ $user->fullname }}</h3>
             <br>
             <p>Category</p>
             <h3>Essay Event</h3>

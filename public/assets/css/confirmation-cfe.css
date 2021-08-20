@@ -61,17 +61,26 @@ body {
   display: -ms-flexbox;
   display: flex;
   gap: 2rem;
+  align-items: center;
 }
 
-.footer button {
+.footer button,
+.footer a {
   width: 150px;
+  color: white;
+  text-align: center;
+}
+
+.footer a:hover {
+    -webkit-transform: translate(0px, -4px);
+    transform: translate(0px, -4px);
 }
 
 .footer .later {
   background-color: transparent;
   -webkit-box-shadow: none;
           box-shadow: none;
-  text-decoration: underline;
+  text-decoration: none;
   font-weight: 400;
 }
 

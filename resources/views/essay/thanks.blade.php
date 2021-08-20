@@ -15,8 +15,8 @@
         <div class="line"></div>
         <h4>Do you want to <span class="text-green">pay now?</span></h4>
         <form class="footer">
-            <button class="later" type="submit" href="#">Pay later</button>
-            <button class="btn-green" href="{{ route('essay.payment', ['email' => $email]) }}">Pay now</button>
+            <a class="later" type="submit" href="{{ route('essay.branding') }}">Pay later</a>
+            <a class="button btn-green" href="{{ route('essay.payment', ['email' => $email]) }}">Pay now</a>
         </form>
     </div>
 

@@ -12,12 +12,6 @@ Registration Call for Essay
     <div class="card">
         <h2>Registration <br> Call for Essay</h2>
 
-        <!-- Warning -->
-        <div class="warn-container"></div>
-        @if (Session::has('error'))
-            <span class="alert fail">{{ Session::get('error') }}</span>
-        @endif
-
         <!-- Form -->
         <form action="{{ route('essay.form') }}" method="post">
             @csrf
@@ -29,7 +23,7 @@ Registration Call for Essay
             <div class="age-phone">
                 <div>
                     <h4>Age</h4>
-                    <input type="text" id="age" name="age" class="mandatory" value="{{ old('fullname') }}">
+                    <input type="number" id="age" name="age" class="mandatory" value="{{ old('fullname') }}">
                 </div>
                 <div>
                     <h4>Phone Number</h4>
@@ -50,8 +44,16 @@ Registration Call for Essay
             <h4>Google Drive Link <img class="help" src="{{ asset('assets/img/help.svg') }}" data-toggle="modal"
                     data-target="#helpGdrive"></h4>
             <input type="text" id="link" name="link" class="mandatory">
+            {{-- <hr> --}}
+            @if (Session::has('error'))
+            <span class="alert fail">{{ Session::get('error') }}</span>
             <hr>
-            <button type="submit" class="btn-green" id="btn-regis">Register</button>
+            @endif
+
+            <!-- Warning -->
+            <div class="warn-container" style="margin-top: 1rem"></div>
+
+            <button type="submit" class="btn-green" id="btn-regis" style="margin-top: 1rem">Register</button>
         </form>
     </div>
 

@@ -7,6 +7,7 @@ use App\Models\Essay;
 use App\Models\EssayPayment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+use Validator;
 
 class EssayController extends Controller
 {
@@ -74,10 +75,12 @@ class EssayController extends Controller
 
         if ($request->query('email') != null) {
             // cek jika sudah berhasil membayar
+            $user = Essay::where('email', $request->query('email'))->first();
 
             // jika belum bayar atau gagal bayar, maka tampilkan form
             return view('essay.payment', [
                 'email' => $request->query('email'),
+                'user' => $user,
             ]);
         }
         return redirect()->route('essay.branding');
@@ -86,10 +89,21 @@ class EssayController extends Controller
     public function paid(Request $request)
     {
         // validate
-        $request->validate([
+        $rules = [
             'method' => 'required',
             'bukti'  => 'required'
-        ]);
+        ];
+
+        $messages = [
+            'method.required'        => 'The payment method field is required',
+            'bukti.required'         => 'The transfer slip field is required',
+        ];
+
+        $validator = Validator::make($request->all(), $rules, $messages);
+
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput($request->all);
+        }
 
         // find user
         $user = Essay::where('email', $request->email)->first();

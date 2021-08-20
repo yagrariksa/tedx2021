@@ -18,8 +18,8 @@ Check Status
                     aria-expanded="false">Competition</a>
 
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <li><a class="dropdown-item" href="#">Call for Essay</a></li>
-                    <li><a class="dropdown-item disabled" href="#">Coming Soon</a></li>
+                    <li><a class="dropdown-item" href="{{ route('essay.branding') }}">Call for Essay</a></li>
+                    <li><a class="dropdown-item disabled" href="#" aria-disabled="true">Coming Soon</a></li>
                 </ul>
             </div>
             <a href="" class="menu active">Check Status</a>
@@ -33,25 +33,25 @@ Check Status
     <div class="container">
         <h2 class="title">Check Status</h2>
         <div class="card">
+            @if (Session::has('success'))
+                <span class="alert success">{{ Session::get('success') }}</span>
+            @endif
             <div class="input-email">
                 <h4>Email</h4>
                 <input type="text" name="email" id="email">
-                @if (Session::has('success'))
-                    <span class="alert success">{{ Session::get('success') }}</span>
-                @endif
                 <div class="option">
                     <!-- belum ada(?) -->
                     <input type="radio" name="option" id="cfe" checked>
                     <label for="cfe">Call for Essay</label>
-                    <input type="radio" name="option" id="coming">
-                    <label class="disabled" for="coming">Coming soon</label>
+                    <input type="radio" name="option" id="coming" disabled>
+                    <label class="disabled" for="coming" style="cursor:default">Coming soon</label>
                 </div>
-                <button id="trigger">CEK</button>
+                <button id="trigger" style="margin-top: 1rem; border: 1px solid #24B9BA">CEK</button>
             </div>
             <div class="status">
                 <!-- diisi pake innerHTML -->
             </div>
-            <button href="#" id="paid" class="btn-green" style="display: none">PAID</button>
+            <a href='#' id="paid" class="button btn-green" style="display: none">PAID</a>
         </div>
     </div>
 
@@ -178,13 +178,14 @@ Check Status
             </div>
             <hr>
             <p>Your payment has been <span class="text-red" style="font-weight: 600;">decline</span> due to
-                <span class="text-red" style="font-weight: 600;">blablablablabla</span> <br>
+                <span class="text-red" style="font-weight: 600;">`;
+
+    const decline2 =`</span> <br>
                 Please <span class="text-red" style="font-weight: 600;">pay</span> and <span class="text-red"
                     style="font-weight: 600;">upload</span> the transfer slip <span class="text-red"
-                    style="font-weight: 600;">before dd/mm/yyyy</span>
+                    style="font-weight: 600;">before deadline</span>
             </p>
-        </div>
-        <button class="btn-green">Pay</button>`;
+        </div>`;
 
     const selection =
         `<div class="line"></div>
@@ -263,7 +264,7 @@ Check Status
         // listener input email
         const email = document.querySelector('input#email');
         const btn = document.querySelector('button#trigger');
-        const paidbtn = document.querySelector('button#paid');
+        const paidbtn = document.querySelector('a#paid');
         email.addEventListener('input', () => {
             // VERIFIY EMAIL
         })
@@ -286,7 +287,7 @@ Check Status
                 case (1):
                     paidbtn.style.display = 'inline';
                     resstat.innerHTML = unpaid
-                    paidbtn.innerHTML = "Bayar sekarang"
+                    paidbtn.innerHTML = "Pay Now"
                     paidbtn.setAttribute('href', paymentlink + "?email=" + email.value)
                     break
 
@@ -303,8 +304,8 @@ Check Status
 
                 case ("5"):
                     paidbtn.style.display = 'inline';
-                    resstat.innerHTML = "pembayaran ditolak, karena <strong>" + data.reason + "</strong>"
-                    paidbtn.innerHTML = "Bayar Ulang"
+                    resstat.innerHTML = decline + data.reason + decline2;
+                    paidbtn.innerHTML = "Pay Again"
                     paidbtn.setAttribute('href', paymentlink + "?email=" + email.value)
                     break
 
