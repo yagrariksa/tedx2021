@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('title')
-Check Status
+    Check Status
 @endsection
 
 @section('css')
-<link rel="stylesheet" href="{{ asset('assets/css/check-status.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/check-status.css') }}">
 @endsection
 
 @section('content')
@@ -14,8 +14,8 @@ Check Status
         <img src="{{ asset('assets/img/white-logo.png') }}" alt="" class="logo">
         <div class="menus navbar">
             <div class="nav-item dropdown">
-                <a href="#" class="menu nav-link dropdown-toggle" role="button" id="navbarDropdownMenuLink" data-bs-toggle="dropdown"
-                    aria-expanded="false">Competition</a>
+                <a href="#" class="menu nav-link dropdown-toggle" role="button" id="navbarDropdownMenuLink"
+                    data-bs-toggle="dropdown" aria-expanded="false">Competition</a>
 
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                     <li><a class="dropdown-item" href="{{ route('essay.branding') }}">Call for Essay</a></li>
@@ -101,10 +101,10 @@ Check Status
                 <filter id="gooey">
                     <feGaussianBlur in="SourceGraphic" stdDeviation="10" />
                     <feColorMatrix values="
-                  1 0 0 0 0
-                  0 1 0 0 0
-                  0 0 1 0 0
-                  0 0 0 20 -10" />
+                              1 0 0 0 0
+                              0 1 0 0 0
+                              0 0 1 0 0
+                              0 0 0 20 -10" />
                 </filter>
             </defs>
         </svg>
@@ -123,11 +123,12 @@ Check Status
 @endsection
 
 @section('js')
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous">
+    </script>
     <script>
-
-    const notFound =
-        `<div class="line"></div>
+        const notFound =
+            `<div class="line"></div>
         <div class="desc">
             <div>
                 <h2 class="text-red">Not Found</h2>
@@ -140,8 +141,8 @@ Check Status
         </div>
         <button class="btn-green">Register</button>`;
 
-    const unpaid =
-        `<div class="line"></div>
+        const unpaid =
+            `<div class="line"></div>
         <div class="desc">
             <div>
                 <h2 class="text-red">Unpaid</h2>
@@ -156,8 +157,8 @@ Check Status
         </div>
         `;
 
-    const pending =
-        `<div class="line"></div>
+        const pending =
+            `<div class="line"></div>
         <div class="desc">
             <div>
                 <h2 class="text-red">Pending</h2>
@@ -169,8 +170,8 @@ Check Status
             </p>
         </div>`;
 
-    const decline =
-        `<div class="line"></div>
+        const decline =
+            `<div class="line"></div>
         <div class="desc">
             <div>
                 <h2 class="text-red">Decline</h2>
@@ -180,15 +181,15 @@ Check Status
             <p>Your payment has been <span class="text-red" style="font-weight: 600;">decline</span> due to
                 <span class="text-red" style="font-weight: 600;">`;
 
-    const decline2 =`</span> <br>
+        const decline2 = `</span> <br>
                 Please <span class="text-red" style="font-weight: 600;">pay</span> and <span class="text-red"
                     style="font-weight: 600;">upload</span> the transfer slip <span class="text-red"
                     style="font-weight: 600;">before deadline</span>
             </p>
         </div>`;
 
-    const selection =
-        `<div class="line"></div>
+        const selection =
+            `<div class="line"></div>
         <div class="desc">
             <div>
                 <h2 class="text-green">Selection</h2>
@@ -202,8 +203,8 @@ Check Status
             </p>
         </div>`;
 
-    const failed =
-        `<div class="line"></div>
+        const failed =
+            `<div class="line"></div>
         <div class="desc">
             <div>
                 <h2 class="text-red">We're Sorry</h2>
@@ -216,8 +217,8 @@ Check Status
             </p>
         </div>`;
 
-    const choosen =
-        `<div class="line"></div>
+        const choosen =
+            `<div class="line"></div>
         <div class="desc">
             <div>
                 <h2 class="text-green">Congratulations</h2>
@@ -230,16 +231,17 @@ Check Status
             </p>
         </div>`;
 
-    const validate = () => {
-        let email = $('input#email')[0].value;
-        let filter = /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+        const validate = () => {
+            let email = $('input#email')[0].value;
+            let filter =
+                /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
 
-        return (filter.test(email));
-    }
+            return (filter.test(email));
+        }
 
-    // LOADER
-    const loading =
-        `<div class="loader loader--fullscreen">
+        // LOADER
+        const loading =
+            `<div class="loader loader--fullscreen">
             <div class="loader__balls">
                 <div class="loader__balls__dot"></div>
                 <div class="loader__balls__dot"></div>
@@ -281,7 +283,7 @@ Check Status
         const displayRes = (data) => {
             paidbtn.style.display = 'none';
             switch (data.code) {
-                case ("0"):
+                case (0):
                     resstat.innerHTML = notFound
                     break;
                 case (1):
@@ -307,6 +309,10 @@ Check Status
                     resstat.innerHTML = decline + data.reason + decline2;
                     paidbtn.innerHTML = "Pay Again"
                     paidbtn.setAttribute('href', paymentlink + "?email=" + email.value)
+                    break
+
+                case ("6"):
+                    resstat.innerHTML = "Pembayaran diterima - on progress"
                     break
 
                 default:

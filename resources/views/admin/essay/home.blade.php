@@ -37,6 +37,9 @@
                                 @case(5)
                                     pembayaran ditolak
                                 @break
+                                @case(6)
+                                    pembayaran diterima
+                                @break
                                 @default
                                     Belum Bayar
                             @endswitch
