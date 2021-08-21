@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('landing');
-});
+})->name('landing');
 Route::prefix('essay')->group(function () {
     Route::get('/', [CE::class, 'branding'])->name('essay.branding');
     Route::get('/register', [CE::class, 'form'])->name('essay.form');
