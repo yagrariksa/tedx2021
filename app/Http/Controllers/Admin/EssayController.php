@@ -5,13 +5,14 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Essay;
 use App\Models\EssayPayment;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class EssayController extends Controller
 {
     public function home()
     {
-        $data = Essay::with('payment')->paginate(20);
+        $data = Essay::with(['user', 'payment'])->paginate(20);
         foreach ($data as $d) {
             if (sizeof($d->payment) > 0) {
                 $d->last = $d->payment[sizeof($d->payment) - 1];
@@ -30,7 +31,7 @@ class EssayController extends Controller
         if (!$request->id) {
             return redirect()->route('admin.essay.home');
         }
-        $payment = EssayPayment::with('essay')->find($request->id);
+        $payment = EssayPayment::with('essay', 'essay.user')->find($request->id);
         if (!$payment) {
             dd("KEGAGALAN SISTEM");
         }
@@ -41,9 +42,9 @@ class EssayController extends Controller
 
         $msg = [
             "sukses mengubah status untuk",
-            $payment->essay->fullname,
+            $payment->essay->user->name,
             "(",
-            $payment->essay->email,
+            $payment->essay->user->email,
             ")",
         ];
 

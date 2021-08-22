@@ -10,11 +10,11 @@ class EssayPayment extends Model
     use HasFactory;
 
     protected $fillable = [
-        'uid', 'status', 'reason', 'img', 'method'
+        'essay_id', 'status', 'reason', 'img', 'method'
     ];
 
     public function essay()
     {
-        return $this->belongsTo(Essay::class, 'uid', 'id');
+        return $this->belongsTo(Essay::class, 'essay_id', 'id');
     }
 }

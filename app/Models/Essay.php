@@ -10,13 +10,17 @@ class Essay extends Model
     use HasFactory;
 
     protected $fillable = [
-        'fullname', 'email', 'age',
-        'phone', 'address', 'institute',
+        'uid',
         'title', 'essaylink'
     ];
 
     public function payment()
     {
-        return $this->hasMany(EssayPayment::class, 'uid', 'id');
+        return $this->hasMany(EssayPayment::class, 'essay_id', 'id');
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'uid', 'id');
     }
 }

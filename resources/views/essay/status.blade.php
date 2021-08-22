@@ -312,7 +312,7 @@
                     break
 
                 case ("6"):
-                    resstat.innerHTML = "Pembayaran diterima - on progress"
+                    resstat.innerHTML = selection
                     break
 
                 default:

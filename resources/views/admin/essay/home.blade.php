@@ -21,7 +21,7 @@
             @foreach ($data as $d)
                 <tr>
                     <td>{{ $loop->iteration }}</td>
-                    <td>{{ $d->fullname }}</td>
+                    <td>{{ $d->user->name }}</td>
                     <td>
                         @if ($d->last != null)
                             @switch($d->last->status)
@@ -50,7 +50,7 @@
                     </td>
                     <td>
                         @if ($d->last != null)
-                            <button class="form-trigger" data-email="{{ $d->email }}" data-name="{{ $d->fullname }}"
+                            <button class="form-trigger" data-email="{{ $d->user->email }}" data-name="{{ $d->user->name }}"
                                 data-src="{{ $d->last->img }}" data-id="@if ($d->last != null) {{ $d->last->id }} @endif">show and change status</button>
                         @else
                             Belum Bayar Gabisa ubah status

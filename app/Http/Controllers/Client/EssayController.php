@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Client;
 use App\Http\Controllers\Controller;
 use App\Models\Essay;
 use App\Models\EssayPayment;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Validator;
@@ -31,22 +32,26 @@ class EssayController extends Controller
         // custom validate message !!!
 
         // validate email
-        if (Essay::where('email', $request->email)->first()) {
+        if (User::where('email', $request->email)->first()) {
             return redirect()
                 ->back()
                 ->with('error', 'Email sudah digunakan')
                 ->withInput($request->all());
         }
         // insert data
-        Essay::create([
-            'fullname'  => $request->fullname,
+        $u = User::create([
+            'name'  => $request->fullname,
             'email'     => $request->email,
             'age'       => $request->age,
             'address'   => $request->addr,
             'institute' => $request->institute,
+            'phone' => $request->phone,
+        ]);
+
+        Essay::create([
+            'uid'       => $u->id,
             'title'     => $request->essay,
             'essaylink' => $request->link,
-            'phone' => $request->phone,
         ]);
 
         // return
@@ -71,11 +76,10 @@ class EssayController extends Controller
 
     public function payment(Request $request)
     {
-
-
         if ($request->query('email') != null) {
             // cek jika sudah berhasil membayar
-            $user = Essay::where('email', $request->query('email'))->first();
+            // $user = Essay::where('email', $request->query('email'))->first();
+            $user = User::with('essay')->where('email', $request->query('email'))->first();
 
             // jika belum bayar atau gagal bayar, maka tampilkan form
             return view('essay.payment', [
@@ -106,7 +110,7 @@ class EssayController extends Controller
         }
 
         // find user
-        $user = Essay::where('email', $request->email)->first();
+        $user = User::with('essay')->where('email', $request->email)->first();
         if (!$user) {
             dd("USER NOT FOUND");
         }
@@ -116,7 +120,7 @@ class EssayController extends Controller
         $request->bukti->storeAs('public', $nameimg);
         // insert data
         $a = EssayPayment::create([
-            'uid' => $user->id,
+            'essay_id' => $user->essay->id,
             'status' => 2,
             'img' => url('/storage' . "/" . $nameimg),
             'method' => $request->method

@@ -15,15 +15,12 @@ class CreateEssaysTable extends Migration
     {
         Schema::create('essays', function (Blueprint $table) {
             $table->id();
-            $table->string('email')->unique();
-            $table->string('fullname');
-            $table->integer('age');
-            $table->string('phone');
-            $table->string('address');
-            $table->string('institute');
+            $table->unsignedBigInteger('uid');
             $table->string('title');
             $table->string('essaylink');
             $table->timestamps();
+
+            $table->foreign('uid')->references('id')->on('users');
         });
     }
 
