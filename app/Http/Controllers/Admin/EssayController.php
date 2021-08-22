@@ -50,4 +50,19 @@ class EssayController extends Controller
 
         return redirect()->route('admin.essay.home')->with('success', join(" ", $msg));
     }
+
+    public function finalist()
+    {
+        $data = Essay::with(['user', 'payment'])->paginate(20);
+        foreach ($data as $d) {
+            if (sizeof($d->payment) > 0) {
+                $d->last = $d->payment[sizeof($d->payment) - 1];
+            } else {
+                $d->last = null;
+            }
+        }
+        return view('admin.essay.finalist', [
+            'data' => $data,
+        ]);
+    }
 }

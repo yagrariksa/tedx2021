@@ -55,9 +55,9 @@
               <li class="nav-item dropdown {{Request::is('admin/*') ? 'active' : ''}}">
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-file-alt"></i> <span>CFE</span></a>
                 <ul class="dropdown-menu">
-                  <li class=" {{Request::is('admin/statistic') ? 'active' : ''}}"><a class="nav-link" href="layout-default.html">Statistic</a></li>
-                  <li class=" {{Request::is('admin/essay') ? 'active' : ''}}"><a class="nav-link" href="layout-transparent.html">Payment</a></li>
-                  <li class=" {{Request::is('admin/finalist') ? 'active' : ''}}"><a class="nav-link" href="layout-top-navigation.html">Finalist</a></li>
+                  <li class=" {{Request::is('admin/essay') ? 'active' : ''}}"><a class="nav-link" href="{{ route('admin.essay.home') }}">Statistic</a></li>
+                  <li class=" {{Request::is('admin/essay/payment') ? 'active' : ''}}"><a class="nav-link" href="{{ route('admin.essay.home') }}">Payment</a></li>
+                  <li class=" {{Request::is('admin/essay/finalist') ? 'active' : ''}}"><a class="nav-link" href="{{ route('admin.essay.finalist') }}">Finalist</a></li>
                 </ul>
               </li>
 
@@ -111,6 +111,7 @@
   <script src="{{ asset('node_modules/prismjs/prism.js') }}"></script>
   <script src="{{ asset('assets/modules/chocolat/dist/js/jquery.chocolat.min.js') }}"></script>
   <script src="{{ asset('assets/modules/jquery-ui/jquery-ui.min.js') }}"></script>
+  <script src="{{ asset('assets/js/page/forms-advanced-forms.js') }}"></script>
 
   <!-- Template JS File -->
   <script src="{{ asset('assets/js/scripts.js') }}"></script>

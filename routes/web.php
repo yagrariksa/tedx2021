@@ -39,5 +39,6 @@ Route::prefix('admin')->group(function () {
     Route::prefix('/essay')->group(function () {
         Route::get('/', [AE::class, 'home'])->name('admin.essay.home');
         Route::post('/', [AE::class, 'changepaid']);
+        Route::get('/finalist', [AE::class, 'finalist'])->name('admin.essay.finalist');
     });
 });

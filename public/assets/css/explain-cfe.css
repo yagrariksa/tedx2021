@@ -382,6 +382,7 @@ h2, h4 {
       -ms-flex-pack: justify;
           justify-content: space-between;
   gap: 10px;
+  min-height: 600px;
 }
 
 .card-right::before {
@@ -705,6 +706,7 @@ h2, h4 {
     -ms-grid-row: 2;
     -ms-grid-column: 1;
     grid-area: regis-tl;
+    min-height: 450px;
   }
   .grid .writing {
     -ms-grid-row: 3;

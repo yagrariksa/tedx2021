@@ -10,29 +10,27 @@
 
 @section('content')
     <!-- Content -->
-    <div class="container">
-        <h2 class="title">Check Status</h2>
-        <div class="card">
-            @if (Session::has('success'))
-                <span class="alert success">{{ Session::get('success') }}</span>
-            @endif
-            <div class="input-email">
-                <h4>Email</h4>
-                <input type="text" name="email" id="email">
-                <div class="option">
-                    <!-- belum ada(?) -->
-                    <input type="radio" name="option" id="cfe" checked>
-                    <label for="cfe">Call for Essay</label>
-                    <input type="radio" name="option" id="coming" disabled>
-                    <label class="disabled" for="coming" style="cursor:default">Coming soon</label>
-                </div>
-                <button id="trigger" style="margin-top: 1rem; border: 1px solid #24B9BA">CEK</button>
+    <h2 class="title">Check Status</h2>
+    <div class="card">
+        @if (Session::has('success'))
+            <span class="alert success">{{ Session::get('success') }}</span>
+        @endif
+        <div class="input-email">
+            <h4>Email</h4>
+            <input type="text" name="email" id="email">
+            <div class="option">
+                <!-- belum ada(?) -->
+                <input type="radio" name="option" id="cfe" checked>
+                <label for="cfe">Call for Essay</label>
+                <input type="radio" name="option" id="coming" disabled>
+                <label class="disabled" for="coming" style="cursor:default">Coming soon</label>
             </div>
-            <div class="status">
-                {{-- diisi pake innerHTML --}}
-            </div>
-            <a href='#' id="paid" class="button btn-green" style="display: none">PAID</a>
+            <button id="trigger" style="margin-top: 1rem; border: 1px solid #24B9BA">CEK</button>
         </div>
+        <div class="status">
+            {{-- diisi pake innerHTML --}}
+        </div>
+        <a href='#' id="paid" class="button btn-green" style="display: none">PAID</a>
     </div>
 
 
@@ -63,9 +61,6 @@
     <img class="bg-sm red1" src="{{ asset('assets/img/status-red1-sm.svg') }}" alt="">
     <img class="bg-sm red2" src="{{ asset('assets/img/status-red2-sm.svg') }}" alt="">
 
-    <template>
-
-    </template>
 @endsection
 
 @section('js')
@@ -95,7 +90,7 @@
             <hr>
             <p>Please <span class="text-red" style="font-weight: 600;">pay</span> and <span class="text-red"
                     style="font-weight: 600;">upload</span> the transfer slip <span class="text-red"
-                    style="font-weight: 600;">before dd/mm/yyyy</span>
+                    style="font-weight: 600;">before 11 September 2021</span>
             </p>
         </div>
         `;
@@ -127,7 +122,7 @@
         const decline2 = `</span> <br>
                 Please <span class="text-red" style="font-weight: 600;">pay</span> and <span class="text-red"
                     style="font-weight: 600;">upload</span> the transfer slip <span class="text-red"
-                    style="font-weight: 600;">before deadline</span>
+                    style="font-weight: 600;">before 11 September 2021</span>
             </p>
         </div>`;
 

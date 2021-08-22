@@ -13,6 +13,12 @@
     <link rel="stylesheet" href="{{ asset('assets/css/landing-page.css') }}">
     {{-- <link rel="stylesheet" href="{{url('assets/css/dummy.css')}}"> --}}
 
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('assets/favicon/apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('assets/favicon/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/favicon/favicon-32x32.png') }}">
+    <link rel="manifest" href="{{ asset('assets/favicon/site.webmanifest') }}">
+
     <!-- Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -61,11 +67,11 @@
                 <div class="follow">
                     <h4>Follow Us</h4>
                     <div>
-                        <button><img src="{{ asset('assets/img/insta.svg') }}" alt=""></button>
-                        <button><img src="{{ asset('assets/img/youtube.svg') }}" alt=""></button>
-                        <button><img src="{{ asset('assets/img/linkedin.svg') }}" alt=""></button>
-                        <button><img src="{{ asset('assets/img/line.svg') }}" alt=""></button>
-                        <button><img src="{{ asset('assets/img/tiktok.svg') }}" alt=""></button>
+                        <button onclick="window.open('https://instagram.com/tedxuniversitasairlangga?utm_medium=copy_link','_blank');"><img src="{{ asset('assets/img/insta.svg') }}" alt=""></button>
+                        <button onclick="window.open('https://youtube.com/channel/UCOvVrpgK-xYZErQVgtjlu-Q','_blank')"><img src="{{ asset('assets/img/youtube.svg') }}" alt=""></button>
+                        <button onclick="window.open('https://www.linkedin.com/company/tedxuniversitasairlangga','_blank')"><img src="{{ asset('assets/img/linkedin.svg') }}" alt=""></button>
+                        <button onclick="window.open('https://timeline.line.me/user/_daiinodcILa_O8mgtkvD5-Szv0vOn8D4U24ITa0','_blank')"><img src="{{ asset('assets/img/line.svg') }}" alt=""></button>
+                        <button onclick="window.open('https://vt.tiktok.com/ZGJUhywYy/', '_blank')"><img src="{{ asset('assets/img/tiktok.svg') }}" alt=""></button>
                     </div>
                 </div>
                 <hr>

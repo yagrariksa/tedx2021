@@ -21,9 +21,9 @@
                     </div>
                     <img class="img-sm" src="{{ asset('assets/img/cfe/icon-cfe.svg') }}" />
                     <p>
-                        Call for essay adalah sebuah event yang diselenggarakan untuk mencari gagasan/ide kreatif yang
-                        dituangkan dalam bentuk tulisan. Pada tahun ini, Call for Essay TEDx Universitas Airlangga mengangkat
-                        tema yakni <span class="text-green">Ripple</span> <span class="text-red">Effect</span>.
+                        Call for essay is an event held to seek creative ideas/ideas poured in written form.
+                        This year, Universitas Airlangga's Call for Essay TEDx raised the theme, namely the
+                        <span class="text-green">Ripple</span> <span class="text-red">Effect</span>.
                     </p>
                     <div class="mid">
                         <img class="img-lg" src="{{ asset('assets/img/cfe/icon-cfe.svg') }}" />
@@ -32,27 +32,27 @@
                                 <p>Syarat dan ketentuan:</p>
                                 <ol>
                                     <li>
-                                        Peserta dibuka untuk masyarakat umum berusia 17 - 25 tahun.
+                                        The targeted participants of this competition are those who are currently 17-25 years old.
                                     </li>
-                                    <li>Lomba bersifat individu</li>
+                                    <li>The competition is individual.</li>
                                     <li>
-                                        Karya essay dapat dibuat menggunakan Bahasa Inggris atau
-                                        Bahasa Indonesia.
+                                        Essays can be made in English or Indonesian.
                                     </li>
-                                    <li>Tidak ada ketentuan khusus untuk penulisan essay.</li>
-                                    <li>1 peserta hanya dapat mengirimkan 1 essay</li>
+                                    <li>There are no special provisions for the writing.
+                                    </li>
+                                    <li>Participants are eligible to send one essay only.
+                                    </li>
                                 </ol>
                             </div>
                             <p>
-                                Untuk informasi lebih lanjut, dapat diakses melewati booklet
-                                yang sudah disediakan.
+                                For more information, it can be accessed through the booklet that has been provided.
                             </p>
                         </div>
                     </div>
                 </div>
                 <div class="cfe-btn">
-                    <button id="booklet">Booklet</button>
-                    <a class="button btn-green" href="{{ route('essay.form') }}" id="regist">Register</a>
+                    <a class="button" href="https://drive.google.com/file/d/1Duvy0HibSGy-R8gDuTmpoS7epuneCrcO/view?usp=sharing" id="booklet" style="height: 45px" target="_blank">Booklet</a>
+                    <a class="button btn-green" href="{{ route('essay.form') }}" id="regist" style="height: 45px">Register</a>
                 </div>
             </div>
 
@@ -92,7 +92,7 @@
                                 <div class="circle"></div>
                                 <div class="txt">
                                     <p class="title">Close Registration</p>
-                                    <p>16 September</p>
+                                    <p>11 September</p>
                                 </div>
                             </div>
                             <div class="agenda right present">
