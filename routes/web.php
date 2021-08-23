@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\Admin\EssayController as AE;
+use App\Http\Controllers\Client\EssayController as CE;
+use GuzzleHttp\Psr7\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +17,29 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('landing');
+})->name('landing');
+Route::prefix('essay')->group(function () {
+    Route::get('/', [CE::class, 'branding'])->name('essay.branding');
+    Route::get('/register', [CE::class, 'form'])->name('essay.form');
+    Route::post('/register', [CE::class, 'register'])->name('essay.form');
+    Route::get('/payment', [CE::class, 'payment'])->name('essay.payment');
+    Route::post('/payment', [CE::class, 'paid'])->name('essay.payment');
+    Route::get('/thanks', [CE::class, 'thanks'])->name('essay.thanks');
+    Route::get('/status', [CE::class, 'status'])->name('essay.status');
+});
+
+Route::prefix('admin')->group(function () {
+    Route::get('/', function () {
+        return view('admin.home');
+    });
+    Route::get('/login', function () {
+        return view('admin.login');
+    });
+    Route::prefix('/essay')->group(function () {
+        Route::get('/', [AE::class, 'home'])->name('admin.essay.home');
+        Route::get('/payment', [AE::class, 'payment'])->name('admin.essay.payment');
+        Route::post('/payment', [AE::class, 'changepaid']);
+        Route::get('/finalist', [AE::class, 'finalist'])->name('admin.essay.finalist');
+    });
 });

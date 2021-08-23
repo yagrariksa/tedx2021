@@ -1,0 +1,102 @@
+@import 'env';
+@import 'nav-footer';
+
+body {
+    position: relative;
+}
+
+h2, h3 {
+    margin: 0;
+}
+
+.ripple {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .title {
+        width: 70%;
+    }
+
+    .fill {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: .25rem;
+    }
+
+    h2 {
+        padding-bottom: 1rem;
+    }
+
+    h2, h3, p {
+        text-align: center;
+    }
+}
+
+.bg {
+    max-height: 80%;
+    max-width: 50%;
+    position: absolute;
+    z-index: -999;
+
+    &.red {
+        bottom: 0;
+    }
+
+    &.green {
+        top: 0;
+        right: 0;
+    }
+}
+
+.bg-sm {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .ripple {
+        h2 {
+            font-size: 20px;
+            padding-bottom: .5rem;
+        }
+
+        h3 {
+            font-size: 14px;
+            line-height: 28px;
+        }
+    }
+
+    .bg {
+        display: none;
+    }
+
+    .bg-sm {
+        position: absolute;
+        display: unset;
+        z-index: -999;
+
+        &.green1 {
+            top: .1vh;
+            left: 0;
+            width: 20%;
+        }
+
+        &.green2 {
+            left: 0;
+            bottom: 3vh;
+            width: 70%;
+            height: 100vh;
+        }
+
+        &.red {
+            right: 0;
+            top: 5vh;
+            width: 30%;
+        }
+    }
+}

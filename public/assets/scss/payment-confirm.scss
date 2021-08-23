@@ -1,0 +1,293 @@
+@import 'env';
+
+body {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+    h2 {
+        margin-bottom: 3rem;
+    }
+}
+
+.card {
+    @include border-white-gradient();
+    padding: 40px 80px;
+    width: 90vw;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;    
+    border-radius: 1rem;
+}
+
+.grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+
+    p {
+        font-size: 18px;
+    }
+
+    .right {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: .5rem;
+        
+        & > div {
+            width: 100%;
+        }
+    }
+
+    .method {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+    }
+    
+    .payment {
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+    }
+
+    input[name='payment-method'] {
+        display: none;
+
+        &:checked + label {
+            background-color: $white;
+        }
+    }
+
+    label[for="dana"],
+    label[for="mandiri"] {
+        margin: 0;
+        padding: 0.5rem 1rem;
+        width: 100%;
+        max-width: 200px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        background-color: transparent;
+        border: 2px solid $white;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .help {
+        cursor: pointer;
+    }
+
+    label[for='inputFile'] {
+        padding: 6px 14px;
+        width: 100%;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-radius: 10px;
+        border: 2px dashed $prime-red;
+        background-color: $white;
+        
+        span {
+            font-size: 14px;
+            color: rgba($color: #000000, $alpha: .5);
+        }
+    }
+}
+
+button.btn-green {
+    width: 150px;
+    align-self: flex-end;
+}
+
+#helpDana,
+#helpMandiri {
+    .modal-dialog {
+        max-width: 90vw;
+        width: 1050px;
+    }
+
+    .modal-content {
+        @include border-white-gradient();
+    }
+    
+    .lg {
+        padding: 3rem;
+    }
+
+    .close {
+        @include btn-close();
+    }
+
+    ol {
+        margin-left: 1rem;
+    }
+
+    .sm {
+        display: none;
+    }
+}
+
+#thanks {
+    .modal-content {
+        @include border-white-gradient();
+    }
+
+    .modal-body {
+        padding: 3rem;
+    }
+
+    .close {
+        @include btn-close();
+    }
+}
+
+.bg {
+    max-width: 60%;
+    position: absolute;
+    bottom: 0;
+    z-index: -999;
+
+    &.green {
+        left: 0;
+    }
+
+    &.red {
+        right: 0;
+    }
+}
+
+.bg-sm {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    body h2 {
+        margin-bottom: 2rem;
+    }
+    
+    .grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        gap: 0;
+        
+        .method {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+
+    #helpDana,
+    #helpMandiri {
+        .lg {
+            display: none;
+        }
+
+        .sm {
+            display: block;
+            padding: 2rem;
+        }
+
+        .language {
+            width: 100%;
+            padding-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+
+            input {
+                display: none;
+            }
+
+            label, button {
+                width: 50px;
+                margin: 0;
+                padding: 2px;
+                text-align: center;
+                border-radius: 30px;
+                border: 2px solid $white;
+            }
+
+            // input:checked + label {
+            //     border-color: $new-green;
+            //     background-color: $new-green;
+            // }
+            
+            .btn-active {
+                border-color: $new-green;
+                background-color: $new-green;
+            }
+        }
+    }
+    
+    .bg {
+        display: none;
+    }
+    
+    .bg-sm {
+        position: absolute;
+        left: 0;
+        display: unset;
+        z-index: -999;
+        
+        &.green {
+            top: 0;
+        }
+        
+        &.red {
+            bottom: 0;
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    body h2 {
+        margin-bottom: 1rem;
+    }
+
+    .card {
+        padding: 40px;
+    }
+
+    .left br {
+        display: none;
+    }
+    
+    .grid {
+        p {
+            font-size: 16px;
+        }
+
+        label[for="dana"], 
+        label[for="mandiri"] {
+            padding: 7px 14px;
+            
+            img {
+                width: 100%;
+                
+            }
+        }
+        
+        .help {
+            width: 1rem;
+        }
+
+        label[for='inputFile'] {
+            font-size: 14px;
+        }
+    }
+}
