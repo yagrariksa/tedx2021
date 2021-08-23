@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('title')
-    THANKS
+    Thanks Call For Essay
 @endsection
 
 @section('css')
-<link rel="stylesheet" href="{{ asset('assets/css/confirmation-cfe.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/confirmation-cfe.css') }}">
 @endsection
 
 @section('content')
