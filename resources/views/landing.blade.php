@@ -1,7 +1,7 @@
 @extends('layouts.client')
 
 @section('title')
-    LANDING
+    TEDxUniversitasAirlangga
 @endsection
 
 @section('css')

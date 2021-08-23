@@ -1,7 +1,7 @@
 @extends('layouts.client')
 
 @section('title')
-    ESSAY
+    Call For Essay
 @endsection
 
 @section('css')
