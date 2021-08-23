@@ -17,7 +17,7 @@ Call For Essay
         <div class="col-12">
             <div class="card">
             <div class="card-header">
-                <h4>Participant Finalist</h4>
+                <h4>Payment of All Participant</h4>
                 <div class="card-header-form">
                 {{-- <form>
                     <div class="input-group">
@@ -37,12 +37,16 @@ Call For Essay
                         <option>50</option>
                     </select>
                     <label class="selectgroup-item m-0">
+                        <input type="checkbox" name="value" value="HTML" class="selectgroup-input" checked="">
+                        <span class="selectgroup-button">Unconfirmed</span>
+                    </label>
+                    <label class="selectgroup-item m-0">
                         <input type="checkbox" name="value" value="CSS" class="selectgroup-input">
-                        <span class="selectgroup-button">Lose</span>
+                        <span class="selectgroup-button">Declined</span>
                     </label>
                     <label class="selectgroup-item m-0">
                         <input type="checkbox" name="value" value="PHP" class="selectgroup-input">
-                        <span class="selectgroup-button">Winner</span>
+                        <span class="selectgroup-button">Accepted</span>
                     </label>
                 </div>
             </div>

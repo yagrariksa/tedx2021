@@ -12,6 +12,11 @@ class EssayController extends Controller
 {
     public function home()
     {
+        return view('admin.essay.home');
+    }
+
+    public function payment()
+    {
         $data = Essay::with(['user', 'payment'])->paginate(20);
         foreach ($data as $d) {
             if (sizeof($d->payment) > 0) {
@@ -20,7 +25,7 @@ class EssayController extends Controller
                 $d->last = null;
             }
         }
-        return view('admin.essay.home', [
+        return view('admin.essay.payment', [
             'data' => $data,
         ]);
     }
@@ -29,7 +34,7 @@ class EssayController extends Controller
     {
         // dd($request);
         if (!$request->id) {
-            return redirect()->route('admin.essay.home');
+            return redirect()->route('admin.essay.payment');
         }
         $payment = EssayPayment::with('essay', 'essay.user')->find($request->id);
         if (!$payment) {
@@ -48,7 +53,7 @@ class EssayController extends Controller
             ")",
         ];
 
-        return redirect()->route('admin.essay.home')->with('success', join(" ", $msg));
+        return redirect()->route('admin.essay.payment')->with('success', join(" ", $msg));
     }
 
     public function finalist()
