@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\EssayController as AE;
 use App\Http\Controllers\Client\EssayController as CE;
+use App\Http\Middleware\AdminMiddleware;
 use GuzzleHttp\Psr7\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -31,15 +33,18 @@ Route::prefix('essay')->group(function () {
 
 Route::prefix('admin')->group(function () {
     Route::get('/', function () {
-        return view('admin.home');
-    });
-    Route::get('/login', function () {
-        return view('admin.login');
-    });
-    Route::prefix('/essay')->group(function () {
-        Route::get('/', [AE::class, 'home'])->name('admin.essay.home');
-        Route::get('/payment', [AE::class, 'payment'])->name('admin.essay.payment');
-        Route::post('/payment', [AE::class, 'changepaid']);
-        Route::get('/finalist', [AE::class, 'finalist'])->name('admin.essay.finalist');
+        return redirect()->route('admin.essay.payment');
+        // return view('admin.home');
+    })->middleware(AdminMiddleware::class)->name('admin.home');
+    Route::get('/login', [AuthController::class, 'login'])->name('admin.login');
+    Route::post('/login', [AuthController::class, 'doLogin'])->name('admin.login');
+    Route::middleware(AdminMiddleware::class)->group(function () {
+        Route::get('/logout', [AuthController::class, 'logout'])->name('admin.logout');
+        Route::prefix('/essay')->group(function () {
+            Route::get('/', [AE::class, 'home'])->name('admin.essay.home');
+            Route::get('/payment', [AE::class, 'payment'])->name('admin.essay.payment');
+            Route::post('/payment', [AE::class, 'changepaid']);
+            Route::get('/finalist', [AE::class, 'finalist'])->name('admin.essay.finalist');
+        });
     });
 });

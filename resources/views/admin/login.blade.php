@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-  <title>Login &mdash; Stisla</title>
+  <title>Login &mdash; TEDxUnair</title>
 
   <!-- General CSS Files -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -31,8 +31,17 @@
               <div class="card-header"><h4>Admin Login</h4></div>
 
               <div class="card-body">
-                <form method="POST" action="#" class="needs-validation" novalidate="">
-
+                <form method="POST" action="{{route('admin.login')}}" class="needs-validation" novalidate="">
+                  @csrf
+                  <div class="form-group">
+                    <div class="d-block">
+                    	<label for="name" class="control-label">Tell us your name</label>
+                    </div>
+                    <input id="name" type="text" class="form-control" name="name" tabindex="2" required>
+                    <div class="invalid-feedback">
+                      your beautiful name is very important for us
+                    </div>
+                  </div>
                   <div class="form-group">
                     <div class="d-block">
                     	<label for="password" class="control-label">Password</label>
@@ -42,8 +51,10 @@
                       please fill in your password
                     </div>
                   </div>
-
                   <div class="form-group">
+                    @if (Session::has('error.password'))
+                      <div class="alert alert-danger btn-block text-center">{{Session::get('error.password')}}</div>
+                    @endif
                     <button type="submit" class="btn btn-primary btn-lg btn-block" tabindex="4">
                       Login
                     </button>

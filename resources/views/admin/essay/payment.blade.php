@@ -194,7 +194,8 @@
         const tableBody = document.querySelector('tbody#tbody');
         const ulPagination = document.querySelector('ul#ul-pagination');
 
-        const changedata = (page = false) => {
+        const accessToken = "{{Session::get('admin')['token']}}";
+        const changedata = (page = 1) => {
             let filter = [];
             if (filter2.checked) {
                 filter.push(2);
@@ -208,6 +209,7 @@
             let paginate = ipaginate.value
             let unpaid = filter0.checked
 
+
             let url = "{{ route('api.essay.payment') }}" + `?nulldata=${unpaid}&paginate=${paginate}`;
             if (page) {
                 url = url + `&page=${page}`
@@ -218,7 +220,11 @@
             console.log(url);
 
             try {
-                fetch(url)
+                fetch(url, {
+                    headers: {
+                        'Authorization': accessToken
+                    }
+                })
                     .then(response => response.json())
                     .then(data => {
                         console.log(data.body);

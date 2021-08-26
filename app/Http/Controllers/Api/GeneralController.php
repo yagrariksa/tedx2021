@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Models\Admin;
 use App\Models\Essay;
 use App\Models\EssayPayment;
 use App\Models\User;
@@ -69,6 +70,11 @@ class GeneralController extends Controller
     private $nulldata = "true";
     public function c(Request $request)
     {
+        if (!$this->verifyAdmin($request->header('Authorization'))) {
+            return response()->json([
+                'message' => 'you dont have access'
+            ], 401);
+        }
         $data = Essay::with('user')->get();
 
         $filter = $request->query('filter') ? $request->query('filter') : null;
@@ -104,5 +110,14 @@ class GeneralController extends Controller
         return response()->json([
             'body' => $data,
         ], 200);
+    }
+
+    public function verifyAdmin($token)
+    {
+        if (Admin::where('token', $token)->where('logout', false)->first()) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }
