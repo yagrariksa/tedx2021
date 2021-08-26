@@ -17,17 +17,15 @@ class EssayController extends Controller
 
     public function payment()
     {
-        $data = Essay::with(['user', 'payment'])->paginate(20);
-        foreach ($data as $d) {
-            if (sizeof($d->payment) > 0) {
-                $d->last = $d->payment[sizeof($d->payment) - 1];
-            } else {
-                $d->last = null;
-            }
-        }
-        return view('admin.essay.payment', [
-            'data' => $data,
-        ]);
+        // $data = Essay::with(['user', 'payment'])->paginate(20);
+        // foreach ($data as $d) {
+        //     if (sizeof($d->payment) > 0) {
+        //         $d->last = $d->payment[sizeof($d->payment) - 1];
+        //     } else {
+        //         $d->last = null;
+        //     }
+        // }
+        return view('admin.essay.payment', );
     }
 
     public function changepaid(Request $request)

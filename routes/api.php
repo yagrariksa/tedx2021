@@ -20,4 +20,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('/essay/status', [GeneralController::class, 'a'])->name('api.essay.status.payment');
-Route::get('/user', [GeneralController::class, 'b']);
+Route::get('/essay/payment', [GeneralController::class, 'c'])->name('api.essay.payment');

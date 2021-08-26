@@ -64,4 +64,45 @@ class GeneralController extends Controller
             'body'      => $data
         ], 200);
     }
+
+    private $filter = [2, 5, 6];
+    private $nulldata = "true";
+    public function c(Request $request)
+    {
+        $data = Essay::with('user')->get();
+
+        $filter = $request->query('filter') ? $request->query('filter') : null;
+
+        if ($filter) {
+            $this->filter = explode(",", $filter);
+        } else {
+            $this->filter = [];
+        }
+
+        $this->nulldata = $request->query('nulldata') ? $request->query('nulldata') : "true";
+        // dd($this->nulldata);
+
+        $paginate = $request->query('paginate') ? (int)$request->query('paginate') : 10;
+
+        foreach ($data as $d) {
+            $d->payment = EssayPayment::where('essay_id', $d->id)->orderBy('created_at', 'desc')->first();
+        }
+
+        $data = $data->filter(function ($item) {
+            if ($this->nulldata != "false") {
+                if ($item->payment == null) {
+                    return true;
+                }
+            }
+            if ($item->payment) {
+                if (in_array($item->payment->status, $this->filter)) {
+                    return true;
+                }
+            }
+        })->values()->paginate($paginate);
+
+        return response()->json([
+            'body' => $data,
+        ], 200);
+    }
 }
