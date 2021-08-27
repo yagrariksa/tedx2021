@@ -1,0 +1,38 @@
+* [33m650c733[m[33m ([m[1;31morigin/backend[m[33m)[m implementation of API Request for Admin Payment
+[31m|[m *   [33meb924ed[m[33m ([m[1;31morigin/production[m[33m)[m DEPLOY #1
+[31m|[m [32m|[m[33m\[m  
+[31m|[m [32m|[m *   [33m4aa8664[m[33m ([m[1;31morigin/dev[m[33m)[m Merge commit '8e2cf8de370c456fee57068680f7278fb936f113' into dev
+[31m|[m [32m|[m [34m|[m[31m\[m  
+[31m|[m [32m|[m[31m_[m[34m|[m[31m/[m  
+[31m|[m[31m/[m[32m|[m [34m|[m   
+* [32m|[m [34m|[m [33m8e2cf8d[m[33m ([m[1;36mHEAD -> [m[1;32mfrontend[m[33m, [m[1;31morigin/frontend[m[33m)[m Title Update
+[35m|[m [32m|[m * [33m4503b08[m Deploy #1
+[35m|[m [32m|[m[32m/[m[35m|[m 
+[35m|[m [32m|[m[35m/[m  
+[35m|[m[35m/[m[32m|[m   
+* [32m|[m [33mdf9a338[m Add halaman login + rapihin routing admin
+* [32m|[m [33m0e1e551[m fix front end
+* [32m|[m   [33m4628b30[m Merge branch 'adiharka' into yer
+[1;32m|[m[1;33m\[m [32m\[m  
+[1;32m|[m * [32m|[m [33m17293e6[m Landing page + CFE
+[1;32m|[m * [32m|[m [33mfbc6a05[m Templating Admin Page
+* [1;33m|[m [32m|[m [33mae999cd[m pivot database
+* [1;33m|[m [32m|[m [33m3ebbd4d[m minor-repair
+[1;33m|[m[1;33m/[m [32m/[m  
+* [32m|[m [33m138af09[m Revisi
+* [32m|[m   [33m4a1ff8a[m nyusulin yg ketinggalan
+[1;34m|[m[1;35m\[m [32m\[m  
+[1;34m|[m * [32m|[m [33m9624885[m fix status page
+* [1;35m|[m [32m|[m   [33mf0ecd8d[m Merge Database Equipment
+[1;35m|[m[31m\[m [1;35m\[m [32m\[m  
+[1;35m|[m [31m|[m[1;35m/[m [32m/[m  
+[1;35m|[m[1;35m/[m[31m|[m [32m|[m   
+[1;35m|[m * [32m|[m [33mf0829ba[m Database Equipment
+* [31m|[m [32m|[m [33m66c2f84[m merge with oxy repo (status) + add layouts.app
+* [31m|[m [32m|[m [33m0568e9e[m merge with oxy repo (form, payment, thanks)
+[31m|[m[31m/[m [32m/[m  
+* [32m|[m [33mced4109[m main flow clear
+* [32m|[m [33m099fd07[m basic flow essay
+* [32m|[m [33m4241876[m setup init endpoint+controller
+[32m|[m[32m/[m  
+* [33m736c00a[m[33m ([m[1;32mdev[m[33m)[m initial
