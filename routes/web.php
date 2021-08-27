@@ -33,8 +33,7 @@ Route::prefix('essay')->group(function () {
 
 Route::prefix('admin')->group(function () {
     Route::get('/', function () {
-        return redirect()->route('admin.essay.payment');
-        // return view('admin.home');
+        return view('admin.home');
     })->middleware(AdminMiddleware::class)->name('admin.home');
     Route::get('/login', [AuthController::class, 'login'])->name('admin.login');
     Route::post('/login', [AuthController::class, 'doLogin'])->name('admin.login');

@@ -5,21 +5,21 @@
 @endsection
 
 @section('css')
-<link rel="stylesheet" href="{{ asset('assets/modules/chocolat/dist/css/chocolat.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/modules/chocolat/dist/css/chocolat.css') }}">
 @endsection
 
 @section('header')
-Call For Essay
+    Call For Essay
 @endsection
 
 @section('content')
     <div class="row">
         <div class="col-12">
             <div class="card">
-            <div class="card-header">
-                <h4>Call For Essay Statistic</h4>
-                <div class="card-header-form">
-                {{-- <form>
+                <div class="card-header">
+                    <h4>Call For Essay Statistic</h4>
+                    <div class="card-header-form">
+                        {{-- <form>
                     <div class="input-group">
                     <input type="text" class="form-control" placeholder="Search">
                     <div class="input-group-btn">
@@ -27,102 +27,102 @@ Call For Essay
                     </div>
                     </div>
                 </form> --}}
+                    </div>
                 </div>
-            </div>
 
-            <div class="container mb-4 mx-0">
-                <div class="row">
-                    <div class="col-sm col-4">
-                        <div class="">
-                          <div class="card card-statistic-1 mb-0">
-                            <div class="card-icon bg-primary">
-                              <i class="far fa-user"></i>
+                <div class="container mb-4 mx-0">
+                    <div class="row">
+                        <div class="col-sm col-4">
+                            <div class="">
+                                <div class="card card-statistic-1 mb-0">
+                                    <div class="card-icon bg-primary">
+                                        <i class="far fa-user"></i>
+                                    </div>
+                                    <div class="card-wrap">
+                                        <div class="card-header">
+                                            <h4>Total Pendaftar</h4>
+                                        </div>
+                                        <div class="card-body">
+                                            {{ $total }}
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="card-wrap">
-                              <div class="card-header">
-                                <h4>Total Pendaftar</h4>
-                              </div>
-                              <div class="card-body">
-                                10
-                              </div>
+                            <div class="">
+                                <div class="card card-statistic-1 mb-0">
+                                    <div class="card-icon bg-danger">
+                                        <i class="far fa-thumbs-down"></i>
+                                    </div>
+                                    <div class="card-wrap">
+                                        <div class="card-header">
+                                            <h4>Belum Bayar</h4>
+                                        </div>
+                                        <div class="card-body">
+                                            {{ $unpaid }}
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                          </div>
+                            <div class="">
+                                <div class="card card-statistic-1 mb-0">
+                                    <div class="card-icon bg-info">
+                                        <i class="far fa-clock"></i>
+                                    </div>
+                                    <div class="card-wrap">
+                                        <div class="card-header">
+                                            <h4>Menunggu Konfirmasi</h4>
+                                        </div>
+                                        <div class="card-body">
+                                            {{ $waiting }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="">
+                                <div class="card card-statistic-1 mb-0">
+                                    <div class="card-icon bg-success">
+                                        <i class="far fa-thumbs-up"></i>
+                                    </div>
+                                    <div class="card-wrap">
+                                        <div class="card-header">
+                                            <h4>Pembayaran diterima</h4>
+                                        </div>
+                                        <div class="card-body">
+                                            {{ $accepted }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="">
+                                <div class="card card-statistic-1 mb-0">
+                                    <div class="card-icon bg-dark">
+                                        <i class="fas fa-times"></i>
+                                    </div>
+                                    <div class="card-wrap">
+                                        <div class="card-header">
+                                            <h4>Pembayaran Ditolak</h4>
+                                        </div>
+                                        <div class="card-body">
+                                            {{ $declined }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="">
-                          <div class="card card-statistic-1 mb-0">
-                            <div class="card-icon bg-danger">
-                              <i class="far fa-thumbs-down"></i>
-                            </div>
-                            <div class="card-wrap">
-                              <div class="card-header">
-                                <h4>Belum Bayar</h4>
-                              </div>
-                              <div class="card-body">
-                                42
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="">
-                          <div class="card card-statistic-1 mb-0">
-                            <div class="card-icon bg-info">
-                              <i class="far fa-clock"></i>
-                            </div>
-                            <div class="card-wrap">
-                              <div class="card-header">
-                                <h4>Menunggu Konfirmasi</h4>
-                              </div>
-                              <div class="card-body">
-                                42
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="">
-                          <div class="card card-statistic-1 mb-0">
-                            <div class="card-icon bg-success">
-                              <i class="far fa-thumbs-up"></i>
-                            </div>
-                            <div class="card-wrap">
-                              <div class="card-header">
-                                <h4>Pembayaran diterima</h4>
-                              </div>
-                              <div class="card-body">
-                                1,201
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="">
-                          <div class="card card-statistic-1 mb-0">
-                            <div class="card-icon bg-dark">
-                              <i class="fas fa-times"></i>
-                            </div>
-                            <div class="card-wrap">
-                              <div class="card-header">
-                                <h4>Pembayaran Ditolak</h4>
-                              </div>
-                              <div class="card-body">
-                                47
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
 
-                    <div class="col-8 align-middle">
-                        <canvas id="myChart" height="200"></canvas>
+                        <div class="col-8 align-middle">
+                            <canvas id="myChart" height="200"></canvas>
+                        </div>
+
                     </div>
 
                 </div>
 
-            </div>
-
 
 
             </div>
         </div>
-        </div>
+    </div>
 
 @endsection
 
@@ -136,6 +136,10 @@ Call For Essay
     <script src="{{ asset('node_modules/jqvmap/dist/maps/jquery.vmap.world.js') }}"></script>
     <script src="{{ asset('node_modules/jqvmap/dist/maps/jquery.vmap.indonesia.js') }}"></script>
 
+    <script>
+let ownurl = "{{ route('api.essay.graph') }}";
+        
+    </script>
     {{-- DATA YG DIBUTUHIN --}}
     <script src="{{ asset('assets/js/cfe-home.js') }}"></script>
 

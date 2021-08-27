@@ -8,6 +8,7 @@ use App\Models\Essay;
 use App\Models\EssayPayment;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class GeneralController extends Controller
 {
@@ -119,5 +120,17 @@ class GeneralController extends Controller
         } else {
             return false;
         }
+    }
+
+    public function d()
+    {
+        $groupByDate = DB::table('essays')
+            ->select(DB::raw('Date(created_at) as date, count(*) as total'))
+            ->groupBy(DB::raw('Date(created_at)'))->limit(7)
+            ->orderByDesc('created_at')->get();
+
+        return response()->json([
+            'body' => $groupByDate,
+        ], 200);
     }
 }
