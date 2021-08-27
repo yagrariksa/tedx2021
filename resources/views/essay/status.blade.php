@@ -5,6 +5,21 @@
 @endsection
 
 @section('css')
+<style>
+    @media screen and (max-width: 768px) {
+ .option {
+  flex-direction: column;
+ }
+
+ .bg-sm {
+ max-height : 100vh;
+}
+
+ .bg-sm.red1 {
+ bottom : 0 !important;
+}
+}
+</style>
     <link rel="stylesheet" href="{{ asset('assets/css/check-status.css') }}">
 @endsection
 
@@ -236,7 +251,7 @@
                     break
 
                 case ("3"):
-                    resstat.innerHTML = choosen
+                    resstat.innerHTML = choosen;
                     break;
                 case ("4"):
                     resstat.innerHTML = failed
@@ -250,7 +265,10 @@
                     break
 
                 case ("6"):
-                    resstat.innerHTML = selection
+                    resstat.innerHTML = selection;
+                    paidbtn.style.display = 'inline';
+                    paidbtn.innerHTML = "Join Whatsapp Group"
+                    paidbtn.setAttribute('href', "https://bit.ly/CallForEssayTEDXUNAIR")
                     break
 
                 default:
