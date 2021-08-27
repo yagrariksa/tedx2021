@@ -131,9 +131,8 @@
                             <div class="form-group">
                                 <label>Ubah status menjadi</label>
                                 <select class="form-control" name="status" id="form-input-status">
-                                    <option value="" selected disabled>--pilih opsi--</option>
+                                    <option value="6" selected>Pembayaran Diterima</option>
                                     <option value="5">Tolak Pembayaran</option>
-                                    <option value="6">Pembayaran Diterima</option>
                                 </select>
                             </div>
                             <input type="text" name="reason" placeholder="alasan (wajib diisi)" id="input-reason"
