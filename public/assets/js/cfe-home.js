@@ -10,8 +10,8 @@ fetch(ownurl)
   .then(data => {
     console.log(data);
     data.body.forEach(item => {
-      ownlabel.push(item.date)
-      owndata.push(item.total)
+      ownlabel.unshift(item.date)
+      owndata.unshift(item.total)
     });
     var myChart = new Chart(ctx, {
       type: 'line',

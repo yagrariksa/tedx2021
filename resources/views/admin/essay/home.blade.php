@@ -137,7 +137,7 @@
     <script src="{{ asset('node_modules/jqvmap/dist/maps/jquery.vmap.indonesia.js') }}"></script>
 
     <script>
-let ownurl = "{{ route('api.essay.graph') }}";
+        let ownurl = "{{ route('api.essay.graph') }}";
         
     </script>
     {{-- DATA YG DIBUTUHIN --}}
