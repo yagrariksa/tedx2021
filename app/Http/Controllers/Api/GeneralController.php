@@ -3,10 +3,12 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Models\Admin;
 use App\Models\Essay;
 use App\Models\EssayPayment;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class GeneralController extends Controller
 {
@@ -62,6 +64,73 @@ class GeneralController extends Controller
             'message'   => 'get 10 data',
             'page'      => $page,
             'body'      => $data
+        ], 200);
+    }
+
+    private $filter = [2, 5, 6];
+    private $nulldata = "true";
+    public function c(Request $request)
+    {
+        if (!$this->verifyAdmin($request->header('Authorization'))) {
+            return response()->json([
+                'message' => 'you dont have access'
+            ], 401);
+        }
+        $data = Essay::with('user')->get();
+
+        $filter = $request->query('filter') ? $request->query('filter') : null;
+
+        if ($filter) {
+            $this->filter = explode(",", $filter);
+        } else {
+            $this->filter = [];
+        }
+
+        $this->nulldata = $request->query('nulldata') ? $request->query('nulldata') : "true";
+        // dd($this->nulldata);
+
+        $paginate = $request->query('paginate') ? (int)$request->query('paginate') : 10;
+
+        foreach ($data as $d) {
+            $d->payment = EssayPayment::where('essay_id', $d->id)->orderBy('created_at', 'desc')->first();
+        }
+
+        $data = $data->filter(function ($item) {
+            if ($this->nulldata != "false") {
+                if ($item->payment == null) {
+                    return true;
+                }
+            }
+            if ($item->payment) {
+                if (in_array($item->payment->status, $this->filter)) {
+                    return true;
+                }
+            }
+        })->values()->paginate($paginate);
+
+        return response()->json([
+            'body' => $data,
+        ], 200);
+    }
+
+    public function verifyAdmin($token)
+    {
+        if (Admin::where('token', $token)->where('logout', false)->first()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function d()
+    {
+        $groupByDate = DB::table('essays')
+            ->select(DB::raw('Date(created_at) as date, count(*) as total'))
+            ->groupBy(DB::raw('Date(created_at)'))->limit(7)
+            ->orderByDesc('created_at')->get();
+
+        return response()->json([
+            'body' => $groupByDate,
         ], 200);
     }
 }
