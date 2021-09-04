@@ -133,4 +133,35 @@ class GeneralController extends Controller
             'body' => $groupByDate,
         ], 200);
     }
+
+    public function checkaccount(Request $request)
+    {
+        if (!$request->query('email')) {
+            return response()->json([
+                'message'=>'email are required',
+            ], 400);
+        }
+
+        $user = User::where('email',$request->query('email'))->first();
+
+        if (!$user) {
+            return response()->json([
+                'message' => 'your email hasn\'t register yet' ,
+                'code'  => 1
+            ], 200);
+        }
+
+        if (!$user->usepass) {
+            return response()->json([
+                'message' => "welcome " . $user->name . ", setup your password now" ,
+                'code'  => 2
+            ], 200);
+        }else{
+            return response()->json([
+                'message' => "welcome " . $user->name . ", enter your password to login" ,
+                'code'  => 3
+            ], 200);
+        }
+
+    }
 }

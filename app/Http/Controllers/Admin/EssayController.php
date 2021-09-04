@@ -38,7 +38,7 @@ class EssayController extends Controller
             $data->filter(function ($item) {
                 if (sizeof($item->payment) != 0) {
                     $last = sizeof($item->payment) - 1;
-                    if ($item->payment[$last]->status == "5") {
+                    if ($item->payment[$last]->status == "6") {
                         return true;
                     }
                 }
@@ -48,7 +48,7 @@ class EssayController extends Controller
             $data->filter(function ($item) {
                 if (sizeof($item->payment) != 0) {
                     $last = sizeof($item->payment) - 1;
-                    if ($item->payment[$last]->status == "6") {
+                    if ($item->payment[$last]->status == "5") {
                         return true;
                     }
                 }

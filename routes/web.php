@@ -1,7 +1,8 @@
 <?php
 
 use App\Http\Controllers\Admin\AuthController;
-use App\Http\Controllers\Admin\EssayController as AE;
+use App\Http\Controllers\Admin\EssayController as AdminEssay;
+use App\Http\Controllers\Client\AccountController;
 use App\Http\Controllers\Client\EssayController as CE;
 use App\Http\Middleware\AdminMiddleware;
 use GuzzleHttp\Psr7\Request;
@@ -21,6 +22,19 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('landing');
 })->name('landing');
+Route::prefix('account')->group(function(){
+    Route::get('/login', [AccountController::class, 'login'])->name('account.login');
+    Route::get('/login/{any}', function(){
+        return redirect()->route('account.login');
+    });
+    Route::post('/login', [AccountController::class, 'post'])->name('account.login');
+    Route::post('/login/setup', [AccountController::class, 'postsetup'])->name('account.login.setup');
+    Route::post('/login/regist', [AccountController::class, 'postregist'])->name('account.login.regist');
+    Route::middleware('auth')->group(function(){
+        Route::get('/', [AccountController::class, 'dashboard'])->name('account.dashboard');
+        Route::get('/logout', [AccountController::class, 'logout'])->name('account.logout');
+    });
+});
 Route::prefix('essay')->group(function () {
     Route::get('/', [CE::class, 'branding'])->name('essay.branding');
     Route::get('/register', [CE::class, 'form'])->name('essay.form');
@@ -40,10 +54,10 @@ Route::prefix('admin')->group(function () {
     Route::middleware(AdminMiddleware::class)->group(function () {
         Route::get('/logout', [AuthController::class, 'logout'])->name('admin.logout');
         Route::prefix('/essay')->group(function () {
-            Route::get('/', [AE::class, 'home'])->name('admin.essay.home');
-            Route::get('/payment', [AE::class, 'payment'])->name('admin.essay.payment');
-            Route::post('/payment', [AE::class, 'changepaid']);
-            Route::get('/finalist', [AE::class, 'finalist'])->name('admin.essay.finalist');
+            Route::get('/', [AdminEssay::class, 'home'])->name('admin.essay.home');
+            Route::get('/payment', [AdminEssay::class, 'payment'])->name('admin.essay.payment');
+            Route::post('/payment', [AdminEssay::class, 'changepaid']);
+            Route::get('/finalist', [AdminEssay::class, 'finalist'])->name('admin.essay.finalist');
         });
     });
 });
