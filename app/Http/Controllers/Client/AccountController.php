@@ -54,7 +54,10 @@ class AccountController extends Controller
         ])) {
             return redirect()->route('account.dashboard');
         } else {
-            return redirect()->back()->with('error', 'Wrong password');
+            return redirect()->back()->with([
+                'error' => 'Wrong password',
+                'form' => 'login',
+            ])->withInput($request->all());
         }
     }
 
@@ -76,7 +79,23 @@ class AccountController extends Controller
 
     public function postregist(Request $request)
     {
-        dd($request);
+        if (User::where('email', $request->email)->first()) {
+            return redirect()->back()->with([
+                'form' => 'regist',
+                'error' => 'email has been used'
+            ])->withInput($request->all());
+        }
+        $user = User::create([
+            'name' => $request->fullname,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+            'usepass' => true,
+            'age' => $request->age,
+            'phone' => $request->phone,
+            'address' => $request->address,
+            'institute' => $request->institute
+        ]);
+        Auth::login($user);
         return redirect()->route('account.dashboard');
     }
 
