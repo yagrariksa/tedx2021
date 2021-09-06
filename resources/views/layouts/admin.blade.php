@@ -57,7 +57,7 @@
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-file-alt"></i> <span>CFE</span></a>
                 <ul class="dropdown-menu">
                   <li class=" {{Request::is('admin/essay') ? 'active' : ''}}"><a class="nav-link" href="{{ route('admin.essay.home') }}">Statistic</a></li>
-                  <li class=" {{Request::is('admin/essay/payment') ? 'active' : ''}}"><a class="nav-link" href="{{ route('admin.essay.payment') }}">Payment</a></li>
+                  <li class=" {{Request::is('admin/essay/payment') ? 'active' : ''}}"><a class="nav-link" href="{{ route('admin.essay.payment') }}">Participant</a></li>
                   {{-- <li class=" {{Request::is('admin/essay/finalist') ? 'active' : ''}}"><a class="nav-link" href="{{ route('admin.essay.finalist') }}">Finalist</a></li> --}}
                 </ul>
               </li>

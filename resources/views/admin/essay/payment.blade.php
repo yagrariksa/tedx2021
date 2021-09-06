@@ -17,7 +17,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h4>Payment of All Participant</h4>
+                    <h4>All Participant</h4>
                     <div class="card-header-form">
                         {{-- <form>
                     <div class="input-group">
@@ -64,13 +64,13 @@
                             <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th>Nama</th>
+                                    <th>Name</th>
                                     <th>Status</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody id="tbody">
-                               
+
                             </tbody>
                         </table>
                     </div>
@@ -118,7 +118,7 @@
                         <form action="#" method="post" style="display: none" id="form-ubah">
                             @csrf
                             <div class="form-group">
-                                <label for="">Nama</label>
+                                <label for="">Name</label>
                                 <input type="hidden" name="id" value="" id="input-id" class="form-control">
                                 <input type="text" name="fullname" disabled value="" placeholder="" id="input-name"
                                     class="form-control">
@@ -144,6 +144,68 @@
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     <button type="button" class="btn btn-primary"
                         onclick="document.getElementById('form-ubah').submit()">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" tabindex="-1" role="dialog" id="infoModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Update Status</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="">
+                        {{-- <form action="#" method="post" style="display: none" id="form-ubah"> --}}
+                            {{-- @csrf --}}
+                            <div class="form-group">
+                                <label>Name</label>
+                                <p id="info-name"
+                                    class="">tes coba yes</p>
+                            </div>
+                            <div class="form-group">
+                                <label>Age</label>
+                                <p id="info-age"
+                                    class="">tes coba yes</p>
+                            </div>
+                            <div class="form-group">
+                                <label>Phone Number</label>
+                                <p id="info-number"
+                                    class="">tes coba yes</p>
+                            </div>
+                            <div class="form-group">
+                                <label>Email</label>
+                                <p id="info-email"
+                                    class="">tes coba yes</p>
+                            </div>
+                            <div class="form-group">
+                                <label>Address</label>
+                                <p id="info-address"
+                                    class="">tes coba yes</p>
+                            </div>
+                            <div class="form-group">
+                                <label>Institute</label>
+                                <p id="info-institute"
+                                    class="">tes coba yes</p>
+                            </div>
+                            <div class="form-group">
+                                <label>Essay Title</label>
+                                <p id="info-essay"
+                                    class="">tes coba yes</p>
+                            </div>
+                            <div class="form-group">
+                                <label>Google Drive Link</label>
+                                <p id="info-link"
+                                    class="">tes coba yes</p>
+                            </div>
+                        {{-- </form> --}}
+                    </div>
+                </div>
+                <div class="modal-footer bg-whitesmoke br">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
@@ -276,7 +338,7 @@
                     switch (record.payment.status) {
                         case "2":
                             span.classList.add('badge-info');
-                            span.innerHTML = "Menunggu Konfirmas";
+                            span.innerHTML = "Menunggu Konfirmasi";
                             break;
 
                         case "5":
@@ -304,13 +366,26 @@
                     form.querySelector('input#input-name').value = button.dataset.name;
                     form.querySelector('input#input-email').value = button.dataset.email;
                 });
+
                 tdstatus.appendChild(span);
                 tdbutton.appendChild(button);
+
+                // const tdbutton2 = document.createElement('td');
+                const button2 = document.createElement('button');
+                button2.classList.add('btn');
+                button2.innerHTML = 'Detail Participant';
+                button2.style.marginLeft = '.5rem';
+                button2.classList.add('form-trigger');
+                button2.classList.add('btn-warning');
+                button2.dataset.toggle = "modal";
+                button2.dataset.target = "#infoModal";
+                tdbutton.appendChild(button2);
 
                 tr.appendChild(tdno);
                 tr.appendChild(tdname);
                 tr.appendChild(tdstatus);
                 tr.appendChild(tdbutton);
+                // tr.appendChild(tdbutton2);
 
                 tableBody.appendChild(tr);
             });
