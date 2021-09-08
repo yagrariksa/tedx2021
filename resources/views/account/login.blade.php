@@ -11,7 +11,7 @@
     @endif">
         <input type="email" placeholder="email">
         <button type="button" onclick="checkEmail()">next</button>
-        <button type="button" id="goto-regist">register</button>
+        <a href="{{route('account.regist')}}" id="goto-regist">register</a>
     </form>
 
     <form action="{{ route('account.login') }}" method="post"
@@ -37,27 +37,7 @@
         <button type="submit">setup pass</button>
     </form>
 
-    <form action="{{ route('account.login.regist') }}" method="post"
-        class="@if (Session::has('form'))
-        @if (Session::get('form') != 'regist')
-            hide
-        @endif
-    @else
-        hide
-    @endif"
-        id="regist">
-        @csrf
-        <input type="email" name="email" placeholder="email" value="{{ old('email') }}">
-        <input type="text" name="fullname" placeholder="fullname" value="{{ old('fullname') }}">
-        <input type="password" name="password" placeholder="password">
-        <input type="password" name="repass" placeholder="repeat password">
-        <input type="text" name="age" placeholder="age" value="{{ old('age') }}">
-        <input type="text" name="phone" placeholder="phone" value="{{ old('phone') }}">
-        <input type="text" name="address" placeholder="address" value="{{ old('address') }}">
-        <input type="text" name="institute" placeholder="institute" value="{{ old('institute') }}">
-        <button type="submit">regist</button>
-        <button type="button" id="goto-login">login</button>
-    </form>
+    
 @endsection
 
 @section('js')
@@ -75,24 +55,7 @@
         const formemail = document.querySelector('form#email');
         const formsetup = document.querySelector('form#setup');
         const formlogin = document.querySelector('form#login');
-        const formregist = document.querySelector('form#regist');
-
-        const btntoregist = document.querySelector('button#goto-regist')
-        const btntologin = document.querySelector('button#goto-login')
-
         const alertbox = document.querySelector('div#alert-message');
-
-        // show form regist
-        btntoregist.addEventListener('click', () => {
-            formemail.classList.add('hide');
-            formregist.classList.remove('hide');
-        })
-
-        // show form login (email)
-        btntologin.addEventListener('click', () => {
-            formemail.classList.remove('hide');
-            formregist.classList.add('hide');
-        })
 
         const data = {};
 
