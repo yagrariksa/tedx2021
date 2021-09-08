@@ -138,30 +138,57 @@ class GeneralController extends Controller
     {
         if (!$request->query('email')) {
             return response()->json([
-                'message'=>'email are required',
+                'message' => 'email are required',
             ], 400);
         }
 
-        $user = User::where('email',$request->query('email'))->first();
+        $user = User::where('email', $request->query('email'))->first();
 
         if (!$user) {
             return response()->json([
-                'message' => 'your email hasn\'t register yet' ,
+                'message' => 'your email hasn\'t register yet',
                 'code'  => 1
             ], 200);
         }
 
         if (!$user->usepass) {
             return response()->json([
-                'message' => "welcome " . $user->name . ", setup your password now" ,
+                'message' => "welcome " . $user->name . ", setup your password now",
                 'code'  => 2
             ], 200);
-        }else{
+        } else {
             return response()->json([
-                'message' => "welcome " . $user->name . ", enter your password to login" ,
+                'message' => "welcome " . $user->name . ", enter your password to login",
                 'code'  => 3
             ], 200);
         }
+    }
 
+    public function infouser(Request $request)
+    {
+        if (!$this->verifyAdmin($request->header('Authorization'))) {
+            return response()->json([
+                'message' => 'you dont have access'
+            ], 401);
+        }
+
+        if (!$request->query('email')) {
+            return response()->json([
+                'message' => 'email are required',
+            ], 400);
+        }
+
+        $user = User::with('essay')->where('email', $request->query('email'))->first();
+
+        if (!$user) {
+            return response()->json([
+                'message' => 'not found',
+            ], 404);
+        } else {
+            return response()->json([
+                'message' => 'data found',
+                'body' => $user
+            ], 200);
+        }
     }
 }
