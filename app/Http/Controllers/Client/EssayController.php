@@ -14,7 +14,10 @@ class EssayController extends Controller
 {
     public function branding()
     {
-        return view('essay.branding');
+        // maybe give some middleware identification here
+        // or maybe in view
+        // return view('essay.branding');
+        return view('dummy.essay');
     }
 
     public function form()
@@ -134,5 +137,10 @@ class EssayController extends Controller
     public function status()
     {
         return view('essay.status');
+    }
+
+    public function dashboard()
+    {
+        return view('account.essay');
     }
 }

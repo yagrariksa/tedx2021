@@ -316,6 +316,10 @@
 
                 const tdname = document.createElement('td');
                 tdname.innerHTML = record.user.name
+                tdname.addEventListener('click', () => {
+                    window.open(record.essaylink)
+                })
+                tdname.style.cursor = 'pointer';
 
                 const tdstatus = document.createElement('td');
                 const span = document.createElement('span');

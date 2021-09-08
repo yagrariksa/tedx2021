@@ -22,17 +22,23 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('landing');
 })->name('landing');
-Route::prefix('account')->group(function(){
-    Route::get('/login', [AccountController::class, 'login'])->name('account.login');
-    Route::get('/login/{any}', function(){
-        return redirect()->route('account.login');
+Route::prefix('account')->group(function () {
+    Route::middleware('guest')->group(function () {
+        Route::get('/login', [AccountController::class, 'login'])->name('account.login');
+        Route::get('/login/{any}', function () {
+            return redirect()->route('account.login');
+        });
+        Route::post('/login', [AccountController::class, 'post'])->name('account.login');
+        Route::post('/login/setup', [AccountController::class, 'postsetup'])->name('account.login.setup');
+        Route::get('/regist', [AccountController::class, 'regist'])->name('account.regist');
+        Route::post('/regist', [AccountController::class, 'postregist'])->name('account.regist');
     });
-    Route::post('/login', [AccountController::class, 'post'])->name('account.login');
-    Route::post('/login/setup', [AccountController::class, 'postsetup'])->name('account.login.setup');
-    Route::post('/login/regist', [AccountController::class, 'postregist'])->name('account.login.regist');
-    Route::middleware('auth')->group(function(){
+    Route::middleware('auth')->group(function () {
         Route::get('/', [AccountController::class, 'dashboard'])->name('account.dashboard');
         Route::get('/logout', [AccountController::class, 'logout'])->name('account.logout');
+        Route::prefix('/essay')->group(function(){
+            Route::get('/', [CE::class, 'dashboard'])->name('account.essay.dashboard');
+        });
     });
 });
 Route::prefix('essay')->group(function () {

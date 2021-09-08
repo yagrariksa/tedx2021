@@ -99,6 +99,11 @@ class AccountController extends Controller
         return redirect()->route('account.dashboard');
     }
 
+    public function regist()
+    {
+        return view('account.regist');
+    }
+
     public function logout()
     {
         Auth::logout();
