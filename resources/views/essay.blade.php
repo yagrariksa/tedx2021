@@ -5,7 +5,7 @@
 
     @auth
         @if (Auth::user()->essay)
-            <button id="to-dashboard">CEK STATUS</button>
+            <a href="{{ route('account.essay.dashboard') }}" id="to-dashboard">CEK STATUS</a>
         @else
             <button id="show-modals">SHOW DIALOG MODALS REGIST</button>
             <hr>
@@ -13,7 +13,7 @@
             <hr>
             <hr>
             <div class="modal hide" id="modal-regist">
-                <form action="" method="post">
+                <form action="{{ route('account.essay.register') }}" method="post">
                     @csrf
                     <input type="text" required placeholder="essay title" name="title">
                     <input type="text" required placeholder="link gdrive" name="essaylink">

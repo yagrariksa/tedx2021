@@ -5,7 +5,6 @@ use App\Http\Controllers\Admin\EssayController as AdminEssay;
 use App\Http\Controllers\Client\AccountController;
 use App\Http\Controllers\Client\EssayController as CE;
 use App\Http\Middleware\AdminMiddleware;
-use GuzzleHttp\Psr7\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -38,16 +37,18 @@ Route::prefix('account')->group(function () {
         Route::get('/logout', [AccountController::class, 'logout'])->name('account.logout');
         Route::prefix('/essay')->group(function(){
             Route::get('/', [CE::class, 'dashboard'])->name('account.essay.dashboard');
+            Route::post('/', [CE::class, 'register'])->name('account.essay.register');
+            Route::put('/', [CE::class, 'paid'])->name('account.essay.payment');
         });
     });
 });
 Route::prefix('essay')->group(function () {
     Route::get('/', [CE::class, 'branding'])->name('essay.branding');
-    Route::get('/register', [CE::class, 'form'])->name('essay.form');
-    Route::post('/register', [CE::class, 'register'])->name('essay.form');
-    Route::get('/payment', [CE::class, 'payment'])->name('essay.payment');
-    Route::post('/payment', [CE::class, 'paid'])->name('essay.payment');
-    Route::get('/thanks', [CE::class, 'thanks'])->name('essay.thanks');
+    // Route::get('/register', [CE::class, 'form'])->name('essay.form');
+    // Route::post('/register', [CE::class, 'register'])->name('essay.form');
+    // Route::get('/payment', [CE::class, 'payment'])->name('essay.payment');
+    // Route::post('/payment', [CE::class, 'paid'])->name('essay.payment');
+    // Route::get('/thanks', [CE::class, 'thanks'])->name('essay.thanks');
     Route::get('/status', [CE::class, 'status'])->name('essay.status');
 });
 
