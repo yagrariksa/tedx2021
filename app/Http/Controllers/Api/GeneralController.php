@@ -153,12 +153,12 @@ class GeneralController extends Controller
 
         if (!$user->usepass) {
             return response()->json([
-                'message' => "welcome " . $user->name . ", setup your password now" ,
+                'message' => $user->name,
                 'code'  => 2
             ], 200);
         }else{
             return response()->json([
-                'message' => "welcome " . $user->name . ", enter your password to login" ,
+                'message' => $user->name,
                 'code'  => 3
             ], 200);
         }

@@ -44,7 +44,7 @@ class AccountController extends Controller
         // find user
         $user = User::where('email', $request->email)->first();
         if (!$user) {
-            return redirect()->back()->with('error', 'User with email not found');
+            return redirect()->back()->with('error', 'Email not found');
         }
 
         // login
@@ -55,7 +55,8 @@ class AccountController extends Controller
             return redirect()->route('account.dashboard');
         } else {
             return redirect()->back()->with([
-                'error' => 'Wrong password',
+                'error' => 'Incorrect password',
+                'hint' => 'Please try again while remembering your password.',
                 'form' => 'login',
             ])->withInput($request->all());
         }
