@@ -1,0 +1,122 @@
+nav {
+    z-index: 999;
+    padding: 2rem 0 1.5rem 0;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: #0101018C;
+    backdrop-filter: blur(16px);
+
+    .container {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .brand {
+        height: 100%;
+        position: absolute;
+        left: 0;
+        cursor: pointer;
+    }
+
+    .menuItems {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+
+        li {
+            position: relative;
+            display: flex;
+            align-items: center;
+
+            a {
+                text-decoration: none;
+                font-family: 'Spartan', sans-serif;
+                font-size: 16px;
+                font-weight: 600;
+                position: relative;
+                transition: all 0.5s ease-in-out;
+                color: $white;
+        
+                &::before {
+                    content: attr(data-item);
+                    transition: 0.5s;
+                    color: $prime-red;
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    width: 0;
+                    overflow: hidden;
+                }
+        
+                &:hover {
+                    &::before {
+                    width: 100%;
+                    transition: all 0.5s ease-in-out;
+                    }
+                }
+            }
+        }
+    }
+
+    #login, .dropdown {
+        position: absolute;
+        right: 0;
+    }
+
+    #account {
+        @include account();
+    }
+
+    .dropdown-menu {
+        padding: .5rem;
+        top: 0;
+        background-color: $white;
+        opacity: 0;
+        visibility: hidden;
+        transform-origin: top;
+        animation-fill-mode: forwards; 
+        transform: scale(0.9, 0.7) translateY(-20px);
+        display: block; 
+        transition: all 500ms ease;
+        
+        .dropdown-item {
+            color: $batman;
+            
+            &:hover {
+                background-color: #008f9026;
+            }
+        }
+    }
+        
+    .show.dropdown-menu {
+        transform: scale(1, 1) translateY(34px) !important;  
+        opacity: 1;
+        visibility: visible;
+    }
+
+}
+.nav-sm {
+    display: none;
+}
+
+
+
+
+@media screen and (max-width: 992px) {
+    nav {
+        display: none;
+    }
+
+    .nav-sm {
+        display: unset;  
+    }
+}

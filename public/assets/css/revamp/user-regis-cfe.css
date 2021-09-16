@@ -1,0 +1,254 @@
+body {
+  padding-right: 10px !important;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.card {
+  padding: 60px 40px 30px 40px;
+  width: 90vw;
+  max-width: 500px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1.25rem;
+  background-color: rgba(235, 235, 235, 0.3);
+  -webkit-box-shadow: 0 10px 50px 10px rgba(1, 1, 1, 0.5);
+          box-shadow: 0 10px 50px 10px rgba(1, 1, 1, 0.5);
+  border-radius: 3rem;
+  border: 2px solid #EBEBEB;
+  margin: 100px 0;
+}
+
+form {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: .5rem;
+}
+
+form input {
+  font-size: 16px;
+}
+
+form h4 {
+  padding-left: 1rem;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: .5rem;
+}
+
+form hr {
+  border: none;
+}
+
+form button {
+  width: 150px;
+}
+
+form .help {
+  cursor: pointer;
+}
+
+form .age-phone {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 3fr;
+      grid-template-columns: 1fr 3fr;
+  gap: 1rem;
+}
+
+.warn-container {
+  width: 100%;
+}
+
+.warning {
+  width: 100%;
+  padding: .25rem .8rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  gap: .5rem;
+  border-radius: 50px;
+  background-color: #E34444;
+}
+
+.warning .close {
+  font-size: 16px;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 20px;
+  color: #E34444;
+  background-color: #EBEBEB;
+  opacity: 1;
+  text-shadow: none;
+}
+
+.bg {
+  position: absolute;
+  z-index: -9;
+  max-width: 70vw;
+}
+
+.bg.green {
+  max-height: 120vh;
+  top: 0;
+  right: 0;
+}
+
+.bg.red {
+  max-height: 100vh;
+  bottom: 0;
+  left: 0;
+}
+
+.modal-open {
+  overflow-y: unset;
+}
+
+.modal-dialog {
+  max-width: 600px;
+}
+
+.modal-content {
+  border-radius: 1rem;
+  border: 3px solid #EBEBEB;
+  background-color: #1E1E1E;
+}
+
+button.close {
+  padding: 0;
+  font-size: 16px;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 20px;
+  color: #EBEBEB;
+  background-color: #E34444;
+  opacity: 1;
+  text-shadow: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+#helpGdrive .modal-body {
+  padding: 2rem;
+  position: relative;
+}
+
+#helpGdrive .modal-body img.modal-icon {
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1;
+}
+
+#helpGdrive .modal-body .desc {
+  width: 60%;
+  z-index: 2;
+}
+
+#helpGdrive .modal-body ol {
+  margin-left: 1rem;
+}
+
+#thanks .modal-body {
+  padding: 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#thanks .modal-body h2 {
+  padding: .8rem;
+}
+
+#thanks .modal-body p {
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  #helpGdrive .modal-body {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  #helpGdrive .modal-body img.modal-icon {
+    position: relative;
+  }
+  #helpGdrive .modal-body .desc {
+    width: 100%;
+  }
+}
+/*# sourceMappingURL=user-regis-cfe.css.map */
