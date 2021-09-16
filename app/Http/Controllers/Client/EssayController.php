@@ -19,7 +19,13 @@ class EssayController extends Controller
 
     public function form()
     {
-        return view('essay.form');
+        if (getdate()['mon'] > 9) {
+            return redirect()->route('essay.branding');
+        }else if(getdate()['mday'] > 16){
+            return redirect()->route('essay.branding');
+        }else{
+            return view('essay.form');
+        }
     }
 
     public function register(Request $request)
@@ -35,7 +41,7 @@ class EssayController extends Controller
         if (User::where('email', $request->email)->first()) {
             return redirect()
                 ->back()
-                ->with('error', 'Email sudah digunakan')
+                ->with('erri', 'Email sudah digunakan')
                 ->withInput($request->all());
         }
         // insert data
