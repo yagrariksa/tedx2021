@@ -45,8 +45,8 @@ Registration Call for Essay
                     data-target="#helpGdrive"></h4>
             <input type="text" id="link" name="link" class="mandatory">
             {{-- <hr> --}}
-            @if (Session::has('error'))
-            <span class="alert fail">{{ Session::get('error') }}</span>
+            @if (Session::has('erri') )
+            <span class="alert fail">{{ Session::get('erri') }}</span>
             <hr>
             @endif
 
