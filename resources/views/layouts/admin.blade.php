@@ -53,14 +53,22 @@
           </div>
           <ul class="sidebar-menu">
             <li class="{{Request::is('admin') ? 'active' : ''}}"><a class="nav-link" href="{{ route('admin.home') }}"><i class="fas fa-home"></i> <span>Homepage</span></a></li>
-              <li class="nav-item dropdown {{Request::is('admin/*') ? 'active' : ''}}">
-                <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-file-alt"></i> <span>CFE</span></a>
-                <ul class="dropdown-menu">
-                  <li class=" {{Request::is('admin/essay') ? 'active' : ''}}"><a class="nav-link" href="{{ route('admin.essay.home') }}">Statistic</a></li>
-                  <li class=" {{Request::is('admin/essay/payment') ? 'active' : ''}}"><a class="nav-link" href="{{ route('admin.essay.payment') }}">Participant</a></li>
-                  {{-- <li class=" {{Request::is('admin/essay/finalist') ? 'active' : ''}}"><a class="nav-link" href="{{ route('admin.essay.finalist') }}">Finalist</a></li> --}}
-                </ul>
-              </li>
+            <li class="nav-item dropdown {{Request::is('admin/essay*') ? 'active' : ''}}">
+              <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-file-alt"></i> <span>CFE</span></a>
+              <ul class="dropdown-menu">
+                <li class=" {{Request::is('admin/essay') ? 'active' : ''}}"><a class="nav-link" href="{{ route('admin.essay.home') }}">Statistic</a></li>
+                <li class=" {{Request::is('admin/essay/payment') ? 'active' : ''}}"><a class="nav-link" href="{{ route('admin.essay.payment') }}">Participant</a></li>
+                {{-- <li class=" {{Request::is('admin/essay/finalist') ? 'active' : ''}}"><a class="nav-link" href="{{ route('admin.essay.finalist') }}">Finalist</a></li> --}}
+              </ul>
+            </li>
+            <li class="nav-item dropdown {{Request::is('admin/speaker*') ? 'active' : ''}}">
+              <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-file-alt"></i> <span>CFSS</span></a>
+              <ul class="dropdown-menu">
+                <li class=" {{Request::is('admin/speaker') ? 'active' : ''}}"><a class="nav-link" href="{{ route('admin.speaker.home') }}">Statistic</a></li>
+                <li class=" {{Request::is('admin/speaker/participant') ? 'active' : ''}}"><a class="nav-link" href="{{ route('admin.speaker.participant') }}">Participant</a></li>
+                {{-- <li class=" {{Request::is('admin/essay/finalist') ? 'active' : ''}}"><a class="nav-link" href="{{ route('admin.essay.finalist') }}">Finalist</a></li> --}}
+              </ul>
+            </li>
 
         </aside>
       </div>

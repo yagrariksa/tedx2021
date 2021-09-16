@@ -45,4 +45,9 @@ class User extends Authenticatable
     {
         return $this->hasOne(Essay::class, 'uid', 'id');
     }
+
+    public function speaker()
+    {
+        return $this->hasOne(Speaker::class, 'uid', 'id');
+    }
 }

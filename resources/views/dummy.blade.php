@@ -13,9 +13,22 @@
 
 <body>
     @auth
-        <a href="{{ route('account.dashboard') }}">DASHBOARD</a>
-        <a href="{{ route('account.essay.dashboard') }}">ESSAY</a>
-        <a href="{{ route('account.logout') }}">LOGOUT</a>
+        <h3>AKUN NAVBAR</h3>
+        <ul>
+            <li style="display: inline">
+                <a href="{{ route('account.dashboard') }}">DASHBOARD</a>
+            </li>
+            <li style="display: inline">
+                <a href="{{ route('account.essay.dashboard') }}">ESSAY</a>
+            </li>
+            <li style="display: inline">
+                <a href="{{ route('account.speaker.dashboard') }}">speaker</a>
+            </li>
+            <li style="display: inline">
+                <a href="{{ route('account.logout') }}">LOGOUT</a>
+            </li>
+        </ul>
+        <hr>
     @else
         <a href="{{ route('account.login') }}">LOGIN</a>
     @endauth

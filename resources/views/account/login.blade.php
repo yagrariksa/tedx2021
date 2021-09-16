@@ -54,11 +54,11 @@
         <fieldset>
             <h2>Login</h2>
             <div class="alert" id="alert-email">
-                @if (Session::has('error'))
+                @if (Session::has('erri'))
                     <div class="danger">
                         <img id="alert-img" src="{{ asset('assets/img/revamp/danger.svg') }}" alt="">
                         <div class="desc">
-                            <h4 id="alert-message">{{ Session::get('error') }}</h4>
+                            <h4 id="alert-message">{{ Session::get('erri') }}</h4>
                             <h5 id="alert-hint">{{ Session::get('hint') }}</h5>
                         </div>
                     </div>

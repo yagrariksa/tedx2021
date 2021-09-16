@@ -2,8 +2,10 @@
 
 use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\EssayController as AdminEssay;
+use App\Http\Controllers\Admin\SpeakerController as AdminSpeaker;
 use App\Http\Controllers\Client\AccountController;
 use App\Http\Controllers\Client\EssayController as CE;
+use App\Http\Controllers\Client\SpeakerController as DS;
 use App\Http\Middleware\AdminMiddleware;
 use Illuminate\Support\Facades\Route;
 
@@ -35,22 +37,19 @@ Route::prefix('account')->group(function () {
     Route::middleware('auth')->group(function () {
         Route::get('/', [AccountController::class, 'dashboard'])->name('account.dashboard');
         Route::get('/logout', [AccountController::class, 'logout'])->name('account.logout');
-        Route::prefix('/essay')->group(function(){
+        Route::prefix('/essay')->group(function () {
             Route::get('/', [CE::class, 'dashboard'])->name('account.essay.dashboard');
             Route::post('/', [CE::class, 'register'])->name('account.essay.register');
             Route::put('/', [CE::class, 'paid'])->name('account.essay.payment');
         });
+        Route::prefix('/speaker')->group(function () {
+            Route::get('/', [DS::class, 'dashboard'])->name('account.speaker.dashboard');
+            Route::post('/', [DS::class, 'register'])->name('account.speaker.register');
+        });
     });
 });
-Route::prefix('essay')->group(function () {
-    Route::get('/', [CE::class, 'branding'])->name('essay.branding');
-    // Route::get('/register', [CE::class, 'form'])->name('essay.form');
-    // Route::post('/register', [CE::class, 'register'])->name('essay.form');
-    // Route::get('/payment', [CE::class, 'payment'])->name('essay.payment');
-    // Route::post('/payment', [CE::class, 'paid'])->name('essay.payment');
-    // Route::get('/thanks', [CE::class, 'thanks'])->name('essay.thanks');
-    Route::get('/status', [CE::class, 'status'])->name('essay.status');
-});
+Route::get('/essay', [CE::class, 'branding'])->name('essay.branding');
+Route::get('/speaker', [DS::class, 'branding'])->name('speaker.branding');
 
 Route::prefix('admin')->group(function () {
     Route::get('/', function () {
@@ -65,6 +64,11 @@ Route::prefix('admin')->group(function () {
             Route::get('/payment', [AdminEssay::class, 'payment'])->name('admin.essay.payment');
             Route::post('/payment', [AdminEssay::class, 'changepaid']);
             Route::get('/finalist', [AdminEssay::class, 'finalist'])->name('admin.essay.finalist');
+        });
+        Route::prefix('/speaker')->group(function () {
+            Route::get('/', [AdminSpeaker::class, 'home'])->name('admin.speaker.home');
+            Route::get('/participant', [AdminSpeaker::class, 'participant'])->name('admin.speaker.participant');
+            Route::post('/participant', [AdminSpeaker::class, 'loloskan'])->name('admin.speaker.participant');
         });
     });
 });
