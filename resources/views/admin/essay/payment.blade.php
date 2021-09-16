@@ -64,7 +64,7 @@
                             <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th>Nama</th>
+                                    <th>Name</th>
                                     <th>Status</th>
                                     <th>Action</th>
                                 </tr>
@@ -118,7 +118,7 @@
                         <form action="#" method="post" style="display: none" id="form-ubah">
                             @csrf
                             <div class="form-group">
-                                <label for="">Nama</label>
+                                <label for="">Name</label>
                                 <input type="hidden" name="id" value="" id="input-id" class="form-control">
                                 <input type="text" name="fullname" disabled value="" placeholder="" id="input-name"
                                     class="form-control">
@@ -148,6 +148,68 @@
             </div>
         </div>
     </div>
+    <div class="modal fade" tabindex="-1" role="dialog" id="infoModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Update Status</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="">
+                        {{-- <form action="#" method="post" style="display: none" id="form-ubah"> --}}
+                            {{-- @csrf --}}
+                            <div class="form-group">
+                                <label>Name</label>
+                                <p id="info-name"
+                                    class="">tes coba yes</p>
+                            </div>
+                            <div class="form-group">
+                                <label>Age</label>
+                                <p id="info-age"
+                                    class="">tes coba yes</p>
+                            </div>
+                            <div class="form-group">
+                                <label>Phone Number</label>
+                                <p id="info-number"
+                                    class="">tes coba yes</p>
+                            </div>
+                            <div class="form-group">
+                                <label>Email</label>
+                                <p id="info-email"
+                                    class="">tes coba yes</p>
+                            </div>
+                            <div class="form-group">
+                                <label>Address</label>
+                                <p id="info-address"
+                                    class="">tes coba yes</p>
+                            </div>
+                            <div class="form-group">
+                                <label>Institute</label>
+                                <p id="info-institute"
+                                    class="">tes coba yes</p>
+                            </div>
+                            <div class="form-group">
+                                <label>Essay Title</label>
+                                <p id="info-essay"
+                                    class="">tes coba yes</p>
+                            </div>
+                            <div class="form-group">
+                                <label>Google Drive Link</label>
+                                <p id="info-link"
+                                    class="">tes coba yes</p>
+                            </div>
+                        {{-- </form> --}}
+                    </div>
+                </div>
+                <div class="modal-footer bg-whitesmoke br">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection
 
 @section('js')
@@ -161,6 +223,7 @@
         const form = document.querySelector('form#form-ubah');
         // const btnCancelForm = document.querySelector('button#cancel-form');
         const btnTrigger = document.querySelectorAll('button.form-trigger');
+        const infoModal = document.querySelector('#infoModal');
 
         s.addEventListener('input', () => {
             let inputreason = document.querySelector('input#input-reason');
@@ -276,7 +339,7 @@
                     switch (record.payment.status) {
                         case "2":
                             span.classList.add('badge-info');
-                            span.innerHTML = "Menunggu Konfirmas";
+                            span.innerHTML = "Menunggu Konfirmasi";
                             break;
 
                         case "5":
@@ -306,6 +369,20 @@
                 });
                 tdstatus.appendChild(span);
                 tdbutton.appendChild(button);
+
+                const button2 = document.createElement('button');
+                button2.classList.add('btn');
+                button2.innerHTML = 'Detail Participant';
+                button2.style.marginLeft = '.5rem';
+                button2.classList.add('form-trigger');
+                button2.classList.add('btn-warning');
+                button2.dataset.toggle = "modal";
+                button2.dataset.target = "#infoModal";
+                button2.dataset.email = record.user.email;
+                button2.addEventListener('click', () => {
+                    getUser(record.user.email);
+                })
+                tdbutton.appendChild(button2);
 
                 tr.appendChild(tdno);
                 tr.appendChild(tdname);
@@ -339,6 +416,39 @@
             });
         }
 
+        const getUser = (email) => {
+            let url = "{{ route('api.account.info') }}" + `?email=${email}`;
+            try {
+                fetch(url, {
+                        headers: {
+                            'Authorization': accessToken
+                        }
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        // console.log(data.body);
+                        populateModal(data.body);
+                    });
+            } catch (error) {
+                console.error('FETCH API ERROR');
+            }
+        }
+
+        const populateModal = (data) => {
+            infoModal.querySelector('#info-name').innerHTML = data.name;
+            infoModal.querySelector('#info-age').innerHTML = data.age;
+            infoModal.querySelector('#info-number').innerHTML = data.phone;
+            infoModal.querySelector('#info-email').innerHTML = data.email;
+            infoModal.querySelector('#info-address').innerHTML = data.address;
+            infoModal.querySelector('#info-institute').innerHTML = data.institute;
+            infoModal.querySelector('#info-essay').innerHTML = data.essay.title;
+            infoModal.querySelector('#info-link').innerHTML = data.essay.essaylink;
+            infoModal.querySelector('#info-link').style.color = 'blue';
+            infoModal.querySelector('#info-link').style.cursor = 'pointer';
+            infoModal.querySelector('#info-link').addEventListener('click', () => {
+                window.open(data.essay.essaylink);
+            });
+        }
 
         ipaginate.addEventListener("change", changedata);
         filter0.addEventListener("change", changedata);

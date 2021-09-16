@@ -133,4 +133,32 @@ class GeneralController extends Controller
             'body' => $groupByDate,
         ], 200);
     }
+
+    public function infouser(Request $request)
+    {
+        if (!$this->verifyAdmin($request->header('Authorization'))) {
+            return response()->json([
+                'message' => 'you dont have access'
+            ], 401);
+        }
+
+        if (!$request->query('email')) {
+            return response()->json([
+                'message' => 'email are required',
+            ], 400);
+        }
+
+        $user = User::with('essay')->where('email', $request->query('email'))->first();
+
+        if (!$user) {
+            return response()->json([
+                'message' => 'not found',
+            ], 404);
+        } else {
+            return response()->json([
+                'message' => 'data found',
+                'body' => $user
+            ], 200);
+        }
+    }
 }
