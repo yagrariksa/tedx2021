@@ -16,7 +16,9 @@ class SpeakerController extends Controller
 
     public function dashboard()
     {
-        return view('account.speaker');
+        return redirect()->route('account.dashboard');
+
+        // return view('account.speaker');
     }
 
     public function register(Request $request)
@@ -28,7 +30,7 @@ class SpeakerController extends Controller
             'uid' => Auth::user()->id
         ]);
 
-        return redirect()->route('account.speaker.dashboard');
+        return redirect()->route('account.dashboard');
     }
 
     public function interview()

@@ -23,7 +23,9 @@ class EssayController extends Controller
 
     public function dashboard()
     {
-        return view('account.essay');
+        return redirect()->route('account.dashboard');
+
+        // return view('account.essay');
     }
 
     public function register(Request $request)
@@ -36,7 +38,7 @@ class EssayController extends Controller
         ]);
 
         // return
-        return redirect()->route('account.essay.dashboard');
+        return redirect()->route('account.dashboard');
     }
 
     public function paid(Request $request)
@@ -70,7 +72,7 @@ class EssayController extends Controller
         ]);
 
         return redirect()
-            ->route('account.essay.dashboard')
+            ->route('account.dashboard')
             ->with('success', 'Sukses mengupload pembayaran');
     }
 }
