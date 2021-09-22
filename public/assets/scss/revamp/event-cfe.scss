@@ -1,0 +1,264 @@
+@import 'env';
+@import 'nav-footer';
+
+.content {
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.header {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 6rem;
+
+    .description {
+        max-width: 60%;
+        padding: 4rem;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+
+        &::before, &::after {
+            content: "";
+            z-index: -1;
+            opacity: .8;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            background: linear-gradient(104.69deg, rgba(129, 25, 26, 0.8) 5.9%, rgba(27, 16, 17, 0.4) 51.97%, rgba(12, 83, 84, 0.8) 96.07%);
+            box-shadow: 0px 20px 50px rgba(108, 69, 69, 0.5);
+        }
+
+        &::before {
+            top: 0;
+            left: 0rem;
+        }
+
+        &::after {
+            top: 3rem;
+            left: 3rem;
+        }
+    }
+
+    .footer {
+        height: auto;
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .timeline {
+        width: 220px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1.5rem;
+    }
+
+    .tl-card {
+        width: 100%;
+        padding: .5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: .5rem;
+        border-radius: 10px;
+        background-color: rgba(99, 99, 99, 0.5);
+
+        &.now {
+            background-color: $prime-green;
+        }
+    }
+
+    .date-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .date-month {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .date {
+        margin: 0;
+        font-size: 24px;
+        font-weight: 700;
+    }
+}
+
+.prizes {
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1rem;
+
+    .prize-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .prize-card {
+        width: 24%;
+        height: 360px;
+        transform-style: preserve-3d;
+        perspective: 1000px;
+        transition: 1s;
+
+        &:hover .card-front {
+            transform: rotateY(-180deg);
+        }
+
+        &:hover .card-back {
+            transform: rotateY(0deg);
+        }
+
+        .card-front, .card-back {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-radius: 4px;
+            backface-visibility: hidden;
+            transition: 1s;
+            background-blend-mode: lighten, normal;
+        }
+
+        .card-front {
+            transform: rotateY(0deg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            h2 {
+                color: $batman;
+            }
+        }
+
+        .card-back {
+            transform: rotateY(-180deg);
+            padding: 3rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+
+            > h3 {
+                color: #3E5959;
+                font-weight: 600;
+            }
+
+            .block {
+                padding: 1rem;
+                background-blend-mode: difference;
+                background-color: #AD8484;
+
+                h3 {
+                    font-size: 20px;
+                    font-weight: 600;
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+    .kedua {
+        &.prize-card {
+            margin-top: 50px;
+        }
+
+        .card-front, .card-back {
+            background-image: linear-gradient(0deg, rgba(192, 192, 192, 0.7), rgba(192, 192, 192, 0.7)), linear-gradient(106.52deg, rgba(173, 132, 132, 0.8) 9.98%, rgba(175, 220, 220, 0.8) 70.62%);
+        }
+
+        .block h3 {
+            color: #BEB4B4;
+        }
+    }
+
+    .pertama {
+        .card-front, .card-back {
+            background-image: linear-gradient(0deg, rgba(236, 213, 92, 0.6), rgba(236, 213, 92, 0.6)), linear-gradient(106.52deg, rgba(173, 132, 132, 0.8) 9.98%, rgba(175, 220, 220, 0.8) 84.44%);
+        }
+
+        .block h3 {
+            color: #D8BD99;
+        }
+    }
+
+    .ketiga {
+        &.prize-card {
+            margin-top: 50px;
+        }
+
+        .card-front, .card-back {
+            background-image: linear-gradient(0deg, rgba(205, 127, 50, 0.6), rgba(205, 127, 50, 0.6)), linear-gradient(106.52deg, rgba(173, 132, 132, 0.8) 9.98%, rgba(175, 220, 220, 0.8) 70.62%);
+        }
+
+        .block h3 {
+            color: #C5DEDE;
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .prizes .prize-card {
+        height: 300px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .header {
+        flex-direction: column;
+
+        .description {
+            max-width: 80%;
+        }
+    }
+
+    .prizes {
+        .prize-container {
+            flex-direction: column;
+        }
+
+        .prize-card {
+            width: 250px;
+        }
+
+        .kedua, .ketiga {
+            &.prize-card {
+                margin: 0;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .header .description {
+        max-width: 90%;
+        padding: 2rem;
+
+        &::after {
+            top: 1.5rem;
+            left: 1.5rem;
+        }
+    }
+}

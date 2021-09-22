@@ -1,6 +1,6 @@
 @extends('layouts.clientNew')
 
-@section('title', "TEDX UNAIR")
+@section('title', "TEDx UNAIR")
 
 @section('css')
 <link rel="stylesheet" href="{{ asset('assets/css/revamp/landing-page.css') }}">
@@ -56,7 +56,7 @@
     <div class="event-list">
         <div class="event">
             <h2>Call for Essay</h2>
-            <a href="" class="ic-read-more">
+            <a href="{{ route('essay.branding') }}" class="ic-read-more">
                 <img src="{{ asset('assets/img/revamp/ic-cfe.svg') }}" alt="">
                 <span></span>
                 <p>Read More</p>

@@ -84,6 +84,7 @@
                         class="text-red" style="font-weight: 600;">before dd/mm/yyyy</span>
                 </p>
             </div>
+            <button class="btn-green">Pay</button>
             @endif
         </div>
     </div>

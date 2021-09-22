@@ -8,7 +8,19 @@
     <title>@yield('title')</title>
 
     <!-- Favicon -->
-    <link rel="icon" href="{{ asset('assets/img/revamp/x.svg') }}" type="image/gif" sizes="16x16">
+    {{-- <link rel="icon" href="{{ asset('assets/img/revamp/x.svg') }}" type="image/gif" sizes="16x16"> --}}
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('assets/img/favicon/apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('assets/img/favicon/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/img/favicon/favicon-16x16.png') }}">
+    <link rel="manifest" href="{{ asset('assets/img/favicon/site.webmanifest') }}">
+
+    <!-- SEO -->
+    <meta name="theme-color" content="#000">
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="TEDx Universitas Airlangga" />
+    <meta property="og:url" content="https://www.tedxuniversitasairlangga.com" />
+    <meta property="og:description" content="Small Matters, Big Impact. An impact still can be made regardless of how people perceive the changes they have created." />
+    <meta name="image" property="og:image" content="{{ asset('assets/img/favicon/android-chrome-512x512.png') }}" />
 
     <!-- CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -67,6 +79,38 @@
         <!-- Content End -->
 
         <!-- Footer -->
+        <footer>
+            <img class="logo" src="{{ asset('assets/img/revamp/white-logo.png') }}" alt="">
+            <div class="content-footer">
+                <div class="links">
+                    <div class="follow">
+                        <h3>Follow Us</h3>
+                        <!-- link ke sosmed -->
+                        <div class="apps">
+                            <a href="" target="_blank" rel="noopener noreferrer" class=" btn-app"><img
+                                    src="{{ asset('assets/img/revamp/ic-insta.svg') }}" alt=""></a>
+                            <a href="" target="_blank" rel="noopener noreferrer" class=" btn-app"><img
+                                    src="{{ asset('assets/img/revamp/ic-youtube.svg') }}" alt=""></a>
+                            <a href="" target="_blank" rel="noopener noreferrer" class=" btn-app"><img
+                                    src="{{ asset('assets/img/revamp/ic-linkedin.svg') }}" alt=""></a>
+                            <a href="" target="_blank" rel="noopener noreferrer" class=" btn-app"><img
+                                    src="{{ asset('assets/img/revamp/ic-line.svg') }}" alt=""></a>
+                            <a href="" target="_blank" rel="noopener noreferrer" class=" btn-app"><img
+                                    src="{{ asset('assets/img/revamp/ic-tiktok.svg') }}" alt=""></a>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="address">
+                        <h3>Address</h3>
+                        <p>Jl. Airlangga No.4, Kec. Gubeng, Kota SBY, Jawa Timur 60286</p>
+                    </div>
+                </div>
+                <div class="copyright">
+                    <h5>&#169; Copyright 2021</h5>
+                    <h5>This independent TEDx event is operated under license from TED</h5>
+                </div>
+            </div>
+        </footer>
         <!-- Footer End -->
     </div>
 

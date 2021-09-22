@@ -8,7 +8,18 @@
     <title>TEDx Universitas Airlangga</title>
 
     <!-- Favicon -->
-    <link rel="icon" href="{{ asset('assets/img/revamp/x.svg') }}" type="image/gif" sizes="16x16">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('assets/img/favicon/apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('assets/img/favicon/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/img/favicon/favicon-16x16.png') }}">
+    <link rel="manifest" href="{{ asset('assets/img/favicon/site.webmanifest') }}">
+
+    <!-- SEO -->
+    <meta name="theme-color" content="#000">
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="TEDx Universitas Airlangga" />
+    <meta property="og:url" content="https://www.tedxuniversitasairlangga.com" />
+    <meta property="og:description" content="Small Matters, Big Impact. An impact still can be made regardless of how people perceive the changes they have created." />
+    <meta name="image" property="og:image" content="{{ asset('assets/img/favicon/android-chrome-512x512.png') }}" />
 
     <!-- CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"

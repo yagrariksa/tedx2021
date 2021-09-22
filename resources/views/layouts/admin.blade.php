@@ -12,6 +12,20 @@
   <!-- CSS Libraries -->
   <link rel="stylesheet" href="{{ asset('node_modules/prismjs/themes/prism.css') }}">
 
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('assets/img/favicon/apple-touch-icon.png') }}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('assets/img/favicon/favicon-32x32.png') }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/img/favicon/favicon-16x16.png') }}">
+  <link rel="manifest" href="{{ asset('assets/img/favicon/site.webmanifest') }}">
+
+    <!-- SEO -->
+    <meta name="theme-color" content="#000">
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="TEDx Universitas Airlangga" />
+    <meta property="og:url" content="https://www.tedxuniversitasairlangga.com/admin" />
+    <meta property="og:description" content="Small Matters, Big Impact. An impact still can be made regardless of how people perceive the changes they have created." />
+    <meta name="image" property="og:image" content="{{ asset('assets/img/favicon/android-chrome-512x512.png') }}" />
+
   <!-- Template CSS -->
   <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
   <link rel="stylesheet" href="{{ asset('assets/css/components.css') }}">
