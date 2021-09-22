@@ -43,7 +43,7 @@ nav {
                 position: relative;
                 transition: all 0.5s ease-in-out;
                 color: $white;
-        
+
                 &::before {
                     content: attr(data-item);
                     transition: 0.5s;
@@ -56,7 +56,7 @@ nav {
                     width: 0;
                     overflow: hidden;
                 }
-        
+
                 &:hover {
                     &::before {
                     width: 100%;
@@ -83,29 +83,107 @@ nav {
         opacity: 0;
         visibility: hidden;
         transform-origin: top;
-        animation-fill-mode: forwards; 
+        animation-fill-mode: forwards;
         transform: scale(0.9, 0.7) translateY(-20px);
-        display: block; 
+        display: block;
         transition: all 500ms ease;
-        
+
         .dropdown-item {
             color: $batman;
-            
+
             &:hover {
                 background-color: #008f9026;
             }
         }
     }
-        
+
     .show.dropdown-menu {
-        transform: scale(1, 1) translateY(34px) !important;  
+        transform: scale(1, 1) translateY(34px) !important;
         opacity: 1;
         visibility: visible;
     }
 
 }
+
 .nav-sm {
     display: none;
+}
+
+footer {
+    width: 100%;
+    padding: 4rem 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    .logo {
+        width: 265px;
+    }
+
+    .content-footer {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        .links {
+            max-width: 600px;
+            width: 50%;
+            align-self: flex-end;
+            display: flex;
+            gap: 2rem;
+
+            h3, p {
+                text-align: end;
+            }
+        }
+
+        .apps {
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 14px;
+
+            a:hover {
+                transform: scale(1.1);
+            }
+        }
+
+        .btn-app {
+            width: 50px;
+            height: 50px;
+            padding: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            border: 2px solid white;
+
+            img {
+                width: 24px;
+                height: 24px;
+            }
+        }
+
+        hr {
+            width: 1px;
+            height: auto;
+            margin: 0;
+            border-left: 1px solid $white;
+            opacity: 1;
+        }
+
+        .copyright {
+            align-self: flex-start;
+            display: flex;
+            align-items: center;
+            gap: .8rem;
+
+            h5 {
+                text-align: center;
+            }
+        }
+    }
 }
 
 
@@ -117,6 +195,53 @@ nav {
     }
 
     .nav-sm {
-        display: unset;  
+        display: unset;
+    }
+
+    footer {
+        padding: 2rem 0;
+        align-items: center;
+        gap: 2rem;
+
+        .logo {
+            max-width: 216px;
+            width: 90%;
+        }
+
+        .content-footer {
+            .links {
+                width: 100%;
+                align-self: center;
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+
+                h3, p {
+                    text-align: center;
+                }
+            }
+
+            .btn-app {
+                width: 24px;
+                height: 24px;
+
+                img {
+                    width: 12px;
+                    height: 12px;
+                }
+            }
+
+            hr {
+                width: 5.25rem;
+                border-left: none;
+                border-top: 1px solid white;
+            }
+
+            .copyright {
+                align-self: center;
+                flex-direction: column;
+                gap: 0;
+            }
+        }
     }
 }
