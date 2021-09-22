@@ -19,6 +19,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::get('/account/info', [GeneralController::class, 'infouser'])->name('api.account.info');
 Route::get('/account/check', [GeneralController::class, 'checkaccount'])->name('api.account.check');
 
 Route::get('/essay/status', [GeneralController::class, 'a'])->name('api.essay.status.payment');

@@ -25,7 +25,7 @@
         <nav>
             <div class="container">
                 {{-- <a href="{{ route('landing') }}"> --}}
-                    <img class="brand" src="{{ asset('assets/img/revamp/white-logo.png') }}" alt="navbar-brand">
+                <img class="brand" src="{{ asset('assets/img/revamp/white-logo.png') }}" alt="navbar-brand">
                 {{-- </a> --}}
                 <ul class="menuItems">
                     <li><a href='{{ route('landing') }}' data-item='Home'>Home</a></li>
@@ -38,18 +38,18 @@
                 <!-- <a href="login.html" id="login" class="button secondary">Login</a> -->
                 <!-- Kalo udah login -->
                 @auth
-                <div class="dropdown">
-                    <button class="dropdown-toggle" type="button" id="account" data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        <img src="{{ asset('assets/img/revamp/user.svg') }}" alt="profile">
-                        <p>{{ Auth::user()->name }}</p>
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="account">
-                        <li><a class="dropdown-item" href="#">Dashboard</a></li>
-                        <li><a class="dropdown-item" href="#">Profile</a></li>
-                        <li><a class="dropdown-item" href="#">lalala</a></li>
-                    </ul>
-                </div>
+                    <div class="dropdown">
+                        <button class="dropdown-toggle" type="button" id="account" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            <img src="{{ asset('assets/img/revamp/user.svg') }}" alt="profile">
+                            <p>{{ Auth::user()->name }}</p>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="account">
+                            <li><a class="dropdown-item" href="{{ route('account.dashboard') }}">Dashboard</a></li>
+                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li><a class="dropdown-item" href="{{ route('account.logout') }}">Logout</a></li>
+                        </ul>
+                    </div>
                 @endauth
             </div>
         </nav>
@@ -95,8 +95,8 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
     <script src="{{ asset('assets/js/revamp/nav-footer.js') }}"></script>
     @yield('script')

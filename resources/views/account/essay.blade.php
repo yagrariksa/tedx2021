@@ -1,13 +1,6 @@
 @extends('dummy')
 
 @section('content')
-    <h1>welcome back {{ Auth::user()->name }}</h1>
-    <a href="{{ route('account.essay.dashboard') }}">Essay</a>
-    <a href="{{ route('account.logout') }}">Logout</a>
-
-    <hr>
-    <hr>
-    <h1>Essay section (CFE)</h1>
     @if (Auth::user()->essay)
         <h3>Essay : {{ Auth::user()->essay->title }}</h3>
         <h5>Link : <a href="{{ Auth::user()->essay->essaylink }}">{{ Auth::user()->essay->essaylink }}</a></h5>
@@ -70,27 +63,6 @@
         @endif
     @else
         <h3>Anda belum terdaftar pada acara ini</h3>
-        <a href="#">DAFTAR SEKARANG</a>
-        <h2>PENDAFTARAN DAH TUTUP</h2>
-    @endif
-
-    <hr>
-    <hr>
-    <h1>Speaker section (CFSS)</h1>
-    @if (Auth::user()->speaker)
-        anda sudah terdafatar
-        @if (Auth::user()->speaker->lolos)
-            <strong>
-                ANDA lolos
-            </strong>
-            {{-- harusnya disini nanti ada modals tentang
-                masukin data interview mau kapan --}}
-            {{-- kalo gapaham ttg interview apaan
-                tanya ke ubin atau baca dokumen brief CFSS --}}
-            {{-- knp belum dibikin ? karena masi mau
-                koordinasi lgi sama anak Event nya ttg ini --}}
-        @endif
-    @else
-        anda belum terdaftar
+        <a href="{{ route('essay.branding') }}">DAFTAR SEKARANG</a>
     @endif
 @endsection
