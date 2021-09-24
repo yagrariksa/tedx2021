@@ -74,9 +74,9 @@
                 @endif
             </div>
             <div class="others">
-                <h2>Other Events <a href="">&#8599</a></h2>
+                <h2>Other Events <a href="{{ route('landing') }}#event">&#8599</a></h2>
                 <div class="event-container">
-                    @if (!Auth::user()->essay)
+                    {{-- @if (!Auth::user()->essay) --}}
                     <div class="event">
                         <h3>Call for Essay</h3>
                         <a href="{{ route('essay.branding') }}" class="ic-read-more">
@@ -85,17 +85,17 @@
                             <p>Read More</p>
                         </a>
                     </div>
-                    @endif
-                    @if (!Auth::user()->speaker)
+                    {{-- @endif --}}
+                    {{-- @if (!Auth::user()->speaker) --}}
                     <div class="event">
                         <h3>Call for Speaker Student</h3>
-                        <a href="" class="ic-read-more">
+                        <a href="#" class="ic-read-more">
                             <img style="background: white" src="{{ asset('assets/img/revamp/ic-cfs.png') }}" alt="">
                             <span></span>
                             <p>Read More</p>
                         </a>
                     </div>
-                    @endif
+                    {{-- @endif --}}
                 </div>
             </div>
         </div>

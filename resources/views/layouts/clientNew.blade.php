@@ -42,8 +42,8 @@
                 <ul class="menuItems">
                     <li><a href='{{ route('landing') }}#home' data-item='Home'>Home</a></li>
                     <li><a href='{{ route('landing') }}#event' data-item='Event'>Event</a></li>
-                    <li><a href='{{ route('landing') }}' data-item='Merchandise'>Merchandise</a></li>
-                    <li><a href='{{ route('landing') }}#' data-item='Sponsorship'>Sponsorship</a></li>
+                    <li><a href='#' data-item='Merchandise'>Merchandise</a></li>
+                    <li><a href='#' data-item='Sponsorship'>Sponsorship</a></li>
                     <li><a href='{{ route('mainboard') }}#' data-item='About'>About</a></li>
                 </ul>
                 <!-- Kalo belom login -->
@@ -116,10 +116,10 @@
                         <a class="menu__link" href="{{ route('landing') }}#event">Event</a>
                     </li>
                     <li class="menu__item">
-                        <a class="menu__link" href="{{ route('landing') }}#0">Merchandise</a>
+                        <a class="menu__link" href="#">Merchandise</a>
                     </li>
                     <li class="menu__item">
-                        <a class="menu__link" href="{{ route('landing') }}#0">Contact Us</a>
+                        <a class="menu__link" href="#">Sponsorship</a>
                     </li>
                     <li class="menu__item">
                         <a class="menu__link" href="{{ route('mainboard') }}#0">About</a>

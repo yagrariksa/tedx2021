@@ -64,7 +64,7 @@
         </div>
         <div class="event">
             <h2>Call for Student Speaker</h2>
-            <a href="" class="ic-read-more">
+            <a href="#" class="ic-read-more">
                 <img src="{{ asset('assets/img/revamp/ic-cfs.png') }}" alt="">
                 <span></span>
                 <p>Read More</p>
@@ -81,7 +81,7 @@
             <hr>
             <h3>An impact still can be made regardless of how people perceive the changes they have created.
                 Each impact of the deeds will eventually spread and...</h3>
-            <a href="" class="button submit">Read more</a>
+            <a href="{{route('mainboard')}}" class="button submit">Read more</a>
         </div>
         <div class="circle" style="background-image: url({{ asset('assets/img/revamp/ripple-desc.jpg') }});"></div>
     </div>
