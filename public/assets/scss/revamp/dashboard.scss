@@ -8,14 +8,15 @@
     flex-direction: column;
     gap: 2.5rem;
 }
+.header, .participated, .others, .name {
+    > h2 {
+        margin: 0;
+        font-size: 24px;
+        font-weight: 700;
 
-h2 {
-    margin: 0;
-    font-size: 24px;
-    font-weight: 700;
-
-    &.wb {
-        font-weight: 500;
+        &.wb {
+            font-weight: 500;
+        }
     }
 }
 
@@ -36,22 +37,22 @@ h2 {
         opacity: 0;
         visibility: hidden;
         transform-origin: top;
-        animation-fill-mode: forwards; 
+        animation-fill-mode: forwards;
         transform: scale(0.9, 0.7) translateY(-20px);
-        display: block; 
+        display: block;
         transition: all 500ms ease;
-        
+
         .dropdown-item {
             color: $batman;
-            
+
             &:hover {
                 background-color: #008f9026;
             }
         }
     }
-        
+
     .show.dropdown-menu {
-        transform: scale(1, 1) translateY(34px) !important;  
+        transform: scale(1, 1) translateY(34px) !important;
         opacity: 1;
         visibility: visible;
     }
@@ -70,10 +71,10 @@ h2 {
         // align-items: center;
         border-radius: 10px;
         border: 1px solid $white;
-        background-color: $batman;
+        background-color: #0101014D;
         background-blend-mode: hue;
     }
-    
+
     .name {
         min-width: 250px;
         padding: 3rem 0;
@@ -86,6 +87,11 @@ h2 {
         background-color: rgba(163, 189, 190, 0.3);
         background-blend-mode: hard-light;
     }
+
+    p {
+        font-size: 18px;
+        line-height: 28px;
+    }
 }
 
 .status {
@@ -97,7 +103,7 @@ h2 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
+
     .desc {
         margin-bottom: 1rem;
         width: 80%;
@@ -118,9 +124,9 @@ h2 {
             display: flex;
             flex-direction: column;
             align-items: flex-end;
-    
+
             p {
-                font-weight: 600;
+                font-weight: 500;
             }
 
             h2 {
@@ -190,14 +196,23 @@ h2 {
 
 
 
+@media screen and (max-width: 1200px) {
+    .participated p {
+        font-size: 14px;
+        line-height: 20px;
+    }
+}
+
 @media screen and (max-width: 992px) {
     .content {
         margin-top: 2.5rem;
         gap: 1.5rem;
     }
 
-    h2 {
-        font-size: 18px;
+    .header, .participated, .others, .name {
+        h2 {
+            font-size: 18px;
+        }
     }
 
     .header {
@@ -224,6 +239,10 @@ h2 {
             border-right: none;
             border-bottom: 1px solid $white;
         }
+
+        p {
+        text-align: center;
+        }
     }
 
     .status {
@@ -235,6 +254,10 @@ h2 {
             hr {
                 width: 50%;
                 align-self: center;
+            }
+
+            > div > h2 {
+                text-align: center;
             }
         }
 

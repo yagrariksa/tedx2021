@@ -15,12 +15,6 @@
             dituangkan dalam bentuk tulisan. Pada tahun ini, Call for Essay TEDx Universitas Airlangga
             mengangkat tema yakni <span class="text-green">Ripple</span> <span
                 class="text-red">Effect.</span></h3>
-                <form action="{{ route('account.essay.register') }}" method="post">
-                    @csrf
-                    <input type="text" required placeholder="essay title" name="title">
-                    <input type="text" required placeholder="link gdrive" name="essaylink">
-                    <button type="submit">REGIST NOW</button>
-                </form>
         <div class="footer">
             <a href="" class="button secondary">Booklet</a>
             {{-- <a href="" class="button submit">Join Event</a> --}}
@@ -37,7 +31,7 @@
                 </div>
                 <h3 class="date">-</h3>
                 <div class="date-month">
-                    <h3 class="date">11</h3>
+                    <h3 class="date">19</h3>
                     <h5>Sep</h5>
                 </div>
             </div>
@@ -45,14 +39,14 @@
         <div class="tl-card">
             <h4>Close Registration</h4>
             <div class="date-month">
-                <h3 class="date">16</h3>
+                <h3 class="date">19</h3>
                 <h5>Sep</h5>
             </div>
         </div>
         <div class="tl-card now">
             <h3>Winner Announcement</h3>
             <div class="date-month">
-                <h3 class="date">23</h3>
+                <h3 class="date">25</h3>
                 <h5>Sep</h5>
             </div>
         </div>

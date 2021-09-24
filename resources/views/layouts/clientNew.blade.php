@@ -34,17 +34,17 @@
     <div class="container">
         <!-- Navbar -->
         <!-- Desktop -->
-        <nav>
+        <nav class="nav-lg">
             <div class="container">
                 {{-- <a href="{{ route('landing') }}"> --}}
                 <img class="brand" src="{{ asset('assets/img/revamp/white-logo.png') }}" alt="navbar-brand">
                 {{-- </a> --}}
                 <ul class="menuItems">
-                    <li><a href='{{ route('landing') }}' data-item='Home'>Home</a></li>
-                    <li><a href='#' data-item='About'>About</a></li>
-                    <li><a href='#' data-item='Event'>Event</a></li>
-                    <li><a href='#' data-item='Merchandise'>Merchandise</a></li>
-                    <li><a href='#' data-item='Sponsorship'>Sponsorship</a></li>
+                    <li><a href='{{ route('landing') }}#home' data-item='Home'>Home</a></li>
+                    <li><a href='{{ route('landing') }}#event' data-item='Event'>Event</a></li>
+                    <li><a href='{{ route('landing') }}' data-item='Merchandise'>Merchandise</a></li>
+                    <li><a href='{{ route('landing') }}#' data-item='Sponsorship'>Sponsorship</a></li>
+                    <li><a href='{{ route('mainboard') }}#' data-item='About'>About</a></li>
                 </ul>
                 <!-- Kalo belom login -->
                 <!-- <a href="login.html" id="login" class="button secondary">Login</a> -->
@@ -58,17 +58,85 @@
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="account">
                             <li><a class="dropdown-item" href="{{ route('account.dashboard') }}">Dashboard</a></li>
-                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            {{-- <li><a class="dropdown-item" href="#">Profile</a></li> --}}
                             <li><a class="dropdown-item" href="{{ route('account.logout') }}">Logout</a></li>
                         </ul>
                     </div>
+                @else
+                <div class="dropdown"><a href="{{ route('account.login') }}" class="button">Login</a></div>
                 @endauth
             </div>
         </nav>
 
         <!-- Mobile -->
-        <div class="nav-sm">
-            <!-- BELOM HEHE -->
+        <div class="nav-toggle">
+            <input type="checkbox" id="main-navigation-toggle" class="btn btn--close" title="Toggle main navigation" />
+            <label for="main-navigation-toggle">
+                <span></span>
+            </label>
+
+            <!-- Navbar Mobile -->
+            <nav id="main-navigation" class="nav-sm">
+                <ul class="menu">
+                    @auth
+
+                    <!-- KALO UDA LOGIN -->
+                    {{-- <li class="menu__item" style="margin-bottom: 1rem; display: flex; justify-content: center;">
+                        <button class="dropdown-toggle" type="button" id="account" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            <img src="assets/img/user.svg" alt="profile">
+                            <p>Nama user</p>
+                        </button>
+                        <ul class="submenu">
+                            <li class="menu__item">
+                                <a class="menu__link" href="#0">Dashboard</a>
+                            </li>
+                            <li class="menu__item">
+                                <a class="menu__link" href="#0">Profile</a>
+                            </li>
+                            <li class="menu__item">
+                                <a class="menu__link" href="#0">lalala</a>
+                            </li>
+                        </ul>
+                    </li> --}}
+                    <li class="menu__item">
+                        <a class="menu__link" href="{{ route('account.dashboard') }}#0">Dashboard</a>
+                    </li>
+                    <li class="menu__item">
+                        <a class="menu__link" href="{{ route('account.logout') }}">Logout</a>
+                    </li>
+                    <hr>
+                    @endauth
+
+                    <!-- GENERAL -->
+                    <li class="menu__item">
+                        <a class="menu__link" href="{{ route('landing') }}#home">Home</a>
+                    </li>
+                    <li class="menu__item">
+                        <a class="menu__link" href="{{ route('landing') }}#event">Event</a>
+                    </li>
+                    <li class="menu__item">
+                        <a class="menu__link" href="{{ route('landing') }}#0">Merchandise</a>
+                    </li>
+                    <li class="menu__item">
+                        <a class="menu__link" href="{{ route('landing') }}#0">Contact Us</a>
+                    </li>
+                    <li class="menu__item">
+                        <a class="menu__link" href="{{ route('mainboard') }}#0">About</a>
+                    </li>
+
+                    <!-- BELOM LOGIN -->
+                    @auth
+                    @else
+                    <hr>
+                    <li class="menu__item"
+                        style="margin-top: 1rem; display: flex; align-items: center; justify-content: center;">
+                        <a class="menu__link button secondary" href="{{ route('account.login') }}">Login</a>
+                    </li>
+                    @endauth
+                </ul>
+            </nav>
+            <!-- Navbar Mobile End -->
         </div>
         <!-- Navbar End -->
 
@@ -87,15 +155,15 @@
                         <h3>Follow Us</h3>
                         <!-- link ke sosmed -->
                         <div class="apps">
-                            <a href="" target="_blank" rel="noopener noreferrer" class=" btn-app"><img
+                            <a href="" target="_blank" rel="noopener noreferrer" class="insta btn-app"><img
                                     src="{{ asset('assets/img/revamp/ic-insta.svg') }}" alt=""></a>
-                            <a href="" target="_blank" rel="noopener noreferrer" class=" btn-app"><img
+                            <a href="" target="_blank" rel="noopener noreferrer" class="youtube btn-app"><img
                                     src="{{ asset('assets/img/revamp/ic-youtube.svg') }}" alt=""></a>
-                            <a href="" target="_blank" rel="noopener noreferrer" class=" btn-app"><img
+                            <a href="" target="_blank" rel="noopener noreferrer" class="linkedin btn-app"><img
                                     src="{{ asset('assets/img/revamp/ic-linkedin.svg') }}" alt=""></a>
-                            <a href="" target="_blank" rel="noopener noreferrer" class=" btn-app"><img
+                            <a href="" target="_blank" rel="noopener noreferrer" class="line btn-app"><img
                                     src="{{ asset('assets/img/revamp/ic-line.svg') }}" alt=""></a>
-                            <a href="" target="_blank" rel="noopener noreferrer" class=" btn-app"><img
+                            <a href="" target="_blank" rel="noopener noreferrer" class="tiktok btn-app"><img
                                     src="{{ asset('assets/img/revamp/ic-tiktok.svg') }}" alt=""></a>
                         </div>
                     </div>

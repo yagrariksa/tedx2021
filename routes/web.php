@@ -48,6 +48,9 @@ Route::prefix('account')->group(function () {
         });
     });
 });
+Route::get('/about', function () {
+    return view('mainboard');
+})->name('mainboard');
 Route::get('/essay', [CE::class, 'branding'])->name('essay.branding');
 Route::get('/speaker', [DS::class, 'branding'])->name('speaker.branding');
 

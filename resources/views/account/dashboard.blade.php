@@ -41,7 +41,7 @@
                         <p>{{ Auth::user()->name }}</p>
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="account">
-                        <li><a class="dropdown-item" href="{{ route('landing') }}">Landing Page</a></li>
+                        <li><a class="dropdown-item" href="{{ route('landing') }}#home">Home</a></li>
                         <li><a class="dropdown-item" href="{{ route('account.logout') }}">Log out</a></li>
                     </ul>
                 </div>

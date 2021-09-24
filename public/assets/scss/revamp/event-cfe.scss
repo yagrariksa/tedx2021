@@ -24,6 +24,11 @@
         align-items: center;
         gap: 1rem;
 
+        h3 {
+            margin: 0;
+            text-align: justify;
+        }
+
         &::before, &::after {
             content: "";
             z-index: -1;
@@ -41,13 +46,14 @@
         }
 
         &::after {
-            top: 3rem;
-            left: 3rem;
+            top: 2.5rem;
+            left: 2.5rem;
         }
     }
 
     .footer {
         height: auto;
+        margin-top: 2rem;
         display: flex;
         align-items: center;
         gap: 2rem;
@@ -74,7 +80,7 @@
         background-color: rgba(99, 99, 99, 0.5);
 
         &.now {
-            background-color: $prime-green;
+            background-color: rgba(12, 83, 84, 0.8);
         }
     }
 
@@ -237,6 +243,18 @@
     .prizes {
         .prize-container {
             flex-direction: column;
+
+            .pertama {
+                order: 1;
+            }
+
+            .kedua {
+                order: 2;
+            }
+
+            .ketiga {
+                order: 3;
+            }
         }
 
         .prize-card {
@@ -255,10 +273,11 @@
     .header .description {
         max-width: 90%;
         padding: 2rem;
+        gap: .5rem;
 
         &::after {
-            top: 1.5rem;
-            left: 1.5rem;
+            top: 1rem;
+            left: 1rem;
         }
     }
 }

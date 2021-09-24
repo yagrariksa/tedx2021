@@ -7,7 +7,7 @@
 @endsection
 
 @section('content')
-<div class="heading">
+<div class="heading" id="home">
     <div class="heading-body">
         <div class="x-container">
             <img class="x" src="{{ asset('assets/img/revamp/x.svg') }}" alt="">
@@ -51,21 +51,21 @@
 </div>
 
 <!-- Eventsssss -->
-<div class="events">
+<div class="events" id="event">
     <h1>Events</h1>
     <div class="event-list">
         <div class="event">
             <h2>Call for Essay</h2>
             <a href="{{ route('essay.branding') }}" class="ic-read-more">
-                <img src="{{ asset('assets/img/revamp/ic-cfe.svg') }}" alt="">
+                <img src="{{ asset('assets/img/revamp/ic-cfe.png') }}" alt="">
                 <span></span>
                 <p>Read More</p>
             </a>
         </div>
         <div class="event">
-            <h2>Call for Speaker Student</h2>
+            <h2>Call for Student Speaker</h2>
             <a href="" class="ic-read-more">
-                <img src="{{ asset('assets/img/revamp/ic-cfe.svg') }}" alt="">
+                <img src="{{ asset('assets/img/revamp/ic-cfs.png') }}" alt="">
                 <span></span>
                 <p>Read More</p>
             </a>

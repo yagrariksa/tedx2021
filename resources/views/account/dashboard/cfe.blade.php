@@ -3,7 +3,7 @@
     @if (Auth::user()->essay)
     <div class="main-card">
         <div class="name">
-            <img src="{{ asset('assets/img/revamp/ic-cfe.svg') }}" alt="">
+            <img style="width: 51px" src="{{ asset('assets/img/revamp/ic-cfe.png') }}" alt="">
             <h2>Call for Essay</h2>
         </div>
         <!-- Unpaid -->

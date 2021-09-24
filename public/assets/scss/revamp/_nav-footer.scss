@@ -1,4 +1,4 @@
-nav {
+.nav-lg {
     z-index: 999;
     padding: 2rem 0 1.5rem 0;
     width: 100%;
@@ -72,10 +72,6 @@ nav {
         right: 0;
     }
 
-    #account {
-        @include account();
-    }
-
     .dropdown-menu {
         padding: .5rem;
         top: 0;
@@ -105,7 +101,11 @@ nav {
 
 }
 
-.nav-sm {
+#account {
+    @include account();
+}
+
+.nav-sm, .nav-toggle {
     display: none;
 }
 
@@ -143,16 +143,11 @@ footer {
             display: flex;
             flex-wrap: nowrap;
             gap: 14px;
-
-            a:hover {
-                transform: scale(1.1);
-            }
         }
 
         .btn-app {
             width: 50px;
             height: 50px;
-            padding: auto;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -162,6 +157,10 @@ footer {
             img {
                 width: 24px;
                 height: 24px;
+            }
+
+            &:hover {
+                background-color: white;
             }
         }
 
@@ -190,12 +189,291 @@ footer {
 
 
 @media screen and (max-width: 992px) {
-    nav {
+    .nav-lg {
         display: none;
     }
 
-    .nav-sm {
+    .nav-toggle {
+        position: fixed;
+        top: 1.5rem;
+        right: 1.5rem;
         display: unset;
+        z-index: 9;
+    }
+
+    #main-navigation-toggle {
+        opacity: 0;
+        position: fixed;
+        top: -100%;
+
+        ~ label {
+            cursor: pointer;
+            position: fixed;
+            right: 1rem;
+            top: 1rem;
+            z-index: 100;
+
+            span {
+                display: block;
+                height: 2rem;
+                padding: 0.5rem;
+                position: relative;
+                transition: transform calc(150ms * 3) cubic-bezier(0.215, 0.61, 0.355, 1);
+                width: 2rem;
+
+                &::before,
+                &::after {
+                    background-color: $white;
+                    bottom: 0;
+                    content: '';
+                    height: 4px;
+                    left: 0;
+                    margin: auto;
+                    position: absolute;
+                    right: 0;
+                    transition: transform calc(150ms * 3) cubic-bezier(0.215, 0.61, 0.355, 1);
+                    top: 0;
+                    width: calc(100% - 1rem);
+                }
+
+                &::before {
+                    transform: rotate(0) translateY(-100%);
+                }
+
+                &::after {
+                    transform: rotate(0) translateY(100%);
+                }
+            }
+        }
+    }
+
+    #main-navigation-toggle:checked ~ label {
+        span {
+            transform: rotate(1turn);
+
+            &::before {
+                transform: rotate(45deg);
+            }
+
+            &::after {
+                transform: rotate(-45deg);
+            }
+        }
+    }
+
+    #main-navigation-toggle:checked ~ .nav-sm {
+        left: 0;
+        transition: transform 0s;
+
+        &::before,
+        &::after {
+            transform: translateX(0);
+            transition-delay: 0s;
+        }
+
+        &::after {
+            transition-delay: calc(150ms / 2);
+        }
+
+        .menu__item {
+            opacity: 1;
+            transform: translateX(0);
+            transition:
+                opacity calc(150ms * 2) cubic-bezier(0.215, 0.61, 0.355, 1),
+                transform calc(150ms * 2) cubic-bezier(0.215, 0.61, 0.355, 1);
+        }
+
+        @for $i from 1 through 5 {
+            .menu__item:nth-child(#{$i}) {
+                transition-delay: calc(150ms * 2 * (#{$i} * 0.25));
+                z-index: $i * -1;
+            }
+        }
+    }
+
+    .nav-sm {
+        align-items: center;
+        display: flex;
+        height: 100%;
+        justify-content: center;
+        position: fixed;
+        left: -100%;
+        top: 0;
+        transition:
+          left 0s calc(150ms * 2),
+          transform 0s calc(150ms * 2);
+        width: 100%;
+
+        &::before,
+        &::after {
+            content: '';
+            background-color: $batman;
+            height: 50%;
+            left: 0;
+            position: absolute;
+            transform: translateX(-110%);
+            transform-origin: 0 50%;
+            transition: transform calc(150ms * 2) 150ms cubic-bezier(0.215, 0.61, 0.355, 1);
+            width: 100%;
+            z-index: -100;
+        }
+
+        &::before {
+            top: 0;
+        }
+
+        &::after {
+            bottom: 0;
+        }
+
+        .menu__item {
+            opacity: 0;
+            transform: translateX(-1rem);
+            transition:
+                opacity 150ms cubic-bezier(0.215, 0.61, 0.355, 1),
+                transform 150ms cubic-bezier(0.215, 0.61, 0.355, 1);
+        }
+    }
+
+    .menu {
+        position: relative;
+        text-align: center;
+        z-index: 1;
+    }
+
+    .submenu {
+        margin-top: 1rem;
+        padding: 0;
+        left: 0;
+        opacity: 0;
+        position: absolute;
+        transform: translateY(-10%);
+        top: 100%;
+        width: 100%;
+        visibility: hidden;
+        z-index: 2;
+
+        .menu__item {
+            width: 100%;
+            height: 30px;
+        }
+
+        .menu__link {
+            color: $white;
+            font-size: 18px;
+            line-height: 26px;
+            font-weight: 400;
+            text-shadow:
+                1px 1px 0 $darker-red,
+                2px 2px 0 $darker-red;
+
+            &::before,
+            &::after {
+                display: none;
+            }
+        }
+    }
+
+    .menu__item {
+        display: block;
+        position: relative;
+
+        &:hover .menu__link {
+            &::before,
+            &::after {
+                animation: blink 1s 150ms steps(1, end) forwards infinite;
+                transform: translateX(calc(100% - 0.5rem));
+                transition-duration: calc(150ms * 3);
+            }
+
+            &::after {
+                transition-delay: calc(150ms / 2);
+            }
+        }
+
+        &:hover .submenu {
+            opacity: 1;
+            transform: translateY(0);
+            transition:
+                transform calc(150ms * 2) calc(150ms * 3) cubic-bezier(0.215, 0.61, 0.355, 1),
+                opacity calc(150ms * 2) calc(150ms * 3) cubic-bezier(0.215, 0.61, 0.355, 1),
+                visibility 0s calc(150ms * 3);
+            visibility: visible;
+        }
+    }
+
+    .menu__link {
+        color: $white;
+        display: inline-block;
+        font-size: 24px;
+        line-height: 28px;
+        font-weight: 500;
+        overflow: hidden;
+        padding: 0.5rem 1rem 0.125rem;
+        position: relative;
+        text-decoration: none;
+        transition:
+        color 150ms cubic-bezier(0.215, 0.61, 0.355, 1),
+        opacity 150ms cubic-bezier(0.215, 0.61, 0.355, 1),
+        transform 150ms cubic-bezier(0.215, 0.61, 0.355, 1);
+        z-index: 1;
+
+        &::before,
+        &::after {
+            content: '';
+            background-color: $prime-red;
+            height: 50%;
+            left: 0;
+            position: absolute;
+            transform: translateX(-110%);
+            transform-origin: 0 50%;
+            transition: transform 0s cubic-bezier(0.215, 0.61, 0.355, 1);
+            width: 100%;
+            z-index: -1;
+        }
+
+        &::before {
+            top: 0;
+        }
+
+        &::after {
+            bottom: 0;
+        }
+    }
+
+    .menu:not(:focus-within):not(:hover) .menu__item {
+        .menu__link {
+            opacity: 1;
+            transform: translate(0, 0);
+        }
+    }
+
+    .menu__item {
+        .menu__link {
+            opacity: 0.25;
+            transition-duration: calc(150ms * 3);
+            transform: translate(0, calc(30% * -1));
+        }
+
+        .submenu .menu__link {
+            opacity: 1;
+        }
+
+        &:hover > .menu__link {
+            color: $new-red;
+            opacity: 1;
+            transform: translate(0, 0);
+
+            &:hover {
+                color: $new-red;
+                transition-delay: 0s;
+            }
+        }
+
+        &:hover ~ .menu__item > .menu__link {
+            transition-duration: calc(150ms * 3);
+            transform: translate(0, 30%);
+        }
     }
 
     footer {
@@ -244,4 +522,8 @@ footer {
             }
         }
     }
+}
+
+@keyframes blink {
+    50%, 100% { opacity: 0 }
 }
