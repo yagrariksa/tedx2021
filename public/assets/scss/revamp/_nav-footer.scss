@@ -283,7 +283,7 @@ footer {
                 transform calc(150ms * 2) cubic-bezier(0.215, 0.61, 0.355, 1);
         }
 
-        @for $i from 1 through 5 {
+        @for $i from 1 through 10 {
             .menu__item:nth-child(#{$i}) {
                 transition-delay: calc(150ms * 2 * (#{$i} * 0.25));
                 z-index: $i * -1;

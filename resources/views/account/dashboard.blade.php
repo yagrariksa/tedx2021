@@ -80,7 +80,7 @@
                     <div class="event">
                         <h3>Call for Essay</h3>
                         <a href="{{ route('essay.branding') }}" class="ic-read-more">
-                            <img src="{{ asset('assets/img/revamp/ic-cfe.png') }}" alt="">
+                            <img style="background: white" src="{{ asset('assets/img/revamp/ic-cfe.png') }}" alt="">
                             <span></span>
                             <p>Read More</p>
                         </a>
@@ -90,7 +90,7 @@
                     <div class="event">
                         <h3>Call for Speaker Student</h3>
                         <a href="" class="ic-read-more">
-                            <img src="{{ asset('assets/img/revamp/ic-cfe.png') }}" alt="">
+                            <img style="background: white" src="{{ asset('assets/img/revamp/ic-cfs.png') }}" alt="">
                             <span></span>
                             <p>Read More</p>
                         </a>
