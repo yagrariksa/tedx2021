@@ -134,6 +134,36 @@ class GeneralController extends Controller
         ], 200);
     }
 
+    public function checkaccount(Request $request)
+    {
+        if (!$request->query('email')) {
+            return response()->json([
+                'message' => 'email are required',
+            ], 400);
+        }
+
+        $user = User::where('email', $request->query('email'))->first();
+
+        if (!$user) {
+            return response()->json([
+                'message' => 'your email hasn\'t register yet',
+                'code'  => 1
+            ], 200);
+        }
+
+        if (!$user->usepass) {
+            return response()->json([
+                'message' => $user->name,
+                'code'  => 2
+            ], 200);
+        } else {
+            return response()->json([
+                'message' => $user->name,
+                'code'  => 3
+            ], 200);
+        }
+    }
+
     public function infouser(Request $request)
     {
         if (!$this->verifyAdmin($request->header('Authorization'))) {

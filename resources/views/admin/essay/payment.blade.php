@@ -17,7 +17,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h4>Payment of All Participant</h4>
+                    <h4>All Participant</h4>
                     <div class="card-header-form">
                         {{-- <form>
                     <div class="input-group">
@@ -38,7 +38,8 @@
                             <option>50</option>
                         </select>
                         <label class="selectgroup-item m-0">
-                            <input type="checkbox" name="value" id="input-filter0" value="Unpaid" class="selectgroup-input" checked>
+                            <input type="checkbox" name="value" id="input-filter0" value="Unpaid" class="selectgroup-input"
+                                checked>
                             <span class="selectgroup-button">Unpaid</span>
                         </label>
                         <label class="selectgroup-item m-0">
@@ -70,7 +71,7 @@
                                 </tr>
                             </thead>
                             <tbody id="tbody">
-                               
+
                             </tbody>
                         </table>
                     </div>
@@ -111,9 +112,9 @@
                 </div>
                 <div class="modal-body">
                     <div class="">
-                        <img src="#"
-                            onclick="window.open(document.getElementById('img-payment').getAttribute('src'),'Image')"
-                            alt="click show" id="img-payment" class="img-fluid" style="border-radius: 4px">
+                        <img src=" #"
+                        onclick="window.open(document.getElementById('img-payment').getAttribute('src'),'Image')"
+                        alt="click show" id="img-payment" class="img-fluid" style="border-radius: 4px">
                         <label for="">Klik foto untuk memperbesar</label>
                         <form action="#" method="post" style="display: none" id="form-ubah">
                             @csrf
@@ -161,301 +162,317 @@
                     <div class="">
                         {{-- <form action="#" method="post" style="display: none" id="form-ubah"> --}}
                             {{-- @csrf --}}
-                            <div class="form-group">
-                                <label>Name</label>
-                                <p id="info-name"
-                                    class="">tes coba yes</p>
+                            <div class="
+                        form-group">
+                        <label>Name</label>
+                        <p id="info-name"
+                            class="">tes coba yes</p>
                             </div>
-                            <div class="form-group">
-                                <label>Age</label>
-                                <p id="info-age"
-                                    class="">tes coba yes</p>
+                            <div class="
+                            form-group">
+                            <label>Age</label>
+                        <p id="info-age"
+                            class="">tes coba yes</p>
                             </div>
-                            <div class="form-group">
-                                <label>Phone Number</label>
-                                <p id="info-number"
-                                    class="">tes coba yes</p>
+                            <div class="
+                            form-group">
+                            <label>Phone Number</label>
+                        <p id="info-number"
+                            class="">tes coba yes</p>
                             </div>
-                            <div class="form-group">
-                                <label>Email</label>
-                                <p id="info-email"
-                                    class="">tes coba yes</p>
+                            <div class="
+                            form-group">
+                            <label>Email</label>
+                        <p id="info-email"
+                            class="">tes coba yes</p>
                             </div>
-                            <div class="form-group">
-                                <label>Address</label>
-                                <p id="info-address"
-                                    class="">tes coba yes</p>
+                            <div class="
+                            form-group">
+                            <label>Address</label>
+                        <p id="info-address"
+                            class="">tes coba yes</p>
                             </div>
-                            <div class="form-group">
-                                <label>Institute</label>
-                                <p id="info-institute"
-                                    class="">tes coba yes</p>
+                            <div class="
+                            form-group">
+                            <label>Institute</label>
+                        <p id="info-institute"
+                            class="">tes coba yes</p>
                             </div>
-                            <div class="form-group">
-                                <label>Essay Title</label>
-                                <p id="info-essay"
-                                    class="">tes coba yes</p>
+                            <div class="
+                            form-group">
+                            <label>Essay Title</label>
+                        <p id="info-essay"
+                            class="">tes coba yes</p>
                             </div>
-                            <div class="form-group">
-                                <label>Google Drive Link</label>
-                                <p id="info-link"
-                                    class="">tes coba yes</p>
+                            <div class="
+                            form-group">
+                            <label>Google Drive Link</label>
+                        <p id="info-link"
+                            class="">tes coba yes</p>
                             </div>
                         {{-- </form> --}}
                     </div>
                 </div>
-                <div class="modal-footer bg-whitesmoke br">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <div class="
+                            modal-footer bg-whitesmoke br">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-@endsection
+    @endsection
 
-@section('js')
-    <script src="{{ asset('assets/js/page/bootstrap-modal.js') }}"></script>
-    <script src="{{ asset('assets/js/page/components-table.js') }}"></script>
-
-
-    <script>
-        const s = document.querySelector('select#form-input-status');
-        const img = document.querySelector('img#img-payment');
-        const form = document.querySelector('form#form-ubah');
-        // const btnCancelForm = document.querySelector('button#cancel-form');
-        const btnTrigger = document.querySelectorAll('button.form-trigger');
-        const infoModal = document.querySelector('#infoModal');
-
-        s.addEventListener('input', () => {
-            let inputreason = document.querySelector('input#input-reason');
-            if (s.value == "5") {
-                inputreason.style.display = 'inline';
-            } else {
-                inputreason.style.display = 'none';
-            }
-        })
-
-        btnTrigger.forEach(btn => {
-            btn.addEventListener('click', () => {
-                form.style.display = 'block';
-                img.setAttribute('src', btn.dataset.src);
-                form.querySelector('input#input-id').value = btn.dataset.id;
-                form.querySelector('input#input-name').value = btn.dataset.name;
-                form.querySelector('input#input-email').value = btn.dataset.email;
-            });
-        });
+    @section('js')
+        <script src="{{ asset('assets/js/page/bootstrap-modal.js') }}"></script>
+        <script src="{{ asset('assets/js/page/components-table.js') }}"></script>
 
 
-        const ipaginate = document.querySelector('#input-item-per-page');
-        const filter0 = document.querySelector('#input-filter0');
-        const filter2 = document.querySelector('#input-filter2');
-        const filter5 = document.querySelector('#input-filter5');
-        const filter6 = document.querySelector('#input-filter6');
+        <script>
+            const s = document.querySelector('select#form-input-status');
+            const img = document.querySelector('img#img-payment');
+            const form = document.querySelector('form#form-ubah');
+            // const btnCancelForm = document.querySelector('button#cancel-form');
+            const btnTrigger = document.querySelectorAll('button.form-trigger');
+            const infoModal = document.querySelector('#infoModal');
 
-        const tableBody = document.querySelector('tbody#tbody');
-        const ulPagination = document.querySelector('ul#ul-pagination');
-
-        const accessToken = "{{Session::get('admin')['token']}}";
-        const changedata = (page = 1) => {
-            let filter = [];
-            if (filter2.checked) {
-                filter.push(2);
-            }
-            if (filter5.checked) {
-                filter.push(6);
-            }
-            if (filter6.checked) {
-                filter.push(5);
-            }
-            let paginate = ipaginate.value
-            let unpaid = filter0.checked
-
-
-            let url = "{{ route('api.essay.payment') }}" + `?nulldata=${unpaid}&paginate=${paginate}`;
-            if (page) {
-                url = url + `&page=${page}`
-            }
-            if (filter != null) {
-                url = url + `&filter=${filter}`
-            }
-            console.log(url);
-
-            try {
-                fetch(url, {
-                    headers: {
-                        'Authorization': accessToken
-                    }
-                })
-                    .then(response => response.json())
-                    .then(data => {
-                        console.log(data.body);
-                        if (typeof(data.body.data == "object")) {
-                            let arr = Object.values(data.body.data);
-                            populateData(arr);
-                        } else {
-                            populateData(data.body.data);
-                        }
-                        populatePagination(data.body.links);
-                    });
-            } catch (error) {
-                console.error('FETCH API ERROR');
-            }
-
-            // console.log(filter);
-            // console.log(paginate);
-            // console.log(unpaid);
-        }
-
-        const populateData = (data) => {
-            tableBody.innerHTML = "";
-            let counter = 1;
-            data.forEach(record => {
-                const tr = document.createElement('tr');
-
-                const tdno = document.createElement('td');
-                tdno.innerHTML = counter;
-                counter++;
-
-                const tdname = document.createElement('td');
-                tdname.innerHTML = record.user.name
-
-                const tdstatus = document.createElement('td');
-                const span = document.createElement('span');
-                span.classList.add('badge');
-
-                const tdbutton = document.createElement('td');
-                const button = document.createElement('button');
-                button.classList.add('btn');
-                button.innerHTML = 'Show/Change Status';
-
-                if (record.payment != null) {
-                    button.classList.add('form-trigger');
-                    button.classList.add('btn-primary');
-                    button.dataset.toggle = "modal";
-                    button.dataset.target = "#exampleModal"
-                    button.dataset.email = record.user.email
-                    button.dataset.name = record.user.name
-                    button.dataset.src = record.payment.img
-                    button.dataset.id = record.payment.id
-                    switch (record.payment.status) {
-                        case "2":
-                            span.classList.add('badge-info');
-                            span.innerHTML = "Menunggu Konfirmasi";
-                            break;
-
-                        case "5":
-                            span.classList.add('badge-danger');
-                            span.innerHTML = "Pembayaran Ditolak";
-                            break;
-                        case "6":
-                            span.classList.add('badge-success');
-                            span.innerHTML = "Pembayaran diterima";
-                            break;
-                        default:
-                            span.classList.add('badge-light');
-                            span.innerHTML = "DEFAULT";
-                            button.setAttribute('disabled', true);
-                            break;
-                    }
+            s.addEventListener('input', () => {
+                let inputreason = document.querySelector('input#input-reason');
+                if (s.value == "5") {
+                    inputreason.style.display = 'inline';
                 } else {
-                    span.classList.add('badge-light');
-                    span.innerHTML = "Belum Bayar";
+                    inputreason.style.display = 'none';
                 }
-                button.addEventListener('click', () => {
+            })
+
+            btnTrigger.forEach(btn => {
+                btn.addEventListener('click', () => {
                     form.style.display = 'block';
-                    img.setAttribute('src', button.dataset.src);
-                    form.querySelector('input#input-id').value = button.dataset.id;
-                    form.querySelector('input#input-name').value = button.dataset.name;
-                    form.querySelector('input#input-email').value = button.dataset.email;
+                    img.setAttribute('src', btn.dataset.src);
+                    form.querySelector('input#input-id').value = btn.dataset.id;
+                    form.querySelector('input#input-name').value = btn.dataset.name;
+                    form.querySelector('input#input-email').value = btn.dataset.email;
                 });
-                tdstatus.appendChild(span);
-                tdbutton.appendChild(button);
-
-                const button2 = document.createElement('button');
-                button2.classList.add('btn');
-                button2.innerHTML = 'Detail Participant';
-                button2.style.marginLeft = '.5rem';
-                button2.classList.add('form-trigger');
-                button2.classList.add('btn-warning');
-                button2.dataset.toggle = "modal";
-                button2.dataset.target = "#infoModal";
-                button2.dataset.email = record.user.email;
-                button2.addEventListener('click', () => {
-                    getUser(record.user.email);
-                })
-                tdbutton.appendChild(button2);
-
-                tr.appendChild(tdno);
-                tr.appendChild(tdname);
-                tr.appendChild(tdstatus);
-                tr.appendChild(tdbutton);
-
-                tableBody.appendChild(tr);
             });
-        }
 
-        const populatePagination = (link) => {
-            ulPagination.innerHTML = '';
-            link.forEach(page => {
-                const li = document.createElement('li');
-                li.classList.add('page-item');
-                page.active ? li.classList.add('active') : null;
-                // li.classList.add(page.active ? 'active' : '');
-                page.url ? null : li.classList.add('disabled');
-                let tagA = document.createElement('a');
-                // tagA.classList.add('page-link');
-                tagA.classList.add('page-link')
-                tagA.innerHTML = page.label
-                // tagA.setAttribute('href', page.url ? page.url : '#');
-                tagA.addEventListener('click', () => {
-                    changedata(page.url[page.url.length - 1]);
-                })
-                li.appendChild(tagA);
-                ulPagination.appendChild(li);
-                // tagA.setAttribute('href', page.url ? page.url : '#');
 
-            });
-        }
+            const ipaginate = document.querySelector('#input-item-per-page');
+            const filter0 = document.querySelector('#input-filter0');
+            const filter2 = document.querySelector('#input-filter2');
+            const filter5 = document.querySelector('#input-filter5');
+            const filter6 = document.querySelector('#input-filter6');
 
-        const getUser = (email) => {
-            let url = "{{ route('api.account.info') }}" + `?email=${email}`;
-            try {
-                fetch(url, {
-                        headers: {
-                            'Authorization': accessToken
-                        }
-                    })
-                    .then(response => response.json())
-                    .then(data => {
-                        // console.log(data.body);
-                        populateModal(data.body);
-                    });
-            } catch (error) {
-                console.error('FETCH API ERROR');
+            const tableBody = document.querySelector('tbody#tbody');
+            const ulPagination = document.querySelector('ul#ul-pagination');
+
+            const accessToken = "{{ Session::get('admin')['token'] }}";
+            const changedata = (page = 1) => {
+                let filter = [];
+                if (filter2.checked) {
+                    filter.push(2);
+                }
+                if (filter5.checked) {
+                    filter.push(6);
+                }
+                if (filter6.checked) {
+                    filter.push(5);
+                }
+                let paginate = ipaginate.value
+                let unpaid = filter0.checked
+
+
+                let url = "{{ route('api.essay.payment') }}" + `?nulldata=${unpaid}&paginate=${paginate}`;
+                if (page) {
+                    url = url + `&page=${page}`
+                }
+                if (filter != null) {
+                    url = url + `&filter=${filter}`
+                }
+                console.log(url);
+
+                try {
+                    fetch(url, {
+                            headers: {
+                                'Authorization': accessToken
+                            }
+                        })
+                        .then(response => response.json())
+                        .then(data => {
+                            console.log(data.body);
+                            if (typeof(data.body.data == "object")) {
+                                let arr = Object.values(data.body.data);
+                                populateData(arr);
+                            } else {
+                                populateData(data.body.data);
+                            }
+                            populatePagination(data.body.links);
+                        });
+                } catch (error) {
+                    console.error('FETCH API ERROR');
+                }
+
+                // console.log(filter);
+                // console.log(paginate);
+                // console.log(unpaid);
             }
-        }
 
-        const populateModal = (data) => {
-            infoModal.querySelector('#info-name').innerHTML = data.name;
-            infoModal.querySelector('#info-age').innerHTML = data.age;
-            infoModal.querySelector('#info-number').innerHTML = data.phone;
-            infoModal.querySelector('#info-email').innerHTML = data.email;
-            infoModal.querySelector('#info-address').innerHTML = data.address;
-            infoModal.querySelector('#info-institute').innerHTML = data.institute;
-            infoModal.querySelector('#info-essay').innerHTML = data.essay.title;
-            infoModal.querySelector('#info-link').innerHTML = data.essay.essaylink;
-            infoModal.querySelector('#info-link').style.color = 'blue';
-            infoModal.querySelector('#info-link').style.cursor = 'pointer';
-            infoModal.querySelector('#info-link').addEventListener('click', () => {
-                window.open(data.essay.essaylink);
-            });
-        }
+            const populateData = (data) => {
+                tableBody.innerHTML = "";
+                let counter = 1;
+                data.forEach(record => {
+                    const tr = document.createElement('tr');
 
-        ipaginate.addEventListener("change", changedata);
-        filter0.addEventListener("change", changedata);
-        filter2.addEventListener("change", changedata);
-        filter5.addEventListener("change", changedata);
-        filter6.addEventListener("change", changedata);
+                    const tdno = document.createElement('td');
+                    tdno.innerHTML = counter;
+                    counter++;
 
-        changedata();
-    </script>
-@endsection
+                    const tdname = document.createElement('td');
+                    tdname.innerHTML = record.user.name
+                    tdname.addEventListener('click', () => {
+                        window.open(record.essaylink)
+                    })
+                    tdname.style.cursor = 'pointer';
+
+                    const tdstatus = document.createElement('td');
+                    const span = document.createElement('span');
+                    span.classList.add('badge');
+
+                    const tdbutton = document.createElement('td');
+                    const button = document.createElement('button');
+                    button.classList.add('btn');
+                    button.innerHTML = 'Show/Change Status';
+
+                    if (record.payment != null) {
+                        button.classList.add('form-trigger');
+                        button.classList.add('btn-primary');
+                        button.dataset.toggle = "modal";
+                        button.dataset.target = "#exampleModal"
+                        button.dataset.email = record.user.email
+                        button.dataset.name = record.user.name
+                        button.dataset.src = record.payment.img
+                        button.dataset.id = record.payment.id
+                        switch (record.payment.status) {
+                            case "2":
+                                span.classList.add('badge-info');
+                                span.innerHTML = "Menunggu Konfirmasi";
+                                break;
+
+                            case "5":
+                                span.classList.add('badge-danger');
+                                span.innerHTML = "Pembayaran Ditolak";
+                                break;
+                            case "6":
+                                span.classList.add('badge-success');
+                                span.innerHTML = "Pembayaran diterima";
+                                break;
+                            default:
+                                span.classList.add('badge-light');
+                                span.innerHTML = "DEFAULT";
+                                button.setAttribute('disabled', true);
+                                break;
+                        }
+                    } else {
+                        span.classList.add('badge-light');
+                        span.innerHTML = "Belum Bayar";
+                    }
+                    button.addEventListener('click', () => {
+                        form.style.display = 'block';
+                        img.setAttribute('src', button.dataset.src);
+                        form.querySelector('input#input-id').value = button.dataset.id;
+                        form.querySelector('input#input-name').value = button.dataset.name;
+                        form.querySelector('input#input-email').value = button.dataset.email;
+                    });
+
+                    tdstatus.appendChild(span);
+                    tdbutton.appendChild(button);
+
+                    // const tdbutton2 = document.createElement('td');
+                    const button2 = document.createElement('button');
+                    button2.classList.add('btn');
+                    button2.innerHTML = 'Detail Participant';
+                    button2.style.marginLeft = '.5rem';
+                    button2.classList.add('form-trigger');
+                    button2.classList.add('btn-warning');
+                    button2.dataset.toggle = "modal";
+                    button2.dataset.target = "#infoModal";
+                    button2.dataset.email = record.user.email;
+                    button2.addEventListener('click', () => {
+                        getUser(record.user.email);
+                    })
+                    tdbutton.appendChild(button2);
+
+                    tr.appendChild(tdno);
+                    tr.appendChild(tdname);
+                    tr.appendChild(tdstatus);
+                    tr.appendChild(tdbutton);
+                    // tr.appendChild(tdbutton2);
+
+                    tableBody.appendChild(tr);
+                });
+            }
+
+            const populatePagination = (link) => {
+                ulPagination.innerHTML = '';
+                link.forEach(page => {
+                    const li = document.createElement('li');
+                    li.classList.add('page-item');
+                    page.active ? li.classList.add('active') : null;
+                    // li.classList.add(page.active ? 'active' : '');
+                    page.url ? null : li.classList.add('disabled');
+                    let tagA = document.createElement('a');
+                    // tagA.classList.add('page-link');
+                    tagA.classList.add('page-link')
+                    tagA.innerHTML = page.label
+                    // tagA.setAttribute('href', page.url ? page.url : '#');
+                    tagA.addEventListener('click', () => {
+                        changedata(page.url[page.url.length - 1]);
+                    })
+                    li.appendChild(tagA);
+                    ulPagination.appendChild(li);
+                    // tagA.setAttribute('href', page.url ? page.url : '#');
+
+                });
+            }
+
+            const getUser = (email) => {
+                let url = "{{ route('api.account.info') }}" + `?email=${email}`;
+                try {
+                    fetch(url, {
+                            headers: {
+                                'Authorization': accessToken
+                            }
+                        })
+                        .then(response => response.json())
+                        .then(data => {
+                            console.log(data.body);
+                            populateModal(data.body);
+                        });
+                } catch (error) {
+                    console.error('FETCH API ERROR');
+                }
+            }
+
+            const populateModal = (data) => {
+                infoModal.querySelector('#info-name').innerHTML = data.name;
+                infoModal.querySelector('#info-age').innerHTML = data.age;
+                infoModal.querySelector('#info-number').innerHTML = data.phone;
+                infoModal.querySelector('#info-email').innerHTML = data.email;
+                infoModal.querySelector('#info-address').innerHTML = data.address;
+                infoModal.querySelector('#info-institute').innerHTML = data.institute;
+                infoModal.querySelector('#info-essay').innerHTML = data.essay.title;
+                infoModal.querySelector('#info-link').innerHTML = data.essay.essaylink;
+                infoModal.querySelector('#info-link').style.color = 'blue';
+                infoModal.querySelector('#info-link').style.cursor = 'pointer';
+                infoModal.querySelector('#info-link').addEventListener('click', () => {
+                    window.open(data.essay.essaylink);
+                });
+            }
+
+            ipaginate.addEventListener("change", changedata);
+            filter0.addEventListener("change", changedata);
+            filter2.addEventListener("change", changedata);
+            filter5.addEventListener("change", changedata);
+            filter6.addEventListener("change", changedata);
+
+            changedata();
+        </script>
+    @endsection
