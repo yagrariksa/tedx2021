@@ -739,6 +739,7 @@ footer .content-footer .copyright h5 {
   overflow: hidden;
   height: 54px;
   padding: 0 54px;
+  width: 600px;
 }
 
 .moving-text .visible:before {

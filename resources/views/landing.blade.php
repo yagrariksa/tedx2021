@@ -89,5 +89,8 @@
 @endsection
 
 @section('script')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.ripples/0.5.3/jquery.ripples.js"
+integrity="sha512-wrQIZRuIVRafoAsp5i2HIXa+3oF+lQqx4eOMAdw+vt7npivM7+D4OMIZPhlkdbV18VxZLkn2QaOii6cr8c1+dA=="
+crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="{{ asset('assets/js/revamp/landing-page.js') }}"></script>
 @endsection

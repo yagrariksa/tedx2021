@@ -428,7 +428,7 @@ const curation =
                 <div class="back-green"></div>
             </div>
             <div class="member2">
-                <img src="` + "{{ asset('assets/img/revamp/mainboard/ubin.png') }}" + `" alt="">
+                <img src="` + "{{ asset('assets/img/revamp/mainboard/arnee.png') }}" + `" alt="">
                 <div class="member-card">
                     <h4>Aarnee</h4>
                     <p>Co-Manager | FISIP 19</p>
