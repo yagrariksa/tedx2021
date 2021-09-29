@@ -1,0 +1,171 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.card {
+  padding: 60px 40px 30px 40px;
+  width: 90vw;
+  max-width: 500px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1.25rem;
+  background-color: rgba(235, 235, 235, 0.3);
+  -webkit-box-shadow: 0 10px 50px 10px rgba(1, 1, 1, 0.5);
+          box-shadow: 0 10px 50px 10px rgba(1, 1, 1, 0.5);
+  border-radius: 3rem;
+  border: 2px solid #EBEBEB;
+}
+
+.card::before {
+  content: '';
+  width: 140%;
+  height: 120%;
+  position: absolute;
+  top: -30%;
+  right: -50%;
+  z-index: -1;
+  background-image: url(../img/login-green.svg);
+  background-size: cover;
+}
+
+.card::after {
+  content: '';
+  width: 140%;
+  height: 120%;
+  position: absolute;
+  bottom: -30%;
+  left: -50%;
+  z-index: -1;
+  background-image: url(../img/login-red.svg);
+  background-size: cover;
+}
+
+.card > p {
+  color: #E5E5E5;
+}
+
+.card > p a {
+  color: #008F90;
+}
+
+.warning {
+  width: 100%;
+  padding: .25rem .8rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  gap: .5rem;
+  border-radius: 50px;
+  background-color: #E34444;
+}
+
+.warning .close {
+  font-size: 16px;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 20px;
+  color: #E34444;
+  background-color: #EBEBEB;
+  opacity: 1;
+  text-shadow: none;
+}
+
+form {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: .7rem;
+}
+
+form div {
+  width: 100%;
+}
+
+form div input {
+  font-size: 16px;
+}
+
+form div label {
+  width: 100%;
+}
+
+form div label h4 {
+  padding-left: 1rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+form .remember-forgot {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 1rem;
+}
+
+form .remember-forgot label {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  color: #E5E5E5;
+  font-size: 16px;
+}
+
+form .remember-forgot a {
+  color: #D7C3A9;
+}
+
+form button {
+  width: 150px;
+}
+/*# sourceMappingURL=user-login.css.map */
