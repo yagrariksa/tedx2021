@@ -61,7 +61,7 @@
     </div>
 </div>
 <div class="prizes">
-    <h2>Prize</h2>
+    <h2>Winner Announcement</h2>
     <div class="prize-container">
         <div class="prize-card kedua">
             <div class="card-front">
@@ -87,7 +87,7 @@
                 </div>
                 <h5 class="desc">There is a famous saying that goes, “All it takes for evil to triumph is
                     for people of good conscience to remain silent.” It is not that...</h5>
-                <button onclick="location.href='https://drive.google.com/file/d/1VA2KhpTc1XJYJNPwZ-qXQK0Ab33PvRTJ/view?usp=sharing'" class="submit">Read Essay</button>
+                <button onclick="window.open('https://drive.google.com/file/d/1VA2KhpTc1XJYJNPwZ-qXQK0Ab33PvRTJ/view?usp=sharing')" class="submit">Read Essay</button>
             </div>
         </div>
         <div class="prize-card pertama">
@@ -113,7 +113,7 @@
                 </div>
                 <h5 class="desc">“We are all a Catalyst of Change. We All Have The Ability to Change and
                     Improve The World Around Us”-Tonya Dalton. This quote always reminds me about...</h5>
-                <button onclick="location.href='https://drive.google.com/file/d/1e3LL-4Y9LBvnKjW9E0Ww2J-PEMcVqmgP/view?usp=sharing'" class="submit">Read Essay</button>
+                <button onclick="window.open('https://drive.google.com/file/d/1e3LL-4Y9LBvnKjW9E0Ww2J-PEMcVqmgP/view?usp=sharing')" class="submit">Read Essay</button>
             </div>
         </div>
         <div class="prize-card ketiga">
@@ -140,7 +140,7 @@
                 <h5 class="desc">Apakah Anda pernah mendengar kutipan: <br>
                     “Never get tired of doing little things for others. Sometimes, those little things
                     occupy the biggest part of their hearts”? Kutipan tersebut...</h5>
-                <button onclick="location.href='https://drive.google.com/file/d/19hQ1Ceh4mFPZA7FAUikhXHm5N0cW3Zac/view?usp=sharing'" class="submit">Read Essay</button>
+                <button onclick="window.open('https://drive.google.com/file/d/19hQ1Ceh4mFPZA7FAUikhXHm5N0cW3Zac/view?usp=sharing')" class="submit">Read Essay</button>
             </div>
         </div>
     </div>
