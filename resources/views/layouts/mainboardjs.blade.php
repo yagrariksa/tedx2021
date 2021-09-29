@@ -1,4 +1,5 @@
-// HEIGHT FOOTER
+<script>
+    // HEIGHT FOOTER
 let footerHeight = $('fieldset.line').parent()[0].offsetHeight;
 $('.content').css({
     'height': footerHeight
@@ -126,28 +127,28 @@ const lna =
                     <p>Manager | FEB 19</p>
                     <div class="footer">
                         <a href="https://www.instagram.com/iqbaldida" target="_blank"
-                            rel="noopener noreferrer"><img src="assets/img/ic-insta-black.svg"
+                            rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-insta-black.svg') }}" + `"
                                 alt=""></a>
                         <a target="_blank" rel="noopener noreferrer" style="opacity: .2;"><img
-                                src="assets/img/ic-twitter-black.svg" alt=""></a>
+                                src="` + "{{ asset('assets/img/revamp/ic-twitter-black.svg') }}" + `" alt=""></a>
                         <div></div>
                         <hr class="red">
                     </div>
                 </div>
-                <img src="assets/img/mainboard/iqbaal.png" alt="">
+                <img src="` + "{{ asset('assets/img/revamp/mainboard/iqbaal.png') }}" + `" alt="">
                 <div class="back-green"></div>
             </div>
             <div class="member2">
-                <img src="assets/img/mainboard/rio.png" alt="">
+                <img src="` + "{{ asset('assets/img/revamp/mainboard/rio.png') }}" + `" alt="">
                 <div class="member-card">
                     <h4>Rio</h4>
                     <p>Co-Manager | FEB 20</p>
                     <div class="footer">
                         <a href="https://www.instagram.com/ahmdsatrio" target="_blank"
-                            rel="noopener noreferrer"><img src="assets/img/ic-insta-black.svg"
+                            rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-insta-black.svg') }}" + `"
                                 alt=""></a>
                         <a href="https://twitter.com/itsamesatrio" target="_blank" rel="noopener noreferrer"><img
-                                src="assets/img/ic-twitter-black.svg" alt=""></a>
+                                src="` + "{{ asset('assets/img/revamp/ic-twitter-black.svg') }}" + `" alt=""></a>
                         <div></div>
                         <hr class="red">
                     </div>
@@ -161,9 +162,9 @@ const lna =
                 <p>Volunteer | FKM 19</p>
                 <div class="footer">
                     <a href="https://www.instagram.com/captain2maxx" target="_blank"
-                        rel="noopener noreferrer"><img src="assets/img/ic-insta-black.svg" alt=""></a>
+                        rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-insta-black.svg') }}" + `" alt=""></a>
                     <a target="_blank" rel="noopener noreferrer" style="opacity: .2;"><img
-                            src="assets/img/ic-twitter-black.svg" alt=""></a>
+                            src="` + "{{ asset('assets/img/revamp/ic-twitter-black.svg') }}" + `" alt=""></a>
                     <div></div>
                     <hr class="green">
                 </div>
@@ -173,9 +174,9 @@ const lna =
                 <p>Volunteer | FEB 19</p>
                 <div class="footer">
                     <a href="https://www.instagram.com/dionisiusvarell" target="_blank"
-                        rel="noopener noreferrer"><img src="assets/img/ic-insta-black.svg" alt=""></a>
+                        rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-insta-black.svg') }}" + `" alt=""></a>
                     <a target="_blank" rel="noopener noreferrer" style="opacity: .2;"><img
-                            src="assets/img/ic-twitter-black.svg" alt=""></a>
+                            src="` + "{{ asset('assets/img/revamp/ic-twitter-black.svg') }}" + `" alt=""></a>
                     <div></div>
                     <hr class="green">
                 </div>
@@ -185,9 +186,9 @@ const lna =
                 <p>Volunteer | FEB 19</p>
                 <div class="footer">
                     <a href="https://www.instagram.com/haniffirza19" target="_blank"
-                        rel="noopener noreferrer"><img src="assets/img/ic-insta-black.svg" alt=""></a>
+                        rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-insta-black.svg') }}" + `" alt=""></a>
                     <a href="https://twitter.com/jamezzrodri" target="_blank" rel="noopener noreferrer"><img
-                            src="assets/img/ic-twitter-black.svg" alt=""></a>
+                            src="` + "{{ asset('assets/img/revamp/ic-twitter-black.svg') }}" + `" alt=""></a>
                     <div></div>
                     <hr class="green">
                 </div>
@@ -197,9 +198,9 @@ const lna =
                 <p>Volunteer | FV 20</p>
                 <div class="footer">
                     <a href="https://www.instagram.com/sabrinafitrip" target="_blank"
-                        rel="noopener noreferrer"><img src="assets/img/ic-insta-black.svg" alt=""></a>
+                        rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-insta-black.svg') }}" + `" alt=""></a>
                     <a target="_blank" rel="noopener noreferrer" style="opacity: .2;"><img
-                            src="assets/img/ic-twitter-black.svg" alt=""></a>
+                            src="` + "{{ asset('assets/img/revamp/ic-twitter-black.svg') }}" + `" alt=""></a>
                     <div></div>
                     <hr class="green">
                 </div>
@@ -209,9 +210,9 @@ const lna =
                 <p>Volunteer | FK 20</p>
                 <div class="footer">
                     <a href="https://www.instagram.com/drick.s" target="_blank"
-                        rel="noopener noreferrer"><img src="assets/img/ic-insta-black.svg" alt=""></a>
+                        rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-insta-black.svg') }}" + `" alt=""></a>
                     <a target="_blank" rel="noopener noreferrer" style="opacity: .2;"><img
-                            src="assets/img/ic-twitter-black.svg" alt=""></a>
+                            src="` + "{{ asset('assets/img/revamp/ic-twitter-black.svg') }}" + `" alt=""></a>
                     <div></div>
                     <hr class="green">
                 </div>
@@ -221,9 +222,9 @@ const lna =
                 <p>Volunteer | FISIP 20</p>
                 <div class="footer">
                     <a href="https://www.instagram.com/davitaf" target="_blank"
-                        rel="noopener noreferrer"><img src="assets/img/ic-insta-black.svg" alt=""></a>
+                        rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-insta-black.svg') }}" + `" alt=""></a>
                     <a href="https://twitter.com/dapitut" target="_blank" rel="noopener noreferrer"><img
-                            src="assets/img/ic-twitter-black.svg" alt=""></a>
+                            src="` + "{{ asset('assets/img/revamp/ic-twitter-black.svg') }}" + `" alt=""></a>
                     <div></div>
                     <hr class="green">
                 </div>
@@ -233,9 +234,9 @@ const lna =
                 <p>Volunteer | FTMM 20</p>
                 <div class="footer">
                     <a href="https://www.instagram.com/othmanlutfii" target="_blank"
-                        rel="noopener noreferrer"><img src="assets/img/ic-insta-black.svg" alt=""></a>
+                        rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-insta-black.svg') }}" + `" alt=""></a>
                     <a href="https://twitter.com/othmanlutfii" target="_blank" rel="noopener noreferrer"><img
-                            src="assets/img/ic-twitter-black.svg" alt=""></a>
+                            src="` + "{{ asset('assets/img/revamp/ic-twitter-black.svg') }}" + `" alt=""></a>
                     <div></div>
                     <hr class="green">
                 </div>
@@ -245,9 +246,9 @@ const lna =
                 <p>Volunteer | FISIP 20</p>
                 <div class="footer">
                     <a href="https://www.instagram.com/rhaimyo" target="_blank"
-                        rel="noopener noreferrer"><img src="assets/img/ic-insta-black.svg" alt=""></a>
+                        rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-insta-black.svg') }}" + `" alt=""></a>
                     <a href="https://twitter.com/rioohosana" target="_blank"
-                        rel="noopener noreferrer"><img src="assets/img/ic-twitter-black.svg" alt=""></a>
+                        rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-twitter-black.svg') }}" + `" alt=""></a>
                     <div></div>
                     <hr class="green">
                 </div>
@@ -264,29 +265,29 @@ const eventDiv =
                     <p>Manager | FEB 19</p>
                     <div class="footer">
                         <a href="https://www.instagram.com/rehanmahdii" target="_blank"
-                            rel="noopener noreferrer"><img src="assets/img/ic-insta-black.svg"
+                            rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-insta-black.svg') }}" + `"
                                 alt=""></a>
                         <a href="https://twitter.com/remaja20taon" target="_blank"
-                            rel="noopener noreferrer"><img src="assets/img/ic-twitter-black.svg"
+                            rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-twitter-black.svg') }}" + `"
                                 alt=""></a>
                         <div></div>
                         <hr class="red">
                     </div>
                 </div>
-                <img src="assets/img/mainboard/rehan.png" alt="">
+                <img src="` + "{{ asset('assets/img/revamp/mainboard/rehan.png') }}" + `" alt="">
                 <div class="back-green"></div>
             </div>
             <div class="member2">
-                <img src="assets/img/mainboard/sekar.png" alt="">
+                <img src="` + "{{ asset('assets/img/revamp/mainboard/sekar.png') }}" + `" alt="">
                 <div class="member-card">
                     <h4>Sekar</h4>
                     <p>Co-Manager | FISIP 19</p>
                     <div class="footer">
                         <a href="https://www.instagram.com/adskr" target="_blank"
-                            rel="noopener noreferrer"><img src="assets/img/ic-insta-black.svg"
+                            rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-insta-black.svg') }}" + `"
                                 alt=""></a>
                         <a href="https://twitter.com/addindasekarr" target="_blank"
-                            rel="noopener noreferrer"><img src="assets/img/ic-twitter-black.svg"
+                            rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-twitter-black.svg') }}" + `"
                                 alt=""></a>
                         <div></div>
                         <hr class="red">
@@ -301,9 +302,9 @@ const eventDiv =
                 <p>Volunteer | FKM 19</p>
                 <div class="footer">
                     <a href="https://www.instagram.com/captain2maxx" target="_blank"
-                        rel="noopener noreferrer"><img src="assets/img/ic-insta-black.svg" alt=""></a>
+                        rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-insta-black.svg') }}" + `" alt=""></a>
                     <a target="_blank" rel="noopener noreferrer" style="opacity: .2;"><img
-                            src="assets/img/ic-twitter-black.svg" alt=""></a>
+                            src="` + "{{ asset('assets/img/revamp/ic-twitter-black.svg') }}" + `" alt=""></a>
                     <div></div>
                     <hr class="green">
                 </div>
@@ -313,9 +314,9 @@ const eventDiv =
                 <p>Volunteer | FISIP 20</p>
                 <div class="footer">
                     <a href="https://www.instagram.com/ichariesaa_" target="_blank"
-                        rel="noopener noreferrer"><img src="assets/img/ic-insta-black.svg" alt=""></a>
+                        rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-insta-black.svg') }}" + `" alt=""></a>
                     <a target="_blank" rel="noopener noreferrer" style="opacity: .2;"><img
-                            src="assets/img/ic-twitter-black.svg" alt=""></a>
+                            src="` + "{{ asset('assets/img/revamp/ic-twitter-black.svg') }}" + `" alt=""></a>
                     <div></div>
                     <hr class="green">
                 </div>
@@ -325,9 +326,9 @@ const eventDiv =
                 <p>Volunteer | FKM 20</p>
                 <div class="footer">
                     <a href="https://www.instagram.com/hani_mutia" target="_blank"
-                        rel="noopener noreferrer"><img src="assets/img/ic-insta-black.svg" alt=""></a>
+                        rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-insta-black.svg') }}" + `" alt=""></a>
                     <a target="_blank" rel="noopener noreferrer" style="opacity: .2;"><img
-                            src="assets/img/ic-twitter-black.svg" alt=""></a>
+                            src="` + "{{ asset('assets/img/revamp/ic-twitter-black.svg') }}" + `" alt=""></a>
                     <div></div>
                     <hr class="green">
                 </div>
@@ -337,9 +338,9 @@ const eventDiv =
                 <p>Volunteer | FK 20</p>
                 <div class="footer">
                     <a href="https://www.instagram.com/florencia.theno" target="_blank"
-                        rel="noopener noreferrer"><img src="assets/img/ic-insta-black.svg" alt=""></a>
+                        rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-insta-black.svg') }}" + `" alt=""></a>
                     <a target="_blank" rel="noopener noreferrer" style="opacity: .2;"><img
-                            src="assets/img/ic-twitter-black.svg" alt=""></a>
+                            src="` + "{{ asset('assets/img/revamp/ic-twitter-black.svg') }}" + `" alt=""></a>
                     <div></div>
                     <hr class="green">
                 </div>
@@ -349,9 +350,9 @@ const eventDiv =
                 <p>Volunteer | FEB 20</p>
                 <div class="footer">
                     <a href="https://www.instagram.com/amaliamalindaa " target="_blank"
-                        rel="noopener noreferrer"><img src="assets/img/ic-insta-black.svg" alt=""></a>
+                        rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-insta-black.svg') }}" + `" alt=""></a>
                     <a href="https://twitter.com/amaliamalinda" target="_blank"
-                        rel="noopener noreferrer"><img src="assets/img/ic-twitter-black.svg" alt=""></a>
+                        rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-twitter-black.svg') }}" + `" alt=""></a>
                     <div></div>
                     <hr class="green">
                 </div>
@@ -361,9 +362,9 @@ const eventDiv =
                 <p>Volunteer | FKM 19</p>
                 <div class="footer">
                     <a href="https://www.instagram.com/gabrielleugene" target="_blank"
-                        rel="noopener noreferrer"><img src="assets/img/ic-insta-black.svg" alt=""></a>
+                        rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-insta-black.svg') }}" + `" alt=""></a>
                     <a href="https://twitter.com/gabrielleugene" target="_blank"
-                        rel="noopener noreferrer"><img src="assets/img/ic-twitter-black.svg" alt=""></a>
+                        rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-twitter-black.svg') }}" + `" alt=""></a>
                     <div></div>
                     <hr class="green">
                 </div>
@@ -373,9 +374,9 @@ const eventDiv =
                 <p>Volunteer | FK 19</p>
                 <div class="footer">
                     <a href="https://www.instagram.com/zulfazakya" target="_blank"
-                        rel="noopener noreferrer"><img src="assets/img/ic-insta-black.svg" alt=""></a>
+                        rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-insta-black.svg') }}" + `" alt=""></a>
                     <a target="_blank" rel="noopener noreferrer" style="opacity: .2;"><img
-                            src="assets/img/ic-twitter-black.svg" alt=""></a>
+                            src="` + "{{ asset('assets/img/revamp/ic-twitter-black.svg') }}" + `" alt=""></a>
                     <div></div>
                     <hr class="green">
                 </div>
@@ -385,8 +386,8 @@ const eventDiv =
                 <p>Volunteer | FKM 20</p>
                 <div class="footer">
                     <a href="https://www.instagram.com/cigicig" target="_blank"
-                        rel="noopener noreferrer"><img src="assets/img/ic-insta-black.svg" alt=""></a>
-                    <a target="_blank" rel="noopener noreferrer" style="opacity: .2;"><img src="assets/img/ic-twitter-black.svg" alt=""></a>
+                        rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-insta-black.svg') }}" + `" alt=""></a>
+                    <a target="_blank" rel="noopener noreferrer" style="opacity: .2;"><img src="` + "{{ asset('assets/img/revamp/ic-twitter-black.svg') }}" + `" alt=""></a>
                     <div></div>
                     <hr class="green">
                 </div>
@@ -396,9 +397,9 @@ const eventDiv =
                 <p>Volunteer | FKM 19</p>
                 <div class="footer">
                     <a href="https://www.instagram.com/jamsazzara" target="_blank"
-                        rel="noopener noreferrer"><img src="assets/img/ic-insta-black.svg" alt=""></a>
+                        rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-insta-black.svg') }}" + `" alt=""></a>
                     <a href="https://twitter.com/jamsazzara" target="_blank"
-                        rel="noopener noreferrer"><img src="assets/img/ic-twitter-black.svg" alt=""></a>
+                        rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-twitter-black.svg') }}" + `" alt=""></a>
                     <div></div>
                     <hr class="green">
                 </div>
@@ -415,28 +416,28 @@ const curation =
                     <p>Manager | FISIP 19</p>
                     <div class="footer">
                         <a href="https://www.instagram.com/rvth.hssntr" target="_blank"
-                            rel="noopener noreferrer"><img src="assets/img/ic-insta-black.svg"
+                            rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-insta-black.svg') }}" + `"
                                 alt=""></a>
                         <a target="_blank" rel="noopener noreferrer" style="opacity: .2;"><img
-                                src="assets/img/ic-twitter-black.svg" alt=""></a>
+                                src="` + "{{ asset('assets/img/revamp/ic-twitter-black.svg') }}" + `" alt=""></a>
                         <div></div>
                         <hr class="red">
                     </div>
                 </div>
-                <img src="assets/img/mainboard/ervitha.png" alt="">
+                <img src="` + "{{ asset('assets/img/revamp/mainboard/ervitha.png') }}" + `" alt="">
                 <div class="back-green"></div>
             </div>
             <div class="member2">
-                <img src="assets/img/mainboard/ubin.png" alt="">
+                <img src="` + "{{ asset('assets/img/revamp/mainboard/ubin.png') }}" + `" alt="">
                 <div class="member-card">
                     <h4>Aarnee</h4>
                     <p>Co-Manager | FISIP 19</p>
                     <div class="footer">
                         <a href="https://www.instagram.com/aarneebaskoro" target="_blank"
-                            rel="noopener noreferrer"><img src="assets/img/ic-insta-black.svg"
+                            rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-insta-black.svg') }}" + `"
                                 alt=""></a>
                         <a target="_blank" rel="noopener noreferrer" style="opacity: .2;"><img
-                                src="assets/img/ic-twitter-black.svg" alt=""></a>
+                                src="` + "{{ asset('assets/img/revamp/ic-twitter-black.svg') }}" + `" alt=""></a>
                         <div></div>
                         <hr class="red">
                     </div>
@@ -450,9 +451,9 @@ const curation =
                 <p>Volunteer | FKM 19</p>
                 <div class="footer">
                     <a href="https://www.instagram.com/@tsabitahsty" target="_blank"
-                        rel="noopener noreferrer"><img src="assets/img/ic-insta-black.svg" alt=""></a>
+                        rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-insta-black.svg') }}" + `" alt=""></a>
                     <a target="_blank" rel="noopener noreferrer" style="opacity: .2;"><img
-                            src="assets/img/ic-twitter-black.svg" alt=""></a>
+                            src="` + "{{ asset('assets/img/revamp/ic-twitter-black.svg') }}" + `" alt=""></a>
                     <div></div>
                     <hr class="green">
                 </div>
@@ -462,9 +463,9 @@ const curation =
                 <p>Volunteer | FEB 20</p>
                 <div class="footer">
                     <a href="https://www.instagram.com/ninaaadr" target="_blank"
-                        rel="noopener noreferrer"><img src="assets/img/ic-insta-black.svg" alt=""></a>
+                        rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-insta-black.svg') }}" + `" alt=""></a>
                     <a href="https://twitter.com/aaddriani" target="_blank"
-                        rel="noopener noreferrer"><img src="assets/img/ic-twitter-black.svg" alt=""></a>
+                        rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-twitter-black.svg') }}" + `" alt=""></a>
                     <div></div>
                     <hr class="green">
                 </div>
@@ -474,9 +475,9 @@ const curation =
                 <p>Volunteer | FISIP 20</p>
                 <div class="footer">
                     <a href="https://www.instagram.com/raymond.tkd" target="_blank"
-                        rel="noopener noreferrer"><img src="assets/img/ic-insta-black.svg" alt=""></a>
+                        rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-insta-black.svg') }}" + `" alt=""></a>
                     <a target="_blank" rel="noopener noreferrer" style="opacity:.2;><img
-                        src="assets/img/ic-twitter-black.svg" alt=""></a>
+                        src="` + "{{ asset('assets/img/revamp/ic-twitter-black.svg') }}" + `" alt=""></a>
                     <div></div>
                     <hr class="green">
                 </div>
@@ -486,9 +487,9 @@ const curation =
                 <p>Volunteer | FEB 20</p>
                 <div class="footer">
                     <a href="https://www.instagram.com/ilham_adipratama" target="_blank"
-                        rel="noopener noreferrer"><img src="assets/img/ic-insta-black.svg" alt=""></a>
+                        rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-insta-black.svg') }}" + `" alt=""></a>
                     <a target="_blank" rel="noopener noreferrer" style="opacity:.2;><img
-                        src="assets/img/ic-twitter-black.svg" alt=""></a>
+                        src="` + "{{ asset('assets/img/revamp/ic-twitter-black.svg') }}" + `" alt=""></a>
                     <div></div>
                     <hr class="green">
                 </div>
@@ -498,9 +499,9 @@ const curation =
                 <p>Volunteer | FEB 20</p>
                 <div class="footer">
                     <a href="https://www.instagram.com/Savinasmayada" target="_blank"
-                        rel="noopener noreferrer"><img src="assets/img/ic-insta-black.svg" alt=""></a>
+                        rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-insta-black.svg') }}" + `" alt=""></a>
                     <a target="_blank" rel="noopener noreferrer" style="opacity:.2;><img
-                        src="assets/img/ic-twitter-black.svg" alt=""></a>
+                        src="` + "{{ asset('assets/img/revamp/ic-twitter-black.svg') }}" + `" alt=""></a>
                     <div></div>
                     <hr class="green">
                 </div>
@@ -510,9 +511,9 @@ const curation =
                 <p>Volunteer | FISIP 20</p>
                 <div class="footer">
                     <a href="https://www.instagram.com/ehren_damanik" target="_blank"
-                        rel="noopener noreferrer"><img src="assets/img/ic-insta-black.svg" alt=""></a>
+                        rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-insta-black.svg') }}" + `" alt=""></a>
                     <a href="https://twitter.com/EDMD01" target="_blank"
-                        rel="noopener noreferrer"><img src="assets/img/ic-twitter-black.svg" alt=""></a>
+                        rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-twitter-black.svg') }}" + `" alt=""></a>
                     <div></div>
                     <hr class="green">
                 </div>
@@ -529,28 +530,28 @@ const sponsor =
                     <p>Manager | FEB 19</p>
                     <div class="footer">
                         <a href="https://www.instagram.com/titosiahaan_" target="_blank"
-                            rel="noopener noreferrer"><img src="assets/img/ic-insta-black.svg"
+                            rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-insta-black.svg') }}" + `"
                                 alt=""></a>
                         <a target="_blank" rel="noopener noreferrer" style="opacity: .2;"><img
-                                src="assets/img/ic-twitter-black.svg" alt=""></a>
+                                src="` + "{{ asset('assets/img/revamp/ic-twitter-black.svg') }}" + `" alt=""></a>
                         <div></div>
                         <hr class="red">
                     </div>
                 </div>
-                <img src="assets/img/mainboard/tito.png" alt="">
+                <img src="` + "{{ asset('assets/img/revamp/mainboard/tito.png') }}" + `" alt="">
                 <div class="back-green"></div>
             </div>
             <div class="member2">
-                <img src="assets/img/mainboard/ajeng.png" alt="">
+                <img src="` + "{{ asset('assets/img/revamp/mainboard/ajeng.png') }}" + `" alt="">
                 <div class="member-card">
                     <h4>Ajeng</h4>
                     <p>Co-Manager | FEB 19</p>
                     <div class="footer">
                         <a href="https://www.instagram.com/Ajengnindia" target="_blank"
-                            rel="noopener noreferrer"><img src="assets/img/ic-insta-black.svg"
+                            rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-insta-black.svg') }}" + `"
                                 alt=""></a>
                         <a href="https://twitter.com/Ajengnindiaa" target="_blank"
-                            rel="noopener noreferrer"><img src="assets/img/ic-twitter-black.svg"
+                            rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-twitter-black.svg') }}" + `"
                                 alt=""></a>
                         <div></div>
                         <hr class="red">
@@ -565,9 +566,9 @@ const sponsor =
                 <p>Volunteer | FPsi 19</p>
                 <div class="footer">
                     <a href="https://www.instagram.com/Kaniaizdi" target="_blank"
-                        rel="noopener noreferrer"><img src="assets/img/ic-insta-black.svg" alt=""></a>
+                        rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-insta-black.svg') }}" + `" alt=""></a>
                     <a target="_blank" rel="noopener noreferrer" style="opacity: .2;"><img
-                            src="assets/img/ic-twitter-black.svg" alt=""></a>
+                            src="` + "{{ asset('assets/img/revamp/ic-twitter-black.svg') }}" + `" alt=""></a>
                     <div></div>
                     <hr class="green">
                 </div>
@@ -577,9 +578,9 @@ const sponsor =
                 <p>Volunteer | FISIP 19</p>
                 <div class="footer">
                     <a href="https://www.instagram.com/diffashaa" target="_blank"
-                        rel="noopener noreferrer"><img src="assets/img/ic-insta-black.svg" alt=""></a>
+                        rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-insta-black.svg') }}" + `" alt=""></a>
                     <a href="https://twitter.com/diffashaa" target="_blank"
-                        rel="noopener noreferrer"><img src="assets/img/ic-twitter-black.svg" alt=""></a>
+                        rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-twitter-black.svg') }}" + `" alt=""></a>
                     <div></div>
                     <hr class="green">
                 </div>
@@ -589,9 +590,9 @@ const sponsor =
                 <p>Volunteer | FPK 19</p>
                 <div class="footer">
                     <a href="https://www.instagram.com/dhenacellia" target="_blank"
-                        rel="noopener noreferrer"><img src="assets/img/ic-insta-black.svg" alt=""></a>
+                        rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-insta-black.svg') }}" + `" alt=""></a>
                     <a target="_blank" rel="noopener noreferrer" style="opacity: .2;"><img
-                            src="assets/img/ic-twitter-black.svg" alt=""></a>
+                            src="` + "{{ asset('assets/img/revamp/ic-twitter-black.svg') }}" + `" alt=""></a>
                     <div></div>
                     <hr class="green">
                 </div>
@@ -601,9 +602,9 @@ const sponsor =
                 <p>Volunteer | FH 19</p>
                 <div class="footer">
                     <a href="https://www.instagram.com/arel_mahardika" target="_blank"
-                        rel="noopener noreferrer"><img src="assets/img/ic-insta-black.svg" alt=""></a>
+                        rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-insta-black.svg') }}" + `" alt=""></a>
                     <a target="_blank" rel="noopener noreferrer" style="opacity: .2;"><img
-                            src="assets/img/ic-twitter-black.svg" alt=""></a>
+                            src="` + "{{ asset('assets/img/revamp/ic-twitter-black.svg') }}" + `" alt=""></a>
                     <div></div>
                     <hr class="green">
                 </div>
@@ -613,9 +614,9 @@ const sponsor =
                 <p>Volunteer | FKM 19</p>
                 <div class="footer">
                     <a href="https://www.instagram.com/najandhf" target="_blank"
-                        rel="noopener noreferrer"><img src="assets/img/ic-insta-black.svg" alt=""></a>
+                        rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-insta-black.svg') }}" + `" alt=""></a>
                     <a href="https://twitter.com/nadhifnaja" target="_blank" rel="noopener noreferrer"
-                        style="opacity: .2;"><img src="assets/img/ic-twitter-black.svg" alt=""></a>
+                        style="opacity: .2;"><img src="` + "{{ asset('assets/img/revamp/ic-twitter-black.svg') }}" + `" alt=""></a>
                     <div></div>
                     <hr class="green">
                 </div>
@@ -625,9 +626,9 @@ const sponsor =
                 <p>Volunteer | FIB 19</p>
                 <div class="footer">
                     <a href="https://www.instagram.com/nuzulashaa" target="_blank"
-                        rel="noopener noreferrer"><img src="assets/img/ic-insta-black.svg" alt=""></a>
+                        rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-insta-black.svg') }}" + `" alt=""></a>
                     <a target="_blank" rel="noopener noreferrer" style="opacity: .2;"><img
-                            src="assets/img/ic-twitter-black.svg" alt=""></a>
+                            src="` + "{{ asset('assets/img/revamp/ic-twitter-black.svg') }}" + `" alt=""></a>
                     <div></div>
                     <hr class="green">
                 </div>
@@ -637,9 +638,9 @@ const sponsor =
                 <p>Volunteer | FKM 20</p>
                 <div class="footer">
                     <a href="https://www.instagram.com/gabrielaandhien" target="_blank"
-                        rel="noopener noreferrer"><img src="assets/img/ic-insta-black.svg" alt=""></a>
+                        rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-insta-black.svg') }}" + `" alt=""></a>
                     <a href="https://twitter.com/gabrielaandhien" target="_blank"
-                        rel="noopener noreferrer"><img src="assets/img/ic-twitter-black.svg" alt=""></a>
+                        rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-twitter-black.svg') }}" + `" alt=""></a>
                     <div></div>
                     <hr class="green">
                 </div>
@@ -649,9 +650,9 @@ const sponsor =
                 <p>Volunteer | FKH 20</p>
                 <div class="footer">
                     <a href="https://www.instagram.com/tesyasrgh" target="_blank"
-                        rel="noopener noreferrer"><img src="assets/img/ic-insta-black.svg" alt=""></a>
+                        rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-insta-black.svg') }}" + `" alt=""></a>
                     <a target="_blank" rel="noopener noreferrer" style="opacity: .2;"><img
-                            src="assets/img/ic-twitter-black.svg" alt=""></a>
+                            src="` + "{{ asset('assets/img/revamp/ic-twitter-black.svg') }}" + `" alt=""></a>
                     <div></div>
                     <hr class="green">
                 </div>
@@ -668,29 +669,29 @@ const marketing =
                     <p>Manager | FIB 19</p>
                     <div class="footer">
                         <a href="https://www.instagram.com/charismasnr" target="_blank"
-                            rel="noopener noreferrer"><img src="assets/img/ic-insta-black.svg"
+                            rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-insta-black.svg') }}" + `"
                                 alt=""></a>
                         <a href="https://twitter.com/_chaendelier_" target="_blank"
-                            rel="noopener noreferrer"><img src="assets/img/ic-twitter-black.svg"
+                            rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-twitter-black.svg') }}" + `"
                                 alt=""></a>
                         <div></div>
                         <hr class="red">
                     </div>
                 </div>
-                <img src="assets/img/mainboard/charisma.png" alt="">
+                <img src="` + "{{ asset('assets/img/revamp/mainboard/charisma.png') }}" + `" alt="">
                 <div class="back-green"></div>
             </div>
             <div class="member2">
-                <img src="assets/img/mainboard/alyssa.png" alt="">
+                <img src="` + "{{ asset('assets/img/revamp/mainboard/alyssa.png') }}" + `" alt="">
                 <div class="member-card">
                     <h4>Alyssa</h4>
                     <p>Co-Manager | FEB 19</p>
                     <div class="footer">
                         <a href="https://www.instagram.com/alyssacht" target="_blank"
-                            rel="noopener noreferrer"><img src="assets/img/ic-insta-black.svg"
+                            rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-insta-black.svg') }}" + `"
                                 alt=""></a>
                         <a target="_blank" rel="noopener noreferrer" style="opacity: .2;"><img
-                                src="assets/img/ic-twitter-black.svg" alt=""></a>
+                                src="` + "{{ asset('assets/img/revamp/ic-twitter-black.svg') }}" + `" alt=""></a>
                         <div></div>
                         <hr class="red">
                     </div>
@@ -704,9 +705,9 @@ const marketing =
                 <p>Volunteer | FK 19</p>
                 <div class="footer">
                     <a href="https://www.instagram.com/onihadi" target="_blank"
-                        rel="noopener noreferrer"><img src="assets/img/ic-insta-black.svg" alt=""></a>
+                        rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-insta-black.svg') }}" + `" alt=""></a>
                     <a target="_blank" rel="noopener noreferrer" style="opacity: .2;"><img
-                            src="assets/img/ic-twitter-black.svg" alt=""></a>
+                            src="` + "{{ asset('assets/img/revamp/ic-twitter-black.svg') }}" + `" alt=""></a>
                     <div></div>
                     <hr class="green">
                 </div>
@@ -716,9 +717,9 @@ const marketing =
                 <p>Volunteer | FISIP 19</p>
                 <div class="footer">
                     <a href="https://www.instagram.com/_yasminelysia" target="_blank"
-                        rel="noopener noreferrer"><img src="assets/img/ic-insta-black.svg" alt=""></a>
+                        rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-insta-black.svg') }}" + `" alt=""></a>
                     <a href="https://twitter.com/moonjellyu" target="_blank"
-                        rel="noopener noreferrer"><img src="assets/img/ic-twitter-black.svg" alt=""></a>
+                        rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-twitter-black.svg') }}" + `" alt=""></a>
                     <div></div>
                     <hr class="green">
                 </div>
@@ -728,9 +729,9 @@ const marketing =
                 <p>Volunteer | FISIP 19</p>
                 <div class="footer">
                     <a href="https://www.instagram.com/aisyahridhoo" target="_blank"
-                        rel="noopener noreferrer"><img src="assets/img/ic-insta-black.svg" alt=""></a>
+                        rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-insta-black.svg') }}" + `" alt=""></a>
                     <a href="https://twitter.com/aisyahridho" target="_blank"
-                        rel="noopener noreferrer"><img src="assets/img/ic-twitter-black.svg" alt=""></a>
+                        rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-twitter-black.svg') }}" + `" alt=""></a>
                     <div></div>
                     <hr class="green">
                 </div>
@@ -740,9 +741,9 @@ const marketing =
                 <p>Volunteer | FISIP 19</p>
                 <div class="footer">
                     <a href="https://www.instagram.com/mariaanyaa" target="_blank"
-                        rel="noopener noreferrer"><img src="assets/img/ic-insta-black.svg" alt=""></a>
+                        rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-insta-black.svg') }}" + `" alt=""></a>
                     <a target="_blank" rel="noopener noreferrer" style="opacity: .2;"><img
-                            src="assets/img/ic-twitter-black.svg" alt=""></a>
+                            src="` + "{{ asset('assets/img/revamp/ic-twitter-black.svg') }}" + `" alt=""></a>
                     <div></div>
                     <hr class="green">
                 </div>
@@ -752,9 +753,9 @@ const marketing =
                 <p>Volunteer | FISIP 19</p>
                 <div class="footer">
                     <a href="https://www.instagram.com/566dymas" target="_blank"
-                        rel="noopener noreferrer"><img src="assets/img/ic-insta-black.svg" alt=""></a>
+                        rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-insta-black.svg') }}" + `" alt=""></a>
                     <a target="_blank" rel="noopener noreferrer" style="opacity: .2;"><img
-                            src="assets/img/ic-twitter-black.svg" alt=""></a>
+                            src="` + "{{ asset('assets/img/revamp/ic-twitter-black.svg') }}" + `" alt=""></a>
                     <div></div>
                     <hr class="green">
                 </div>
@@ -764,9 +765,9 @@ const marketing =
                 <p>Volunteer | FK 20</p>
                 <div class="footer">
                     <a href="https://www.instagram.com/yudiartanaputra" target="_blank"
-                        rel="noopener noreferrer"><img src="assets/img/ic-insta-black.svg" alt=""></a>
+                        rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-insta-black.svg') }}" + `" alt=""></a>
                     <a href="https://twitter.com/@yudiartanaputra" target="_blank"
-                        rel="noopener noreferrer"><img src="assets/img/ic-twitter-black.svg" alt=""></a>
+                        rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-twitter-black.svg') }}" + `" alt=""></a>
                     <div></div>
                     <hr class="green">
                 </div>
@@ -776,9 +777,9 @@ const marketing =
                 <p>Volunteer | FISIP 20</p>
                 <div class="footer">
                     <a href="https://www.instagram.com/lusiamalus" target="_blank"
-                        rel="noopener noreferrer"><img src="assets/img/ic-insta-black.svg" alt=""></a>
+                        rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-insta-black.svg') }}" + `" alt=""></a>
                     <a arget="_blank" rel="noopener noreferrer" style="opacity: .2;"><img
-                            src="assets/img/ic-twitter-black.svg" alt=""></a>
+                            src="` + "{{ asset('assets/img/revamp/ic-twitter-black.svg') }}" + `" alt=""></a>
                     <div></div>
                     <hr class="green">
                 </div>
@@ -788,9 +789,9 @@ const marketing =
                 <p>Volunteer | FV 20</p>
                 <div class="footer">
                     <a href="https://www.instagram.com/irfanshr" target="_blank"
-                        rel="noopener noreferrer"><img src="assets/img/ic-insta-black.svg" alt=""></a>
+                        rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-insta-black.svg') }}" + `" alt=""></a>
                     <aarget="_blank" rel="noopener noreferrer" style="opacity: .2;"><img
-                            src="assets/img/ic-twitter-black.svg" alt=""></a>
+                            src="` + "{{ asset('assets/img/revamp/ic-twitter-black.svg') }}" + `" alt=""></a>
                         <div></div>
                         <hr class="green">
                 </div>
@@ -800,9 +801,9 @@ const marketing =
                 <p>Volunteer | FIB 20</p>
                 <div class="footer">
                     <a href="https://www.instagram.com/hayfanajma" target="_blank"
-                        rel="noopener noreferrer"><img src="assets/img/ic-insta-black.svg" alt=""></a>
+                        rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-insta-black.svg') }}" + `" alt=""></a>
                     <a href="https://twitter.com/playhayfyy" target="_blank"
-                        rel="noopener noreferrer"><img src="assets/img/ic-twitter-black.svg" alt=""></a>
+                        rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-twitter-black.svg') }}" + `" alt=""></a>
                     <div></div>
                     <hr class="green">
                 </div>
@@ -812,9 +813,9 @@ const marketing =
                 <p>Volunteer | FPsi 20</p>
                 <div class="footer">
                     <a href="https://www.instagram.com/nazzahraay" target="_blank"
-                        rel="noopener noreferrer"><img src="assets/img/ic-insta-black.svg" alt=""></a>
+                        rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-insta-black.svg') }}" + `" alt=""></a>
                     <a target="_blank" rel="noopener noreferrer" style="opacity: .2;"><img
-                            src="assets/img/ic-twitter-black.svg" alt=""></a>
+                            src="` + "{{ asset('assets/img/revamp/ic-twitter-black.svg') }}" + `" alt=""></a>
                     <div></div>
                     <hr class="green">
                 </div>
@@ -831,28 +832,28 @@ const merchandise =
                     <p>Manager | FEB 19</p>
                     <div class="footer">
                         <a href="https://www.instagram.com/happymrnd" target="_blank"
-                            rel="noopener noreferrer"><img src="assets/img/ic-insta-black.svg"
+                            rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-insta-black.svg') }}" + `"
                                 alt=""></a>
                         <a target="_blank" rel="noopener noreferrer" style="opacity: .2;"><img
-                                src="assets/img/ic-twitter-black.svg" alt=""></a>
+                                src="` + "{{ asset('assets/img/revamp/ic-twitter-black.svg') }}" + `" alt=""></a>
                         <div></div>
                         <hr class="red">
                     </div>
                 </div>
-                <img src="assets/img/mainboard/happy.png" alt="">
+                <img src="` + "{{ asset('assets/img/revamp/mainboard/happy.png') }}" + `" alt="">
                 <div class="back-green"></div>
             </div>
             <div class="member2">
-                <img src="assets/img/mainboard/silvi.png" alt="">
+                <img src="` + "{{ asset('assets/img/revamp/mainboard/silvi.png') }}" + `" alt="">
                 <div class="member-card">
                     <h4>Silvi</h4>
                     <p>Co-Manager | FIB 19</p>
                     <div class="footer">
                         <a href="https://www.instagram.com/silvinfr" target="_blank"
-                            rel="noopener noreferrer"><img src="assets/img/ic-insta-black.svg"
+                            rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-insta-black.svg') }}" + `"
                                 alt=""></a>
                         <a target="_blank" rel="noopener noreferrer" style="opacity: .2;"><img
-                                src="assets/img/ic-twitter-black.svg" alt=""></a>
+                                src="` + "{{ asset('assets/img/revamp/ic-twitter-black.svg') }}" + `" alt=""></a>
                         <div></div>
                         <hr class="red">
                     </div>
@@ -866,9 +867,9 @@ const merchandise =
                 <p>Volunteer | FV 19</p>
                 <div class="footer">
                     <a href="https://www.instagram.com/anjaa_febrino" target="_blank"
-                        rel="noopener noreferrer"><img src="assets/img/ic-insta-black.svg" alt=""></a>
+                        rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-insta-black.svg') }}" + `" alt=""></a>
                     <a href="https://twitter.com/marbenjvl" target="_blank"
-                        rel="noopener noreferrer"><img src="assets/img/ic-twitter-black.svg" alt=""></a>
+                        rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-twitter-black.svg') }}" + `" alt=""></a>
                     <div></div>
                     <hr class="green">
                 </div>
@@ -878,9 +879,9 @@ const merchandise =
                 <p>Volunteer | FEB 19</p>
                 <div class="footer">
                     <a href="https://www.instagram.com/ardheliaindira" target="_blank"
-                        rel="noopener noreferrer"><img src="assets/img/ic-insta-black.svg" alt=""></a>
+                        rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-insta-black.svg') }}" + `" alt=""></a>
                     <a target="_blank" rel="noopener noreferrer" style="opacity: .2;"><img
-                        src="assets/img/ic-twitter-black.svg" alt=""></a>
+                        src="` + "{{ asset('assets/img/revamp/ic-twitter-black.svg') }}" + `" alt=""></a>
                     <div></div>
                     <hr class="green">
                 </div>
@@ -890,9 +891,9 @@ const merchandise =
                 <p>Volunteer | FIB 20</p>
                 <div class="footer">
                     <a href="https://www.instagram.com/sahistaaf" target="_blank"
-                        rel="noopener noreferrer"><img src="assets/img/ic-insta-black.svg" alt=""></a>
+                        rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-insta-black.svg') }}" + `" alt=""></a>
                     <a href="https://twitter.com/sahistaaf" target="_blank"
-                        rel="noopener noreferrer"><img src="assets/img/ic-twitter-black.svg" alt=""></a>
+                        rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-twitter-black.svg') }}" + `" alt=""></a>
                     <div></div>
                     <hr class="green">
                 </div>
@@ -902,9 +903,9 @@ const merchandise =
                 <p>Design Staff | FEB 19</p>
                 <div class="footer">
                     <a href="https://www.instagram.com/grc.melody" target="_blank"
-                        rel="noopener noreferrer"><img src="assets/img/ic-insta-black.svg" alt=""></a>
+                        rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-insta-black.svg') }}" + `" alt=""></a>
                     <a target="_blank" rel="noopener noreferrer" style="opacity: .2;"><img
-                            src="assets/img/ic-twitter-black.svg" alt=""></a>
+                            src="` + "{{ asset('assets/img/revamp/ic-twitter-black.svg') }}" + `" alt=""></a>
                     <div></div>
                     <hr class="green">
                 </div>
@@ -914,9 +915,9 @@ const merchandise =
                 <p>Volunteer | FEB 19</p>
                 <div class="footer">
                     <a href="https://www.instagram.com/ardheliaindira" target="_blank"
-                        rel="noopener noreferrer"><img src="assets/img/ic-insta-black.svg" alt=""></a>
+                        rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-insta-black.svg') }}" + `" alt=""></a>
                     <a target="_blank" rel="noopener noreferrer" style="opacity: .2;"><img
-                            src="assets/img/ic-twitter-black.svg" alt=""></a>
+                            src="` + "{{ asset('assets/img/revamp/ic-twitter-black.svg') }}" + `" alt=""></a>
                     <div></div>
                     <hr class="green">
                 </div>
@@ -926,10 +927,10 @@ const merchandise =
                     <p>Volunteer | FEB 20</p>
                     <div class="footer">
                         <a href="https://www.instagram.com/firdajumantara" target="_blank"
-                            rel="noopener noreferrer"><img src="assets/img/ic-insta-black.svg"
+                            rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-insta-black.svg') }}" + `"
                                 alt=""></a>
                         <a target="_blank" rel="noopener noreferrer" style="opacity: .2;"><img
-                                src="assets/img/ic-twitter-black.svg" alt=""></a>
+                                src="` + "{{ asset('assets/img/revamp/ic-twitter-black.svg') }}" + `" alt=""></a>
                         <div></div>
                         <hr class="green">
                     </div>
@@ -939,9 +940,9 @@ const merchandise =
                 <p>Volunteer | FF 20</p>
                 <div class="footer">
                     <a href="https://www.instagram.com/antyaptr" target="_blank"
-                        rel="noopener noreferrer"><img src="assets/img/ic-insta-black.svg" alt=""></a>
+                        rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-insta-black.svg') }}" + `" alt=""></a>
                     <a href="https://twitter.com/antyaptr" target="_blank"
-                        rel="noopener noreferrer"><img src="assets/img/ic-twitter-black.svg" alt=""></a>
+                        rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-twitter-black.svg') }}" + `" alt=""></a>
                     <div></div>
                     <hr class="green">
                 </div>
@@ -951,9 +952,9 @@ const merchandise =
                 <p>Volunteer | FEB 20</p>
                 <div class="footer">
                     <a href="https://www.instagram.com/mraisadam_" target="_blank"
-                        rel="noopener noreferrer"><img src="assets/img/ic-insta-black.svg" alt=""></a>
+                        rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-insta-black.svg') }}" + `" alt=""></a>
                     <a target="_blank" rel="noopener noreferrer" style="opacity: .2;"><img
-                            src="assets/img/ic-twitter-black.svg" alt=""></a>
+                            src="` + "{{ asset('assets/img/revamp/ic-twitter-black.svg') }}" + `" alt=""></a>
                     <div></div>
                     <hr class="green">
                 </div>
@@ -963,9 +964,9 @@ const merchandise =
                 <p>Volunteer | FTMM 20</p>
                 <div class="footer">
                     <a href="https://www.instagram.com/idabgsary_" target="_blank"
-                        rel="noopener noreferrer"><img src="assets/img/ic-insta-black.svg" alt=""></a>
+                        rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-insta-black.svg') }}" + `" alt=""></a>
                     <a target="_blank" rel="noopener noreferrer" style="opacity: .2;"><img
-                            src="assets/img/ic-twitter-black.svg" alt=""></a>
+                            src="` + "{{ asset('assets/img/revamp/ic-twitter-black.svg') }}" + `" alt=""></a>
                     <div></div>
                     <hr class="green">
                 </div>
@@ -975,9 +976,9 @@ const merchandise =
                 <p>Volunteer | FEB 20</p>
                 <div class="footer">
                     <a href="https://www.instagram.com/basith_fauzian" target="_blank"
-                        rel="noopener noreferrer"><img src="assets/img/ic-insta-black.svg" alt=""></a>
+                        rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-insta-black.svg') }}" + `" alt=""></a>
                     <a href="https://twitter.com/hacobsableng" target="_blank"
-                        rel="noopener noreferrer"><img src="assets/img/ic-twitter-black.svg" alt=""></a>
+                        rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-twitter-black.svg') }}" + `" alt=""></a>
                     <div></div>
                     <hr class="green">
                 </div>
@@ -987,9 +988,9 @@ const merchandise =
                 <p>Volunteer | FPsi 20</p>
                 <div class="footer">
                     <a href="https://www.instagram.com/zaidanm_" target="_blank"
-                        rel="noopener noreferrer"><img src="assets/img/ic-insta-black.svg" alt=""></a>
+                        rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-insta-black.svg') }}" + `" alt=""></a>
                     <atarget="_blank" rel="noopener noreferrer" style="opacity: .2;"><img
-                            src="assets/img/ic-twitter-black.svg" alt=""></a>
+                            src="` + "{{ asset('assets/img/revamp/ic-twitter-black.svg') }}" + `" alt=""></a>
                         <div></div>
                         <hr class="green">
                 </div>
@@ -1006,29 +1007,29 @@ const design =
                     <p>Manager | FISIP 19</p>
                     <div class="footer">
                         <a href="https://www.instagram.com/arnrbl" target="_blank"
-                            rel="noopener noreferrer"><img src="assets/img/ic-insta-black.svg"
+                            rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-insta-black.svg') }}" + `"
                                 alt=""></a>
                         <a href="https://twitter.com/arnrbl" target="_blank"
-                            rel="noopener noreferrer"><img src="assets/img/ic-twitter-black.svg"
+                            rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-twitter-black.svg') }}" + `"
                                 alt=""></a>
                         <div></div>
                         <hr class="red">
                     </div>
                 </div>
-                <img src="assets/img/mainboard/naura.png" alt="">
+                <img src="` + "{{ asset('assets/img/revamp/mainboard/naura.png') }}" + `" alt="">
                 <div class="back-green"></div>
             </div>
             <div class="member2">
-                <img src="assets/img/mainboard/nadia.png" alt="">
+                <img src="` + "{{ asset('assets/img/revamp/mainboard/nadia.png') }}" + `" alt="">
                 <div class="member-card">
                     <h4>Nadia</h4>
                     <p>Co-Manager | FEB 19</p>
                     <div class="footer">
                         <a href="https://www.instagram.com/nadiaaarg" target="_blank"
-                            rel="noopener noreferrer"><img src="assets/img/ic-insta-black.svg"
+                            rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-insta-black.svg') }}" + `"
                                 alt=""></a>
                         <a target="_blank" rel="noopener noreferrer" style="opacity: .2;"><img
-                                src="assets/img/ic-twitter-black.svg" alt=""></a>
+                                src="` + "{{ asset('assets/img/revamp/ic-twitter-black.svg') }}" + `" alt=""></a>
                         <div></div>
                         <hr class="red">
                     </div>
@@ -1042,9 +1043,9 @@ const design =
                 <p>Volunteer | FIB 19</p>
                 <div class="footer">
                     <a href="https://www.instagram.com/naurisrofaudin" target="_blank"
-                        rel="noopener noreferrer"><img src="assets/img/ic-insta-black.svg" alt=""></a>
+                        rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-insta-black.svg') }}" + `" alt=""></a>
                     <a href="https://twitter.com/shalatshubuh" target="_blank"
-                        rel="noopener noreferrer"><img src="assets/img/ic-twitter-black.svg" alt=""></a>
+                        rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-twitter-black.svg') }}" + `" alt=""></a>
                     <div></div>
                     <hr class="green">
                 </div>
@@ -1054,9 +1055,9 @@ const design =
                 <p>Volunteer | FKM 19</p>
                 <div class="footer">
                     <a href="https://www.instagram.com/deandranaya" target="_blank"
-                        rel="noopener noreferrer"><img src="assets/img/ic-insta-black.svg" alt=""></a>
+                        rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-insta-black.svg') }}" + `" alt=""></a>
                     <a href="https://twitter.com/deandranaya_" target="_blank"
-                        rel="noopener noreferrer"><img src="assets/img/ic-twitter-black.svg" alt=""></a>
+                        rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-twitter-black.svg') }}" + `" alt=""></a>
                     <div></div>
                     <hr class="green">
                 </div>
@@ -1066,9 +1067,9 @@ const design =
                 <p>Volunteer | FIB 19</p>
                 <div class="footer">
                     <a href="https://www.instagram.com/anyamaulidyna" target="_blank"
-                        rel="noopener noreferrer"><img src="assets/img/ic-insta-black.svg" alt=""></a>
+                        rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-insta-black.svg') }}" + `" alt=""></a>
                     <a target="_blank" rel="noopener noreferrer" style="opacity: .2;"><img
-                            src="assets/img/ic-twitter-black.svg" alt=""></a>
+                            src="` + "{{ asset('assets/img/revamp/ic-twitter-black.svg') }}" + `" alt=""></a>
                         <div></div>
                         <hr class="green">
                 </div>
@@ -1078,9 +1079,9 @@ const design =
                 <p>Volunteer | FEB 19</p>
                 <div class="footer">
                     <a href="https://www.instagram.com/belaxx__" target="_blank"
-                        rel="noopener noreferrer"><img src="assets/img/ic-insta-black.svg" alt=""></a>
+                        rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-insta-black.svg') }}" + `" alt=""></a>
                     <a href="https://twitter.com/nabilahbel_" target="_blank"
-                        rel="noopener noreferrer"><img src="assets/img/ic-twitter-black.svg" alt=""></a>
+                        rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-twitter-black.svg') }}" + `" alt=""></a>
                     <div></div>
                     <hr class="green">
                 </div>
@@ -1090,9 +1091,9 @@ const design =
                 <p>Volunteer | FISIP 20</p>
                 <div class="footer">
                     <a href="https://www.instagram.com/arimbisp" target="_blank"
-                        rel="noopener noreferrer"><img src="assets/img/ic-insta-black.svg" alt=""></a>
+                        rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-insta-black.svg') }}" + `" alt=""></a>
                     <a target="_blank" rel="noopener noreferrer" style="opacity: .2;"><img
-                            src="assets/img/ic-twitter-black.svg" alt=""></a>
+                            src="` + "{{ asset('assets/img/revamp/ic-twitter-black.svg') }}" + `" alt=""></a>
                     <div></div>
                     <hr class="green">
                 </div>
@@ -1109,29 +1110,29 @@ const video =
                     <p>Manager | FISIP 19</p>
                     <div class="footer">
                         <a href="https://www.instagram.com/ananta.ajip" target="_blank"
-                            rel="noopener noreferrer"><img src="assets/img/ic-insta-black.svg"
+                            rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-insta-black.svg') }}" + `"
                                 alt=""></a>
                         <a href="https://twitter.com/ananta.ajip" target="_blank"
-                            rel="noopener noreferrer"><img src="assets/img/ic-twitter-black.svg"
+                            rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-twitter-black.svg') }}" + `"
                                 alt=""></a>
                         <div></div>
                         <hr class="red">
                     </div>
                 </div>
-                <img src="assets/img/mainboard/aji.png" alt="">
+                <img src="` + "{{ asset('assets/img/revamp/mainboard/aji.png') }}" + `" alt="">
                 <div class="back-green"></div>
             </div>
             <div class="member2">
-                <img src="assets/img/mainboard/dana.png" alt="">
+                <img src="` + "{{ asset('assets/img/revamp/mainboard/dana.png') }}" + `" alt="">
                 <div class="member-card">
                     <h4>Dana</h4>
                     <p>Co-Manager | FEB 19</p>
                     <div class="footer">
                         <a href="https://www.instagram.com/danafarmansyah" target="_blank"
-                            rel="noopener noreferrer"><img src="assets/img/ic-insta-black.svg"
+                            rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-insta-black.svg') }}" + `"
                                 alt=""></a>
                         <a target="_blank" rel="noopener noreferrer" style="opacity: .2;"><img
-                                src="assets/img/ic-twitter-black.svg" alt=""></a>
+                                src="` + "{{ asset('assets/img/revamp/ic-twitter-black.svg') }}" + `" alt=""></a>
                         <div></div>
                         <hr class="red">
                     </div>
@@ -1145,9 +1146,9 @@ const video =
                 <p>Volunteer | FISIP 19</p>
                 <div class="footer">
                     <a href="https://www.instagram.com/alvin.rafli" target="_blank"
-                        rel="noopener noreferrer"><img src="assets/img/ic-insta-black.svg" alt=""></a>
+                        rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-insta-black.svg') }}" + `" alt=""></a>
                     <a target="_blank" rel="noopener noreferrer" style="opacity: .2;"><img
-                            src="assets/img/ic-twitter-black.svg" alt=""></a>
+                            src="` + "{{ asset('assets/img/revamp/ic-twitter-black.svg') }}" + `" alt=""></a>
                     <div></div>
                     <hr class="green">
                 </div>
@@ -1157,9 +1158,9 @@ const video =
                 <p>Volunteer | FISIP 19</p>
                 <div class="footer">
                     <a href="https://www.instagram.com/dikyreskianto" target="_blank"
-                        rel="noopener noreferrer"><img src="assets/img/ic-insta-black.svg" alt=""></a>
+                        rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-insta-black.svg') }}" + `" alt=""></a>
                     <a target="_blank" rel="noopener noreferrer" style="opacity: .2;"><img
-                            src="assets/img/ic-twitter-black.svg" alt=""></a>
+                            src="` + "{{ asset('assets/img/revamp/ic-twitter-black.svg') }}" + `" alt=""></a>
                     <div></div>
                     <hr class="green">
                 </div>
@@ -1169,9 +1170,9 @@ const video =
                 <p>Volunteer | FISIP 20</p>
                 <div class="footer">
                     <a href="https://www.instagram.com/Faishalf1.4" target="_blank"
-                        rel="noopener noreferrer"><img src="assets/img/ic-insta-black.svg" alt=""></a>
+                        rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-insta-black.svg') }}" + `" alt=""></a>
                     <a href="https://twitter.com/Faishalf14" target="_blank"
-                        rel="noopener noreferrer"><img src="assets/img/ic-twitter-black.svg" alt=""></a>
+                        rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-twitter-black.svg') }}" + `" alt=""></a>
                     <div></div>
                     <hr class="green">
                 </div>
@@ -1181,9 +1182,9 @@ const video =
                 <p>Volunteer | FISIp 20</p>
                 <div class="footer">
                     <a href="https://www.instagram.com/yosia_dimas" target="_blank"
-                        rel="noopener noreferrer"><img src="assets/img/ic-insta-black.svg" alt=""></a>
+                        rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-insta-black.svg') }}" + `" alt=""></a>
                     <a target="_blank" rel="noopener noreferrer" style="opacity: .2;"><img
-                            src="assets/img/ic-twitter-black.svg" alt=""></a>
+                            src="` + "{{ asset('assets/img/revamp/ic-twitter-black.svg') }}" + `" alt=""></a>
                     <div></div>
                     <hr class="green">
                 </div>
@@ -1200,28 +1201,28 @@ const sosmed =
                     <p>Manager | FIB 19</p>
                     <div class="footer">
                         <a href="https://www.instagram.com/nadaikaa" target="_blank"
-                            rel="noopener noreferrer"><img src="assets/img/ic-insta-black.svg"
+                            rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-insta-black.svg') }}" + `"
                                 alt=""></a>
                         <a target="_blank" rel="noopener noreferrer" style="opacity: .2;"><img
-                                src="assets/img/ic-twitter-black.svg" alt=""></a>
+                                src="` + "{{ asset('assets/img/revamp/ic-twitter-black.svg') }}" + `" alt=""></a>
                         <div></div>
                         <hr class="red">
                     </div>
                 </div>
-                <img src="assets/img/mainboard/genada.png" alt="">
+                <img src="` + "{{ asset('assets/img/revamp/mainboard/genada.png') }}" + `" alt="">
                 <div class="back-green"></div>
             </div>
             <div class="member2">
-                <img src="assets/img/mainboard/raiza.png" alt="">
+                <img src="` + "{{ asset('assets/img/revamp/mainboard/raiza.png') }}" + `" alt="">
                 <div class="member-card">
                     <h4>Raiza</h4>
                     <p>Co-Manager | FIB 19</p>
                     <div class="footer">
                         <a href="https://www.instagram.com/raiza.kirana" target="_blank"
-                            rel="noopener noreferrer"><img src="assets/img/ic-insta-black.svg"
+                            rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-insta-black.svg') }}" + `"
                                 alt=""></a>
                         <a target="_blank" rel="noopener noreferrer" style="opacity: .2;"><img
-                                src="assets/img/ic-twitter-black.svg" alt=""></a>
+                                src="` + "{{ asset('assets/img/revamp/ic-twitter-black.svg') }}" + `" alt=""></a>
                         <div></div>
                         <hr class="red">
                     </div>
@@ -1235,9 +1236,9 @@ const sosmed =
                 <p>Volunteer | FIB 19</p>
                 <div class="footer">
                     <a href="https://www.instagram.com/raihan.damar" target="_blank" rel="noopener noreferrer"><img
-                            src="assets/img/ic-insta-black.svg" alt=""></a>
+                            src="` + "{{ asset('assets/img/revamp/ic-insta-black.svg') }}" + `" alt=""></a>
                     <a target="_blank" rel="noopener noreferrer" style="opacity: .2;"><img
-                            src="assets/img/ic-twitter-black.svg" alt=""></a>
+                            src="` + "{{ asset('assets/img/revamp/ic-twitter-black.svg') }}" + `" alt=""></a>
                     <div></div>
                     <hr class="green">
                 </div>
@@ -1247,9 +1248,9 @@ const sosmed =
                 <p>Volunteer | FIB 19</p>
                 <div class="footer">
                     <a href="https://www.instagram.com/bonitalrs" target="_blank" rel="noopener noreferrer"><img
-                            src="assets/img/ic-insta-black.svg" alt=""></a>
+                            src="` + "{{ asset('assets/img/revamp/ic-insta-black.svg') }}" + `" alt=""></a>
                     <a href="https://twitter.com/aruniquea" target="_blank" rel="noopener noreferrer"><img
-                            src="assets/img/ic-twitter-black.svg" alt=""></a>
+                            src="` + "{{ asset('assets/img/revamp/ic-twitter-black.svg') }}" + `" alt=""></a>
                     <div></div>
                     <hr class="green">
                 </div>
@@ -1259,9 +1260,9 @@ const sosmed =
                 <p>Volunteer | FK 19</p>
                 <div class="footer">
                     <a href="https://www.instagram.com/ayunoviac" target="_blank" rel="noopener noreferrer"><img
-                            src="assets/img/ic-insta-black.svg" alt=""></a>
+                            src="` + "{{ asset('assets/img/revamp/ic-insta-black.svg') }}" + `" alt=""></a>
                     <a href="https://twitter.com/anjeliese" target="_blank" rel="noopener noreferrer"><img
-                            src="assets/img/ic-twitter-black.svg" alt=""></a>
+                            src="` + "{{ asset('assets/img/revamp/ic-twitter-black.svg') }}" + `" alt=""></a>
                     <div></div>
                     <hr class="green">
                 </div>
@@ -1271,9 +1272,9 @@ const sosmed =
                 <p>Volunteer | FK 19</p>
                 <div class="footer">
                     <a href="https://www.instagram.com/almirasaskia" target="_blank" rel="noopener noreferrer"><img
-                            src="assets/img/ic-insta-black.svg" alt=""></a>
+                            src="` + "{{ asset('assets/img/revamp/ic-insta-black.svg') }}" + `" alt=""></a>
                     <a target="_blank" rel="noopener noreferrer" style="opacity: .2;"><img
-                            src="assets/img/ic-twitter-black.svg" alt=""></a>
+                            src="` + "{{ asset('assets/img/revamp/ic-twitter-black.svg') }}" + `" alt=""></a>
                     <div></div>
                     <hr class="green">
                 </div>
@@ -1283,9 +1284,9 @@ const sosmed =
                 <p>Volunteer | FIB 19</p>
                 <div class="footer">
                     <a href="https://www.instagram.com/nino_9f2" target="_blank" rel="noopener noreferrer"><img
-                            src="assets/img/ic-insta-black.svg" alt=""></a>
+                            src="` + "{{ asset('assets/img/revamp/ic-insta-black.svg') }}" + `" alt=""></a>
                     <a target="_blank" rel="noopener noreferrer" style="opacity: .2;"><img
-                            src="assets/img/ic-twitter-black.svg" alt=""></a>
+                            src="` + "{{ asset('assets/img/revamp/ic-twitter-black.svg') }}" + `" alt=""></a>
                     <div></div>
                     <hr class="green">
                 </div>
@@ -1295,9 +1296,9 @@ const sosmed =
                 <p>Volunteer | FST 20</p>
                 <div class="footer">
                     <a href="https://www.instagram.com/kheylahakim" target="_blank" rel="noopener noreferrer"><img
-                            src="assets/img/ic-insta-black.svg" alt=""></a>
+                            src="` + "{{ asset('assets/img/revamp/ic-insta-black.svg') }}" + `" alt=""></a>
                     <a href="https://twitter.com/kheylv" target="_blank" rel="noopener noreferrer"><img
-                            src="assets/img/ic-twitter-black.svg" alt=""></a>
+                            src="` + "{{ asset('assets/img/revamp/ic-twitter-black.svg') }}" + `" alt=""></a>
                     <div></div>
                     <hr class="green">
                 </div>
@@ -1307,9 +1308,9 @@ const sosmed =
                 <p>Volunteer | FISIP 20</p>
                 <div class="footer">
                     <a href="https://www.instagram.com/@ristadlbr" target="_blank" rel="noopener noreferrer"><img
-                            src="assets/img/ic-insta-black.svg" alt=""></a>
+                            src="` + "{{ asset('assets/img/revamp/ic-insta-black.svg') }}" + `" alt=""></a>
                     <a target="_blank" rel="noopener noreferrer" style="opacity: .2;"><img
-                            src="assets/img/ic-twitter-black.svg" alt=""></a>
+                            src="` + "{{ asset('assets/img/revamp/ic-twitter-black.svg') }}" + `" alt=""></a>
                     <div></div>
                     <hr class="green">
                 </div>
@@ -1319,9 +1320,9 @@ const sosmed =
                 <p>Volunteer | FISIP 20</p>
                 <div class="footer">
                     <a href="https://www.instagram.com/asaaisaraa" target="_blank" rel="noopener noreferrer"><img
-                            src="assets/img/ic-insta-black.svg" alt=""></a>
+                            src="` + "{{ asset('assets/img/revamp/ic-insta-black.svg') }}" + `" alt=""></a>
                     <a target="_blank" rel="noopener noreferrer" style="opacity: .2;"><img
-                            src="assets/img/ic-twitter-black.svg" alt=""></a>
+                            src="` + "{{ asset('assets/img/revamp/ic-twitter-black.svg') }}" + `" alt=""></a>
                     <div></div>
                     <hr class="green">
                 </div>
@@ -1338,28 +1339,28 @@ const webdev =
                     <p>Manager | FST 19</p>
                     <div class="footer">
                         <a href="https://www.instagram.com/ubeann" target="_blank"
-                            rel="noopener noreferrer"><img src="assets/img/ic-insta-black.svg"
+                            rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-insta-black.svg') }}" + `"
                                 alt=""></a>
                         <a target="_blank" rel="noopener noreferrer" style="opacity: .2;"><img
-                                src="assets/img/ic-twitter-black.svg" alt=""></a>
+                                src="` + "{{ asset('assets/img/revamp/ic-twitter-black.svg') }}" + `" alt=""></a>
                         <div></div>
                         <hr class="red">
                     </div>
                 </div>
-                <img src="assets/img/mainboard/ubin.png" alt="">
+                <img src="` + "{{ asset('assets/img/revamp/mainboard/ubin.png') }}" + `" alt="">
                 <div class="back-green"></div>
             </div>
             <div class="member2">
-                <img src="assets/img/mainboard/yer.png" alt="">
+                <img src="` + "{{ asset('assets/img/revamp/mainboard/yer.png') }}" + `" alt="">
                 <div class="member-card">
                     <h4>Yer</h4>
                     <p>Co-Manager | FST 19</p>
                     <div class="footer">
                         <a href="https://www.instagram.com/yagrariksa" target="_blank"
-                            rel="noopener noreferrer"><img src="assets/img/ic-insta-black.svg"
+                            rel="noopener noreferrer"><img src="` + "{{ asset('assets/img/revamp/ic-insta-black.svg') }}" + `"
                                 alt=""></a>
                         <a target="_blank" rel="noopener noreferrer" style="opacity: .2;"><img
-                                src="assets/img/ic-twitter-black.svg" alt=""></a>
+                                src="` + "{{ asset('assets/img/revamp/ic-twitter-black.svg') }}" + `" alt=""></a>
                         <div></div>
                         <hr class="red">
                     </div>
@@ -1373,9 +1374,9 @@ const webdev =
                 <p>Coding Volunteer | FST 19</p>
                 <div class="footer">
                     <a href="https://www.instagram.com/adiharka" target="_blank" rel="noopener noreferrer"><img
-                            src="assets/img/ic-insta-black.svg" alt=""></a>
+                            src="` + "{{ asset('assets/img/revamp/ic-insta-black.svg') }}" + `" alt=""></a>
                     <a target="_blank" rel="noopener noreferrer" style="opacity: .2;"><img
-                            src="assets/img/ic-twitter-black.svg" alt=""></a>
+                            src="` + "{{ asset('assets/img/revamp/ic-twitter-black.svg') }}" + `" alt=""></a>
                     <div></div>
                     <hr class="green">
                 </div>
@@ -1385,9 +1386,9 @@ const webdev =
                 <p>Coding Volunteer | FST 20</p>
                 <div class="footer">
                     <a href="https://www.instagram.com/aetyoome_" target="_blank" rel="noopener noreferrer"><img
-                            src="assets/img/ic-insta-black.svg" alt=""></a>
+                            src="` + "{{ asset('assets/img/revamp/ic-insta-black.svg') }}" + `" alt=""></a>
                     <a target="_blank" rel="noopener noreferrer" style="opacity: .2;"><img
-                            src="assets/img/ic-twitter-black.svg" alt=""></a>
+                            src="` + "{{ asset('assets/img/revamp/ic-twitter-black.svg') }}" + `" alt=""></a>
                     <div></div>
                     <hr class="green">
                 </div>
@@ -1397,9 +1398,9 @@ const webdev =
                 <p>Design Volunteer | FST 20</p>
                 <div class="footer">
                     <a href="https://www.instagram.com/put_0411" target="_blank" rel="noopener noreferrer"><img
-                            src="assets/img/ic-insta-black.svg" alt=""></a>
+                            src="` + "{{ asset('assets/img/revamp/ic-insta-black.svg') }}" + `" alt=""></a>
                     <a href="https://twitter.com/violet_c" target="_blank" rel="noopener noreferrer"><img
-                            src="assets/img/ic-twitter-black.svg" alt=""></a>
+                            src="` + "{{ asset('assets/img/revamp/ic-twitter-black.svg') }}" + `" alt=""></a>
                     <div></div>
                     <hr class="green">
                 </div>
@@ -1409,9 +1410,9 @@ const webdev =
                 <p>Design Volunteer | FST 20</p>
                 <div class="footer">
                     <a href="https://www.instagram.com/aryadwijasutha" target="_blank" rel="noopener noreferrer"><img
-                            src="assets/img/ic-insta-black.svg" alt=""></a>
+                            src="` + "{{ asset('assets/img/revamp/ic-insta-black.svg') }}" + `" alt=""></a>
                     <a href="https://twitter.com/aryadwijasutha" target="_blank" rel="noopener noreferrer"><img
-                            src="assets/img/ic-twitter-black.svg" alt=""></a>
+                            src="` + "{{ asset('assets/img/revamp/ic-twitter-black.svg') }}" + `" alt=""></a>
                     <div></div>
                     <hr class="green">
                 </div>
@@ -1465,3 +1466,5 @@ $('.division').click(e => {
         $('.member-container')[2].style.opacity = 1;
     }, 1000);
 })
+
+</script>

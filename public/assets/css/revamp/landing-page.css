@@ -68,7 +68,7 @@
   content: attr(data-item);
   -webkit-transition: 0.5s;
   transition: 0.5s;
-  color: #960001;
+  color: #E34444;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -528,7 +528,7 @@ footer .content-footer .copyright h5 {
   }
   .menu__link::before, .menu__link::after {
     content: '';
-    background-color: #960001;
+    background-color: #E34444;
     height: 50%;
     left: 0;
     position: absolute;
@@ -949,7 +949,7 @@ footer .content-footer .copyright h5 {
   width: 100px;
   margin: 0;
   opacity: 1;
-  border-bottom: 4px solid #960001;
+  border-bottom: 4px solid #E34444;
 }
 
 .about .circle {

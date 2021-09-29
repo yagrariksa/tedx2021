@@ -78,7 +78,7 @@
             <li class="nav-item dropdown {{Request::is('admin/speaker*') ? 'active' : ''}}">
               <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-file-alt"></i> <span>CFSS</span></a>
               <ul class="dropdown-menu">
-                <li class=" {{Request::is('admin/speaker') ? 'active' : ''}}"><a class="nav-link" href="{{ route('admin.speaker.home') }}">Statistic</a></li>
+                {{-- <li class=" {{Request::is('admin/speaker') ? 'active' : ''}}"><a class="nav-link" href="{{ route('admin.speaker.home') }}">Statistic</a></li> --}}
                 <li class=" {{Request::is('admin/speaker/participant') ? 'active' : ''}}"><a class="nav-link" href="{{ route('admin.speaker.participant') }}">Participant</a></li>
                 {{-- <li class=" {{Request::is('admin/essay/finalist') ? 'active' : ''}}"><a class="nav-link" href="{{ route('admin.essay.finalist') }}">Finalist</a></li> --}}
               </ul>
