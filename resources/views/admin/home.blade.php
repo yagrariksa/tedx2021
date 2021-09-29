@@ -30,23 +30,23 @@ Homepage
         </div>
       </div>
     </div>
-    {{-- <div class="col-12 col-md-4 col-lg-4">
+    <div class="col-12 col-md-4 col-lg-4">
       <div class="pricing">
         <div class="pricing-title">
           Competition
         </div>
         <div class="pricing-padding">
           <div class="pricing-price m-0">
-            <div>CFS</div>
-            <div>Call For Student</div>
+            <div>CFSS</div>
+            <div>Call For Student Speaker</div>
           </div>
         </div>
         <div class="pricing-cta m-0">
-          <a href="#">Show <i class="fas fa-arrow-right"></i></a>
+          <a href="{{ route('admin.speaker.participant') }}">Show <i class="fas fa-arrow-right"></i></a>
         </div>
       </div>
     </div>
-    <div class="col-12 col-md-4 col-lg-4">
+    {{-- <div class="col-12 col-md-4 col-lg-4">
       <div class="pricing">
         <div class="pricing-title">
           Competition
