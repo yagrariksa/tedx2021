@@ -10,5 +10,5 @@
                 tanya ke ubin atau baca dokumen brief CFSS --}}
             {{-- knp belum dibikin ? karena masi mau
                 koordinasi lgi sama anak Event nya ttg ini --}}
-        @endif
-@endif
+        {{-- @endif
+@endif --}}
