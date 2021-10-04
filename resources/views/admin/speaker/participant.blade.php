@@ -101,6 +101,9 @@
                                         @if (!$d->lolos)
                                             <button class="btn btn-primary btn-loloskan"
                                                 data-email="{{ $d->user->email }}">loloskan</button>
+                                        @else
+                                        <button class="btn btn-danger btn-gagalkan"
+                                                data-email="{{ $d->user->email }}">gagalkan</button>
                                         @endif
                                     </td>
                                 </tr>
@@ -221,16 +224,29 @@
         @csrf
         <input type="text" name="email" id="input-email">
     </form>
+    <form action="{{ route('admin.speaker.participant') }}" id="form-gagalkan" style="display: none" method="POST">
+        @csrf
+        @method('PUT')
+        <input type="text" name="email" id="input-email">
+    </form>
 @endsection
 
 @section('js')
     <script>
-        const formLoloskan = document.querySelector('#form-loloskan')
+        const formLoloskan = document.querySelector('#form-loloskan');
+        const formGagalkan = document.querySelector('#form-gagalkan');
         const btnLoloskan = document.querySelectorAll('.btn-loloskan');
+        const btnGagalkan = document.querySelectorAll('.btn-gagalkan');
         btnLoloskan.forEach(btn => {
             btn.addEventListener('click', () => {
                 formLoloskan.querySelector('#input-email').value = btn.dataset.email
                 formLoloskan.submit();
+            })
+        });
+        btnGagalkan.forEach(btn => {
+            btn.addEventListener('click', () => {
+                formGagalkan.querySelector('#input-email').value = btn.dataset.email
+                formGagalkan.submit();
             })
         });
     </script>

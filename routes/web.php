@@ -72,6 +72,7 @@ Route::prefix('admin')->group(function () {
             Route::get('/', [AdminSpeaker::class, 'home'])->name('admin.speaker.home');
             Route::get('/participant', [AdminSpeaker::class, 'participant'])->name('admin.speaker.participant');
             Route::post('/participant', [AdminSpeaker::class, 'loloskan'])->name('admin.speaker.participant');
+            Route::put('/participant', [AdminSpeaker::class, 'gagalkan'])->name('admin.speaker.participant');
         });
     });
 });

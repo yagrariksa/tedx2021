@@ -34,4 +34,17 @@ class SpeakerController extends Controller
         ]);
         return redirect()->route('admin.speaker.participant');
     }
+
+    public function gagalkan(Request $request)
+    {
+        $u = User::where('email',$request->email)->first();
+        if (!$u) {
+            return redirect()->back()->with('erri','something wrong');
+        }
+
+        $s = Speaker::where('uid',$u->id)->first()->update([
+            'lolos' => false,
+        ]);
+        return redirect()->route('admin.speaker.participant');
+    }
 }

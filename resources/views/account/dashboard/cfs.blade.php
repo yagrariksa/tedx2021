@@ -1,8 +1,8 @@
 @if (Auth::user()->speaker)
-        anda sudah terdafatar
+        anda sudah terdafatar event CFSS
         @if (Auth::user()->speaker->lolos)
             <strong>
-                ANDA lolos
+                ANDA lolos event CFSS
             </strong>
             {{-- harusnya disini nanti ada modals tentang
                 masukin data interview mau kapan --}}
