@@ -42,17 +42,17 @@ Route::prefix('account')->group(function () {
             Route::post('/', [CE::class, 'register'])->name('account.essay.register');
             Route::put('/', [CE::class, 'paid'])->name('account.essay.payment');
         });
-        Route::prefix('/speaker')->group(function () {
-            Route::get('/', [DS::class, 'dashboard'])->name('account.speaker.dashboard');
-            Route::post('/', [DS::class, 'register'])->name('account.speaker.register');
-        });
+        // Route::prefix('/speaker')->group(function () {
+        //     Route::get('/', [DS::class, 'dashboard'])->name('account.speaker.dashboard');
+        //     Route::post('/', [DS::class, 'register'])->name('account.speaker.register');
+        // });
     });
 });
 Route::get('/about', function () {
     return view('mainboard');
 })->name('mainboard');
 Route::get('/essay', [CE::class, 'branding'])->name('essay.branding');
-Route::get('/speaker', [DS::class, 'branding'])->name('speaker.branding');
+// Route::get('/speaker', [DS::class, 'branding'])->name('speaker.branding');
 
 Route::prefix('admin')->group(function () {
     Route::get('/', function () {
@@ -72,6 +72,7 @@ Route::prefix('admin')->group(function () {
             Route::get('/', [AdminSpeaker::class, 'home'])->name('admin.speaker.home');
             Route::get('/participant', [AdminSpeaker::class, 'participant'])->name('admin.speaker.participant');
             Route::post('/participant', [AdminSpeaker::class, 'loloskan'])->name('admin.speaker.participant');
+            Route::put('/participant', [AdminSpeaker::class, 'gagalkan'])->name('admin.speaker.participant');
         });
     });
 });

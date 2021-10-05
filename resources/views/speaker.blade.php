@@ -9,7 +9,7 @@
             <button class="modal-trigger" id="btn-regist" data-target="#modal-regist">daftar sekarang</button>
         @endif
     @else
-        <a href="#">regist account</a>
+        <a href="{{ route('account.regist') }}?page=speaker">regist account</a>
     @endauth
 
     <div class="modal hide" id="modal-regist">
