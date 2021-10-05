@@ -37,7 +37,7 @@
             </form> --}}
                 </div>
             </div>
-            <div class="form-group pl-4">
+            {{-- <div class="form-group pl-4">
                 <div class="selectgroup selectgroup-pills"
                     style="display: inline-flex; flex-wrap:nowrap; gap: .5rem; align-items:center">
                     <select id="input-item-per-page" class="form-control" style="border-radius: 1rem">
@@ -66,7 +66,7 @@
                         <span class="selectgroup-button">Accepted</span>
                     </label>
                 </div>
-            </div>
+            </div> --}}
             <div class="card-body p-0">
                 <div class="table-responsive">
                     <table class="table table-striped">
@@ -81,7 +81,7 @@
                                 <th>other</th>
                             </tr>
                         </thead>
-                        <tbody id="tbody">
+                        <tbody>
                             @foreach ($data as $d)
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>

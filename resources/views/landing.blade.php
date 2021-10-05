@@ -64,7 +64,7 @@
         </div>
         <div class="event">
             <h2>Call for Student Speaker</h2>
-            <a href="#" class="ic-read-more">
+            <a href="{{ route('speaker.branding') }}" class="ic-read-more">
                 <img src="{{ asset('assets/img/revamp/ic-cfs.png') }}" alt="">
                 <span></span>
                 <p>Read More</p>
