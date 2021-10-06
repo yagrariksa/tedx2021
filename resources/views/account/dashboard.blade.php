@@ -49,8 +49,12 @@
             <div class="participated">
                 <h2>Participated Event</h2>
                 @if (Auth::user()->speaker || Auth::user()->essay)
+                @if (Auth::user()->essay)
                 @include('account.dashboard.cfe')
+                @endif
+                @if (Auth::user()->speaker)
                 @include('account.dashboard.cfs')
+                @endif
 
                 {{-- GAIKUT APA2 --}}
                 @else
@@ -89,7 +93,7 @@
                     {{-- @if (!Auth::user()->speaker) --}}
                     <div class="event">
                         <h3>Call for Speaker Student</h3>
-                        <a href="#" class="ic-read-more">
+                        <a href="{{ route('speaker.branding') }}" class="ic-read-more">
                             <img style="background: white" src="{{ asset('assets/img/revamp/ic-cfs.png') }}" alt="">
                             <span></span>
                             <p>Read More</p>

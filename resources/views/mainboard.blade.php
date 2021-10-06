@@ -6,10 +6,6 @@
 <link rel="stylesheet" href="{{ asset('assets/css/revamp/mainboard.css') }}">
 @endsection
 
-@section('js')
-<script src="{{ asset('assets/js/revamp/mainboard.js') }}"></script>
-@endsection
-
 @section('content')
 <div class="about-us">
     <h1>About Us</h1>
@@ -780,6 +776,7 @@
 @endsection
 
 @section('script')
-<script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js'></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+{{-- <script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js'></script> --}}
 @include('layouts.mainboardjs')
 @endsection

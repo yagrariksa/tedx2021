@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 
 class AccountController extends Controller
@@ -17,8 +18,13 @@ class AccountController extends Controller
         return view('account.dashboard');
     }
 
-    public function login()
+    public function login(Request $request)
     {
+        if ($request->query('page')) {
+            if ($request->query('page') == 'speaker') {
+                Session::put('redirect', 'speaker.branding');
+            }
+        }
         return view('account.login');
     }
 
@@ -52,6 +58,11 @@ class AccountController extends Controller
             'email' => $request->email,
             'password' => $request->password
         ])) {
+            if (Session::has('redirect')) {
+                $data = Session::get('redirect');
+                Session::forget('redirect');
+                return redirect()->route($data);
+            }
             return redirect()->route('account.dashboard');
         } else {
             return redirect()->back()->with([
@@ -97,11 +108,21 @@ class AccountController extends Controller
             'institute' => $request->institute
         ]);
         Auth::login($user);
+        if (Session::has('redirect')) {
+            $data = Session::get('redirect');
+            Session::forget('redirect');
+            return redirect()->route($data);
+        }
         return redirect()->route('account.dashboard');
     }
 
-    public function regist()
+    public function regist(Request $request)
     {
+        if ($request->query('page')) {
+            if ($request->query('page') == 'speaker') {
+                Session::put('redirect', 'speaker.branding');
+            }
+        }
         return view('account.regist');
     }
 
