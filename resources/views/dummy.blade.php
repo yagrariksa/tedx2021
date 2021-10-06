@@ -16,13 +16,10 @@
         <h3>AKUN NAVBAR</h3>
         <ul>
             <li style="display: inline">
-                <a href="{{ route('account.dashboard') }}">DASHBOARD</a>
+                <a href="{{ route('landing') }}">Main Page TEDX</a>
             </li>
             <li style="display: inline">
-                <a href="{{ route('account.essay.dashboard') }}">ESSAY</a>
-            </li>
-            <li style="display: inline">
-                <a href="{{ route('account.speaker.dashboard') }}">speaker</a>
+                <a href="{{ route('account.dashboard') }}">DASHBOARD User</a>
             </li>
             <li style="display: inline">
                 <a href="{{ route('account.logout') }}">LOGOUT</a>
