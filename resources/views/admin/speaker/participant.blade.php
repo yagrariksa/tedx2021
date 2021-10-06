@@ -196,12 +196,13 @@
         });
 
         $(".btn.btn-warning#detail-item").on('click', function() {
-            $('#info-ig').attr('href', $(this).data("ig"));
+            // $('#info-ig').attr('href', $(this).data("ig"));
+            $('#info-ig').attr('href', '#');
 
             $('#info-name').text($(this).data("name"));
             $('#info-ig').text($(this).data("ig"));
             $('#info-domisili').text($(this).data("domisili"));
-            $('#info-drive').text($(this).data("domisili"));
+            $('#info-drive').text($(this).data("drive"));
 
         });
 
