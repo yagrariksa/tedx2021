@@ -6,14 +6,6 @@
 
 @section('css')
     <link rel="stylesheet" href="{{ asset('assets/modules/chocolat/dist/css/chocolat.css') }}">
-    <style>
-        th,
-        td {
-            border: 1px solid black;
-            padding: 3px 5px;
-        }
-
-    </style>
 @endsection
 
 @section('header')
@@ -27,14 +19,14 @@
             <div class="card-header">
                 <h4>All Participant</h4>
                 <div class="card-header-form">
-                    {{-- <form>
+                    {{-- <form> --}}
                 <div class="input-group">
-                <input type="text" class="form-control" placeholder="Search">
+                <input type="text" class="form-control" id="table-search" onkeyup="search()"  placeholder="Search name">
                 <div class="input-group-btn">
                     <button class="btn btn-primary"><i class="fas fa-search"></i></button>
                 </div>
                 </div>
-            </form> --}}
+            {{-- </form> --}}
                 </div>
             </div>
             {{-- <div class="form-group pl-4">
@@ -69,16 +61,14 @@
             </div> --}}
             <div class="card-body p-0">
                 <div class="table-responsive">
-                    <table class="table table-striped">
+                    <table id="membertable" class="table table-striped" cellspacing="0" cellpadding="0">
                         <thead>
                             <tr>
                                 <th>#</th>
                                 <th>Name</th>
-                                <th>Domisili</th>
-                                <th>gdrive</th>
-                                <th>IG</th>
+                                <th>Gdrive</th>
                                 <th>LOLOS</th>
-                                <th>other</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -86,18 +76,18 @@
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $d->user->name }}</td>
-                                    <td>{{ $d->domisili }}</td>
                                     <td><a href="{{ $d->drive }}">{{ $d->drive }}</a></td>
-                                    <td>{{ $d->instagram }}</td>
                                     <td>
                                         @if ($d->lolos)
-                                            <span class="btn btn-success">V</span>
+                                            <span class="btn btn-success"><i class="fas fa-check"></i></span>
                                         @else
-                                            <span class="btn btn-danger">X</span>
+                                            <span class="btn btn-danger"><i class="fas fa-times"></i></span>
                                         @endif
                                     </td>
                                     <td>
-                                        <button class="btn btn-success">show modal nantinya</button>
+                                        <button class="btn btn-warning" id="detail-item" data-toggle="modal" data-target="#infoModal"
+                                        data-name='{{ $d->user->name }}' data-domisili="{{ $d->domisili }}" data-drive="{{ $d->drive }}" data-ig="{{ $d->instagram }}"
+                                        >Participant Detail</button>
                                         @if (!$d->lolos)
                                             <button class="btn btn-primary btn-loloskan"
                                                 data-email="{{ $d->user->email }}">loloskan</button>
@@ -134,49 +124,10 @@
     </div>
 </div>
 
-    {{-- <table>
-        <thead>
-            <tr>
-                <th>#</th>
-                <th>Name</th>
-                <th>Domisili</th>
-                <th>gdrive</th>
-                <th>IG</th>
-                <th>LOLOS</th>
-                <th>other</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach ($data as $d)
-                <tr>
-                    <td>{{ $loop->iteration }}</td>
-                    <td>{{ $d->user->name }}</td>
-                    <td>{{ $d->domisili }}</td>
-                    <td><a href="{{ $d->drive }}">{{ $d->drive }}</a></td>
-                    <td>{{ $d->instagram }}</td>
-                    <td>
-                        @if ($d->lolos)
-                            <span class="btn btn-success">V</span>
-                        @else
-                            <span class="btn btn-danger">X</span>
-                        @endif
-                    </td>
-                    <td>
-                        <button class="btn btn-success">show modal nantinya</button>
-                        @if (!$d->lolos)
-                            <button class="btn btn-primary btn-loloskan"
-                                data-email="{{ $d->user->email }}">loloskan</button>
-                        @endif
-                    </td>
-                </tr>
-            @endforeach
-        </tbody>
-    </table> --}}
-
 @endsection
 
 @section('modals')
-{{-- <div class="modal fade" tabindex="-1" role="dialog" id="exampleModal">
+<div class="modal fade" tabindex="-1" role="dialog" id="infoModal">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -187,39 +138,33 @@
             </div>
             <div class="modal-body">
                 <div class="">
-                    <form action="{{ route('admin.speaker.participant') }}" id="form-loloskan" method="post" style="display: none">
-                        @csrf
-                        <div class="form-group">
-                            <label for="">Name</label>
-                            <input type="hidden" name="id" value="" id="input-id" class="form-control">
-                            <input type="text" name="fullname" disabled value="" placeholder="" id="input-name"
-                                class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <label for="">Email</label>
-                            <input type="text" name="email" disabled value="" placeholder="" id="input-email"
-                                class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <label>Ubah status menjadi</label>
-                            <select class="form-control" name="status" id="form-input-status">
-                                <option value="6" selected>Pembayaran Diterima</option>
-                                <option value="5">Tolak Pembayaran</option>
-                            </select>
-                        </div>
-                        <input type="text" name="reason" placeholder="alasan (wajib diisi)" id="input-reason"
-                            class="form-control" style="display: none">
-                    </form>
+                    <div class="form-group">
+                        <label>Name</label>
+                        <p id="info-name" class="">tes coba yes</p>
+                    </div>
+                    <div class="form-group">
+                        <label>Domisili</label>
+                        <p id="info-domisili" class="">tes coba yes</p>
+                    </div>
+                    <div class="form-group">
+                        <label>Gdrive Link</label>
+                        <p id="info-drive" class="">tes coba yes</p>
+                    </div>
+                    <div class="form-group">
+                        <label>Instagram</label>
+                        <p><a id="info-ig" class="">tes coba yes</a></p>
+                    </div>
+
                 </div>
             </div>
-            <div class="modal-footer bg-whitesmoke br">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary"
-                    onclick="document.getElementById('form-ubah').submit()">Save changes</button>
+            <div class="
+                        modal-footer bg-whitesmoke br">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
             </div>
         </div>
     </div>
-</div> --}}
+
     <form action="{{ route('admin.speaker.participant') }}" id="form-loloskan" style="display: none" method="POST">
         @csrf
         <input type="text" name="email" id="input-email">
@@ -249,5 +194,37 @@
                 formGagalkan.submit();
             })
         });
+
+        $(".btn.btn-warning#detail-item").on('click', function() {
+            $('#info-ig').attr('href', $(this).data("ig"));
+
+            $('#info-name').text($(this).data("name"));
+            $('#info-ig').text($(this).data("ig"));
+            $('#info-domisili').text($(this).data("domisili"));
+            $('#info-drive').text($(this).data("domisili"));
+
+        });
+
+        function search() {
+        // Declare variables
+        var input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById("table-search");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("membertable");
+        tr = table.getElementsByTagName("tr");
+
+        // Loop through all table rows, and hide those who don't match the search query
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[1];
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    }
     </script>
 @endsection
