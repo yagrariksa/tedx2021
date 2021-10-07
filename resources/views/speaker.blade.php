@@ -30,7 +30,7 @@
                 data-bs-target="#join-cfs">Join Event</button>
                 @endif
                 @else
-            <a href="{{ route('account.login') }}" class="button submit">Join Event</a>
+            <a href="{{ route('account.login') }}?page=speaker" class="button submit">Join Event</a>
 
             @endif
             <div class="modal fade" id="join-cfs" tabindex="-1" data-bs-backdrop="static"
@@ -74,7 +74,7 @@
     </div>
 </div>
 <div class="announcement">
-    <h2 class="smaller">Announcement</h2>
+    <h2 class="smaller">Timeline</h2>
     <div class="timeline">
         <div class="tl-lg">
             <input type="radio" name="timeline" id="oprec">
@@ -285,14 +285,15 @@ var date = now.getTime();
 // var dateMonth = (now.getMonth()+1);
 // var dateYear = now.getFullYear();
 
-if (date <= new Date("2021-10-28").getTime()) {
+if (date >= new Date("2021-10-28").getTime()) {
     $('#final').prop('checked', true)
-} else if (date <= new Date("2021-10-23").getTime()) {
+} else if (date >= new Date("2021-10-23").getTime()) {
     $('#interview').prop('checked', true)
-} else if (date <= new Date("2021-10-22").getTime()) {
+} else if (date >= new Date("2021-10-22").getTime()) {
     $('#announceI').prop('checked', true)
 } else {
     $('#oprec').prop('checked', true)
+    $('.announce-body')[0].innerHTML = oprec;
 }
 
 

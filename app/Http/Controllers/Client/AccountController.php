@@ -86,6 +86,11 @@ class AccountController extends Controller
         $user->save();
 
         Auth::login($user);
+        if (Session::has('redirect')) {
+            $data = Session::get('redirect');
+            Session::forget('redirect');
+            return redirect()->route($data);
+        }
         return redirect()->route('account.dashboard');
     }
 
