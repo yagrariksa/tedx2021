@@ -15,10 +15,10 @@
 <div class="header" id="join-now">
     <div class="description">
         <h2>Call for Student Speaker</h2>
-        <h3>Call for Student Speaker is an event held for students who want to express their public
-            speaking talent by becoming a speaker at TEDxUniversitas Airlangga 2021. This year, Call
-            for Student Speaker has the theme <span class="text-green">Ripple</span> <span
-                class="text-red">Effect.</span></h3>
+        <h3>Call For Student is one of the subevent held by TEDxUniversitasAirlangga which
+            provides a place for students of Universitas Airlangga to become the speaker in
+            TEDxUniversitasAirlangga 2021. In this occasion, TEDxUniversitasAirlangga is
+            calling students to be the speakers to perform on TEDxUniversitasAirlangga's IGTV and the following main event.</h3>
         <div class="footer">
             <a href="https://drive.google.com/file/d/1kl1MCTMHjyzf13mEWRp16R2gxmdYMgG8/view?usp=sharing" target="__blank" class="button secondary">Booklet</a>
             @if (Auth::user())
