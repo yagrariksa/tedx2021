@@ -10,7 +10,7 @@
             <div class="desc">
                 <div>
                     <h2 class="text-red">You're the winner</h2>
-                    <p class="text-sand-beach">wow <span class="text-green">..·</span> nice</p>
+                    <p class="text-sand-beach">wow <span class="text-green">·</span> nice</p>
                 </div>
             </div>
         @else
