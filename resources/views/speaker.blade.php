@@ -15,16 +15,15 @@
 <div class="header" id="join-now">
     <div class="description">
         <h2>Call for Student Speaker</h2>
-        <h3>Call for student adalah sebuah event yang diselenggarakan untuk mahasiswa yang ingin menuangkan
-            bakat public speaking dengan menjadi pembicara pada TEDxUniversitas Airlangga 2021. Pada tahun
-            ini,
-            Call for student mengangkat tema yakni <span class="text-green">Ripple</span> <span
-                class="text-red">Effect.</span></h3>
+        <h3>Call For Student is one of the subevent held by TEDxUniversitasAirlangga which
+            provides a place for students of Universitas Airlangga to become the speaker in
+            TEDxUniversitasAirlangga 2021. In this occasion, TEDxUniversitasAirlangga is
+            calling students to be the speakers to perform on TEDxUniversitasAirlangga's IGTV and the following main event.</h3>
         <div class="footer">
-            <a href="" class="button secondary">Booklet</a>
+            <a href="https://drive.google.com/file/d/1kl1MCTMHjyzf13mEWRp16R2gxmdYMgG8/view?usp=sharing" target="__blank" class="button secondary">Booklet</a>
             @if (Auth::user())
             @if (Auth::user()->speaker)
-            <button type="button" class="button">Sudah terdaftar</button>
+            <button type="button" class="button" style="cursor:auto">Already Registered</button>
             @else
             <button type="button" class="button submit" data-bs-toggle="modal"
                 data-bs-target="#join-cfs">Join Event</button>
@@ -44,6 +43,9 @@
                         </div>
                         <div class="modal-body">
                             <div class="input-form">
+                                <label>Please read the requirements on the bottom page carefully</label>
+                            </div>
+                            <div class="input-form">
                                 <label for="domisili">Domicile <span class="text-red">*</span></label>
                                 <input type="text" name="domisili" id="domicile"
                                     placeholder="Kota Surabaya">
@@ -51,7 +53,7 @@
                             <div class="input-form">
                                 <label for="instagram">Instagram Account <span
                                         class="text-red">*</span></label>
-                                <input type="text" name="instagram" id="instagram" placeholder="evacipta">
+                                <input type="text" name="instagram" id="instagram" placeholder="@evacipta">
                             </div>
                             <div class="input-form">
                                 <label for="drive">Google Drive Link <span
