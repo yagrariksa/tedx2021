@@ -140,19 +140,19 @@
                 <div class="">
                     <div class="form-group">
                         <label>Name</label>
-                        <p id="info-name" class="">tes coba yes</p>
+                        <p id="info-name" class="">name</p>
                     </div>
                     <div class="form-group">
                         <label>Domisili</label>
-                        <p id="info-domisili" class="">tes coba yes</p>
+                        <p id="info-domisili" class="">domilisi</p>
                     </div>
                     <div class="form-group">
                         <label>Gdrive Link</label>
-                        <p id="info-drive" class="">tes coba yes</p>
+                        <p><a id="info-drive" class="">link gdrive</a></p>
                     </div>
                     <div class="form-group">
                         <label>Instagram</label>
-                        <p><a id="info-ig" class="">tes coba yes</a></p>
+                        <p id="info-ig" class="">instagram</p>
                     </div>
 
                 </div>
@@ -197,7 +197,7 @@
 
         $(".btn.btn-warning#detail-item").on('click', function() {
             // $('#info-ig').attr('href', $(this).data("ig"));
-            $('#info-ig').attr('href', '#');
+            $('#info-drive').attr('href', $(this).data("drive"));
 
             $('#info-name').text($(this).data("name"));
             $('#info-ig').text($(this).data("ig"));

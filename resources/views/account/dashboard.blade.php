@@ -69,7 +69,7 @@
                             <hr>
                             <p>Your account <span class="text-red" style="font-weight: 600;">hasn't been signed</span>
                                 to an event. Be sure to <span class="text-green" style="font-weight: 600;">check</span>
-                                dan <span class="text-green" style="font-weight: 600;">participate</span>.
+                                and <span class="text-green" style="font-weight: 600;">participate</span>.
                             </p>
                         </div>
                         {{-- <a href="{{ route('essay.branding') }}" class="submit">Register</a> --}}
@@ -92,7 +92,7 @@
                     {{-- @endif --}}
                     {{-- @if (!Auth::user()->speaker) --}}
                     <div class="event">
-                        <h3>Call for Speaker Student</h3>
+                        <h3>Call for Student Speaker</h3>
                         <a href="{{ route('speaker.branding') }}" class="ic-read-more">
                             <img style="background: white" src="{{ asset('assets/img/revamp/ic-cfs.png') }}" alt="">
                             <span></span>

@@ -96,7 +96,7 @@
                     <label for="address">Address <span class="text-red">*</span></label>
                     <textarea required type="text" name="address" id="address"
                         placeholder="Jalan Dr. Ir. H. Soekarno, Mulyorejo, Surabaya, Jawa Timur 60115"
-                        rows="4">{{ old('address') }}"</textarea>
+                        rows="4">{{ old('address') }}</textarea>
                 </div>
                 <div class="footer">
                     <div>

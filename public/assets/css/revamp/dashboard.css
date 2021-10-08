@@ -955,6 +955,7 @@ footer .content-footer .copyright h5 {
   border-radius: 50%;
   border: 2px solid #EBEBEB;
   overflow: hidden;
+  background: white;
 }
 
 .others .event .ic-read-more img {
@@ -998,6 +999,11 @@ footer .content-footer .copyright h5 {
 
 .others .event .ic-read-more:hover p {
   color: #fff;
+}
+
+.others .event .ic-read-more img {
+  width: 60px;
+  height: 60px;
 }
 
 @media screen and (max-width: 1200px) {
