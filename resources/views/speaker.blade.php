@@ -20,7 +20,7 @@
             TEDxUniversitasAirlangga 2021. In this occasion, TEDxUniversitasAirlangga is
             calling students to be the speakers to perform on TEDxUniversitasAirlangga's IGTV and the following main event.</h3>
         <div class="footer">
-            <a href="https://drive.google.com/file/d/1kl1MCTMHjyzf13mEWRp16R2gxmdYMgG8/view?usp=sharing" target="__blank" class="button secondary">Booklet</a>
+            <a href="https://drive.google.com/file/d/17b1ZN6GQGA8hI0mGjycFIYTtjL1Zm3O0/view?usp=sharing" target="__blank" class="button secondary">Booklet</a>
             @if (Auth::user())
             @if (Auth::user()->speaker)
             <button type="button" class="button" style="cursor:auto">Already Registered</button>
