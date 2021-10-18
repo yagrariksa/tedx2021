@@ -15,8 +15,8 @@
         </div>
         <div class="headline">
             <h1>TEDx Universitas Airlangga</h1>
-            <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora aliquam quo architecto.
-                Animi doloribus provident velit!</h3>
+            {{-- <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora aliquam quo architecto.
+                Animi doloribus provident velit!</h3> --}}
             <a href="{{ route('account.regist') }}" class="button submit">Join Now</a>
         </div>
     </div>
@@ -64,7 +64,7 @@
         </div>
         <div class="event">
             <h2>Call for Student Speaker</h2>
-            <a href="#" class="ic-read-more">
+            <a href="{{ route('speaker.branding') }}" class="ic-read-more">
                 <img src="{{ asset('assets/img/revamp/ic-cfs.png') }}" alt="">
                 <span></span>
                 <p>Read More</p>

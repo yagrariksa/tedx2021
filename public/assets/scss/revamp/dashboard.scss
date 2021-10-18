@@ -190,6 +190,11 @@
 
         .ic-read-more {
             @include read-more(100px);
+            img {
+                width: 60px;
+                height: 60px;
+            }
+            background: white;
         }
     }
 }

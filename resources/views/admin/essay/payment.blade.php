@@ -388,7 +388,7 @@
                     // const tdbutton2 = document.createElement('td');
                     const button2 = document.createElement('button');
                     button2.classList.add('btn');
-                    button2.innerHTML = 'Detail Participant';
+                    button2.innerHTML = 'Participant Detail';
                     button2.style.marginLeft = '.5rem';
                     button2.classList.add('form-trigger');
                     button2.classList.add('btn-warning');

@@ -1,7 +1,4 @@
-const regist = document.querySelector('#regist');
-regist.addEventListener('click', () => {
-    window.location = "./user-regis-cfe.html"
-})
+
 
 // SLIDESHOW
 let slideIndex = 1;
