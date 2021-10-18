@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Admin;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Str;
 
@@ -23,6 +24,9 @@ class AuthController extends Controller
 
     public function doLogin(Request $request)
     {
+        if (Auth::user()) {
+            Auth::logout();
+        }
         // dd($request);
         if (Session::has('admin')) {
             $admin = Session::get('admin');
