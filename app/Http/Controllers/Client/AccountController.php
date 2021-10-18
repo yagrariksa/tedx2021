@@ -12,6 +12,18 @@ use Illuminate\Support\Facades\Validator;
 
 class AccountController extends Controller
 {
+    function logoutAdmin()
+    {
+        if (Session::has('admin')) {
+            $admin = Session::get('admin');
+            if ($admin['login']) {
+                Session::put('admin', [
+                    'login' => false,
+                    'token' => null
+                ]);
+            }
+        }
+    }
 
     public function dashboard()
     {
@@ -30,6 +42,7 @@ class AccountController extends Controller
 
     public function post(Request $request)
     {
+        $this->logoutAdmin();
         // validator
         $rules = [
             'email' => 'required',
@@ -75,7 +88,8 @@ class AccountController extends Controller
 
     public function postsetup(Request $request)
     {
-        // dd($request);
+        $this->logoutAdmin();
+
         $user = User::where('email', $request->email)->first();
         if (!$user) {
             return redirect()->back()->with('error', 'something wrong, account not found');
@@ -96,6 +110,8 @@ class AccountController extends Controller
 
     public function postregist(Request $request)
     {
+        $this->logoutAdmin();
+
         if (User::where('email', $request->email)->first()) {
             return redirect()->back()->with([
                 'form' => 'regist',
