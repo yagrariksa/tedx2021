@@ -67,14 +67,6 @@
             <div class="card-front">
                 <h2>Runner Up</h2>
             </div>
-            <!-- <div class="card-back">
-                <h3>750K Cash</h3>
-                <h3>E-Certificate</h3>
-                <h3>Bonus merchandise</h3>
-                <div class="block">
-                    <h3>Get Published at TEDxUniversitas Airlangga</h3>
-                </div>
-            </div> -->
             <div class="card-back winner">
                 <div>
                     <h3>Junjungan N. R.</h3>
@@ -94,14 +86,6 @@
             <div class="card-front">
                 <h2>1st Place</h2>
             </div>
-            <!-- <div class="card-back">
-                <h3>750K Cash</h3>
-                <h3>E-Certificate</h3>
-                <h3>Bonus merchandise</h3>
-                <div class="block">
-                    <h3>Get Published at TEDxUniversitas Airlangga</h3>
-                </div>
-            </div> -->
             <div class="card-back winner">
                 <div>
                     <h3>Marenthina</h3>
@@ -120,14 +104,6 @@
             <div class="card-front">
                 <h2>3rd Place</h2>
             </div>
-            <!-- <div class="card-back">
-                <h3>750K Cash</h3>
-                <h3>E-Certificate</h3>
-                <h3>Bonus merchandise</h3>
-                <div class="block">
-                    <h3>Get Published at TEDxUniversitas Airlangga</h3>
-                </div>
-            </div> -->
             <div class="card-back winner">
                 <div>
                     <h3>Evelin Hudiono</h3>

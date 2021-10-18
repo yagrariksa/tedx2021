@@ -89,7 +89,7 @@
                     </div>
                     <h3 class="date">-</h3>
                     <div class="date-month">
-                        <h3 class="date">17</h3>
+                        <h3 class="date">21</h3>
                         <h5>Oct</h5>
                     </div>
                 </div>
