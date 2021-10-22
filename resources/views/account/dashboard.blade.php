@@ -18,7 +18,8 @@
     <meta property="og:type" content="website" />
     <meta property="og:title" content="TEDx Universitas Airlangga" />
     <meta property="og:url" content="https://www.tedxuniversitasairlangga.com" />
-    <meta property="og:description" content="Small Matters, Big Impact. An impact still can be made regardless of how people perceive the changes they have created." />
+    <meta property="og:description"
+        content="Small Matters, Big Impact. An impact still can be made regardless of how people perceive the changes they have created." />
     <meta name="image" property="og:image" content="{{ asset('assets/img/favicon/android-chrome-512x512.png') }}" />
 
     <!-- CSS -->
@@ -26,6 +27,13 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ asset('assets/css/revamp/env.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/revamp/dashboard.css') }}">
+
+    <style>
+        .btn-green {
+            background-color: #24B9BA !important ;
+        }
+
+    </style>
 </head>
 
 <body>
@@ -49,32 +57,34 @@
             <div class="participated">
                 <h2>Participated Event</h2>
                 @if (Auth::user()->speaker || Auth::user()->essay)
-                @if (Auth::user()->essay)
-                @include('account.dashboard.cfe')
-                @endif
-                @if (Auth::user()->speaker)
-                @include('account.dashboard.cfs')
-                @endif
+                    @if (Auth::user()->essay)
+                        @include('account.dashboard.cfe')
+                    @endif
+                    @if (Auth::user()->speaker)
+                        @include('account.dashboard.cfs')
+                    @endif
 
-                {{-- GAIKUT APA2 --}}
+                    {{-- GAIKUT APA2 --}}
                 @else
-                <div class="main-card" style="min-height: 200px;">
-                    <div class="status">
-                        <div class="desc">
-                            <div>
-                                <h2 class="text-red">Oops!</h2>
-                                <p>un <span class="text-green">·</span> re <span class="text-red">·</span> gis <span
-                                        class="text-green">·</span> tered</p>
+                    <div class="main-card" style="min-height: 200px;">
+                        <div class="status">
+                            <div class="desc">
+                                <div>
+                                    <h2 class="text-red">Oops!</h2>
+                                    <p>un <span class="text-green">·</span> re <span class="text-red">·</span>
+                                        gis <span class="text-green">·</span> tered</p>
+                                </div>
+                                <hr>
+                                <p>Your account <span class="text-red" style="font-weight: 600;">hasn't been
+                                        signed</span>
+                                    to an event. Be sure to <span class="text-green"
+                                        style="font-weight: 600;">check</span>
+                                    and <span class="text-green" style="font-weight: 600;">participate</span>.
+                                </p>
                             </div>
-                            <hr>
-                            <p>Your account <span class="text-red" style="font-weight: 600;">hasn't been signed</span>
-                                to an event. Be sure to <span class="text-green" style="font-weight: 600;">check</span>
-                                and <span class="text-green" style="font-weight: 600;">participate</span>.
-                            </p>
+                            {{-- <a href="{{ route('essay.branding') }}" class="submit">Register</a> --}}
                         </div>
-                        {{-- <a href="{{ route('essay.branding') }}" class="submit">Register</a> --}}
                     </div>
-                </div>
                 @endif
             </div>
             <div class="others">
@@ -165,8 +175,8 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
     <script src="{{ asset('assets/js/revamp/nav-footer.js') }}"></script>
     <!-- <script src="assets/js/dashboard.js"></script> -->
