@@ -19,7 +19,8 @@
     <meta property="og:type" content="website" />
     <meta property="og:title" content="TEDx Universitas Airlangga" />
     <meta property="og:url" content="https://www.tedxuniversitasairlangga.com" />
-    <meta property="og:description" content="Small Matters, Big Impact. An impact still can be made regardless of how people perceive the changes they have created." />
+    <meta property="og:description"
+        content="Small Matters, Big Impact. An impact still can be made regardless of how people perceive the changes they have created." />
     <meta name="image" property="og:image" content="{{ asset('assets/img/favicon/android-chrome-512x512.png') }}" />
 
     <!-- CSS -->
@@ -28,6 +29,19 @@
     <link rel="stylesheet" href="{{ asset('assets/css/revamp/env.css') }}">
     @yield('css')
     {{-- <link rel="stylesheet" href="assets/css/--.css"> --}}
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VDL0L9XRY5"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-VDL0L9XRY5');
+    </script>
 </head>
 
 <body>
@@ -63,7 +77,8 @@
                         </ul>
                     </div>
                 @else
-                <div class="dropdown"><a href="{{ route('account.login') }}" class="button">Login</a></div>
+                    <div class="dropdown"><a href="{{ route('account.login') }}" class="button">Login</a>
+                    </div>
                 @endauth
             </div>
         </nav>
@@ -80,8 +95,8 @@
                 <ul class="menu">
                     @auth
 
-                    <!-- KALO UDA LOGIN -->
-                    {{-- <li class="menu__item" style="margin-bottom: 1rem; display: flex; justify-content: center;">
+                        <!-- KALO UDA LOGIN -->
+                        {{-- <li class="menu__item" style="margin-bottom: 1rem; display: flex; justify-content: center;">
                         <button class="dropdown-toggle" type="button" id="account" data-bs-toggle="dropdown"
                             aria-expanded="false">
                             <img src="assets/img/user.svg" alt="profile">
@@ -99,13 +114,13 @@
                             </li>
                         </ul>
                     </li> --}}
-                    <li class="menu__item">
-                        <a class="menu__link" href="{{ route('account.dashboard') }}#0">Dashboard</a>
-                    </li>
-                    <li class="menu__item">
-                        <a class="menu__link" href="{{ route('account.logout') }}">Logout</a>
-                    </li>
-                    <hr>
+                        <li class="menu__item">
+                            <a class="menu__link" href="{{ route('account.dashboard') }}#0">Dashboard</a>
+                        </li>
+                        <li class="menu__item">
+                            <a class="menu__link" href="{{ route('account.logout') }}">Logout</a>
+                        </li>
+                        <hr>
                     @endauth
 
                     <!-- GENERAL -->
@@ -128,11 +143,11 @@
                     <!-- BELOM LOGIN -->
                     @auth
                     @else
-                    <hr>
-                    <li class="menu__item"
-                        style="margin-top: 1rem; display: flex; align-items: center; justify-content: center;">
-                        <a class="menu__link button secondary" href="{{ route('account.login') }}">Login</a>
-                    </li>
+                        <hr>
+                        <li class="menu__item"
+                            style="margin-top: 1rem; display: flex; align-items: center; justify-content: center;">
+                            <a class="menu__link button secondary" href="{{ route('account.login') }}">Login</a>
+                        </li>
                     @endauth
                 </ul>
             </nav>
