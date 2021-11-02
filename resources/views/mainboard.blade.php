@@ -253,7 +253,7 @@
         <div class="member2">
             <img src="{{ asset('assets/img/revamp/mainboard/debby.png') }}" alt="">
             <div class="member-card">
-                <h4>Debby</h4>
+                <h4>Rani</h4>
                 <p>Secretary | FEB 20</p>
                 <div class="footer">
                     <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><img
