@@ -17,7 +17,7 @@
             <h1>TEDx Universitas Airlangga</h1>
             {{-- <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora aliquam quo architecto.
                 Animi doloribus provident velit!</h3> --}}
-            <a href="{{ route('account.regist') }}" class="button submit">Join Now</a>
+            <a href="{{ route('account.regist') }}" class="button submit">Registration Main Event</a>
         </div>
     </div>
 </div>
