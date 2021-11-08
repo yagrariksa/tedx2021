@@ -253,10 +253,10 @@
         <div class="member2">
             <img src="{{ asset('assets/img/revamp/mainboard/debby.png') }}" alt="">
             <div class="member-card">
-                <h4>Debby</h4>
-                <p>Secretary | FEB 20</p>
+                <h4>Rani</h4>
+                <p>Secretary | FEB 19</p>
                 <div class="footer">
-                    <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><img
+                    <a href="https://www.instagram.com/raniadyr" target="_blank" rel="noopener noreferrer"><img
                             src="{{ asset('assets/img/revamp/ic-insta-black.svg') }}" alt=""></a>
                     <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer"><img
                             src="{{ asset('assets/img/revamp/ic-twitter-black.svg') }}" alt=""></a>

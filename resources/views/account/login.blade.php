@@ -1,5 +1,8 @@
 @extends('layouts.clientNew')
 
+@section('title')
+    LOGIN
+@endsection
 @section('css')
 <link rel="stylesheet" href="{{ asset('assets/css/revamp/login.css') }}">
 <style>
