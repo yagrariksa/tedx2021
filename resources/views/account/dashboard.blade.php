@@ -69,6 +69,18 @@
                     <div class="main-card" style="min-height: 200px;">
                         <div class="status">
                             <div class="desc">
+                                <div style="align-items: center">
+                                    <h2 class="text-green">Horray</h2>
+                                    <p class="text-sand-beach">well <span class="text-green">·</span> co <span
+                                            class="text-red">·</span> me </p>
+                                </div>
+                                <hr>
+                                <p>Your registration is <span class="text-green" style="font-weight: 600;">completed</span>.
+                                    <span class="text-red" style="font-weight: 600;">Please wait</span> for the day 
+                                    <span class="text-green" style="font-weight: 600;"> Main Event</span> will be Held. See You !
+                                </p>
+                        </div>
+                            {{-- <div class="desc">
                                 <div>
                                     <h2 class="text-red">Oops!</h2>
                                     <p>un <span class="text-green">·</span> re <span class="text-red">·</span>
@@ -82,8 +94,8 @@
                                     and <span class="text-green" style="font-weight: 600;">participate</span>.
                                 </p>
                             </div>
-                            {{-- <a href="{{ route('essay.branding') }}" class="submit">Register</a> --}}
-                        </div>
+                            {{-- <a href="{{ route('essay.branding') }}" class="submit">Register</a>
+                        </div> --}}
                     </div>
                 @endif
             </div>
