@@ -32,7 +32,7 @@
                             Event</button>
                     @endif
                 @else
-                    <a href="{{ route('account.login') }}?page=speaker" class="button submit">Join Event</a>
+                    <button disabled class="button" style="cursor: auto">Event Has Ended</button>
 
                 @endif
                 <div class="modal fade" id="join-cfs" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false"
@@ -189,7 +189,40 @@
             <fieldset class="announce-content">
                 <div class="announce-body">
                     <!-- here -->
-                    <h1 class="bigest">Announcement</h1>
+                    {{-- <h1 class="bigest">Announcement</h1> --}}
+                    <h2 class="smaller">Final Announcement</h2>
+    <h3>The following names have been <span class="text-green">chosen</span> to be the <span
+            class="text-green">student speakers on TEDxUniversitasAirlangga 2021</span>. We are
+        looking forward to collaborating with you and contributing to the success of
+        TEDxUniversitasAirlangga 2021.
+        <br><br>
+        Thank you to all participant! Keep your spirit. <br>
+        Your ideas worth to spread
+    </h3>
+    <div class="the-winner">
+        <div class="winner">
+            <img src= "{{ asset('assets/img/revamp/speaker-winner/Harits.png') }}" alt="">
+            <div class="member-card" style="width: 275px">
+                <h4>Harits Aufaa Abyan Fawwas</h4>
+                <p>FTMM '20</p>
+                <div class="footer" style="flex-direction: column">
+                    <hr class="red" style="width: 100%">
+                    <p>Net Worth King, as a Student Speakers at the Main Event</p>
+                </div>
+            </div>
+        </div>
+        <div class="winner">
+            <img src= "{{ asset('assets/img/revamp/speaker-winner/Frida.png') }}" alt="">
+            <div class="member-card" style="width: 275px">
+                <h4>Frida Febrianti Kirana</h4>
+                <p>FKM '19</p>
+                <div class="footer" style="flex-direction: column">
+                    <hr class="red" style="width: 100%">
+                    <p>Networking, as a Student Speakers on IGTV Talks That Matters</p>
+                </div>
+            </div>
+        </div>
+    </div>
                 </div>
                 <div class="announce-footer">
                     <h6>For any questions and pieces of information, kindly contact Hani through Line (id:
@@ -215,36 +248,24 @@
     <div class="the-winner">
         <!-- ISIAN WINNERNYA BLM TAU APAAN -->
         <div class="winner">
-            <img src="` + "{{ asset('assets/img/revamp/mainboard/marsa.png') }}" + `" alt="">
-            <div class="member-card">
-                <h4>Marsa</h4>
-                <p>Lisence | FEB 19</p>
-                <div class="footer">
-                    <a href="https://www.instagram.com/marsaandt" target="_blank"
-                        rel="noopener noreferrer"><img src="` +
-            "{{ asset('assets/img/revamp/ic-insta-black.svg') }}" + `"
-                            alt=""></a>
-                    <a target="_blank" rel="noopener noreferrer" style="opacity: .2;"><img
-                            src="assets/img/revamp/ic-twitter-black.svg" alt=""></a>
-                    <div></div>
-                    <hr class="red">
+            <img src="` + "{{ asset('assets/img/revamp/speaker-winner/Harits.png') }}" + `" alt="">
+            <div class="member-card" style="width: 275px">
+                <h4>Harits Aufaa Abyan Fawwas</h4>
+                <p>FTMM '20</p>
+                <div class="footer" style="flex-direction: column">
+                    <hr class="red" style="width: 100%">
+                    <p>Net Worth King, as a Student Speakers at the Main Event</p>
                 </div>
             </div>
         </div>
         <div class="winner">
-            <img src="` + "{{ asset('assets/img/revamp/mainboard/marsa.png') }}" + `" alt="">
-            <div class="member-card">
-                <h4>Marsa</h4>
-                <p>Lisence | FEB 19</p>
-                <div class="footer">
-                    <a href="https://www.instagram.com/marsaandt" target="_blank"
-                        rel="noopener noreferrer"><img src="` +
-            "{{ asset('assets/img/revamp/ic-insta-black.svg') }}" + `"
-                            alt=""></a>
-                    <a target="_blank" rel="noopener noreferrer" style="opacity: .2;"><img
-                            src="` + "{{ asset('assets/img/revamp/ic-twitter-black.svg') }}" + `" alt=""></a>
-                    <div></div>
-                    <hr class="red">
+            <img src="` + "{{ asset('assets/img/revamp/speaker-winner/Frida.png') }}" + `" alt="">
+            <div class="member-card" style="width: 275px">
+                <h4>Frida Febrianti Kirana</h4>
+                <p>FKM '19</p>
+                <div class="footer" style="flex-direction: column">
+                    <hr class="red" style="width: 100%">
+                    <p>Networking, as a Student Speakers on IGTV Talks That Matters</p>
                 </div>
             </div>
         </div>
