@@ -25,7 +25,7 @@
                 class="text-red">Effect.</span></h3>
         <div class="footer">
             <a href="https://drive.google.com/file/d/1Duvy0HibSGy-R8gDuTmpoS7epuneCrcO/view" target="__blank" class="button secondary">Booklet</a>
-            <button disabled class="button" style="cursor: auto">Registration Closed</button>
+            <button disabled class="button" style="cursor: auto">Event Has Ended</button>
         </div>
     </div>
     <div class="timeline">

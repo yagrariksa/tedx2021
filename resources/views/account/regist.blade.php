@@ -1,5 +1,8 @@
 @extends('layouts.clientNew')
 
+@section('title')
+    REGISTER
+@endsection
 @section('css')
 <link rel="stylesheet" href="{{ asset('assets/css/revamp/registration.css') }}">
 @endsection

@@ -32,7 +32,7 @@
                             Event</button>
                     @endif
                 @else
-                    <a href="{{ route('account.login') }}?page=speaker" class="button submit">Join Event</a>
+                    <button disabled class="button" style="cursor: auto">Event Has Ended</button>
 
                 @endif
                 <div class="modal fade" id="join-cfs" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false"
