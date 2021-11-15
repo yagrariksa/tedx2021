@@ -51,6 +51,12 @@ Route::prefix('account')->group(function () {
 Route::get('/about', function () {
     return view('mainboard');
 })->name('mainboard');
+Route::get('/sponsors', function () {
+    return view('sponsors');
+})->name('sponsors');
+Route::get('/stream', function () {
+    return view('stream');
+})->name('stream');
 Route::get('/essay', [CE::class, 'branding'])->name('essay.branding');
 Route::get('/speaker', [DS::class, 'branding'])->name('speaker.branding');
 
@@ -73,6 +79,12 @@ Route::prefix('admin')->group(function () {
             Route::get('/participant', [AdminSpeaker::class, 'participant'])->name('admin.speaker.participant');
             Route::post('/participant', [AdminSpeaker::class, 'loloskan'])->name('admin.speaker.participant');
             Route::put('/participant', [AdminSpeaker::class, 'gagalkan'])->name('admin.speaker.participant');
+        });
+        Route::prefix('/main')->group(function () {
+            // Route::get('/', [AdminSpeaker::class, 'home'])->name('admin.speaker.home');
+            Route::get('/statistic', function () {
+                return view('admin.main.statistic');
+            })->name('admin.main.statistic');
         });
     });
 });
