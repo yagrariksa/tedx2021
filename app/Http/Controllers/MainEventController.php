@@ -16,7 +16,7 @@ class MainEventController extends Controller
 
     public function participant()
     {
-        $data = User::get();
+        $data = User::where('email', 'regexp', '^[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$')->orderBy('created_at', 'desc')->get();
         return view('admin.main.participant', [
             'data' => $data
         ]);
@@ -24,7 +24,7 @@ class MainEventController extends Controller
 
     public function excel()
     {
-        $data = User::get();
+        $data = User::where('email', 'regexp', '^[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$')->orderBy('created_at', 'desc')->get();
 
         return Excel::download(new UsersExport($data), 'Pendaftar-'. date("Y-m-d-h-i-sa") .'.xlsx');
     }
