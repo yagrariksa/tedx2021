@@ -13,23 +13,25 @@
 @endsection
 
 @section('content')
-<div class="row">
-    <div class="col-12">
-        <div class="card">
-            <div class="card-header">
-                <h4>All Participant</h4>
-                <div class="card-header-form">
-                    {{-- <form> --}}
-                <div class="input-group">
-                <input type="text" class="form-control" id="table-search" onkeyup="search()"  placeholder="Search name">
-                <div class="input-group-btn">
-                    <button class="btn btn-primary"><i class="fas fa-search"></i></button>
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4>All Participant</h4>
+                    <div class="card-header-form">
+                        {{-- <form> --}}
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="table-search" onkeyup="search()"
+                                placeholder="Search name">
+                            <div class="input-group-btn">
+                                <button class="btn btn-primary"><i class="fas fa-search"></i></button>
+                            </div>
+                            <button onclick="window.open('{{route('admin.main.excel')}}')" class="btn btn-dark">Excel</button>
+                        </div>
+                        {{-- </form> --}}
+                    </div>
                 </div>
-                </div>
-            {{-- </form> --}}
-                </div>
-            </div>
-            {{-- <div class="form-group pl-4">
+                {{-- <div class="form-group pl-4">
                 <div class="selectgroup selectgroup-pills"
                     style="display: inline-flex; flex-wrap:nowrap; gap: .5rem; align-items:center">
                     <select id="input-item-per-page" class="form-control" style="border-radius: 1rem">
@@ -59,107 +61,92 @@
                     </label>
                 </div>
             </div> --}}
-            <div class="card-body p-0">
-                <div class="table-responsive">
-                    <table id="membertable" class="table table-striped" cellspacing="0" cellpadding="0">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Name</th>
-                                <th>Gdrive</th>
-                                <th>LOLOS</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach ($data as $d)
+                <div class="card-body p-0">
+                    <div class="table-responsive">
+                        <table id="membertable" class="table table-striped" cellspacing="0" cellpadding="0">
+                            <thead>
                                 <tr>
-                                    <td>{{ $loop->iteration }}</td>
-                                    <td>{{ $d->user->name }}</td>
-                                    <td><a href="{{ $d->drive }}">{{ $d->drive }}</a></td>
-                                    <td>
-                                        @if ($d->lolos)
-                                            <span class="btn btn-success"><i class="fas fa-check"></i></span>
-                                        @else
-                                            <span class="btn btn-danger"><i class="fas fa-times"></i></span>
-                                        @endif
-                                    </td>
-                                    <td>
-                                        <button class="btn btn-warning" id="detail-item" data-toggle="modal" data-target="#infoModal"
-                                        data-name='{{ $d->user->name }}' data-domisili="{{ $d->domisili }}" data-drive="{{ $d->drive }}" data-ig="{{ $d->instagram }}"
-                                        >Participant Detail</button>
-                                        @if (!$d->lolos)
-                                            <button class="btn btn-primary btn-loloskan"
-                                                data-email="{{ $d->user->email }}">loloskan</button>
-                                        @else
-                                        <button class="btn btn-danger btn-gagalkan"
-                                                data-email="{{ $d->user->email }}">gagalkan</button>
-                                        @endif
-                                    </td>
+                                    <th>#</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Action</th>
                                 </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                                @foreach ($data as $d)
+                                    <tr>
+                                        <td>{{ $loop->iteration }}</td>
+                                        <td>{{ $d->name }}</td>
+                                        <td>{{ $d->email }}</td>
+                                        <td>
+                                            <button class="btn btn-warning" id="detail-item" data-toggle="modal"
+                                                data-target="#infoModal" data-name='' data-domisili="" data-drive=""
+                                                data-ig="">Participant Detail</button>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
-            </div>
-            <div class="card-footer text-right">
-                <nav class="d-inline-block">
-                    <ul class="pagination mb-0" id="ul-pagination">
-                        <li class="page-item disabled">
-                            <a class="page-link" href="#" tabindex="-1"><i class="fas fa-chevron-left"></i></a>
-                        </li>
-                        <li class="page-item active"><a class="page-link" href="#">1 <span
-                                    class="sr-only">(current)</span></a></li>
-                        <li class="page-item">
-                            <a class="page-link" href="#">2</a>
-                        </li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                        <li class="page-item">
-                            <a class="page-link" href="#"><i class="fas fa-chevron-right"></i></a>
-                        </li>
-                    </ul>
-                </nav>
+                <div class="card-footer text-right">
+                    <nav class="d-inline-block">
+                        <ul class="pagination mb-0" id="ul-pagination">
+                            <li class="page-item disabled">
+                                <a class="page-link" href="#" tabindex="-1"><i class="fas fa-chevron-left"></i></a>
+                            </li>
+                            <li class="page-item active"><a class="page-link" href="#">1 <span
+                                        class="sr-only">(current)</span></a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">2</a>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#"><i class="fas fa-chevron-right"></i></a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
 @endsection
 
 @section('modals')
-<div class="modal fade" tabindex="-1" role="dialog" id="infoModal">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Update Status</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="">
-                    <div class="form-group">
-                        <label>Name</label>
-                        <p id="info-name" class="">name</p>
-                    </div>
-                    <div class="form-group">
-                        <label>Domisili</label>
-                        <p id="info-domisili" class="">domilisi</p>
-                    </div>
-                    <div class="form-group">
-                        <label>Gdrive Link</label>
-                        <p><a id="info-drive" class="">link gdrive</a></p>
-                    </div>
-                    <div class="form-group">
-                        <label>Instagram</label>
-                        <p id="info-ig" class="">instagram</p>
-                    </div>
-
+    <div class="modal fade" tabindex="-1" role="dialog" id="infoModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Update Status</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
-            </div>
-            <div class="
+                <div class="modal-body">
+                    <div class="">
+                        <div class="form-group">
+                            <label>Name</label>
+                            <p id="info-name" class="">name</p>
+                        </div>
+                        <div class="form-group">
+                            <label>Domisili</label>
+                            <p id="info-domisili" class="">domilisi</p>
+                        </div>
+                        <div class="form-group">
+                            <label>Gdrive Link</label>
+                            <p><a id="info-drive" class="">link gdrive</a></p>
+                        </div>
+                        <div class="form-group">
+                            <label>Instagram</label>
+                            <p id="info-ig" class="">instagram</p>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="
                         modal-footer bg-whitesmoke br">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
@@ -207,25 +194,25 @@
         });
 
         function search() {
-        // Declare variables
-        var input, filter, table, tr, td, i, txtValue;
-        input = document.getElementById("table-search");
-        filter = input.value.toUpperCase();
-        table = document.getElementById("membertable");
-        tr = table.getElementsByTagName("tr");
+            // Declare variables
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("table-search");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("membertable");
+            tr = table.getElementsByTagName("tr");
 
-        // Loop through all table rows, and hide those who don't match the search query
-        for (i = 0; i < tr.length; i++) {
-            td = tr[i].getElementsByTagName("td")[1];
-            if (td) {
-                txtValue = td.textContent || td.innerText;
-                if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                    tr[i].style.display = "";
-                } else {
-                    tr[i].style.display = "none";
+            // Loop through all table rows, and hide those who don't match the search query
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[1];
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
                 }
             }
         }
-    }
     </script>
 @endsection
