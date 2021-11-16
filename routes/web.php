@@ -85,6 +85,9 @@ Route::prefix('admin')->group(function () {
             Route::get('/statistic', function () {
                 return view('admin.main.statistic');
             })->name('admin.main.statistic');
+            Route::get('/participant', function () {
+                return view('admin.main.participant');
+            })->name('admin.main.participant');
         });
     });
 });

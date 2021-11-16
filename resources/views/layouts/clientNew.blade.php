@@ -53,11 +53,11 @@
                 {{-- <a href="{{ route('landing') }}"> --}}
                 <img class="brand" src="{{ asset('assets/img/revamp/white-logo.png') }}" alt="navbar-brand">
                 {{-- </a> --}}
-                <ul class="menuItems">
+                <ul class="menuItems" id="menuItems">
                     <li><a href='{{ route('landing') }}#home' data-item='Home'>Home</a></li>
                     <li><a href='{{ route('landing') }}#event' data-item='Event'>Event</a></li>
-                    <li><a href='#' data-item='Merchandise'>Merchandise</a></li>
-                    <li><a href='#' data-item='Sponsorship'>Sponsorship</a></li>
+                    <li><a href='{{ route('landing') }}#merch' data-item='Merchandise'>Merchandise</a></li>
+                    <li><a href='{{ route('landing') }}#sponsors' data-item='Sponsorship'>Sponsorship</a></li>
                     <li><a href='{{ route('mainboard') }}#' data-item='About'>About</a></li>
                 </ul>
                 <!-- Kalo belom login -->
@@ -124,20 +124,20 @@
                     @endauth
 
                     <!-- GENERAL -->
-                    <li class="menu__item">
+                    <li class="menu__item mobile_items">
                         <a class="menu__link" href="{{ route('landing') }}#home">Home</a>
                     </li>
-                    <li class="menu__item">
+                    <li class="menu__item mobile_items">
                         <a class="menu__link" href="{{ route('landing') }}#event">Event</a>
                     </li>
-                    <li class="menu__item">
-                        <a class="menu__link" href="#">Merchandise</a>
+                    <li class="menu__item mobile_items">
+                        <a class="menu__link" href="{{ route('landing') }}#merch">Merchandise</a>
                     </li>
-                    <li class="menu__item">
-                        <a class="menu__link" href="#">Sponsorship</a>
+                    <li class="menu__item mobile_items">
+                        <a class="menu__link" href="{{ route('landing') }}#sponsors">Sponsorship</a>
                     </li>
-                    <li class="menu__item">
-                        <a class="menu__link" href="{{ route('mainboard') }}#0">About</a>
+                    <li class="menu__item mobile_items">
+                        <a class="menu__link" href="{{ route('mainboard') }}#">About</a>
                     </li>
 
                     <!-- BELOM LOGIN -->

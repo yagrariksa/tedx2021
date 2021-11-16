@@ -1,13 +1,24 @@
 // CLICK TO START
+$('#menuItems').css('opacity', '0')
 $('body').addClass('no-scroll')
 $('#click').click(() => {
-    // $('#countdownContainer').css('height', '0')
-    $('#countdownContainer').animate({
+    // $('#home').css('height', '0')
+    $('#home').animate({
         height: '210px',
         opacity: 0
     }, {
         duration: 750,
     });
+    $('#menuItems').animate({
+        opacity: 1
+    }, {
+        duration: 750,
+    });
+    var divsToHide = document.getElementsByClassName("mobile_items"); //divsToHide is an array
+    for(var i = 0; i < divsToHide.length; i++){
+        divsToHide[i].style.display = "block";
+    }
+
     $('body')[0].classList.remove('no-scroll')
     // window.scrollBy(0, ($('.heading')[0].offsetHeight - 80));
 })

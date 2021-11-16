@@ -7,7 +7,17 @@
 @endsection
 
 @section('content')
-<div class="content">
+
+    @if (\Carbon\Carbon::now() > \Carbon\Carbon::createFromFormat('d/m/Y/H/i/s', '29/11/2021/00/00/00'))
+    <div id="mediagroup" data-link="5qap5aO4i9A">
+        <div class="col" id="videogroup">
+            <iframe frameborder="0" width="100%" height="100%" src="https://www.youtube.com/embed/5qap5aO4i9A"
+                allowfullscreen allow="autoplay">
+            </iframe>
+            {{-- <lite-youtube width="100%" id="video" videoid="5qap5aO4i9A"></lite-youtube> --}}
+        </div>
+    </div>
+    @elseif (\Carbon\Carbon::now() > \Carbon\Carbon::createFromFormat('d/m/Y/H/i/s', '28/11/2021/13/00/00'))
     <h1>Stream title</h1>
     <h3>Featuring : speaker name</h3>
 
@@ -24,6 +34,12 @@
                 frameborder="0"></iframe>
         </div>
     </div>
+    @else
+    <div class="countdown">
+        <h2>Streaming starts in</h2>
+        <h1 id="timer">00:00:00</h1>
+    </div>
+    @endif
     {{-- <div class="stream">
         <div class="video">
             <!-- IMPORTANT:: src-nya yang diganti abis /embed/ aja (kalo jadi pake yt sih) -->
@@ -86,15 +102,12 @@
             </div>
         </div>
     </div> --}}
-</div>
 @endsection
 
 @section('script')
 <script type="module" src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1.2.0/lite-youtube.js"></script>
+<script src="{{ asset('assets/js/revamp/stream.js') }}"></script>
 <script>
-    // $('#video').ready(function() {
-    //     $('#video').attr('videoid', $('#mediagroup').data('link'));
-    // });
     $('#livechat').ready(function() {
         var livechatlink = 'https://www.youtube.com/live_chat?v=' + $('#mediagroup').data('link') + '&embed_domain=' + window.location.hostname;
         $('#livechat').attr('src', livechatlink);

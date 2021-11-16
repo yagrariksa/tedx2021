@@ -97,8 +97,8 @@
               <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-file-alt"></i> <span>Main Event</span></a>
               <ul class="dropdown-menu">
                 {{-- <li class=" {{Request::is('admin/speaker') ? 'active' : ''}}"><a class="nav-link" href="{{ route('admin.speaker.home') }}">Statistic</a></li> --}}
-                <li class=" {{Request::is('admin/speaker/participant') ? 'active' : ''}}"><a class="nav-link" href="{{ route('admin.main.statistic') }}">Participant</a></li>
-                {{-- <li class=" {{Request::is('admin/essay/finalist') ? 'active' : ''}}"><a class="nav-link" href="{{ route('admin.essay.finalist') }}">Finalist</a></li> --}}
+                <li class=" {{Request::is('admin/speaker/statistic') ? 'active' : ''}}"><a class="nav-link" href="{{ route('admin.main.statistic') }}">Statistic</a></li>
+                <li class=" {{Request::is('admin/speaker/participant') ? 'active' : ''}}"><a class="nav-link" href="{{ route('admin.main.participant') }}">Participant</a></li>
               </ul>
             </li>
 

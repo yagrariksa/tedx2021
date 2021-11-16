@@ -7,33 +7,19 @@
 @endsection
 
 @section('content')
+<script>
+    document.getElementById("menuItems").style.opacity = "0";
+    var divsToHide = document.getElementsByClassName("mobile_items"); //divsToHide is an array
+    for(var i = 0; i < divsToHide.length; i++){
+        divsToHide[i].style.display = "none";
+    }
+</script>
 <div class="content">
     <!-- bagian atas -->
-    <div class="heading" id="countdownContainer">
+    <div class="heading" id="home">
         <div class="heading-body">
             <h2 id="countdownText">Countdown</h2>
             <h1 id="timer">00:00:00</h1>
-            <!-- <div class="moving-text">
-                <div class='visible'>
-                    <ul>
-                        <li>
-                            <h1>Get Ready</h1>
-                        </li>
-                        <li>
-                            <h1>Inspirational</h1>
-                        </li>
-                        <li>
-                            <h1>Impactful</h1>
-                        </li>
-                        <li>
-                            <h1>Your Ideas</h1>
-                        </li>
-                        <li>
-                            <h1>Worth Spreading</h1>
-                        </li>
-                    </ul>
-                </div>
-            </div> -->
             <div class="wrapper" id="button">
                 <h2 class="smaller" id="click">Click to Start!</h2>
                 <svg class="blob" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
@@ -78,7 +64,7 @@
     </div>
 
     <!-- Event Speaker -->
-    <div class="speakers">
+    <div class="speakers" id="event" style="padding-top: 6rem; margin-top:0">
         <h1>Event Speakers</h1>
         <div class="packages">
             <button role="button" data-bs-toggle="modal" data-bs-target="#speaker1" class="box-email">
@@ -255,7 +241,7 @@
     </div>
 
     <!-- Merchandise -->
-    <div class="merchandise">
+    <div class="merchandise" id="merch" style="padding-top: 8rem; margin-top:0">
         <h1>Merchandise</h1>
         <a href="https://shopee.co.id/tedxunair" class="main merch"><img src="{{ asset('assets/img/revamp/merch/merch1.png') }}" alt=""></a>
         <div class="two-merchs">
@@ -290,7 +276,7 @@
     </div>
 
     <!-- Sponsor -->
-    <div class="sponsor">
+    <div class="sponsor" id="sponsors">
         <h1>Sponsored by</h1>
         <a href="{{ route('sponsors') }}" class="blocks">
             <h2 class="smaller">CHECK OUR SPONSOR</h2>
@@ -301,6 +287,7 @@
 @endsection
 
 @section('script')
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.ripples/0.5.3/jquery.ripples.js"
 integrity="sha512-wrQIZRuIVRafoAsp5i2HIXa+3oF+lQqx4eOMAdw+vt7npivM7+D4OMIZPhlkdbV18VxZLkn2QaOii6cr8c1+dA=="
