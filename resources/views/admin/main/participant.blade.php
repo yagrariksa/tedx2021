@@ -19,7 +19,6 @@
                 <div class="card-header">
                     <h4>All Participant</h4>
                     <div class="card-header-form">
-                        {{-- <form> --}}
                         <div class="input-group">
                             <input type="text" class="form-control" id="table-search" onkeyup="search()"
                                 placeholder="Search name">
@@ -28,45 +27,15 @@
                             </div>
                             <button onclick="window.open('{{route('admin.main.excel')}}')" class="btn btn-dark">Excel</button>
                         </div>
-                        {{-- </form> --}}
                     </div>
                 </div>
-                {{-- <div class="form-group pl-4">
-                <div class="selectgroup selectgroup-pills"
-                    style="display: inline-flex; flex-wrap:nowrap; gap: .5rem; align-items:center">
-                    <select id="input-item-per-page" class="form-control" style="border-radius: 1rem">
-                        <option>15</option>
-                        <option>25</option>
-                        <option>50</option>
-                    </select>
-                    <label class="selectgroup-item m-0">
-                        <input type="checkbox" name="value" id="input-filter0" value="Unpaid" class="selectgroup-input"
-                            checked>
-                        <span class="selectgroup-button">Unpaid</span>
-                    </label>
-                    <label class="selectgroup-item m-0">
-                        <input type="checkbox" name="value" id="input-filter2" value="Unconfirmed"
-                            class="selectgroup-input" checked>
-                        <span class="selectgroup-button">Unconfirmed</span>
-                    </label>
-                    <label class="selectgroup-item m-0">
-                        <input type="checkbox" name="value" id="input-filter6" value="Declined"
-                            class="selectgroup-input">
-                        <span class="selectgroup-button">Declined</span>
-                    </label>
-                    <label class="selectgroup-item m-0">
-                        <input type="checkbox" name="value" id="input-filter5" value="Accepted"
-                            class="selectgroup-input">
-                        <span class="selectgroup-button">Accepted</span>
-                    </label>
-                </div>
-            </div> --}}
                 <div class="card-body p-0">
                     <div class="table-responsive">
                         <table id="membertable" class="table table-striped" cellspacing="0" cellpadding="0">
                             <thead>
                                 <tr>
                                     <th>#</th>
+                                    <th>Tanggal Registrasi</th>
                                     <th>Name</th>
                                     <th>Email</th>
                                     <th>Action</th>
@@ -76,12 +45,19 @@
                                 @foreach ($data as $d)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
+                                        <td>{{ $d->created_at }}</td>
                                         <td>{{ $d->name }}</td>
                                         <td>{{ $d->email }}</td>
                                         <td>
-                                            <button class="btn btn-warning" id="detail-item" data-toggle="modal"
-                                                data-target="#infoModal" data-name='' data-domisili="" data-drive=""
-                                                data-ig="">Participant Detail</button>
+                                            <button class="btn btn-warning" id="detail-item" 
+                                                data-toggle ="modal"
+                                                data-target ="#infoModal" 
+                                                data-name ='{{ $d->name }}' 
+                                                data-email ='{{ $d->email }}' 
+                                                data-age ='{{ $d->age }}' 
+                                                data-phone ='{{ $d->phone }}' 
+                                                data-institute ='{{ $d->institute }}' 
+                                                data-address ="{{ $d->address }}">Lihat Detail</button>
                                         </td>
                                     </tr>
                                 @endforeach
@@ -118,7 +94,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Update Status</h5>
+                    <h5 class="modal-title">Detail Peserta</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -126,22 +102,29 @@
                 <div class="modal-body">
                     <div class="">
                         <div class="form-group">
-                            <label>Name</label>
+                            <label>Nama</label>
                             <p id="info-name" class="">name</p>
                         </div>
                         <div class="form-group">
+                            <label>Institusi</label>
+                            <p id="info-institute" class="">Institusi</p>
+                        </div>
+                        <div class="form-group">
+                            <label>Alamat Email</label>
+                            <p id="info-email" class="">email</p>
+                        </div>
+                        <div class="form-group">
+                            <label>Nomor HP</label>
+                            <p id="info-phone" class="">phone</p>
+                        </div>
+                        <div class="form-group">
+                            <label>Usia</label>
+                            <p id="info-age" class="">age</p>
+                        </div>
+                        <div class="form-group">
                             <label>Domisili</label>
-                            <p id="info-domisili" class="">domilisi</p>
+                            <p id="info-address" class="">address</p>
                         </div>
-                        <div class="form-group">
-                            <label>Gdrive Link</label>
-                            <p><a id="info-drive" class="">link gdrive</a></p>
-                        </div>
-                        <div class="form-group">
-                            <label>Instagram</label>
-                            <p id="info-ig" class="">instagram</p>
-                        </div>
-
                     </div>
                 </div>
                 <div class="
@@ -183,15 +166,14 @@
         });
 
         $(".btn.btn-warning#detail-item").on('click', function() {
-            // $('#info-ig').attr('href', $(this).data("ig"));
-            $('#info-drive').attr('href', $(this).data("drive"));
-
             $('#info-name').text($(this).data("name"));
-            $('#info-ig').text($(this).data("ig"));
-            $('#info-domisili').text($(this).data("domisili"));
-            $('#info-drive').text($(this).data("drive"));
-
+            $('#info-email').text($(this).data("email"));
+            $('#info-age').text($(this).data("age"));
+            $('#info-phone').text($(this).data("phone"));
+            $('#info-institute').text($(this).data("institute"));
+            $('#info-address').text($(this).data("address"));
         });
+        
 
         function search() {
             // Declare variables
