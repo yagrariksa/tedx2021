@@ -186,7 +186,7 @@ $darker-sand-beach: #D7C3A9;
     }
 }
 
-@mixin read-more($size) {
+@mixin read-more($size, $logo) {
     width: $size;
     height: $size;
     position: relative;
@@ -198,8 +198,8 @@ $darker-sand-beach: #D7C3A9;
     overflow: hidden;
 
     img {
-        width: 100px;
-        height: 100px;
+        width: $logo;
+        height: $logo;
     }
 
     span {

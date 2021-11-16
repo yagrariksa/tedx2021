@@ -20,10 +20,24 @@ body {
     justify-content: center;
     gap: 4rem;
 
-    .ripple-effect {
+    #aboutUs {
+        width: 100%;
+    }
+
+    .carousel-item {
+        align-items: center;
+        justify-content: center;
+
+        &.active {
+            display: flex;
+        }
+    }
+
+    .details {
         max-width: 920px;
         width: 64vw;
         height: 50vh;
+        max-height: 400px;
         padding: 80px 100px 120px 100px;
         display: flex;
         flex-direction: column;
@@ -37,6 +51,10 @@ body {
         p {
             text-align: center;
         }
+    }
+
+    button {
+        box-shadow: none;
     }
 }
 
@@ -86,11 +104,11 @@ body {
                 border: 1px solid $dim-grey;
             }
         }
-
+        
         label {
             width: fit-content;
             cursor: pointer;
-
+    
             border: 1px solid $dim-grey;
             background-color: rgba(223, 223, 223, 0.3);
             box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.25);
@@ -98,7 +116,7 @@ body {
         }
     }
 
-
+    
     &:not(:first-of-type) {
         display: none;
     }
@@ -111,18 +129,18 @@ body {
     padding: 1rem;
     border-radius: 10px;
     background-color: #DDE4E4;
-
+    
     h4 {
         font-size: 24px;
         text-align: start;
         color: $batman;
     }
-
+    
     p {
         font-weight: 400;
         color: $batman;
     }
-
+    
     .footer {
         width: 100%;
         margin-top: .5rem;
@@ -130,7 +148,7 @@ body {
         align-items: center;
         gap: .5rem;
     }
-
+    
     a {
         width: 20px;
         height: 20px;
@@ -139,7 +157,7 @@ body {
         justify-content: center;
         border-radius: 50%;
         border: 1px solid $batman;
-
+        
         img {
             width: 10px;
             height: 10px;
@@ -150,16 +168,16 @@ body {
             transform: scale(1.1);
         }
     }
-
+    
     hr {
         width: 100px;
         margin: 0;
         opacity: 1;
-
+        
         &.red {
             border-top: 4px solid $prime-red;
         }
-
+        
         &.green {
             border-top: 4px solid $prime-green;
         }
@@ -218,7 +236,7 @@ body {
     width: 100%;
     opacity: 1;
     transition: opacity 1s cubic-bezier(0.01, 0.27, 0.34, 0.92);
-
+    
     .member {
         width: 100%;
         display: flex;
@@ -231,7 +249,7 @@ body {
 
 
 @media screen and (max-width: 992px) {
-    .about-us .ripple-effect {
+    .about-us .details {
         padding: 78px 40px 87px 40px;
     }
 
@@ -281,7 +299,7 @@ body {
 }
 
 @media screen and (max-width: 576px) {
-    .about-us .ripple-effect {
+    .about-us .details {
         width: 100%;
     }
 }
