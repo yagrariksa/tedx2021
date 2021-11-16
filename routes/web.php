@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\SpeakerController as AdminSpeaker;
 use App\Http\Controllers\Client\AccountController;
 use App\Http\Controllers\Client\EssayController as CE;
 use App\Http\Controllers\Client\SpeakerController as DS;
+use App\Http\Controllers\MainEventController;
 use App\Http\Middleware\AdminMiddleware;
 use Illuminate\Support\Facades\Route;
 
@@ -51,6 +52,12 @@ Route::prefix('account')->group(function () {
 Route::get('/about', function () {
     return view('mainboard');
 })->name('mainboard');
+Route::get('/sponsors', function () {
+    return view('sponsors');
+})->name('sponsors');
+Route::get('/stream', function () {
+    return view('stream');
+})->middleware('auth')->name('stream');
 Route::get('/essay', [CE::class, 'branding'])->name('essay.branding');
 Route::get('/speaker', [DS::class, 'branding'])->name('speaker.branding');
 
@@ -73,6 +80,12 @@ Route::prefix('admin')->group(function () {
             Route::get('/participant', [AdminSpeaker::class, 'participant'])->name('admin.speaker.participant');
             Route::post('/participant', [AdminSpeaker::class, 'loloskan'])->name('admin.speaker.participant');
             Route::put('/participant', [AdminSpeaker::class, 'gagalkan'])->name('admin.speaker.participant');
+        });
+        Route::prefix('/main')->group(function () {
+            // Route::get('/', [AdminSpeaker::class, 'home'])->name('admin.speaker.home');
+            Route::get('/statistic', [MainEventController::class, 'statistic'])->name('admin.main.statistic');
+            Route::get('/participant', [MainEventController::class, 'participant'])->name('admin.main.participant');
+            Route::get('/excel', [MainEventController::class, 'excel'])->name('admin.main.excel');
         });
     });
 });

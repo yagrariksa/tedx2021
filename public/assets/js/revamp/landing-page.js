@@ -1,36 +1,31 @@
-let rect = $('.x-container')[0].getBoundingClientRect();
-let mouse = { x: 0, y: 0, moved: false };
-
-$("body").mousemove(e => {
-    mouse.moved = true;
-    mouse.x = e.clientX - rect.left;
-    mouse.y = e.clientY - rect.top;
-});
-
-// Ticker event will be called on every frame
-TweenLite.ticker.addEventListener('tick', () => {
-    if (mouse.moved && window.innerWidth >= '576') {
-        parallaxIt(".x", -20);
-        parallaxIt(".slide", -20);
-    }
-    mouse.moved = false;
-});
-
-function parallaxIt(target, movement) {
-    TweenMax.to(target, 0.5, {
-        x: (mouse.x - rect.width / 2) / rect.width * movement,
-        y: (mouse.y - rect.height / 2) / rect.height * movement
+// CLICK TO START
+$('#menuItems').css('opacity', '0')
+$('body').addClass('no-scroll')
+$('#click').click(() => {
+    // $('#home').css('height', '0')
+    $('#home').animate({
+        height: '210px',
+        opacity: 0
+    }, {
+        duration: 750,
     });
-}
+    $('#menuItems').animate({
+        opacity: 1
+    }, {
+        duration: 750,
+    });
+    var divsToHide = document.getElementsByClassName("mobile_items"); //divsToHide is an array
+    for(var i = 0; i < divsToHide.length; i++){
+        divsToHide[i].style.display = "block";
+    }
 
-$(window).on('resize scroll', () => {
-    rect = $('.x-container')[0].getBoundingClientRect();
+    $('body')[0].classList.remove('no-scroll')
+    // window.scrollBy(0, ($('.heading')[0].offsetHeight - 80));
 })
 
-// Ripple Effect-nya pool
-$('.pool').ripples({
-    resolution: 256,
-    perturbance: 0.005
+// ON RELOAD: BACK TO TOP
+$(document).ready(function () {
+    $(this).scrollTop(0);
 });
 
 // Hover event-nya
@@ -52,3 +47,46 @@ reads.forEach((element, index) => {
         });
     });
 });
+
+
+// Countdown
+function convertTZ(date, tzString) {
+    return new Date((typeof date === "string" ? new Date(date) : date).toLocaleString("en-US", {timeZone: tzString}));
+}
+
+
+el = 'timer'
+// Set the date we're counting down to
+
+var countDownDate = new Date(2021, 10, 28, 13, 00, 00).getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function StartCount() {
+    // Get today's date and time
+    var time = new Date();
+    var now = convertTZ(time, "Asia/Jakarta").getTime();
+
+    // Find the distance between now and the count down date
+    var distance = countDownDate - now;
+
+    // Time calculations for days, hours, minutes and seconds
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    // Output the result in an element with id="timer"
+    document.getElementById(el).innerHTML = days + 'd : ' + hours + "h : "
+    + minutes + "m : " + seconds + "s";
+
+    // If the count down is over, write some text
+    if (distance < 0) {
+        clearInterval(x);
+        document.getElementById('countdownText').innerHTML = 'The event has started, please look at the streaming page'
+        document.getElementById(el).style.display = "none";
+
+
+    }
+    return StartCount;
+}(), 1000);
+

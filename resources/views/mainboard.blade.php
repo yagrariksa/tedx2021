@@ -9,14 +9,47 @@
 @section('content')
 <div class="about-us">
     <h1>About Us</h1>
-    <div class="ripple-effect">
-        <h2>Ripple Effect</h2>
-        <p>An impact still can be made regardless of how people perceive the changes they have created. Each
-            impact of the deeds will eventually spread and. An impact still can be made regardless of how
-            people perceive the changes they have created. Each impact of the deeds will eventually spread
-            and.
-        </p>
+    <div id="aboutUs" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="details">
+                    <h2>TED</h2>
+                    <p>TED is owned by a non-profit and non-partisan foundation. The agenda is to make a
+                        great idea accessible and spark conversation. <br>
+                        TED is devoted to spreading ideas. Usually in the form of a short powerful talk (18
+                        minutes or less).</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="details">
+                    <h2>TEDx</h2>
+                    <p>A TEDx event is a local gathering where live TED-like talks and performances are
+                        shared with the community. <br>
+                        All TEDx events present multiple issues and diverse voices from different
+                        disciplines. <br>
+                        TEDx events held independently under free license granted by TED.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="details">
+                    <h2>TEDxUniversitasAirlangga</h2>
+                    <p>TEDxUniversitasAirlangga is organized by an independent community that collaborates
+                        with BEM FEB UNAIR at the university level. <br>
+                        TEDxUniversitasAirlangga will also be presented in the form of short and powerfull
+                        talk.</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#aboutUs" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#aboutUs" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
     </div>
+
 </div>
 
 

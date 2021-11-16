@@ -46,22 +46,22 @@ Homepage
         </div>
       </div>
     </div>
-    {{-- <div class="col-12 col-md-4 col-lg-4">
+    <div class="col-12 col-md-4 col-lg-4">
       <div class="pricing">
         <div class="pricing-title">
-          Competition
+          Main Event
         </div>
         <div class="pricing-padding">
           <div class="pricing-price m-0">
-            <div>CFE</div>
-            <div>Call For Essay</div>
+            <div>Main</div>
+            <div>Video Livestream</div>
           </div>
         </div>
         <div class="pricing-cta m-0">
           <a href="#">Show <i class="fas fa-arrow-right"></i></a>
         </div>
       </div>
-    </div> --}}
+    </div>
 
   </div>
 @endsection
