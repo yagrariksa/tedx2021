@@ -17,7 +17,7 @@
             <td>{{ $u->name }}</td>
             <td>{{ $u->institute }}</td>
             <td>{{ $u->email }}</td>
-            <td>{{ strpos(str_replace('-', '', $u->phone), '+62') === 0 ? str_replace('+62', '0', str_replace('-', '', $u->phone)) : str_replace('-', '', $u->phone) }}</td>
+            <td>{{ strpos(str_replace('-', '', $u->phone), '+62') === 0 ? str_replace('+62', '0', str_replace(['-', '(', ')', ' '], '', $u->phone)) : str_replace(['-', '(', ')', ' '], '', $u->phone) }}</td>
             <td>{{ $u->age }}</td>
             <td>{{ $u->address }}</td>
         </tr>
