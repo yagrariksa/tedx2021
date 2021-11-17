@@ -13,153 +13,123 @@
 @endsection
 
 @section('content')
-<div class="row">
-    <div class="col-12">
-        <div class="card">
-            <div class="card-header">
-                <h4>All Participant</h4>
-                <div class="card-header-form">
-                    {{-- <form> --}}
-                <div class="input-group">
-                <input type="text" class="form-control" id="table-search" onkeyup="search()"  placeholder="Search name">
-                <div class="input-group-btn">
-                    <button class="btn btn-primary"><i class="fas fa-search"></i></button>
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4>All Participant</h4>
+                    <div class="card-header-form">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="table-search" onkeyup="search()"
+                                placeholder="Search name">
+                            <div class="input-group-btn">
+                                <button class="btn btn-primary"><i class="fas fa-search"></i></button>
+                            </div>
+                            <button onclick="window.open('{{route('admin.main.excel')}}')" class="btn btn-dark">Excel</button>
+                        </div>
+                    </div>
                 </div>
-                </div>
-            {{-- </form> --}}
-                </div>
-            </div>
-            {{-- <div class="form-group pl-4">
-                <div class="selectgroup selectgroup-pills"
-                    style="display: inline-flex; flex-wrap:nowrap; gap: .5rem; align-items:center">
-                    <select id="input-item-per-page" class="form-control" style="border-radius: 1rem">
-                        <option>15</option>
-                        <option>25</option>
-                        <option>50</option>
-                    </select>
-                    <label class="selectgroup-item m-0">
-                        <input type="checkbox" name="value" id="input-filter0" value="Unpaid" class="selectgroup-input"
-                            checked>
-                        <span class="selectgroup-button">Unpaid</span>
-                    </label>
-                    <label class="selectgroup-item m-0">
-                        <input type="checkbox" name="value" id="input-filter2" value="Unconfirmed"
-                            class="selectgroup-input" checked>
-                        <span class="selectgroup-button">Unconfirmed</span>
-                    </label>
-                    <label class="selectgroup-item m-0">
-                        <input type="checkbox" name="value" id="input-filter6" value="Declined"
-                            class="selectgroup-input">
-                        <span class="selectgroup-button">Declined</span>
-                    </label>
-                    <label class="selectgroup-item m-0">
-                        <input type="checkbox" name="value" id="input-filter5" value="Accepted"
-                            class="selectgroup-input">
-                        <span class="selectgroup-button">Accepted</span>
-                    </label>
-                </div>
-            </div> --}}
-            <div class="card-body p-0">
-                <div class="table-responsive">
-                    <table id="membertable" class="table table-striped" cellspacing="0" cellpadding="0">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Name</th>
-                                <th>Gdrive</th>
-                                <th>LOLOS</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach ($data as $d)
+                <div class="card-body p-0">
+                    <div class="table-responsive">
+                        <table id="membertable" class="table table-striped" cellspacing="0" cellpadding="0">
+                            <thead>
                                 <tr>
-                                    <td>{{ $loop->iteration }}</td>
-                                    <td>{{ $d->user->name }}</td>
-                                    <td><a href="{{ $d->drive }}">{{ $d->drive }}</a></td>
-                                    <td>
-                                        @if ($d->lolos)
-                                            <span class="btn btn-success"><i class="fas fa-check"></i></span>
-                                        @else
-                                            <span class="btn btn-danger"><i class="fas fa-times"></i></span>
-                                        @endif
-                                    </td>
-                                    <td>
-                                        <button class="btn btn-warning" id="detail-item" data-toggle="modal" data-target="#infoModal"
-                                        data-name='{{ $d->user->name }}' data-domisili="{{ $d->domisili }}" data-drive="{{ $d->drive }}" data-ig="{{ $d->instagram }}"
-                                        >Participant Detail</button>
-                                        @if (!$d->lolos)
-                                            <button class="btn btn-primary btn-loloskan"
-                                                data-email="{{ $d->user->email }}">loloskan</button>
-                                        @else
-                                        <button class="btn btn-danger btn-gagalkan"
-                                                data-email="{{ $d->user->email }}">gagalkan</button>
-                                        @endif
-                                    </td>
+                                    <th>#</th>
+                                    <th>Tanggal Registrasi</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Action</th>
                                 </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                                @foreach ($data as $d)
+                                    <tr>
+                                        <td>{{ $loop->iteration }}</td>
+                                        <td>{{ $d->created_at }}</td>
+                                        <td>{{ $d->name }}</td>
+                                        <td>{{ $d->email }}</td>
+                                        <td>
+                                            <button class="btn btn-warning" id="detail-item" 
+                                                data-toggle ="modal"
+                                                data-target ="#infoModal" 
+                                                data-name ='{{ $d->name }}' 
+                                                data-email ='{{ $d->email }}' 
+                                                data-age ='{{ $d->age }}' 
+                                                data-phone ='{{ $d->phone }}' 
+                                                data-institute ='{{ $d->institute }}' 
+                                                data-address ="{{ $d->address }}">Lihat Detail</button>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
-            </div>
-            <div class="card-footer text-right">
-                <nav class="d-inline-block">
-                    <ul class="pagination mb-0" id="ul-pagination">
-                        <li class="page-item disabled">
-                            <a class="page-link" href="#" tabindex="-1"><i class="fas fa-chevron-left"></i></a>
-                        </li>
-                        <li class="page-item active"><a class="page-link" href="#">1 <span
-                                    class="sr-only">(current)</span></a></li>
-                        <li class="page-item">
-                            <a class="page-link" href="#">2</a>
-                        </li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                        <li class="page-item">
-                            <a class="page-link" href="#"><i class="fas fa-chevron-right"></i></a>
-                        </li>
-                    </ul>
-                </nav>
+                <div class="card-footer text-right">
+                    <nav class="d-inline-block">
+                        <ul class="pagination mb-0" id="ul-pagination">
+                            <li class="page-item disabled">
+                                <a class="page-link" href="#" tabindex="-1"><i class="fas fa-chevron-left"></i></a>
+                            </li>
+                            <li class="page-item active"><a class="page-link" href="#">1 <span
+                                        class="sr-only">(current)</span></a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">2</a>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#"><i class="fas fa-chevron-right"></i></a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
 @endsection
 
 @section('modals')
-<div class="modal fade" tabindex="-1" role="dialog" id="infoModal">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Update Status</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="">
-                    <div class="form-group">
-                        <label>Name</label>
-                        <p id="info-name" class="">name</p>
-                    </div>
-                    <div class="form-group">
-                        <label>Domisili</label>
-                        <p id="info-domisili" class="">domilisi</p>
-                    </div>
-                    <div class="form-group">
-                        <label>Gdrive Link</label>
-                        <p><a id="info-drive" class="">link gdrive</a></p>
-                    </div>
-                    <div class="form-group">
-                        <label>Instagram</label>
-                        <p id="info-ig" class="">instagram</p>
-                    </div>
-
+    <div class="modal fade" tabindex="-1" role="dialog" id="infoModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Detail Peserta</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
-            </div>
-            <div class="
+                <div class="modal-body">
+                    <div class="">
+                        <div class="form-group">
+                            <label>Nama</label>
+                            <p id="info-name" class="">name</p>
+                        </div>
+                        <div class="form-group">
+                            <label>Institusi</label>
+                            <p id="info-institute" class="">Institusi</p>
+                        </div>
+                        <div class="form-group">
+                            <label>Alamat Email</label>
+                            <p id="info-email" class="">email</p>
+                        </div>
+                        <div class="form-group">
+                            <label>Nomor HP</label>
+                            <p id="info-phone" class="">phone</p>
+                        </div>
+                        <div class="form-group">
+                            <label>Usia</label>
+                            <p id="info-age" class="">age</p>
+                        </div>
+                        <div class="form-group">
+                            <label>Domisili</label>
+                            <p id="info-address" class="">address</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="
                         modal-footer bg-whitesmoke br">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
@@ -196,36 +166,35 @@
         });
 
         $(".btn.btn-warning#detail-item").on('click', function() {
-            // $('#info-ig').attr('href', $(this).data("ig"));
-            $('#info-drive').attr('href', $(this).data("drive"));
-
             $('#info-name').text($(this).data("name"));
-            $('#info-ig').text($(this).data("ig"));
-            $('#info-domisili').text($(this).data("domisili"));
-            $('#info-drive').text($(this).data("drive"));
-
+            $('#info-email').text($(this).data("email"));
+            $('#info-age').text($(this).data("age"));
+            $('#info-phone').text($(this).data("phone"));
+            $('#info-institute').text($(this).data("institute"));
+            $('#info-address').text($(this).data("address"));
         });
+        
 
         function search() {
-        // Declare variables
-        var input, filter, table, tr, td, i, txtValue;
-        input = document.getElementById("table-search");
-        filter = input.value.toUpperCase();
-        table = document.getElementById("membertable");
-        tr = table.getElementsByTagName("tr");
+            // Declare variables
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("table-search");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("membertable");
+            tr = table.getElementsByTagName("tr");
 
-        // Loop through all table rows, and hide those who don't match the search query
-        for (i = 0; i < tr.length; i++) {
-            td = tr[i].getElementsByTagName("td")[1];
-            if (td) {
-                txtValue = td.textContent || td.innerText;
-                if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                    tr[i].style.display = "";
-                } else {
-                    tr[i].style.display = "none";
+            // Loop through all table rows, and hide those who don't match the search query
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[1];
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
                 }
             }
         }
-    }
     </script>
 @endsection

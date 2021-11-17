@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\SpeakerController as AdminSpeaker;
 use App\Http\Controllers\Client\AccountController;
 use App\Http\Controllers\Client\EssayController as CE;
 use App\Http\Controllers\Client\SpeakerController as DS;
+use App\Http\Controllers\MainEventController;
 use App\Http\Middleware\AdminMiddleware;
 use Illuminate\Support\Facades\Route;
 
@@ -56,7 +57,7 @@ Route::get('/sponsors', function () {
 })->name('sponsors');
 Route::get('/stream', function () {
     return view('stream');
-})->name('stream');
+})->middleware('auth')->name('stream');
 Route::get('/essay', [CE::class, 'branding'])->name('essay.branding');
 Route::get('/speaker', [DS::class, 'branding'])->name('speaker.branding');
 
@@ -82,12 +83,9 @@ Route::prefix('admin')->group(function () {
         });
         Route::prefix('/main')->group(function () {
             // Route::get('/', [AdminSpeaker::class, 'home'])->name('admin.speaker.home');
-            Route::get('/statistic', function () {
-                return view('admin.main.statistic');
-            })->name('admin.main.statistic');
-            Route::get('/participant', function () {
-                return view('admin.main.participant');
-            })->name('admin.main.participant');
+            Route::get('/statistic', [MainEventController::class, 'statistic'])->name('admin.main.statistic');
+            Route::get('/participant', [MainEventController::class, 'participant'])->name('admin.main.participant');
+            Route::get('/excel', [MainEventController::class, 'excel'])->name('admin.main.excel');
         });
     });
 });

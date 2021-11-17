@@ -30,7 +30,7 @@
 
     <style>
         .btn-green {
-            background-color: #24B9BA !important ;
+            background-color: #24B9BA !important;
         }
 
     </style>
@@ -56,6 +56,26 @@
             </div>
             <div class="participated">
                 <h2>Participated Event</h2>
+                <div class="main-card" style="min-height: 200px;">
+                    <div class="status">
+                        <div class="desc">
+                            <div style="align-items: center">
+                                <h2 class="text-green">Horray</h2>
+                                <p class="text-sand-beach">well <span class="text-green">·</span> co <span
+                                        class="text-red">·</span> me </p>
+                            </div>
+                            <hr>
+                            <p>Your registration is <span class="text-green"
+                                    style="font-weight: 600;">completed</span>.
+                                <span class="text-red" style="font-weight: 600;">Please wait</span> for the day
+                                <span class="text-green" style="font-weight: 600;"> Main Event</span> will be Held.
+                                See You !
+                            </p>
+                        </div>
+                        <button class="btn-green" onclick="window.open('{{ route('stream') }}')">Watch
+                            Stream</button>
+                    </div>
+                </div>
                 @if (Auth::user()->speaker || Auth::user()->essay)
                     @if (Auth::user()->essay)
                         @include('account.dashboard.cfe')
@@ -65,38 +85,6 @@
                     @endif
 
                     {{-- GAIKUT APA2 --}}
-                @else
-                    <div class="main-card" style="min-height: 200px;">
-                        <div class="status">
-                            <div class="desc">
-                                <div style="align-items: center">
-                                    <h2 class="text-green">Horray</h2>
-                                    <p class="text-sand-beach">well <span class="text-green">·</span> co <span
-                                            class="text-red">·</span> me </p>
-                                </div>
-                                <hr>
-                                <p>Your registration is <span class="text-green" style="font-weight: 600;">completed</span>.
-                                    <span class="text-red" style="font-weight: 600;">Please wait</span> for the day 
-                                    <span class="text-green" style="font-weight: 600;"> Main Event</span> will be Held. See You !
-                                </p>
-                        </div>
-                            {{-- <div class="desc">
-                                <div>
-                                    <h2 class="text-red">Oops!</h2>
-                                    <p>un <span class="text-green">·</span> re <span class="text-red">·</span>
-                                        gis <span class="text-green">·</span> tered</p>
-                                </div>
-                                <hr>
-                                <p>Your account <span class="text-red" style="font-weight: 600;">hasn't been
-                                        signed</span>
-                                    to an event. Be sure to <span class="text-green"
-                                        style="font-weight: 600;">check</span>
-                                    and <span class="text-green" style="font-weight: 600;">participate</span>.
-                                </p>
-                            </div>
-                            {{-- <a href="{{ route('essay.branding') }}" class="submit">Register</a>
-                        </div> --}}
-                    </div>
                 @endif
             </div>
             <div class="others">
