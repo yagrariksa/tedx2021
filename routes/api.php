@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+Route::get('/admin/main/graph', [GeneralController::class, 'graph'])->name('api.main.graph');
 Route::get('/account/info', [GeneralController::class, 'infouser'])->name('api.account.info');
 
 Route::get('/account/info', [GeneralController::class, 'infouser'])->name('api.account.info');
