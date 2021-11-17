@@ -11,7 +11,9 @@ class MainEventController extends Controller
 {
     public function statistic()
     {
-        $usersCount = User::count();
+        $usersCount = User::where('email', 'regexp', '^[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$')
+            ->where('created_at', '>=', '2021-11-08 00:00:00')
+            ->count();
         return view('admin.main.statistic', compact('usersCount'));
     }
 
