@@ -41,13 +41,13 @@ fetch(ownurl)
               color: '#f2f2f2',
             },
             ticks: {
-              beginAtZero: false,
+              beginAtZero: true,
               stepSize: 200
             }
           }],
           xAxes: [{
             gridLines: {
-              display: false
+              display: true
             }
           }]
         },
