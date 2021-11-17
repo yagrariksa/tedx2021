@@ -191,4 +191,17 @@ class GeneralController extends Controller
             ], 200);
         }
     }
+
+    public function graph(){
+        // Get Data from Database
+        $groupByDate = DB::table('users')
+            ->select(DB::raw('Date(created_at) as date, count(*) as total'))
+            ->groupBy(DB::raw('Date(created_at)'))->limit(7)
+            ->orderByDesc('created_at')->get();
+
+        // Return Data to View
+        return response()->json([
+            'body' => $groupByDate,
+        ], 200);
+    }
 }

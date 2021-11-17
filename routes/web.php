@@ -82,7 +82,6 @@ Route::prefix('admin')->group(function () {
             Route::put('/participant', [AdminSpeaker::class, 'gagalkan'])->name('admin.speaker.participant');
         });
         Route::prefix('/main')->group(function () {
-            // Route::get('/', [AdminSpeaker::class, 'home'])->name('admin.speaker.home');
             Route::get('/statistic', [MainEventController::class, 'statistic'])->name('admin.main.statistic');
             Route::get('/participant', [MainEventController::class, 'participant'])->name('admin.main.participant');
             Route::get('/excel', [MainEventController::class, 'excel'])->name('admin.main.excel');
