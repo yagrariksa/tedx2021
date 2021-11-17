@@ -11,7 +11,8 @@ class MainEventController extends Controller
 {
     public function statistic()
     {
-        return view('admin.main.statistic');
+        $usersCount = User::count();
+        return view('admin.main.statistic', compact('usersCount'));
     }
 
     public function participant()
