@@ -10,7 +10,7 @@ fetch(ownurl)
   .then(data => {
     console.log(data);
     data.body.forEach(item => {
-        ownlabel.unshift(moment(new Date(item.date)).format('dddd, DD MMMM YYYY'))
+        ownlabel.unshift(item.date)
         owndata.unshift(item.total)
     });
     var myChart = new Chart(ctx, {
@@ -22,11 +22,11 @@ fetch(ownurl)
           data: owndata,
           borderWidth: 2,
           backgroundColor: 'transparent',
-          borderColor: 'rgba(254,86,83,.7)',
+          borderColor: 'rgba(254,86,83,.5)',
           borderWidth: 2.5,
-          pointBackgroundColor: 'transparent',
-          pointBorderColor: 'transparent',
-          pointRadius: 4
+          pointBackgroundColor: 'rgba(254,86,83,.7)',
+          pointBorderColor: 'rgba(254,86,83,.7)',
+          pointRadius: 4,
         },
         ]
       },
@@ -41,7 +41,7 @@ fetch(ownurl)
               color: '#f2f2f2',
             },
             ticks: {
-              beginAtZero: true,
+              beginAtZero: false,
               stepSize: 200
             }
           }],
