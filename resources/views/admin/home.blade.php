@@ -53,12 +53,12 @@ Homepage
         </div>
         <div class="pricing-padding">
           <div class="pricing-price m-0">
-            <div>Main</div>
+            <div>STREAM</div>
             <div>Video Livestream</div>
           </div>
         </div>
         <div class="pricing-cta m-0">
-          <a href="#">Show <i class="fas fa-arrow-right"></i></a>
+          <a href="{{ route('admin.main.statistic') }}">Show <i class="fas fa-arrow-right"></i></a>
         </div>
       </div>
     </div>
