@@ -4,6 +4,7 @@
 
 @section('css')
 <link rel="stylesheet" href="{{ asset('assets/css/revamp/landing-page.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/css/revamp/3dbox.css') }}">
 @endsection
 
 @section('content')
@@ -40,12 +41,22 @@
 
     <!-- Ripple Effect -- Cube -->
     <div class="ripple-cube">
-        <img src="{{ asset('assets/img/revamp/cube.png') }}" alt="" class="cube">
+        <div id="scene">
+            <div class="boxBase">
+              <div class="top" style="background-image: url({{ asset('assets/img/revamp/cube/top.png') }})"></div>
+              <div class="bottom" style="background-image: url({{ asset('assets/img/revamp/cube/bottom.png') }})"></div>
+              <div class="front" style="background-image: url({{ asset('assets/img/revamp/cube/front.png') }})"></div>
+              <div class="back" style="background-image: url({{ asset('assets/img/revamp/cube/back.png') }})"></div>
+              <div class="left" style="background-image: url({{ asset('assets/img/revamp/cube/left.png') }})"></div>
+              <div class="right" style="background-image: url({{ asset('assets/img/revamp/cube/right.png') }})"></div>
+            </div>
+          </div>
+        {{-- <img src="{{ asset('assets/img/revamp/cube.png') }}" alt="" class="cube"> --}}
         <h2 class="smaller">Ripple Effect</h2>
         <p class="bigger">Explore more about our grand theme in this year Ted talk! Get yourself a ticket and
             look out for our greatest event yet!</p>
             @auth
-                <a href="{{route('stream')}}" class="button submit">Register Now</a>
+                <a href="{{route('stream')}}" class="button submit">Watch Now</a>
             @else
                 <a href="{{route('account.regist')}}" class="button submit">Register Now</a>
             @endauth
@@ -92,7 +103,7 @@
                                 aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <img src="{{ asset('assets/img/revamp/default_avatar.png') }}" alt="">
+                            <img src="{{ asset('assets/img/revamp/event-speaker/shihab.png') }}" alt="">
                             <div class="speaker-desc">
                                 <h2>A Bridge From Misery to Hope</h2>
                                 <h3 class="subtitle">Najelaa Shihab | Initiator “Semua Murid Semua Guru” |
@@ -125,9 +136,9 @@
                                 aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <img src="{{ asset('assets/img/revamp/default_avatar.png') }}" alt="">
+                            <img src="{{ asset('assets/img/revamp/event-speaker/harits.png') }}" alt="">
                             <div class="speaker-desc">
-                                <h2>Harits</h2>
+                                <h2>The Choosen One</h2>
                                 <h3 class="subtitle">Harits Aufaa | TEDxUniversitasAirlangga Student Speaker |
                                     <a href="https://www.instagram.com/" target="_blank"
                                         rel="noopener noreferrer">@ig_nya</a>
@@ -159,7 +170,7 @@
                                 aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <img src="{{ asset('assets/img/revamp/default_avatar.png') }}" alt="">
+                            <img src="{{ asset('assets/img/revamp/event-speaker/sandiaga.png') }}" alt="">
                             <div class="speaker-desc">
                                 <h2>Inclusivity for Those Who in Need</h2>
                                 <h3 class="subtitle">Sandiaga Uno | Minister of Tourism and Creative Economy of
@@ -194,7 +205,7 @@
                                 aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <img src="{{ asset('assets/img/revamp/default_avatar.png') }}" alt="">
+                            <img src="{{ asset('assets/img/revamp/event-speaker/ayu.png') }}" alt="">
                             <div class="speaker-desc">
                                 <h2>Balancing the Body, Mind, and Soul to Improve Mental Health and Lifestyle
                                 </h2>
@@ -228,7 +239,7 @@
                                 aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <img src="{{ asset('assets/img/revamp/default_avatar.png') }}" alt="">
+                            <img src="{{ asset('assets/img/revamp/event-speaker/ifandi.png') }}" alt="">
                             <div class="speaker-desc">
                                 <h2>Networking and success</h2>
                                 <h3 class="subtitle">Ifandi Khainur Rahim | Founder of Satu Persen |
@@ -246,7 +257,6 @@
                 </div>
             </div>
         </div>
-        <a href='https://pngtree.com/so/businessman' style="color: white; opacity: .3">Illustration : businessman png from pngtree.com/</a>
     </div>
 
     <!-- Merchandise -->
