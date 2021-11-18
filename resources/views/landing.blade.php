@@ -45,7 +45,7 @@
         <p class="bigger">Explore more about our grand theme in this year Ted talk! Get yourself a ticket and
             look out for our greatest event yet!</p>
             @auth
-                <a href="{{route('stream')}}" class="button submit">Register Now</a>
+                <a href="{{route('stream')}}" class="button submit">Stream Page</a>
             @else
                 <a href="{{route('account.regist')}}" class="button submit">Register Now</a>
             @endauth
@@ -92,7 +92,7 @@
                                 aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <img src="{{ asset('assets/img/revamp/default_avatar.png') }}" alt="">
+                            <img src="{{ asset('assets/img/revamp/event-speaker/shihab.png') }}" alt="">
                             <div class="speaker-desc">
                                 <h2>A Bridge From Misery to Hope</h2>
                                 <h3 class="subtitle">Najelaa Shihab | Initiator “Semua Murid Semua Guru” |
@@ -125,7 +125,7 @@
                                 aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <img src="{{ asset('assets/img/revamp/default_avatar.png') }}" alt="">
+                            <img src="{{ asset('assets/img/revamp/event-speaker/harits.png') }}" alt="">
                             <div class="speaker-desc">
                                 <h2>Harits</h2>
                                 <h3 class="subtitle">Harits Aufaa | TEDxUniversitasAirlangga Student Speaker |
@@ -159,7 +159,7 @@
                                 aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <img src="{{ asset('assets/img/revamp/default_avatar.png') }}" alt="">
+                            <img src="{{ asset('assets/img/revamp/event-speaker/sandiaga.png') }}" alt="">
                             <div class="speaker-desc">
                                 <h2>Inclusivity for Those Who in Need</h2>
                                 <h3 class="subtitle">Sandiaga Uno | Minister of Tourism and Creative Economy of
@@ -194,7 +194,7 @@
                                 aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <img src="{{ asset('assets/img/revamp/default_avatar.png') }}" alt="">
+                            <img src="{{ asset('assets/img/revamp/event-speaker/ayu.png') }}" alt="">
                             <div class="speaker-desc">
                                 <h2>Balancing the Body, Mind, and Soul to Improve Mental Health and Lifestyle
                                 </h2>
@@ -228,7 +228,7 @@
                                 aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <img src="{{ asset('assets/img/revamp/default_avatar.png') }}" alt="">
+                            <img src="{{ asset('assets/img/revamp/event-speaker/ifandi.png') }}" alt="">
                             <div class="speaker-desc">
                                 <h2>Networking and success</h2>
                                 <h3 class="subtitle">Ifandi Khainur Rahim | Founder of Satu Persen |
@@ -246,7 +246,6 @@
                 </div>
             </div>
         </div>
-        <a href='https://pngtree.com/so/businessman' style="color: white; opacity: .3">Illustration : businessman png from pngtree.com/</a>
     </div>
 
     <!-- Merchandise -->

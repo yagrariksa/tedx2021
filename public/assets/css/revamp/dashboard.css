@@ -753,6 +753,80 @@ footer .content-footer .copyright h5 {
   gap: 1.5rem;
 }
 
+.participated .ted-talk {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.participated .ted-talk .headline {
+  width: 100%;
+  margin-top: 70px;
+  padding-bottom: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: .5rem;
+  background-color: rgba(163, 189, 190, 0.5);
+  background-blend-mode: hard-light;
+  border: 1px solid #EBEBEB;
+  border-radius: 10px 10px 0 0;
+}
+
+.participated .ted-talk .headline > img {
+  height: 150px;
+  margin-top: -70px;
+}
+
+.participated .ted-talk .headline h3 {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-weight: 500;
+}
+
+.participated .ted-talk .headline h2, .participated .ted-talk .headline h3 {
+  margin: 0;
+}
+
+.participated .ted-talk .headline hr {
+  width: 60px;
+  opacity: 1;
+  color: #EBEBEB;
+}
+
+.participated .ted-talk .status {
+  padding: 2.5rem 2rem;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 0 0 10px 10px;
+  border: 1px solid #EBEBEB;
+  background-color: #0101014D;
+  background-blend-mode: hue;
+}
+
+.participated .ted-talk .status .desc {
+  width: 50%;
+}
+
+.participated .ted-talk .status .desc h2 {
+  white-space: nowrap;
+}
+
 .participated .main-card {
   width: 100%;
   display: -webkit-box;
@@ -955,12 +1029,11 @@ footer .content-footer .copyright h5 {
   border-radius: 50%;
   border: 2px solid #EBEBEB;
   overflow: hidden;
-  background: white;
 }
 
 .others .event .ic-read-more img {
-  width: 100px;
-  height: 100px;
+  width: 40px;
+  height: 40px;
 }
 
 .others .event .ic-read-more span {
@@ -1001,11 +1074,6 @@ footer .content-footer .copyright h5 {
   color: #fff;
 }
 
-.others .event .ic-read-more img {
-  width: 60px;
-  height: 60px;
-}
-
 @media screen and (max-width: 1200px) {
   .participated p {
     font-size: 14px;
@@ -1043,6 +1111,22 @@ footer .content-footer .copyright h5 {
         -ms-flex-align: center;
             align-items: center;
   }
+  .participated .ted-talk {
+    width: 80%;
+  }
+  .participated .ted-talk .headline {
+    margin-top: 50px;
+  }
+  .participated .ted-talk .headline > img {
+    height: 100px;
+    margin-top: -50px;
+  }
+  .participated .ted-talk .status {
+    padding: 1rem 2rem;
+  }
+  .participated .ted-talk .status .desc {
+    width: 80%;
+  }
   .participated .main-card {
     width: 80%;
     -webkit-box-orient: vertical;
@@ -1072,6 +1156,11 @@ footer .content-footer .copyright h5 {
     -ms-flex-item-align: center;
         -ms-grid-row-align: center;
         align-self: center;
+  }
+  .status .desc > div {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   .status .desc > div > h2 {
     text-align: center;

@@ -56,7 +56,47 @@
             </div>
             <div class="participated">
                 <h2>Participated Event</h2>
-                <div class="main-card" style="min-height: 200px;">
+                <div class="ted-talk">
+                    @if (\Carbon\Carbon::now() > \Carbon\Carbon::createFromFormat('d/m/Y/H/i/s', '29/11/2021/00/00/00'))
+                    <div class="headline" style="background: rgba(163, 189, 190, 0.3)">
+                        <img src="{{ asset('assets/img/revamp/cube.png') }}" alt="">
+                        <h2 class="text-red">Ended</h2>
+                    </div>
+                    <div class="status">
+                        <div class="desc">
+                            <p style="text-align: center;">Thank you for participating and listening to our Ted talk.
+                                Don’t forget to join for our next speaker!</p>
+                        </div>
+                    </div>
+                    @elseif (\Carbon\Carbon::now() > \Carbon\Carbon::createFromFormat('d/m/Y/H/i/s', '28/11/2021/13/00/00'))
+                    <div class="headline" style="background: rgba(163, 189, 190, 0.3)">
+                        <img src="{{ asset('assets/img/revamp/cube.png') }}" alt="">
+                        <h2 class="text-green">Live now!</h2>
+                    </div>
+                    <div class="status">
+                        <div class="desc">
+                            <p style="text-align: center;">Our awaited event is starting! Join now and experience the
+                                meaning behind out grand theme!</p>
+                        </div>
+                        <a class="button submit" href="{{ route('stream') }}">Join Stream</a>
+                    </div>
+                    @else
+                    <div class="headline" style="background: rgba(163, 189, 190, 0.3)">
+                        <img src="{{ asset('assets/img/revamp/cube.png') }}" alt="">
+                        <h3>Streaming starts in</h3>
+                        <h2 id="timer">00:00:00</h2>
+                    </div>
+                    <div class="status">
+                        <div class="desc">
+                            <div>
+                                <h2 class="text-green">Coming Soon</h2>
+                                <p>pa <span class="text-red">·</span> tience</p>
+                            </div>
+                        </div>
+                    </div>
+                    @endif
+                </div>
+                {{-- <div class="main-card" style="min-height: 200px;">
                     <div class="status">
                         <div class="desc">
                             <div style="align-items: center">
@@ -72,10 +112,10 @@
                                 See You !
                             </p>
                         </div>
-                        {{-- <button class="btn-green" onclick="window.open('{{ route('stream') }}')">Watch
-                            Stream</button> --}}
+                        <button class="btn-green" onclick="window.open('{{ route('stream') }}')">Watch
+                            Stream</button>
                     </div>
-                </div>
+                </div> --}}
                 @if (Auth::user()->speaker || Auth::user()->essay)
                     @if (Auth::user()->essay)
                         @include('account.dashboard.cfe')
@@ -94,7 +134,7 @@
                     <div class="event">
                         <h3>Call for Essay</h3>
                         <a href="{{ route('essay.branding') }}" class="ic-read-more">
-                            <img style="background: white" src="{{ asset('assets/img/revamp/ic-cfe.png') }}" alt="">
+                            <img src="{{ asset('assets/img/revamp/ic-cfe.png') }}" alt="">
                             <span></span>
                             <p>Read More</p>
                         </a>
@@ -104,7 +144,7 @@
                     <div class="event">
                         <h3>Call for Student Speaker</h3>
                         <a href="{{ route('speaker.branding') }}" class="ic-read-more">
-                            <img style="background: white" src="{{ asset('assets/img/revamp/ic-cfs.png') }}" alt="">
+                            <img src="{{ asset('assets/img/revamp/ic-cfs.png') }}" alt="">
                             <span></span>
                             <p>Read More</p>
                         </a>
@@ -124,16 +164,16 @@
                         <h3>Follow Us</h3>
                         <!-- link ke sosmed -->
                         <div class="apps">
-                            <a href="" target="_blank" rel="noopener noreferrer" class=" btn-app"><img
-                                    src="{{ asset('assets/img/revamp/ic-insta.svg') }}" alt=""></a>
-                            <a href="" target="_blank" rel="noopener noreferrer" class=" btn-app"><img
-                                    src="{{ asset('assets/img/revamp/ic-youtube.svg') }}" alt=""></a>
-                            <a href="" target="_blank" rel="noopener noreferrer" class=" btn-app"><img
-                                    src="{{ asset('assets/img/revamp/ic-linkedin.svg') }}" alt=""></a>
-                            <a href="" target="_blank" rel="noopener noreferrer" class=" btn-app"><img
-                                    src="{{ asset('assets/img/revamp/ic-line.svg') }}" alt=""></a>
-                            <a href="" target="_blank" rel="noopener noreferrer" class=" btn-app"><img
-                                    src="{{ asset('assets/img/revamp/ic-tiktok.svg') }}" alt=""></a>
+                            <a href="" target="_blank" rel="noopener noreferrer" class="insta btn-app"><img
+                                src="{{ asset('assets/img/revamp/ic-insta.svg') }}" alt=""></a>
+                        <a href="" target="_blank" rel="noopener noreferrer" class="youtube btn-app"><img
+                                src="{{ asset('assets/img/revamp/ic-youtube.svg') }}" alt=""></a>
+                        <a href="" target="_blank" rel="noopener noreferrer" class="linkedin btn-app"><img
+                                src="{{ asset('assets/img/revamp/ic-linkedin.svg') }}" alt=""></a>
+                        <a href="" target="_blank" rel="noopener noreferrer" class="line btn-app"><img
+                                src="{{ asset('assets/img/revamp/ic-line.svg') }}" alt=""></a>
+                        <a href="" target="_blank" rel="noopener noreferrer" class="tiktok btn-app"><img
+                                src="{{ asset('assets/img/revamp/ic-tiktok.svg') }}" alt=""></a>
                         </div>
                     </div>
                     <hr>
@@ -179,6 +219,7 @@
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
     <script src="{{ asset('assets/js/revamp/nav-footer.js') }}"></script>
+    <script src="{{ asset('assets/js/revamp/stream.js') }}"></script>
     <!-- <script src="assets/js/dashboard.js"></script> -->
 </body>
 

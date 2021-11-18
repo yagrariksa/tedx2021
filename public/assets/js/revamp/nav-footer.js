@@ -1,8 +1,3 @@
-// NAVBAR BRAND
-$('.brand').click(() => {
-    window.location.href = 'landing-page.html';
-})
-
 // TOMBOL FOOTER ON HOVER
 $('.insta.btn-app').mousemove(() => {
     $('.insta.btn-app img').css('filter', 'invert(1)');
