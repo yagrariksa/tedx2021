@@ -72,8 +72,8 @@
                                 See You !
                             </p>
                         </div>
-                        <button class="btn-green" onclick="window.open('{{ route('stream') }}')">Watch
-                            Stream</button>
+                        {{-- <button class="btn-green" onclick="window.open('{{ route('stream') }}')">Watch
+                            Stream</button> --}}
                     </div>
                 </div>
                 @if (Auth::user()->speaker || Auth::user()->essay)
