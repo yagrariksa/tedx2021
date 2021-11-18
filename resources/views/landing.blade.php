@@ -4,10 +4,16 @@
 
 @section('css')
 <link rel="stylesheet" href="{{ asset('assets/css/revamp/landing-page.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/css/revamp/3dbox.css') }}">
 @endsection
 
 @section('content')
 <script>
+    // document.getElementById("menuItems").children[0].children.style.cursor = "default";
+    var nodes = document.getElementById('menuItems').getElementsByTagName("a");
+    for(var i=0; i<nodes.length; i++) {
+        nodes[i].style.pointerEvents = "none";
+    }
     document.getElementById("menuItems").style.opacity = "0";
     var divsToHide = document.getElementsByClassName("mobile_items"); //divsToHide is an array
     for(var i = 0; i < divsToHide.length; i++){
@@ -35,14 +41,24 @@
 
     <!-- Ripple Effect -- Cube -->
     <div class="ripple-cube">
-        <img src="{{ asset('assets/img/revamp/cube.png') }}" alt="" class="cube">
+        <div id="scene">
+            <div class="boxBase">
+              <div class="top" style="background-image: url({{ asset('assets/img/revamp/cube/top.png') }})"></div>
+              <div class="bottom" style="background-image: url({{ asset('assets/img/revamp/cube/bottom.png') }})"></div>
+              <div class="front" style="background-image: url({{ asset('assets/img/revamp/cube/front.png') }})"></div>
+              <div class="back" style="background-image: url({{ asset('assets/img/revamp/cube/back.png') }})"></div>
+              <div class="left" style="background-image: url({{ asset('assets/img/revamp/cube/left.png') }})"></div>
+              <div class="right" style="background-image: url({{ asset('assets/img/revamp/cube/right.png') }})"></div>
+            </div>
+          </div>
+        {{-- <img src="{{ asset('assets/img/revamp/cube.png') }}" alt="" class="cube"> --}}
         <h2 class="smaller">Ripple Effect</h2>
         <p class="bigger">Explore more about our grand theme in this year Ted talk! Get yourself a ticket and
             look out for our greatest event yet!</p>
             @auth
-                <a href="{{route('stream')}}" class="button submit">Join Now</a>
+                <a href="{{route('stream')}}" class="button submit">Watch Now</a>
             @else
-                <a href="{{route('account.regist')}}" class="button submit">Join Now</a>
+                <a href="{{route('account.regist')}}" class="button submit">Register Now</a>
             @endauth
     </div>
 
@@ -63,9 +79,9 @@
     </div>
 
     <!-- FRAME TEASER -->
-    <div class="teaser">
+    {{-- <div class="teaser">
         <iframe src="https://www.youtube.com/embed/o_rIDOgnE3U?controls=0" height="100%" width="100%"></iframe>
-    </div>
+    </div> --}}
 
     <!-- Event Speaker -->
     <div class="speakers" id="event" style="padding-top: 6rem; margin-top:0">
@@ -87,18 +103,17 @@
                                 aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <img src="{{ asset('assets/img/revamp/speaker1.png') }}" alt="">
+                            <img src="{{ asset('assets/img/revamp/event-speaker/shihab.png') }}" alt="">
                             <div class="speaker-desc">
-                                <h2>JUDUL</h2>
-                                <h3 class="subtitle">Nama | Pekerjaan |
-                                    <a href="https://www.instagram.com/" target="_blank"
-                                        rel="noopener noreferrer">@ig_nya</a>
+                                <h2>A Bridge From Misery to Hope</h2>
+                                <h3 class="subtitle">Najelaa Shihab | Initiator “Semua Murid Semua Guru” |
+                                    <a href="https://www.instagram.com/najelaashihab" target="_blank"
+                                        rel="noopener noreferrer">@najelaashihab</a>
                                 </h3>
-                                <h3>An impact still can be made regardless of how people perceive the changes
-                                    they have created and people do not have to achieve big things to be
-                                    impactful. Each impact of the deeds will eventually spread and influence
-                                    society to a certain extent that people have never imagined before. This
-                                    inappreciable motion that generates a disparity is called the ripple effect.
+                                <h3>Najelaa Shihab, an experienced educator, speaks about the importance of
+                                    reading for learning and transforming the whole learning process through
+                                    various pieces of information and data that can be implemented in daily
+                                    life.
                                 </h3>
                             </div>
                         </div>
@@ -121,10 +136,10 @@
                                 aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <img src="{{ asset('assets/img/revamp/speaker1.png') }}" alt="">
+                            <img src="{{ asset('assets/img/revamp/event-speaker/harits.png') }}" alt="">
                             <div class="speaker-desc">
-                                <h2>JUDUL</h2>
-                                <h3 class="subtitle">Nama | Pekerjaan |
+                                <h2>The Choosen One</h2>
+                                <h3 class="subtitle">Harits Aufaa | TEDxUniversitasAirlangga Student Speaker |
                                     <a href="https://www.instagram.com/" target="_blank"
                                         rel="noopener noreferrer">@ig_nya</a>
                                 </h3>
@@ -155,18 +170,19 @@
                                 aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <img src="{{ asset('assets/img/revamp/speaker1.png') }}" alt="">
+                            <img src="{{ asset('assets/img/revamp/event-speaker/sandiaga.png') }}" alt="">
                             <div class="speaker-desc">
-                                <h2>JUDUL</h2>
-                                <h3 class="subtitle">Nama | Pekerjaan |
-                                    <a href="https://www.instagram.com/" target="_blank"
-                                        rel="noopener noreferrer">@ig_nya</a>
+                                <h2>Inclusivity for Those Who in Need</h2>
+                                <h3 class="subtitle">Sandiaga Uno | Minister of Tourism and Creative Economy of
+                                    The Republic of Indonesia |
+                                    <a href="https://www.instagram.com/sandiuno" target="_blank"
+                                        rel="noopener noreferrer">@sandiuno</a>
                                 </h3>
-                                <h3>An impact still can be made regardless of how people perceive the changes
-                                    they have created and people do not have to achieve big things to be
-                                    impactful. Each impact of the deeds will eventually spread and influence
-                                    society to a certain extent that people have never imagined before. This
-                                    inappreciable motion that generates a disparity is called the ripple effect.
+                                <h3>This kind of case should be viewed with the opportunity to see that it is a
+                                    very good time to expand an inclusive entrepreneurship that exhibits the
+                                    potential that Indonesia has. From Mr. Sandi's experience on becoming an
+                                    entrepreneur, there’s gotta be principles that lie inside every entrepreneur
+                                    which are Work hard. Work smart, Work thoroughly, and Work sincerely.
                                 </h3>
                             </div>
                         </div>
@@ -189,18 +205,18 @@
                                 aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <img src="{{ asset('assets/img/revamp/speaker1.png') }}" alt="">
+                            <img src="{{ asset('assets/img/revamp/event-speaker/ayu.png') }}" alt="">
                             <div class="speaker-desc">
-                                <h2>JUDUL</h2>
-                                <h3 class="subtitle">Nama | Pekerjaan |
-                                    <a href="https://www.instagram.com/" target="_blank"
-                                        rel="noopener noreferrer">@ig_nya</a>
+                                <h2>Balancing the Body, Mind, and Soul to Improve Mental Health and Lifestyle
+                                </h2>
+                                <h3 class="subtitle">Ayu Maulida | Puteri Indonesia 2020 |
+                                    <a href="https://www.instagram.com/ayumaulida97" target="_blank"
+                                        rel="noopener noreferrer">@ayumaulida97</a>
                                 </h3>
-                                <h3>An impact still can be made regardless of how people perceive the changes
-                                    they have created and people do not have to achieve big things to be
-                                    impactful. Each impact of the deeds will eventually spread and influence
-                                    society to a certain extent that people have never imagined before. This
-                                    inappreciable motion that generates a disparity is called the ripple effect.
+                                <h3>In her talk, she will discuss the importance of having good mental health
+                                    and lifestyle, how to practice healthy habits to improve our mental health
+                                    and lifestyle, how to overcome certain obstacles, as well as the ripple
+                                    effect in helping others.
                                 </h3>
                             </div>
                         </div>
@@ -223,18 +239,17 @@
                                 aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <img src="{{ asset('assets/img/revamp/speaker1.png') }}" alt="">
+                            <img src="{{ asset('assets/img/revamp/event-speaker/ifandi.png') }}" alt="">
                             <div class="speaker-desc">
-                                <h2>JUDUL</h2>
-                                <h3 class="subtitle">Nama | Pekerjaan |
-                                    <a href="https://www.instagram.com/" target="_blank"
-                                        rel="noopener noreferrer">@ig_nya</a>
+                                <h2>Networking and success</h2>
+                                <h3 class="subtitle">Ifandi Khainur Rahim | Founder of Satu Persen |
+                                    <a href="https://www.instagram.com/ifandievan" target="_blank"
+                                        rel="noopener noreferrer">@ifandievan</a>
                                 </h3>
-                                <h3>An impact still can be made regardless of how people perceive the changes
-                                    they have created and people do not have to achieve big things to be
-                                    impactful. Each impact of the deeds will eventually spread and influence
-                                    society to a certain extent that people have never imagined before. This
-                                    inappreciable motion that generates a disparity is called the ripple effect.
+                                <h3>Evan has had difficult times in the past but he can still achieve many
+                                    things, one of the factors is because of networking. After studying
+                                    psychology, Evan's self-awareness increased and realized that he was
+                                    experiencing a condition called avoidance attachment.
                                 </h3>
                             </div>
                         </div>
@@ -282,10 +297,15 @@
     <!-- Sponsor -->
     <div class="sponsor" id="sponsors">
         <h1>Sponsored by</h1>
-        <a href="{{ route('sponsors') }}" class="blocks">
-            <h2 class="smaller">CHECK OUR SPONSOR</h2>
-            <h1 style="text-decoration: underline;">HERE</h1>
-        </a>
+        <div class="banner">
+            <!-- <div class="two-inarow">
+                <div class="logo left"><img src="assets/img/cube.png" alt=""></div>
+                <div class="logo right"><img src="assets/img/merch1.png" alt=""></div>
+                <div class="logo right"><img src="assets/img/ripple-desc.jpg" alt=""></div>
+                <div class="logo right"><img src="assets/img/ted-talk-pool.png" alt=""></div>
+            </div> -->
+            <div class="logo left"><img src="{{ asset('assets/img/revamp/Invitech.png') }}" alt=""></div>
+        </div>
     </div>
 </div>
 @endsection

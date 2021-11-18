@@ -37,22 +37,22 @@
         opacity: 0;
         visibility: hidden;
         transform-origin: top;
-        animation-fill-mode: forwards;
+        animation-fill-mode: forwards; 
         transform: scale(0.9, 0.7) translateY(-20px);
-        display: block;
+        display: block; 
         transition: all 500ms ease;
-
+        
         .dropdown-item {
             color: $batman;
-
+            
             &:hover {
                 background-color: #008f9026;
             }
         }
     }
-
+        
     .show.dropdown-menu {
-        transform: scale(1, 1) translateY(34px) !important;
+        transform: scale(1, 1) translateY(34px) !important;  
         opacity: 1;
         visibility: visible;
     }
@@ -65,6 +65,66 @@
     align-items: flex-start;
     gap: 1.5rem;
 
+    .ted-talk {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+        .headline {
+            width: 100%;
+            margin-top: 70px;
+            padding-bottom: 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: .5rem;
+            background-color: rgba(163, 189, 190, 0.5);
+            background-blend-mode: hard-light;
+            border: 1px solid $white;
+            border-radius: 10px 10px 0 0;
+
+            > img {
+                height: 150px;
+                margin-top: -70px;
+            }
+
+            h3 {
+                width: fit-content;
+                font-weight: 500;
+            }
+
+            h2, h3 {
+                margin: 0;
+            }
+            
+            hr {
+                width: 60px;
+                opacity: 1;
+                color: $white;
+            }
+        }
+
+        .status {
+            padding: 2.5rem 2rem;
+            width: 100%;
+            display: flex;
+            border-radius: 0 0 10px 10px;
+            border: 1px solid $white;
+            background-color: #0101014D;
+            background-blend-mode: hue;
+
+            .desc {
+                width: 50%;
+                
+                h2 {
+                    white-space: nowrap;
+                }
+            }
+        }
+
+
+    }
+
     .main-card {
         width: 100%;
         display: flex;
@@ -74,7 +134,7 @@
         background-color: #0101014D;
         background-blend-mode: hue;
     }
-
+    
     .name {
         min-width: 250px;
         padding: 3rem 0;
@@ -103,7 +163,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
+    
     .desc {
         margin-bottom: 1rem;
         width: 80%;
@@ -124,7 +184,7 @@
             display: flex;
             flex-direction: column;
             align-items: flex-end;
-
+    
             p {
                 font-weight: 500;
             }
@@ -189,12 +249,7 @@
         gap: .25rem;
 
         .ic-read-more {
-            @include read-more(100px);
-            img {
-                width: 60px;
-                height: 60px;
-            }
-            background: white;
+            @include read-more(100px, 40px);
         }
     }
 }
@@ -219,7 +274,7 @@
             font-size: 18px;
         }
     }
-
+    
     .header {
         flex-direction: column-reverse;
         align-items: center;
@@ -233,6 +288,27 @@
 
     .participated {
         align-items: center;
+
+        .ted-talk {
+            width: 80%;
+
+            .headline {
+                margin-top: 50px;
+
+                > img {
+                    height: 100px;
+                    margin-top: -50px;
+                }
+            }
+            
+            .status {
+                padding: 1rem 2rem;
+
+                .desc {
+                    width: 80%;
+                }
+            }
+        }
 
         .main-card {
             width: 80%;
@@ -261,8 +337,12 @@
                 align-self: center;
             }
 
-            > div > h2 {
-                text-align: center;
+            > div {
+                align-items: center;
+
+                > h2 {
+                    text-align: center;
+                }
             }
         }
 
