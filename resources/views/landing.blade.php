@@ -4,6 +4,7 @@
 
 @section('css')
 <link rel="stylesheet" href="{{ asset('assets/css/revamp/landing-page.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/css/revamp/3dbox.css') }}">
 @endsection
 
 @section('content')
@@ -40,7 +41,17 @@
 
     <!-- Ripple Effect -- Cube -->
     <div class="ripple-cube">
-        <img src="{{ asset('assets/img/revamp/cube.png') }}" alt="" class="cube">
+        <div id="scene">
+            <div class="boxBase">
+              <div class="top" style="background-image: url({{ asset('assets/img/revamp/cube/top.png') }})"></div>
+              <div class="bottom" style="background-image: url({{ asset('assets/img/revamp/cube/bottom.png') }})"></div>
+              <div class="front" style="background-image: url({{ asset('assets/img/revamp/cube/front.png') }})"></div>
+              <div class="back" style="background-image: url({{ asset('assets/img/revamp/cube/back.png') }})"></div>
+              <div class="left" style="background-image: url({{ asset('assets/img/revamp/cube/left.png') }})"></div>
+              <div class="right" style="background-image: url({{ asset('assets/img/revamp/cube/right.png') }})"></div>
+            </div>
+          </div>
+        {{-- <img src="{{ asset('assets/img/revamp/cube.png') }}" alt="" class="cube"> --}}
         <h2 class="smaller">Ripple Effect</h2>
         <p class="bigger">Explore more about our grand theme in this year Ted talk! Get yourself a ticket and
             look out for our greatest event yet!</p>
@@ -127,7 +138,7 @@
                         <div class="modal-body">
                             <img src="{{ asset('assets/img/revamp/event-speaker/harits.png') }}" alt="">
                             <div class="speaker-desc">
-                                <h2>Harits</h2>
+                                <h2>The Choosen One</h2>
                                 <h3 class="subtitle">Harits Aufaa | TEDxUniversitasAirlangga Student Speaker |
                                     <a href="https://www.instagram.com/" target="_blank"
                                         rel="noopener noreferrer">@ig_nya</a>

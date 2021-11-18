@@ -27,6 +27,7 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ asset('assets/css/revamp/env.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/revamp/dashboard.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/revamp/3dbox.css') }}">
 
     <style>
         .btn-green {
@@ -56,10 +57,20 @@
             </div>
             <div class="participated">
                 <h2>Participated Event</h2>
-                <div class="ted-talk">
+                <div class="ted-talk" style="margin-top: 5rem">
                     @if (\Carbon\Carbon::now() > \Carbon\Carbon::createFromFormat('d/m/Y/H/i/s', '29/11/2021/00/00/00'))
                     <div class="headline" style="background: rgba(163, 189, 190, 0.3)">
-                        <img src="{{ asset('assets/img/revamp/cube.png') }}" alt="">
+                        <div id="scene">
+                            <div class="boxBase">
+                              <div class="top" style="background-image: url({{ asset('assets/img/revamp/cube/top.png') }})"></div>
+                              <div class="bottom" style="background-image: url({{ asset('assets/img/revamp/cube/bottom.png') }})"></div>
+                              <div class="front" style="background-image: url({{ asset('assets/img/revamp/cube/front.png') }})"></div>
+                              <div class="back" style="background-image: url({{ asset('assets/img/revamp/cube/back.png') }})"></div>
+                              <div class="left" style="background-image: url({{ asset('assets/img/revamp/cube/left.png') }})"></div>
+                              <div class="right" style="background-image: url({{ asset('assets/img/revamp/cube/right.png') }})"></div>
+                            </div>
+                          </div>
+                        {{-- <img src="{{ asset('assets/img/revamp/cube.png') }}" alt=""> --}}
                         <h2 class="text-red">Ended</h2>
                     </div>
                     <div class="status">
@@ -70,7 +81,17 @@
                     </div>
                     @elseif (\Carbon\Carbon::now() > \Carbon\Carbon::createFromFormat('d/m/Y/H/i/s', '28/11/2021/13/00/00'))
                     <div class="headline" style="background: rgba(163, 189, 190, 0.3)">
-                        <img src="{{ asset('assets/img/revamp/cube.png') }}" alt="">
+                        <div id="scene">
+                            <div class="boxBase">
+                              <div class="top" style="background-image: url({{ asset('assets/img/revamp/cube/top.png') }})"></div>
+                              <div class="bottom" style="background-image: url({{ asset('assets/img/revamp/cube/bottom.png') }})"></div>
+                              <div class="front" style="background-image: url({{ asset('assets/img/revamp/cube/front.png') }})"></div>
+                              <div class="back" style="background-image: url({{ asset('assets/img/revamp/cube/back.png') }})"></div>
+                              <div class="left" style="background-image: url({{ asset('assets/img/revamp/cube/left.png') }})"></div>
+                              <div class="right" style="background-image: url({{ asset('assets/img/revamp/cube/right.png') }})"></div>
+                            </div>
+                          </div>
+                        {{-- <img src="{{ asset('assets/img/revamp/cube.png') }}" alt=""> --}}
                         <h2 class="text-green">Live now!</h2>
                     </div>
                     <div class="status">
@@ -82,7 +103,17 @@
                     </div>
                     @else
                     <div class="headline" style="background: rgba(163, 189, 190, 0.3)">
-                        <img src="{{ asset('assets/img/revamp/cube.png') }}" alt="">
+                        <div id="scene">
+                            <div class="boxBase">
+                              <div class="top" style="background-image: url({{ asset('assets/img/revamp/cube/top.png') }})"></div>
+                              <div class="bottom" style="background-image: url({{ asset('assets/img/revamp/cube/bottom.png') }})"></div>
+                              <div class="front" style="background-image: url({{ asset('assets/img/revamp/cube/front.png') }})"></div>
+                              <div class="back" style="background-image: url({{ asset('assets/img/revamp/cube/back.png') }})"></div>
+                              <div class="left" style="background-image: url({{ asset('assets/img/revamp/cube/left.png') }})"></div>
+                              <div class="right" style="background-image: url({{ asset('assets/img/revamp/cube/right.png') }})"></div>
+                            </div>
+                          </div>
+                        {{-- <img src="{{ asset('assets/img/revamp/cube.png') }}" alt=""> --}}
                         <h3>Streaming starts in</h3>
                         <h2 id="timer">00:00:00</h2>
                     </div>
