@@ -9,6 +9,10 @@ $('#click').click(() => {
     }, {
         duration: 750,
     });
+    var nodes = document.getElementById('menuItems').getElementsByTagName("a");
+    for(var i=0; i<nodes.length; i++) {
+        nodes[i].style.pointerEvents = "auto";
+    }
     $('#menuItems').animate({
         opacity: 1
     }, {
@@ -25,7 +29,11 @@ $('#click').click(() => {
 
 // ON RELOAD: BACK TO TOP
 $(document).ready(function () {
-    $(this).scrollTop(0);
+    setTimeout(
+        function()
+        {
+            $(this).scrollTop(0);
+        }, 700);
 });
 
 // Hover event-nya
