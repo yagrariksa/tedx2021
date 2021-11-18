@@ -45,9 +45,9 @@
         <p class="bigger">Explore more about our grand theme in this year Ted talk! Get yourself a ticket and
             look out for our greatest event yet!</p>
             @auth
-                <a href="{{route('stream')}}" class="button submit">Join Now</a>
+                <a href="{{route('stream')}}" class="button submit">Register Now</a>
             @else
-                <a href="{{route('account.regist')}}" class="button submit">Join Now</a>
+                <a href="{{route('account.regist')}}" class="button submit">Register Now</a>
             @endauth
     </div>
 
