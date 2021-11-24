@@ -3,7 +3,7 @@
 
 body {
     overflow-x: hidden;
-    overflow-y: auto;
+    overflow-y: hidden;
 }
 
 .content {
@@ -24,6 +24,51 @@ body {
 
     .right {
         @include card-login-regis(100%);
+    }
+
+    .alert {
+        z-index: 999;
+        width: 80%;
+        max-width: 500px;
+        padding: 2rem 0 0 0;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        background-color: $grey;
+        border-radius: 10px;
+        border: none;
+
+        h2, h3 {
+            text-align: center;
+            color: $batman;
+        }
+
+        &-body {
+            width: 100%;
+            padding: 20px 66px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            background-color: rgba(163, 189, 190, 0.5);
+            border-radius: 0 0 10px 10px;
+        }
+    }
+
+    .backdrop {
+        z-index: 998;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #010101B3;
     }
 }
 

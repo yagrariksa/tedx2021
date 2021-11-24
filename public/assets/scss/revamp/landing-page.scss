@@ -464,8 +464,8 @@ h2.smaller {
     }
 }
 
-$left-right: 3.25rem;
-$top-bottom: 2.5rem;
+$left-right: 2.5rem;
+$top-bottom: 1.75rem;
 
 .sponsor {
     margin-top: 8rem;
@@ -492,8 +492,9 @@ $top-bottom: 2.5rem;
             outline-offset: .25rem;
 
             img {
-                max-height: 250px;
+                max-height: 124px;
                 max-width: 100%;
+                border-radius: .5rem;
             }
 
             &::before {
