@@ -8,22 +8,6 @@
 @endsection
 
 @section('content')
-    {{-- @if (Session::has('error'))
-        <div class="alert fail" id="alert-message">{{ Session::get('error') }}</div>
-    @endif --}}
-    {{-- <form action="{{ route('account.regist') }}" method="post" id="regist">
-        @csrf
-        <input type="email" name="email" placeholder="email" value="{{ old('email') }}">
-        <input type="text" name="fullname" placeholder="fullname" value="{{ old('fullname') }}">
-        <input type="password" name="password" placeholder="password">
-        <input type="password" name="repass" placeholder="repeat password">
-        <input type="number" name="age" placeholder="age" value="{{ old('age') }}">
-        <input type="text" name="phone" placeholder="phone" value="{{ old('phone') }}">
-        <input type="text" name="address" placeholder="address" value="{{ old('address') }}">
-        <input type="text" name="institute" placeholder="institute" value="{{ old('institute') }}">
-        <button type="submit">regist</button>
-        <a href="{{ route('account.login') }}" id="goto-login">login</a>
-    </form> --}}
     <div class="left">
         <h1>Sign up so you don't miss it!</h1>
         <h3>Let's set up your account and join our event!</h3>
@@ -111,6 +95,18 @@
             </div>
         </fieldset>
     </form>
+
+    {{-- Daftar ditutup --}}
+    @if (\Carbon\Carbon::now() > \Carbon\Carbon::createFromFormat('d/m/Y/H/i/s', '28/11/2021/00/00/00'))
+    <div class="alert">
+        <h2>Registration Closed</h2>
+        <div class="alert-body">
+            <h3>Thank you for participating in our events. See you on TEDxUniversitasAirlangga 2022!</h3>
+            <a href="{{ route('landing') }}" class="button submit">Home</a>
+        </div>
+    </div>
+    <div class="backdrop"></div>
+    @endif
 @endsection
 
 @section('script')

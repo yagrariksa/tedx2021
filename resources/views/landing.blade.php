@@ -56,9 +56,17 @@
         <p class="bigger">Explore more about our grand theme in this year Ted talk! Get yourself a ticket and
             look out for our greatest event yet!</p>
             @auth
+                @if (\Carbon\Carbon::now() > \Carbon\Carbon::createFromFormat('d/m/Y/H/i/s', '29/11/2021/00/00/00'))
+                <button class="button disabled" disabled style="pointer-events: none">Event Ended</button>
+                @else
                 <a href="{{route('stream')}}" class="button submit">Watch Now</a>
+                @endif
             @else
+                @if (\Carbon\Carbon::now() > \Carbon\Carbon::createFromFormat('d/m/Y/H/i/s', '28/11/2021/00/00/00'))
+                <button class="button disabled" disabled style="pointer-events: none">Registration Closed</button>
+                @else
                 <a href="{{route('account.regist')}}" class="button submit">Register Now</a>
+                @endif
             @endauth
     </div>
 
@@ -298,13 +306,14 @@
     <div class="sponsor" id="sponsors">
         <h1>Sponsored by</h1>
         <div class="banner">
-            <!-- <div class="two-inarow">
+            {{-- <div class="two-inarow">
                 <div class="logo left"><img src="assets/img/cube.png" alt=""></div>
                 <div class="logo right"><img src="assets/img/merch1.png" alt=""></div>
                 <div class="logo right"><img src="assets/img/ripple-desc.jpg" alt=""></div>
                 <div class="logo right"><img src="assets/img/ted-talk-pool.png" alt=""></div>
-            </div> -->
+            </div> --}}
             <div class="logo left"><img src="{{ asset('assets/img/revamp/Invitech.png') }}" alt=""></div>
+            <div class="logo left"><img src="{{ asset('assets/img/revamp/studio.png') }}" alt=""></div>
         </div>
     </div>
 </div>
