@@ -654,11 +654,13 @@ footer .content-footer .copyright h5 {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
   height: 75vh;
   min-height: 400px;
   max-height: 800px;
+}
+
+#mediagroup #videogroup {
+  min-height: 350px;
 }
 
 #mediagroup #livechat {
@@ -880,6 +882,7 @@ footer .content-footer .copyright h5 {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    height: 800px;
   }
   .content {
     margin-top: 4rem;

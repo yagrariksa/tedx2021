@@ -11,18 +11,20 @@
     @if (\Carbon\Carbon::now() > \Carbon\Carbon::createFromFormat('d/m/Y/H/i/s', '29/11/2021/00/00/00'))
     <div id="mediagroup" data-link="5qap5aO4i9A">
         <div class="col" id="videogroup">
+            {{-- <iframe src="https://drive.google.com/file/d/1FtJKo2qPRlJ9Cm-_9k6D9sihio6kb_P3/preview" width="100%" height="100%" allow="autoplay"></iframe> --}}
             <iframe frameborder="0" width="100%" height="100%" src="https://www.youtube.com/embed/5qap5aO4i9A?modestbranding=1&showinfo=0&autohide=1&autoplay=1"
                 allowfullscreen allow="autoplay">
             </iframe>
             {{-- <lite-youtube width="100%" id="video" videoid="5qap5aO4i9A"></lite-youtube> --}}
         </div>
     </div>
-    @elseif (\Carbon\Carbon::now() > \Carbon\Carbon::createFromFormat('d/m/Y/H/i/s', '28/11/2021/13/00/00'))
+    @elseif (\Carbon\Carbon::now() > \Carbon\Carbon::createFromFormat('d/m/Y/H/i/s', '22/11/2021/13/00/00'))
     <h1>Stream title</h1>
     {{-- <h3>Featuring : speaker name</h3> --}}
 
     <div id="mediagroup" data-link="5qap5aO4i9A">
         <div class="col col-lg-8" id="videogroup">
+            {{-- <iframe src="https://drive.google.com/file/d/1FtJKo2qPRlJ9Cm-_9k6D9sihio6kb_P3/preview" width="100%" height="100%" allow="autoplay"></iframe> --}}
             <iframe frameborder="0" width="100%" height="100%" src="https://www.youtube.com/embed/5qap5aO4i9A?modestbranding=1&showinfo=0&autohide=1&autoplay=1"
                 allowfullscreen allow="autoplay">
             </iframe>

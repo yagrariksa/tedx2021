@@ -4,10 +4,13 @@
 #mediagroup {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    // flex-wrap: wrap;
     height: 75vh;
     min-height: 400px;
     max-height: 800px;
+    #videogroup {
+        min-height: 350px;
+    }
     #livechat {
         min-height: 400px;
     }
@@ -163,6 +166,7 @@
 @media screen and (max-width: 992px) {
     #mediagroup {
         flex-direction: column;
+        height: 800px;
     }
 
     .content {
