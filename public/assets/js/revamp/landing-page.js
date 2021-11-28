@@ -66,7 +66,7 @@ function convertTZ(date, tzString) {
 el = 'timer'
 // Set the date we're counting down to
 
-var countDownDate = new Date(2021, 10, 28, 13, 00, 00).getTime();
+var countDownDate = new Date(2021, 10, 28, 12, 45, 00).getTime();
 
 // Update the count down every 1 second
 var x = setInterval(function StartCount() {

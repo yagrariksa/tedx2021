@@ -9,24 +9,24 @@
 @section('content')
 
     @if (\Carbon\Carbon::now() > \Carbon\Carbon::createFromFormat('d/m/Y/H/i/s', '29/11/2021/00/00/00'))
-    <div id="mediagroup" data-link="5qap5aO4i9A">
+    <div id="mediagroup" data-link="OvSwlxpZIX8">
         <div class="col" id="videogroup">
-            <iframe frameborder="0" width="100%" height="100%" src="https://www.youtube.com/embed/5qap5aO4i9A?modestbranding=1&showinfo=0&autohide=1&autoplay=1"
+            <iframe frameborder="0" width="100%" height="100%" src="https://www.youtube.com/embed/OvSwlxpZIX8?modestbranding=1&showinfo=0&autohide=1&autoplay=1"
                 allowfullscreen allow="autoplay">
             </iframe>
-            {{-- <lite-youtube width="100%" id="video" videoid="5qap5aO4i9A"></lite-youtube> --}}
+            {{-- <lite-youtube width="100%" id="video" videoid="OvSwlxpZIX8"></lite-youtube> --}}
         </div>
     </div>
-    @elseif (\Carbon\Carbon::now() > \Carbon\Carbon::createFromFormat('d/m/Y/H/i/s', '28/11/2021/13/00/00'))
-    <h1>Stream title</h1>
+    @elseif (\Carbon\Carbon::now() > \Carbon\Carbon::createFromFormat('d/m/Y/H/i/s', '28/11/2021/12/00/00'))
+    {{-- <h1>Stream title</h1> --}}
     {{-- <h3>Featuring : speaker name</h3> --}}
 
-    <div id="mediagroup" data-link="5qap5aO4i9A">
+    <div id="mediagroup" data-link="OvSwlxpZIX8">
         <div class="col col-lg-8" id="videogroup">
-            <iframe frameborder="0" width="100%" height="100%" src="https://www.youtube.com/embed/5qap5aO4i9A?modestbranding=1&showinfo=0&autohide=1&autoplay=1"
+            <iframe frameborder="0" width="100%" height="100%" src="https://www.youtube.com/embed/OvSwlxpZIX8?modestbranding=1&showinfo=0&autohide=1&autoplay=1"
                 allowfullscreen allow="autoplay">
             </iframe>
-            {{-- <lite-youtube width="100%" id="video" videoid="5qap5aO4i9A"></lite-youtube> --}}
+            {{-- <lite-youtube width="100%" id="video" videoid="OvSwlxpZIX8"></lite-youtube> --}}
         </div>
         <div class="col col-lg-4 p-0" id="livechatgroup">
             <iframe class="lazy" id="livechat" width="100%" height="100%"

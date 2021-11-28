@@ -79,7 +79,7 @@
                                 Don’t forget to join for our next speaker!</p>
                         </div>
                     </div>
-                    @elseif (\Carbon\Carbon::now() > \Carbon\Carbon::createFromFormat('d/m/Y/H/i/s', '28/11/2021/13/00/00'))
+                    @elseif (\Carbon\Carbon::now() > \Carbon\Carbon::createFromFormat('d/m/Y/H/i/s', '28/11/2021/12/45/00'))
                     <div class="headline" style="background: rgba(163, 189, 190, 0.3)">
                         <div id="scene">
                             <div class="boxBase">
