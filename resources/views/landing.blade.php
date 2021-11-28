@@ -63,7 +63,11 @@
                 @endif
             @else
                 @if (\Carbon\Carbon::now() > \Carbon\Carbon::createFromFormat('d/m/Y/H/i/s', '28/11/2021/00/00/00'))
-                <button class="button disabled" disabled style="pointer-events: none">Registration Closed</button>
+                    @if (\Carbon\Carbon::now()->isBetween(Carbon::create($year = 2021, $month = 11, $day = 28, $hour = 12, $minute = 45), Carbon::create($year = 2021, $month = 11, $day = 28, $hour = 22, $minute = 00)) )
+                        <a href="{{route('stream')}}" class="button submit">Watch Now</a>                    
+                    @else
+                        <button class="button disabled" disabled style="pointer-events: none">Registration Closed</button>
+                    @endif
                 @else
                 <a href="{{route('account.regist')}}" class="button submit">Register Now</a>
                 @endif
@@ -87,9 +91,9 @@
     </div>
 
     <!-- FRAME TEASER -->
-    {{-- <div class="teaser">
-        <iframe src="https://www.youtube.com/embed/o_rIDOgnE3U?controls=0" height="100%" width="100%"></iframe>
-    </div> --}}
+    <div class="teaser">
+        <iframe src="https://drive.google.com/file/d/1FtJKo2qPRlJ9Cm-_9k6D9sihio6kb_P3/preview" height="100%" width="100%"></iframe>
+    </div>
 
     <!-- Event Speaker -->
     <div class="speakers" id="event" style="padding-top: 6rem; margin-top:0">
