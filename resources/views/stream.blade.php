@@ -17,7 +17,7 @@
             {{-- <lite-youtube width="100%" id="video" videoid="OvSwlxpZIX8"></lite-youtube> --}}
         </div>
     </div>
-    @elseif (\Carbon\Carbon::now() > \Carbon\Carbon::createFromFormat('d/m/Y/H/i/s', '28/11/2021/12/00/00'))
+    @elseif (\Carbon\Carbon::now() > \Carbon\Carbon::createFromFormat('d/m/Y/H/i/s', '28/11/2021/12/45/00'))
     {{-- <h1>Stream title</h1> --}}
     {{-- <h3>Featuring : speaker name</h3> --}}
 
